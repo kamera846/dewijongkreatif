@@ -31,13 +31,14 @@
                         <div class="text-muted text-center mt-2"><small>Sign up</small></div>
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
-                        <form role="form" action="index.htmle" method="POST" enctype="multipart/form-data">
+                        <form  action="/register/store" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="form-group">
                                 <div class="input-group input-group-merge input-group-alternative mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Name" type="text" />
+                                    <input class="form-control" placeholder="Name" type="text" name="nama" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -45,7 +46,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Email" type="email" />
+                                    <input class="form-control" placeholder="Email" type="email"  name="email"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -53,7 +54,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-album-2"></i></span>
                                     </div>
-                                    <input class="form-control" type="file" />
+                                    <input class="form-control" type="file"  name="foto_profil"/>
                                 </div>
                                 <div class="text-muted font-italic">
                                     <small>*This for your profile picture</small>
@@ -64,7 +65,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Job" type="text" />
+                                    <input class="form-control" placeholder="Job" type="text"  name="pekerjaan"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -72,7 +73,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="No. HP" type="text" />
+                                    <input class="form-control" placeholder="No. HP" type="text" name="no_hp"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -80,7 +81,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
                                     </div>
-                                    <textarea name="address" id="address" class="form-control" placeholder="Address"></textarea>
+                                    <textarea name="alamat" id="address" class="form-control" placeholder="Address"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -88,17 +89,17 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Password" type="password" />
+                                    <input class="form-control" placeholder="Password" type="password" name="password" />
                                 </div>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <div class="input-group input-group-merge input-group-alternative">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
                                     <input class="form-control" placeholder="Confirm password" type="password" />
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="row my-4">
                                 <div class="col-12">
                                     <div class="custom-control custom-control-alternative custom-checkbox">
@@ -110,7 +111,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn btn-primary mt-4">Create account</button>
+                                <button type="submit" class="btn btn-primary mt-4">Create account</button>
                             </div>
                         </form>
                     </div>

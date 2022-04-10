@@ -30,13 +30,19 @@
                         <div class="text-muted text-center mt-2"><small>Sign in</small></div>
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
-                        <form role="form">
+                        <form role="form" action="login" method="post">
+                            @csrf
                             <div class="form-group mb-3">
                                 <div class="input-group input-group-merge input-group-alternative">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Email" type="email" />
+                                    <input class="form-control @error('email') is-invalid @enderror" placeholder="Email" type="email" id="email" name="email" autofocus value="{{ old('email') }}"/>
+                                    @error('email')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>                                        
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
@@ -44,7 +50,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Password" type="password" />
+                                    <input class="form-control" placeholder="Password" type="password" name="password" id="password"/>
                                 </div>
                             </div>
                             <div class="custom-control custom-control-alternative custom-checkbox">
@@ -54,7 +60,7 @@
                                 </label>
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn btn-primary my-4">Sign in</button>
+                                <button type="submit" class="btn btn-primary my-4">Sign in</button>
                             </div>
                         </form>
                     </div>
@@ -64,7 +70,7 @@
                         <a href="#" class="text-light"><small>Forgot password?</small></a>
                     </div>
                     <div class="col-6 text-right">
-                        <a href="register.html" class="text-light"><small>Create new account</small></a>
+                        <a href="/register" class="text-light"><small>Create new account</small></a>
                     </div>
                 </div>
             </div>
