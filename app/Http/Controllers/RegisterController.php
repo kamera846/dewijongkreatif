@@ -11,7 +11,7 @@ class RegisterController extends Controller
     public function index()
     {
         return view('register', [
-            'judul' => 'Register'
+            'judul_halaman' => 'Daftar Admin'
         ]);
     }
 

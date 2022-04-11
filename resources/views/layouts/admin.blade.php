@@ -193,7 +193,7 @@
                                     <img id="image-preview-update" src="admin/assets/img/theme/team-4.jpg" width="200px" height="200px" class="rounded mx-auto d-block mb-2" alt="...">
                                     <div class="row justify-content-center">
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="hidden" name="foto" id="foto" value="admin/assets/img/theme/team-4.jpg">
+                                            <input class="form-control" type="hidden" name="foto_profil" id="foto" value="admin/assets/img/theme/team-4.jpg">
                                         </div>
                                     </div>
                                 </div>
@@ -211,7 +211,7 @@
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label class="form-control-label" for="no-hp">Nomor HP</label>
-                                    <input class="form-control" type="number" name="no-hp" id="no-hp" placeholder="Nomor HP" value="081717582871" readonly>
+                                    <input class="form-control" type="number" name="no_hp" id="no-hp" placeholder="Nomor HP" value="081717582871" readonly>
                                 </div>
                                 <div class="form-group col-lg-12">
                                     <label class="form-control-label" for="alamat">Alamat</label>

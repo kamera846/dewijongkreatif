@@ -16,19 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
-    return view('welcome');
-});
-Route::get('/login', function () {
-    return view('login', ['judul_halaman' => 'Admin | Log in admin']);
-});
-Route::get('/register', function () {
-    return view('register', ['judul_halaman' => 'Admin | Daftar Admin']);
-});
-Route::get('/dashboard', function () {
-    return view('dashboard', ['judul_halaman' => 'Admin | Dashboard']);
-});
-=======
+//     return view('welcome');
+// });
     return view('layouts.admin');
 })->middleware('auth');
 Route::get('register', [RegisterController::class, 'index']);
@@ -36,4 +25,8 @@ Route::post('register/store', [RegisterController::class, 'store']);
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'authenticate']);
 Route::post('logout', [LoginController::class, 'logout']);
->>>>>>> 4845357df311c2c13777b1265c7911c059705e58
+
+// route baru
+Route::get('/dashboard', function () {
+        return view('dashboard', ['judul_halaman' => 'Admin | Dashboard']);
+    });
