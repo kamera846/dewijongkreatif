@@ -17,8 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/login', function () {
-    return view('login', ['judul' => 'Login Admin']);
+    return view('login', ['judul_halaman' => 'Admin | Log in admin']);
 });
 Route::get('/register', function () {
-    return view('register', ['judul' => 'Daftar Admin']);
+    return view('register', ['judul_halaman' => 'Admin | Daftar Admin']);
+});
+Route::get('/dashboard', function () {
+    return view('dashboard', ['judul_halaman' => 'Admin | Dashboard']);
 });

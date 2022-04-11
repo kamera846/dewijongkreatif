@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.sign-admin')
 
 @section('main-content')
 <!-- Main content -->
@@ -47,12 +47,6 @@
                                     <input class="form-control" placeholder="Password" type="password" />
                                 </div>
                             </div>
-                            <div class="custom-control custom-control-alternative custom-checkbox">
-                                <input class="custom-control-input" id=" customCheckLogin" type="checkbox" />
-                                <label class="custom-control-label" for=" customCheckLogin">
-                                    <span class="text-muted">Remember me</span>
-                                </label>
-                            </div>
                             <div class="text-center">
                                 <button type="button" class="btn btn-primary my-4">Sign in</button>
                             </div>
@@ -64,7 +58,7 @@
                         <a href="#" class="text-light"><small>Forgot password?</small></a>
                     </div>
                     <div class="col-6 text-right">
-                        <a href="register.html" class="text-light"><small>Create new account</small></a>
+                        <a href="register" class="text-light"><small>Create new account</small></a>
                     </div>
                 </div>
             </div>
