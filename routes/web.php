@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('welcome');
 });
 Route::get('/login', function () {
@@ -25,3 +28,12 @@ Route::get('/register', function () {
 Route::get('/dashboard', function () {
     return view('dashboard', ['judul_halaman' => 'Admin | Dashboard']);
 });
+=======
+    return view('layouts.admin');
+})->middleware('auth');
+Route::get('register', [RegisterController::class, 'index']);
+Route::post('register/store', [RegisterController::class, 'store']);
+Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::post('login', [LoginController::class, 'authenticate']);
+Route::post('logout', [LoginController::class, 'logout']);
+>>>>>>> 4845357df311c2c13777b1265c7911c059705e58
