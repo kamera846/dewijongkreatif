@@ -10,7 +10,7 @@ document.getElementById("logout").addEventListener("click", function () {
         confirmButtonText: "Yes, Logout",
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "logout";
+            window.location.href = "/logout";
         }
     });
 });
@@ -18,12 +18,12 @@ document.getElementById("logout").addEventListener("click", function () {
 // Edit Profil
 const edit = document.querySelector(".edit-profil");
 const tutup = document.querySelector(".tutup");
-const foto = document.getElementById("foto");
-const nama = document.getElementById("nama");
-const email = document.getElementById("email");
-const pekerjaan = document.getElementById("pekerjaan");
-const noHp = document.getElementById("no-hp");
-const alamat = document.getElementById("alamat");
+const foto = document.getElementById("modal-foto");
+const nama = document.getElementById("modal-nama");
+const email = document.getElementById("modal-email");
+const pekerjaan = document.getElementById("modal-pekerjaan");
+const noHp = document.getElementById("modal-no-hp");
+const alamat = document.getElementById("modal-alamat");
 
 const modalFooter = document.querySelector(".modal-footer");
 
@@ -45,15 +45,15 @@ edit.addEventListener("click", function () {
     edit.style.display = "none";
     modalFooter.appendChild(simpan);
 
-    foto.addEventListener("change", function () {
-        const oFReader = new FileReader();
-        oFReader.readAsDataURL(foto.files[0]);
+    // foto.addEventListener("change", function () {
+    //     const oFReader = new FileReader();
+    //     oFReader.readAsDataURL(foto.files[0]);
 
-        oFReader.onload = function (oFREvent) {
-            document.getElementById("image-preview-update").src =
-                oFREvent.target.result;
-        };
-    });
+    //     oFReader.onload = function (oFREvent) {
+    //         document.getElementById("image-preview-update").src =
+    //             oFREvent.target.result;
+    //     };
+    // });
 
     const batal = document.querySelector(".batal");
     batal.addEventListener("click", function () {
@@ -67,8 +67,7 @@ edit.addEventListener("click", function () {
         alamat.setAttribute("readonly", "");
         tutup.setAttribute("data-dismiss", "modal");
 
-        document.getElementById("image-preview-update").src =
-            "admin/assets/img/theme/team-4.jpg";
+        // document.getElementById("image-preview-update").src = "admin/assets/img/theme/team-4.jpg";
 
         edit.style.display = "inline";
         simpan.remove();

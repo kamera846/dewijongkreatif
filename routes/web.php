@@ -30,3 +30,12 @@ Route::post('logout', [LoginController::class, 'logout']);
 Route::get('/dashboard', function () {
         return view('dashboard', ['judul_halaman' => 'Admin | Dashboard']);
     });
+Route::get('/user', function () {
+        return view('user', ['judul_halaman' => 'Admin | Data Pengguna']);
+    });
+Route::get('/insert-user', function () {
+        return view('insert-user', ['judul_halaman' => 'Admin | Tambah Pengguna']);
+    });
+Route::get('/edit-user', function () {
+        return view('edit-user', ['judul_halaman' => 'Admin | Edit Pengguna']);
+    });

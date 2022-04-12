@@ -24,7 +24,7 @@
             <div class="scrollbar-inner">
                 <!-- Brand -->
                 <div class="sidenav-header d-flex align-items-center">
-                    <a class="navbar-brand" href="dashboard">
+                    <a class="navbar-brand" href="/dashboard">
                         <img src="admin/assets/img/brand/blue.png" class="navbar-brand-img" alt="..." />
                     </a>
                     <div class="ml-auto">
@@ -44,7 +44,7 @@
                         <!-- Nav items -->
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link {{ ( $judul_halaman === 'Admin | Dashboard' ) ? 'active' : '' }}" href="dashboard">
+                                <a class="nav-link {{ ( $judul_halaman === 'Admin | Dashboard' ) ? 'active' : '' }} " href="/dashboard">
                                     <i class="ni ni-shop text-primary"></i>
                                     <span class="nav-link-text">Dashboard</span>
                                 </a>
@@ -66,7 +66,10 @@
                                 </div>
                             </li> -->
                             <li class="nav-item">
-                                <a class="nav-link" href="user">
+                                <a 
+                                class="
+                                    nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' ) ? 'active' : '' }}" 
+                                href="/user">
                                     <i class="ni ni-circle-08 text-green"></i>
                                     <span class="nav-link-text">Data Pengguna</span>
                                 </a>
@@ -124,56 +127,13 @@
                     </div>
                 </div>
             </nav>
+            
             <!-- Header -->
-            <!-- Header -->
-            <div class="header bg-primary pb-6">
-                <div class="container-fluid">
-                    <div class="header-body">
-                        <div class="row align-items-center py-4">
-                            <div class="col-lg-6 col-7">
-                                <h6 class="h2 text-white d-inline-block mb-0">Dashboard</h6>
-                                <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                                    <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                        <li class="breadcrumb-item"><a href="dashboard"><i class="fas fa-home"></i></a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                                    </ol>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @yield('page-header')
+            
             <!-- Page content -->
-            <div class="container-fluid mt--6">
+            @yield('page-content')
 
-                {{-- Admin Main Content --}}
-                @yield('main-content')
-
-                <!-- Footer -->
-                <footer class="footer pt-0">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6">
-                            <div class="copyright text-center text-lg-left text-muted">&copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a></div>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/license" class="nav-link" target="_blank">License</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </footer>
-            </div>
         </div>
 
         <!-- Modal Profil -->
@@ -186,36 +146,36 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="" method="" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="row">
                                 <div class="form-group col-lg-12">
-                                    <img id="image-preview-update" src="admin/assets/img/theme/team-4.jpg" width="200px" height="200px" class="rounded mx-auto d-block mb-2" alt="...">
+                                    <img src="admin/assets/img/theme/team-4.jpg" width="200px" height="200px" class="rounded mx-auto d-block mb-2" alt="...">
                                     <div class="row justify-content-center">
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="hidden" name="foto_profil" id="foto" value="admin/assets/img/theme/team-4.jpg">
+                                            <input class="form-control" type="hidden" name="foto_profil" id="modal-foto">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="nama">Nama</label>
-                                    <input class="form-control" type="text" name="nama" id="nama" placeholder="Nama lengkap" value="Umam Alfarizi" readonly>
+                                    <label class="form-control-label" for="modal-nama">Nama</label>
+                                    <input class="form-control" type="text" name="nama" id="modal-nama" value="Umam Alfarizi" readonly>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="email">Email</label>
-                                    <input class="form-control" type="email" name="email" id="email" placeholder="Alamat email" value="alfariziuchiha@gmail.con" readonly>
+                                    <label class="form-control-label" for="modal-email">Alamat Email</label>
+                                    <input class="form-control" type="email" name="email" id="modal-email" value="alfariziuchiha@gmail.con" readonly>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="pekerjaan">Pekerjaan</label>
-                                    <input class="form-control" type="text" name="pekerjaan" id="pekerjaan" placeholder="Pekerjaan" value="Nganggur" readonly>
+                                    <label class="form-control-label" for="modal-pekerjaan">Pekerjaan</label>
+                                    <input class="form-control" type="text" name="pekerjaan" id="modal-pekerjaan" value="Nganggur" readonly>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="no-hp">Nomor HP</label>
-                                    <input class="form-control" type="number" name="no_hp" id="no-hp" placeholder="Nomor HP" value="081717582871" readonly>
+                                    <label class="form-control-label" for="modal-no-hp">Nomor HP</label>
+                                    <input class="form-control" type="number" name="no_hp" id="modal-no-hp" value="081717582871" readonly>
                                 </div>
                                 <div class="form-group col-lg-12">
-                                    <label class="form-control-label" for="alamat">Alamat</label>
-                                    <textarea class="form-control" name="alamat" id="alamat" placeholder="Alamat lengkap" readonly>Jln R Sangapati</textarea>
+                                    <label class="form-control-label" for="modal-alamat">Alamat</label>
+                                    <textarea class="form-control" name="alamat" id="modal-alamat" readonly>Jln R Sangapati</textarea>
                                 </div>
                             </div>
                         </div>
@@ -230,24 +190,43 @@
 
         <!-- Argon Scripts -->
         <!-- Core -->
-        <script src="admin/assets/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="admin/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="admin/assets/vendor/js-cookie/js.cookie.js"></script>
-        <script src="admin/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-        <script src="admin/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+        <script src="{{ asset('admin/assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ asset('admin/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('admin/assets/vendor/js-cookie/js.cookie.js') }}"></script>
+        <script src="{{ asset('admin/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
+        <script src="{{ asset('admin/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') }}"></script>
         <!-- Optional JS -->
-        <script src="admin/assets/vendor/chart.js/dist/Chart.min.js"></script>
-        <script src="admin/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+        <script src="{{ asset('admin/assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
+        <script src="{{ asset('admin/assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
         <!-- Argon JS -->
-        <script src="admin/assets/js/argon.js?v=1.1.0"></script>
-        <!-- Demo JS - remove this in your project -->
-        <script src="admin/assets/js/demo.min.js"></script>
+        <script src="{{ asset('admin/assets/js/argon.js?v=1.1.0') }}"></script>
 
         {{-- SweetAlert2 --}}
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         {{-- Custom JS --}}
-        <script src="admin/assets/js/script.js"></script>
+        <script src="{{ asset('admin/assets/js/script.js') }}"></script>
+
+        <?php if($judul_halaman === 'Admin | Data Pengguna') : ?>
+            <script>
+                // Hapus Pengguna
+                document.getElementById("delete-user").addEventListener("click", function () {
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "Yakin ingin menghapus data ini!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Yes, Delete!",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "/delete-user";
+                        }
+                    });
+                });
+            </script>
+        <?php endif; ?>
 
     </body>
 </html>
