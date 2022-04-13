@@ -9,8 +9,8 @@
             <div class="header-body text-center mb-7">
                 <div class="row justify-content-center">
                     <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-                        <h1 class="text-white">Create an account</h1>
-                        <p class="text-lead text-white">Complete the forms input to become an admin</p>
+                        <h1 class="text-white">Buat Akun</h1>
+                        <p class="text-lead text-white">Lengkapi form di bawah untuk menjadi admin!</p>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="col-lg-6 col-md-8">
                 <div class="card bg-secondary border-0">
                     <div class="card-header bg-transparent pb-5">
-                        <div class="text-muted text-center mt-2"><small>Sign up</small></div>
+                        <div class="text-muted text-center mt-2"><small>Daftar</small></div>
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
                         <form  action="/register/store" method="post" enctype="multipart/form-data">
@@ -38,7 +38,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Name" type="text" name="nama" />
+                                    <input class="form-control" placeholder="Nama" type="text" name="nama" required/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -46,7 +46,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Email" type="email"  name="email"/>
+                                    <input class="form-control" placeholder="Email" type="email"  name="email"required/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -57,7 +57,7 @@
                                     <input class="form-control" type="file"  name="foto_profil"/>
                                 </div>
                                 <div class="text-muted font-italic">
-                                    <small>*This for your profile picture(optional)</small>
+                                    <small>*Untuk foto profil anda (opsional)</small>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -65,7 +65,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Job (optional)" type="text" name="pekerjaan"/>
+                                    <input class="form-control" placeholder="Pekerjaan (opsional)" type="text" name="pekerjaan"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -73,7 +73,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="No HP (optional)" type="number" name="no_hp"/>
+                                    <input class="form-control" placeholder="Nomor HP (opsioal)" type="number" name="no_hp"/>
                                 </div>
                             </div>
 
@@ -85,7 +85,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
                                     </div>
-                                    <textarea name="alamat" id="address" class="form-control" placeholder="Address"></textarea>
+                                    <textarea name="alamat" id="address" class="form-control" placeholder="Alamat" required></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -93,7 +93,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Password" type="password" name="password" />
+                                    <input class="form-control" placeholder="Password" type="password" name="password" minlength="8" required/>
                                 </div>
                             </div>
                             {{-- <div class="form-group">
@@ -115,7 +115,7 @@
                                 </div>
                             </div> --}}
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary mt-4">Create account</button>
+                                <button type="submit" class="btn btn-primary mt-4">Buat Akun</button>
                             </div>
                         </form>
                     </div>

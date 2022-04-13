@@ -65,13 +65,33 @@
                                     </ul>
                                 </div>
                             </li> -->
+                        </ul>
+                        <hr class="my-3">
+                        <h6 class="navbar-heading p-0 text-primary">DATA</h6>
+                        <ul class="navbar-nav mb-md-3">
+                            <li class="nav-item">
+                                <a 
+                                class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
+                                href="/user">
+                                    <i class="ni ni-circle-08 text-green"></i>
+                                    <span class="nav-link-text">Pengguna</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a 
+                                class="nav-link {{ ( $judul_halaman === 'Admin | Data Blog' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
+                                href="/blog">
+                                    <i class="ni ni-single-copy-04 text-orange"></i>
+                                    <span class="nav-link-text">Blog</span>
+                                </a>
+                            </li>
                             <li class="nav-item">
                                 <a 
                                 class="
-                                    nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' ) ? 'active' : '' }}" 
-                                href="/user">
-                                    <i class="ni ni-circle-08 text-green"></i>
-                                    <span class="nav-link-text">Data Pengguna</span>
+                                    nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
+                                href="/gallery">
+                                    <i class="ni ni-album-2 text-red"></i>
+                                    <span class="nav-link-text">Galeri</span>
                                 </a>
                             </li>
                         </ul>
@@ -153,29 +173,29 @@
                                     <img src="admin/assets/img/theme/team-4.jpg" width="200px" height="200px" class="rounded mx-auto d-block mb-2" alt="...">
                                     <div class="row justify-content-center">
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="hidden" name="foto_profil" id="modal-foto">
+                                            <input class="form-control form-control-alternative" type="hidden" name="foto_profil" id="modal-foto">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label class="form-control-label" for="modal-nama">Nama</label>
-                                    <input class="form-control" type="text" name="nama" id="modal-nama" value="Umam Alfarizi" readonly>
+                                    <input class="form-control form-control-alternative" type="text" name="nama" id="modal-nama" value="Umam Alfarizi" readonly>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label class="form-control-label" for="modal-email">Alamat Email</label>
-                                    <input class="form-control" type="email" name="email" id="modal-email" value="alfariziuchiha@gmail.con" readonly>
+                                    <input class="form-control form-control-alternative" type="email" name="email" id="modal-email" value="alfariziuchiha@gmail.con" readonly>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label class="form-control-label" for="modal-pekerjaan">Pekerjaan</label>
-                                    <input class="form-control" type="text" name="pekerjaan" id="modal-pekerjaan" value="Nganggur" readonly>
+                                    <input class="form-control form-control-alternative" type="text" name="pekerjaan" id="modal-pekerjaan" value="Nganggur" readonly>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label class="form-control-label" for="modal-no-hp">Nomor HP</label>
-                                    <input class="form-control" type="number" name="no_hp" id="modal-no-hp" value="081717582871" readonly>
+                                    <input class="form-control form-control-alternative" type="number" name="no_hp" id="modal-no-hp" value="081717582871" readonly>
                                 </div>
                                 <div class="form-group col-lg-12">
                                     <label class="form-control-label" for="modal-alamat">Alamat</label>
-                                    <textarea class="form-control" name="alamat" id="modal-alamat" readonly>Jln R Sangapati</textarea>
+                                    <textarea class="form-control form-control-alternative" name="alamat" id="modal-alamat" rows="3" readonly>Jln R Sangapati</textarea>
                                 </div>
                             </div>
                         </div>
@@ -206,27 +226,6 @@
 
         {{-- Custom JS --}}
         <script src="{{ asset('admin/assets/js/script.js') }}"></script>
-
-        <?php if($judul_halaman === 'Admin | Data Pengguna') : ?>
-            <script>
-                // Hapus Pengguna
-                document.getElementById("delete-user").addEventListener("click", function () {
-                    Swal.fire({
-                        title: "Are you sure?",
-                        text: "Yakin ingin menghapus data ini!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "Yes, Delete!",
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            window.location.href = "/delete-user";
-                        }
-                    });
-                });
-            </script>
-        <?php endif; ?>
 
     </body>
 </html>

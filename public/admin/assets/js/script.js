@@ -73,3 +73,20 @@ edit.addEventListener("click", function () {
         simpan.remove();
     });
 });
+
+// Konfirmasi Hapus Pengguna
+function hapusPengguna() {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "Ingin menghapus data ini!?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "/delete-user";
+        }
+    });
+}

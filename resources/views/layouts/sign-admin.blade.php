@@ -71,5 +71,47 @@
         <script src="{{ asset('admin/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') }}"></script>
         <!-- Argon JS -->
         <script src="{{ asset('admin/assets/js/argon.js?v=1.1.0') }}"></script>
+
+        {{-- SweetAlert2 --}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        {{-- Alert Admin --}}
+        
+        {{-- Login --}}
+        {{-- <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Email tidak terdaftar!',
+            })
+        </script> --}}
+
+        {{-- <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Kata sandi salah!',
+            })
+        </script> --}}
+
+        
+        {{-- Register --}}
+        {{-- <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Harap menggunakan email yang valid!',
+            })
+        </script> --}}
+
+        {{-- Berhasil register --}}
+        {{-- <script>
+                Swal.fire(
+            'Good job!',
+            'Daftar admin berhasil!',
+            'success'
+            )
+        </script> --}}
+
     </body>
 </html>

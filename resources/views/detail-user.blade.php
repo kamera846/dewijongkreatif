@@ -10,7 +10,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Tambah Pengguna</li>
+                                <li class="breadcrumb-item active" aria-current="page">Detail Pengguna</li>
                             </ol>
                         </nav>
                     </div>
@@ -27,7 +27,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
-                        <h3 class="mb-0">Tambah Pengguna</h3>
+                        <h3 class="mb-0">Detail Pengguna</h3>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -35,52 +35,56 @@
                             <div class="col-lg-8 col-md-10">
                                 <form>
                                   <div class="form-group row">
-                                    <label for="nama" class="col-md-3 col-form-label form-control-label">Nama</label>
+                                    <label for="nama" required class="col-md-3 col-form-label form-control-label">Nama</label>
                                     <div class="col-md-9">
-                                      <input class="form-control" type="text" id="nama" name="nama" required>
+                                      <input class="form-control form-control-flush px-3" type="text" value="John Snow" id="nama" name="nama" readonly>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="email" class="col-md-3 col-form-label form-control-label">Alamat Email</label>
                                     <div class="col-md-9">
-                                      <input class="form-control" type="email" id="email" required>
+                                      <input class="form-control form-control-flush px-3" type="email" value="argon@example.com" id="email" readonly>
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="password" class="col-md-3 col-form-label form-control-label">Password</label>
+                                    <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
                                     <div class="col-md-9">
-                                      <input class="form-control" type="password" id="password" name="password" required>
+                                      <select name="role" id="role" class="form-control form-control-flush px-3" readonly>
+                                        <option value="">-- Pilih Role --</option>
+                                        <option value="admin" selected>Admin</option>
+                                        <option value="super-admin">Super-admin</option>
+                                      </select>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="pekerjaan" class="col-md-3 col-form-label form-control-label">Pekerjaan</label>
                                     <div class="col-md-9">
-                                      <input class="form-control" type="text" id="pekerjaan" name="pekerjaan">
+                                      <input class="form-control form-control-flush px-3" type="text" value="Tidur" id="pekerjaan" name="pekerjaan" readonly>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="no_hp" class="col-md-3 col-form-label form-control-label">Nomor HP</label>
                                     <div class="col-md-9">
-                                      <input class="form-control" type="number" id="no_hp" name="no_hp">
+                                      <input class="form-control form-control-flush px-3" type="number" value="123456789" id="no_hp" name="no_hp" readonly>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
                                     <div class="col-md-9">
-                                      <input class="form-control" type="file" id="foto" name="foto">
+                                      <img id="image-preview-update-2" src="admin/assets/img/theme/team-4.jpg" width="100px" height="100px" class="rounded mt-2" alt="...">
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control" name="alamat" id="alamat" rows="3"></textarea>
+                                        <textarea class="form-control form-control-flush px-3" name="alamat" id="alamat" rows="3" readonly>Jalan-jalan</textarea>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
-                                        <button type="submit" class="btn btn-primary">Tambah</button>
-                                        <a href="/user" class="btn btn-secondary">Batal</a> 
+                                      <a href="/edit-user" class="btn btn-primary">Edit</a>
+                                      <a href="/user" class="btn btn-secondary">Kembali</a> 
                                     </div>
                                   </div>
                                 </form>

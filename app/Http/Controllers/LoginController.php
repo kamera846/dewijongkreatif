@@ -10,7 +10,7 @@ class LoginController extends Controller
     public function index()
     {
         return view('login', [
-            'judul_halaman' => 'Daftar Admin'
+            'judul_halaman' => 'Login Admin'
         ]);
     }
     public function authenticate(Request $request)
