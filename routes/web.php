@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -16,14 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-//     return view('welcome');
-// });
+    //     return view('welcome');
+    // });
     return view('layouts.admin');
 })->middleware('auth');
 Route::get('register', [RegisterController::class, 'index']);
 Route::post('register/store', [RegisterController::class, 'store']);
 Route::get('login', [LoginController::class, 'index'])->name('login');
-Route::post('login', [LoginController::class, 'authenticate']);
+Route::post('/dashboard/login', [LoginController::class, 'authenticate']);
 Route::post('logout', [LoginController::class, 'logout']);
 
 // route baru

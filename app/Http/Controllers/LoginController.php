@@ -13,31 +13,27 @@ class LoginController extends Controller
             'judul_halaman' => 'Login Admin'
         ]);
     }
+
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'nama' => ['required'],
-            'password' => ['required'],
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
             return redirect()->intended('/');
         }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        return back()->with('loginfail', 'Login Gagal, Periksa Email dan Password Anda');
     }
+    public function logout(Request $request)
+    {
+        Auth::logout();
 
-    // public function logout(Request $request)
-    // {
-    //     Auth::logout();
+        $request->session()->invalidate();
 
-    //     $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
-    //     $request->session()->regenerateToken();
-
-    //     return redirect('/login');
-    // }
+        return redirect('/login');
+    }
 }
