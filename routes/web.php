@@ -16,9 +16,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index']);
+Route::get('/', function () {
+    //     return view('welcome');
+    // });
+    return view('layouts.admin');
+})->middleware('auth');
 Route::get('register', [RegisterController::class, 'index']);
 Route::post('register/store', [RegisterController::class, 'store']);
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('/dashboard/login', [LoginController::class, 'authenticate']);
 Route::post('logout', [LoginController::class, 'logout']);
+
+// route baru
+Route::get('/dashboard', function () {
+    return view('dashboard', ['judul_halaman' => 'Admin | Dashboard']);
+});
+Route::get('/user', function () {
+    return view('user', ['judul_halaman' => 'Admin | Data Pengguna']);
+});
+Route::get('/insert-user', function () {
+    return view('insert-user', ['judul_halaman' => 'Admin | Tambah Pengguna']);
+});
+Route::get('/edit-user', function () {
+    return view('edit-user', ['judul_halaman' => 'Admin | Edit Pengguna']);
+});

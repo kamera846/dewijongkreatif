@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.sign-admin')
 
 @section('main-content')
 <!-- Main content -->
@@ -57,7 +57,7 @@
                                     <input class="form-control" type="file"  name="foto_profil"/>
                                 </div>
                                 <div class="text-muted font-italic">
-                                    <small>*This for your profile picture</small>
+                                    <small>*This for your profile picture(optional)</small>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -65,7 +65,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Job" type="text"  name="pekerjaan"/>
+                                    <input class="form-control" placeholder="Job (optional)" type="text" name="pekerjaan"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -73,9 +73,13 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="No. HP" type="text" name="no_hp"/>
+                                    <input class="form-control" placeholder="No HP (optional)" type="number" name="no_hp"/>
                                 </div>
                             </div>
+
+                            {{-- Role --}}
+                            <input name="role" value="admin" type="hidden" />
+
                             <div class="form-group">
                                 <div class="input-group input-group-merge input-group-alternative mb-3">
                                     <div class="input-group-prepend">
@@ -100,7 +104,7 @@
                                     <input class="form-control" placeholder="Confirm password" type="password" />
                                 </div>
                             </div> --}}
-                            <div class="row my-4">
+                            {{-- <div class="row my-4">
                                 <div class="col-12">
                                     <div class="custom-control custom-control-alternative custom-checkbox">
                                         <input class="custom-control-input" id="customCheckRegister" type="checkbox" />
@@ -109,7 +113,7 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary mt-4">Create account</button>
                             </div>
