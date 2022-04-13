@@ -20,7 +20,9 @@
 
     <body class="bg-default">
         <!-- Main content -->
-        
+        {{-- @foreach ($user as $item)
+            <img src="{{ asset('storage'. $item->foto_profil) }}" alt="">
+        @endforeach --}}
         @yield('main-content')
 
         <!-- Footer -->

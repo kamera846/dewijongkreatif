@@ -30,7 +30,7 @@
                         <div class="text-muted text-center mt-2"><small>Sign in</small></div>
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
-                        <form role="form" action="login" method="post">
+                        <form role="form" action="/dashboard/login" method="post">
                             @csrf
                             <div class="form-group mb-3">
                                 <div class="input-group input-group-merge input-group-alternative">

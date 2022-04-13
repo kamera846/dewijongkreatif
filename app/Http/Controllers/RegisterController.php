@@ -17,17 +17,22 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+
+        $validateData = $request->validate([
             'nama' => 'required',
             'email' => 'required|email:dns',
             'password' => 'required|min:8',
-            'alamat' => 'required'
+            'alamat' => 'required',
+            'foto_profil' => 'image'
         ]);
+        if ($request->file('foto_profil')) {
+            $validateData['foto_profil'] = $request->file('foto_profil')->store('foto-profil');
+        }
 
         User::create([
             'nama' => $request->nama,
             'email' => $request->email,
-            'password' => hash::make($request->newPassword),
+            'password' => hash::make($request->password),
             'alamat' => $request->alamat,
             'no_hp' => $request->no_hp,
             'pekerjaan' => $request->pekerjaan,
