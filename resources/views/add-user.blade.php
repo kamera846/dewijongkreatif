@@ -9,7 +9,7 @@
                         <h6 class="h2 text-white d-inline-block mb-0">Pengguna</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="/admin/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Tambah Pengguna</li>
                             </ol>
                         </nav>
@@ -23,7 +23,7 @@
 @section('page-content')
     <div class="container-fluid mt--6">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-8 col-md-10">
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
@@ -31,8 +31,8 @@
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-10">
+                        <div class="row">
+                            <div class="col">
                                 <form>
                                   <div class="form-group row">
                                     <label for="nama" class="col-md-3 col-form-label form-control-label">Nama</label>
@@ -83,14 +83,14 @@
                                   <div class="form-group row">
                                     <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control form-control-alternative" name="alamat" id="alamat" rows="3" required></textarea>
+                                      <textarea class="form-control form-control-alternative" name="alamat" id="alamat" rows="3"></textarea>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                         <button type="submit" class="btn btn-primary">Tambah</button>
-                                        <a href="/user" class="btn btn-secondary">Batal</a> 
+                                        <a href="/admin/user" class="btn btn-secondary">Batal</a> 
                                     </div>
                                   </div>
                                 </form>

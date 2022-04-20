@@ -9,7 +9,7 @@
                         <h6 class="h2 text-white d-inline-block mb-0">Pengguna</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="/admin/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Detail Pengguna</li>
                             </ol>
                         </nav>
@@ -23,7 +23,7 @@
 @section('page-content')
     <div class="container-fluid mt--6">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-8 col-md-10">
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
@@ -31,11 +31,11 @@
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-10">
+                        <div class="row">
+                            <div class="col">
                                 <form>
                                   <div class="form-group row">
-                                    <label for="nama" required class="col-md-3 col-form-label form-control-label">Nama</label>
+                                    <label for="nama" class="col-md-3 col-form-label form-control-label">Nama</label>
                                     <div class="col-md-9">
                                       <input class="form-control form-control-flush px-3" type="text" value="John Snow" id="nama" name="nama" readonly>
                                     </div>
@@ -71,20 +71,13 @@
                                   <div class="form-group row">
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
                                     <div class="col-md-9">
-                                      <img id="image-preview-update-2" src="admin/assets/img/theme/team-4.jpg" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                      <img id="image-preview-update-2" src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" width="100px" height="100px" class="rounded mt-2" alt="...">
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat</label>
                                     <div class="col-md-9">
                                         <textarea class="form-control form-control-flush px-3" name="alamat" id="alamat" rows="3" readonly>Jalan-jalan</textarea>
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <div class="col-md-3"></div>
-                                    <div class="col-md-9">
-                                      <a href="/edit-user" class="btn btn-primary">Edit</a>
-                                      <a href="/user" class="btn btn-secondary">Kembali</a> 
                                     </div>
                                   </div>
                                 </form>

@@ -83,13 +83,6 @@
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Email tidak terdaftar!',
-            })
-        </script> --}}
-
-        {{-- <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
                 text: 'Kata sandi salah!',
             })
         </script> --}}

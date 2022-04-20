@@ -6,11 +6,11 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Pengguna</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Galeri</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/admin/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Data Pengguna</li>
+                                <li class="breadcrumb-item active" aria-current="page">Data Galeri</li>
                             </ol>
                         </nav>
                     </div>
@@ -29,11 +29,11 @@
                     <div class="card-header border-0">
                         <div class="row">
                             <div class="col-6">
-                                <h3 class="mb-0">Data Pengguna</h3>
+                                <h3 class="mb-0">Data Galeri</h3>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="/admin/add-user" class="btn btn-sm btn-primary">
-                                    <span class="btn-inner--icon"><i class="fas fa-user-plus"></i></span>
+                                <a href="/admin/add-gallery" class="btn btn-sm btn-primary">
+                                    <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
                                     <span class="btn-inner--text">Tambah Data</span>
                                 </a>
                             </div>
@@ -45,42 +45,23 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th>Foto</th>
-                                    <th>Nama</th>
-                                    <th>Email</th>
-                                    <th>Pekerjaan</th>
-                                    <th>Nomor HP</th>
-                                    <th>Role</th>
+                                    <th>Judul</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="table-user">
-                                        <img src="{{ asset('admin/assets/img/theme/team-1.jpg') }}" class="avatar rounded-circle">
+                                    <td>
+                                        <img src="{{ asset('admin/assets/img/theme/team-1.jpg') }}" width="70px" class="rounded">
                                     </td>
                                     <td>
-                                        <b>John Michael</b>
-                                    </td>
-                                    <td>
-                                        <a href="mailto:jhonmichael@gmail.com" target="_blank" class="font-weight-bold">jhonmichael@gmail.com</a>
-                                    </td>
-                                    <td>
-                                        <span class="font-weight-bold">Nganggur</span>
-                                    </td>
-                                    <td>
-                                        <span class="font-weight-bold">0234567890</span>
-                                    </td>
-                                    <td>
-                                        <span class="font-weight-bold">Super-admin</span>
+                                        <b>Tutorial Internet Gratis No Root</b>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="/admin/detail-user" class="table-action" data-toggle="tooltip" data-original-title="Detail pengguna">
-                                            <i class="fas fa-info-circle"></i>
+                                        <a href="/admin/edit-gallery" class="table-action" data-toggle="tooltip" data-original-title="Edit galeri">
+                                            <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="/admin/edit-user" class="table-action" data-toggle="tooltip" data-original-title="Edit pengguna">
-                                            <i class="fas fa-user-edit"></i>
-                                        </a>
-                                        <a href="#" onclick="return hapusPengguna()" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus pengguna">
+                                        <a href="#" onclick="return hapusGaleri()" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus galeri">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>

@@ -24,8 +24,8 @@
             <div class="scrollbar-inner">
                 <!-- Brand -->
                 <div class="sidenav-header d-flex align-items-center">
-                    <a class="navbar-brand" href="/dashboard">
-                        <img src="admin/assets/img/brand/blue.png" class="navbar-brand-img" alt="..." />
+                    <a class="navbar-brand" href="/admin/dashboard">
+                        <img src="{{ asset('admin/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="..." />
                     </a>
                     <div class="ml-auto">
                         <!-- Sidenav toggler -->
@@ -44,7 +44,7 @@
                         <!-- Nav items -->
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link {{ ( $judul_halaman === 'Admin | Dashboard' ) ? 'active' : '' }} " href="/dashboard">
+                                <a class="nav-link {{ ( $judul_halaman === 'Admin | Dashboard' ) ? 'active' : '' }} " href="/admin/dashboard">
                                     <i class="ni ni-shop text-primary"></i>
                                     <span class="nav-link-text">Dashboard</span>
                                 </a>
@@ -66,21 +66,22 @@
                                 </div>
                             </li> -->
                         </ul>
+                        <!-- Divider -->
                         <hr class="my-3">
                         <h6 class="navbar-heading p-0 text-primary">DATA</h6>
                         <ul class="navbar-nav mb-md-3">
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
-                                href="/user">
+                                href="/admin/user">
                                     <i class="ni ni-circle-08 text-green"></i>
                                     <span class="nav-link-text">Pengguna</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a 
-                                class="nav-link {{ ( $judul_halaman === 'Admin | Data Blog' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
-                                href="/blog">
+                                class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
+                                href="/admin/blog">
                                     <i class="ni ni-single-copy-04 text-orange"></i>
                                     <span class="nav-link-text">Blog</span>
                                 </a>
@@ -89,13 +90,24 @@
                                 <a 
                                 class="
                                     nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                                href="/gallery">
-                                    <i class="ni ni-album-2 text-red"></i>
+                                href="/admin/gallery">
+                                    <i class="ni ni-album-2 text-info"></i>
                                     <span class="nav-link-text">Galeri</span>
                                 </a>
                             </li>
                         </ul>
-                        <!-- Divider -->
+                        <hr class="my-3">
+                        <ul class="navbar-nav mb-md-3">
+                            <li class="nav-item">
+                                <a 
+                                id="logout"
+                                class="nav-link" 
+                                href="#">
+                                    <i class="ni ni-button-power text-red"></i>
+                                    <span class="nav-link-text">Keluar</span>
+                                </a>
+                            </li>
+                        </ul>
                         <!-- <hr class="my-3" /> -->
                     </div>
                 </div>
@@ -122,25 +134,13 @@
                         </ul>
                         <ul class="navbar-nav align-items-center ml-auto ml-md-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <div class="media align-items-center">
-                                        <div class="media-body mr-2 d-none d-lg-block">
-                                            <span class="mb-0 text-sm font-weight-bold">John Snow</span>
-                                        </div>
-                                        <span class="avatar avatar-sm rounded-circle">
-                                            <img alt="Image placeholder" src="admin/assets/img/theme/team-4.jpg" />
-                                        </span>
+                                <div class="media align-items-center">
+                                    <div class="media-body mr-2 d-none d-lg-block">
+                                        <span class="mb-0 text-sm text-white font-weight-bold">John Snow</span>
                                     </div>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="dropdown-item">
-                                        <i class="ni ni-single-02"></i>
-                                        <span>Profil Saya</span>
-                                    </a>
-                                    <a href="#" id="logout" class="dropdown-item">
-                                        <i class="ni ni-user-run"></i>
-                                        <span>Keluar</span>
-                                    </a>
+                                    <span class="avatar avatar-sm rounded-circle">
+                                        <img alt="Image placeholder" src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" />
+                                    </span>
                                 </div>
                             </li>
                         </ul>
@@ -156,58 +156,6 @@
 
         </div>
 
-        <!-- Modal Profil -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Profil Saya</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form action="" method="" enctype="multipart/form-data">
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="form-group col-lg-12">
-                                    <img src="admin/assets/img/theme/team-4.jpg" width="200px" height="200px" class="rounded mx-auto d-block mb-2" alt="...">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-6">
-                                            <input class="form-control form-control-alternative" type="hidden" name="foto_profil" id="modal-foto">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="modal-nama">Nama</label>
-                                    <input class="form-control form-control-alternative" type="text" name="nama" id="modal-nama" value="Umam Alfarizi" readonly>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="modal-email">Alamat Email</label>
-                                    <input class="form-control form-control-alternative" type="email" name="email" id="modal-email" value="alfariziuchiha@gmail.con" readonly>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="modal-pekerjaan">Pekerjaan</label>
-                                    <input class="form-control form-control-alternative" type="text" name="pekerjaan" id="modal-pekerjaan" value="Nganggur" readonly>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="modal-no-hp">Nomor HP</label>
-                                    <input class="form-control form-control-alternative" type="number" name="no_hp" id="modal-no-hp" value="081717582871" readonly>
-                                </div>
-                                <div class="form-group col-lg-12">
-                                    <label class="form-control-label" for="modal-alamat">Alamat</label>
-                                    <textarea class="form-control form-control-alternative" name="alamat" id="modal-alamat" rows="3" readonly>Jln R Sangapati</textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary tutup" data-dismiss="modal">Tutup</button>
-                            <button type="button" class="btn btn-primary edit-profil">Edit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
         <!-- Argon Scripts -->
         <!-- Core -->
         <script src="{{ asset('admin/assets/vendor/jquery/dist/jquery.min.js') }}"></script>
@@ -218,6 +166,7 @@
         <!-- Optional JS -->
         <script src="{{ asset('admin/assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
         <script src="{{ asset('admin/assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
+        
         <!-- Argon JS -->
         <script src="{{ asset('admin/assets/js/argon.js?v=1.1.0') }}"></script>
 
@@ -226,6 +175,9 @@
 
         {{-- Custom JS --}}
         <script src="{{ asset('admin/assets/js/script.js') }}"></script>
+
+        {{-- CK Editor --}}
+        <script src="//cdn.ckeditor.com/4.18.0/basic/ckeditor.js"></script>
 
     </body>
 </html>
