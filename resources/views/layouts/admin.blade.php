@@ -24,7 +24,7 @@
             <div class="scrollbar-inner">
                 <!-- Brand -->
                 <div class="sidenav-header d-flex align-items-center">
-                    <a class="navbar-brand" href="/admin/dashboard">
+                    <a class="navbar-brand" href="/dashboard">
                         <img src="{{ asset('admin/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="..." />
                     </a>
                     <div class="ml-auto">
@@ -44,7 +44,7 @@
                         <!-- Nav items -->
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link {{ ( $judul_halaman === 'Admin | Dashboard' ) ? 'active' : '' }} " href="/admin/dashboard">
+                                <a class="nav-link {{ ( $judul_halaman === 'Admin | Dashboard' ) ? 'active' : '' }} " href="/dashboard">
                                     <i class="ni ni-shop text-primary"></i>
                                     <span class="nav-link-text">Dashboard</span>
                                 </a>
@@ -73,7 +73,7 @@
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
-                                href="/admin/user">
+                                href="/dashboard/user">
                                     <i class="ni ni-circle-08 text-green"></i>
                                     <span class="nav-link-text">Pengguna</span>
                                 </a>
@@ -81,7 +81,7 @@
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
-                                href="/admin/blog">
+                                href="/dashboard/blog">
                                     <i class="ni ni-single-copy-04 text-orange"></i>
                                     <span class="nav-link-text">Blog</span>
                                 </a>
@@ -90,7 +90,7 @@
                                 <a 
                                 class="
                                     nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                                href="/admin/gallery">
+                                href="/dashboard/gallery">
                                     <i class="ni ni-album-2 text-info"></i>
                                     <span class="nav-link-text">Galeri</span>
                                 </a>
@@ -134,14 +134,16 @@
                         </ul>
                         <ul class="navbar-nav align-items-center ml-auto ml-md-0">
                             <li class="nav-item dropdown">
-                                <div class="media align-items-center">
-                                    <div class="media-body mr-2 d-none d-lg-block">
-                                        <span class="mb-0 text-sm text-white font-weight-bold">John Snow</span>
+                                <a href="#"data-toggle="modal" data-target="#profil-saya">
+                                    <div class="media align-items-center">
+                                        <div class="media-body mr-2 d-none d-lg-block">
+                                            <span class="mb-0 text-sm text-white font-weight-bold">John Snow</span>
+                                        </div>
+                                        <span class="avatar avatar-sm rounded-circle">
+                                            <img alt="Image placeholder" src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" />
+                                        </span>
                                     </div>
-                                    <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" />
-                                    </span>
-                                </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -156,6 +158,46 @@
 
         </div>
 
+        {{-- Modal Profil --}}
+        <div class="modal fade" id="profil-saya" tabindex="-1" role="dialog" aria-labelledby="profil-saya" aria-hidden="true">
+            <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="modal-title-default">Profil Saya</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-sm">
+                        <img src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" alt="" class="rounded d-block mx-auto mb-4" width="150ox" height="150px">
+                        <div class="row mb-2">
+                            <div class="col-4">Nama</div>
+                            <div class="col-8">Umam Alfarizi</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">Email</div>
+                            <div class="col-8">alfariziuchiha@gmail.com</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">Pekerjaan</div>
+                            <div class="col-8">Tidur</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">No. HP</div>
+                            <div class="col-8">081223334444</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">Alamat</div>
+                            <div class="col-8">Jln. R Sangapati km 2,5 Jenggik - Lando</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer text-end">
+                        <a href="/dashboard/edit-user" class="btn btn-primary">Edit</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Argon Scripts -->
         <!-- Core -->
         <script src="{{ asset('admin/assets/vendor/jquery/dist/jquery.min.js') }}"></script>

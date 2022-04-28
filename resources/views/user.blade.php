@@ -9,7 +9,7 @@
                         <h6 class="h2 text-white d-inline-block mb-0">Pengguna</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="/admin/dashboard"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a hrefdashboarddashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Data Pengguna</li>
                             </ol>
                         </nav>
@@ -32,7 +32,7 @@
                                 <h3 class="mb-0">Data Pengguna</h3>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="/admin/add-user" class="btn btn-sm btn-primary">
+                                <a href="/dashboard/add-user" class="btn btn-sm btn-primary">
                                     <span class="btn-inner--icon"><i class="fas fa-user-plus"></i></span>
                                     <span class="btn-inner--text">Tambah Data</span>
                                 </a>
@@ -74,10 +74,10 @@
                                         <span class="font-weight-bold">Super-admin</span>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="/admin/detail-user" class="table-action" data-toggle="tooltip" data-original-title="Detail pengguna">
+                                        <a href="/dashboard/detail-user" class="table-action" data-toggle="tooltip" data-original-title="Detail pengguna">
                                             <i class="fas fa-info-circle"></i>
                                         </a>
-                                        <a href="/admin/edit-user" class="table-action" data-toggle="tooltip" data-original-title="Edit pengguna">
+                                        <a href="/dashboard/edit-user" class="table-action" data-toggle="tooltip" data-original-title="Edit pengguna">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
                                         <a href="#" onclick="return hapusPengguna()" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus pengguna">

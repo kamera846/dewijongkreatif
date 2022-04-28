@@ -9,7 +9,7 @@
                         <h6 class="h2 text-white d-inline-block mb-0">Blog</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="/admin/dashboard"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Data Postingan</li>
                             </ol>
                         </nav>
@@ -32,7 +32,7 @@
                                 <h3 class="mb-0">Data Postingan</h3>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="/admin/add-post" class="btn btn-sm btn-primary">
+                                <a href="/dashboard/add-post" class="btn btn-sm btn-primary">
                                     <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
                                     <span class="btn-inner--text">Tambah Data</span>
                                 </a>
@@ -66,10 +66,10 @@
                                         <span class="font-weight-bold">Umam Alfarizi</span>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="/admin/detail-post" class="table-action" data-toggle="tooltip" data-original-title="Detail postingan">
+                                        <a href="/dashboard/detail-post" class="table-action" data-toggle="tooltip" data-original-title="Detail postingan">
                                             <i class="fas fa-info-circle"></i>
                                         </a>
-                                        <a href="/admin/edit-post" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
+                                        <a href="/dashboard/edit-post" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                         <a href="#" onclick="return hapusPostingan()" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus postingan">

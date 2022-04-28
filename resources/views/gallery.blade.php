@@ -9,7 +9,7 @@
                         <h6 class="h2 text-white d-inline-block mb-0">Galeri</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="/admin/dashboard"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Data Galeri</li>
                             </ol>
                         </nav>
@@ -32,7 +32,7 @@
                                 <h3 class="mb-0">Data Galeri</h3>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="/admin/add-gallery" class="btn btn-sm btn-primary">
+                                <a href="/dashboard/add-gallery" class="btn btn-sm btn-primary">
                                     <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
                                     <span class="btn-inner--text">Tambah Data</span>
                                 </a>
@@ -58,7 +58,7 @@
                                         <b>Tutorial Internet Gratis No Root</b>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="/admin/edit-gallery" class="table-action" data-toggle="tooltip" data-original-title="Edit galeri">
+                                        <a href="/dashboard/edit-gallery" class="table-action" data-toggle="tooltip" data-original-title="Edit galeri">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                         <a href="#" onclick="return hapusGaleri()" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus galeri">

@@ -10,7 +10,7 @@
                         <h6 class="h2 text-white d-inline-block mb-0">Dashboard</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="/admin/dashboard"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                             </ol>
                         </nav>
@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-xl-4 col-md-6">
                       <div class="card card-stats">
-                        <a href="/admin/user">
+                        <a href="/dashboard/user">
                         <!-- Card body -->
                           <div class="card-body">
                             <div class="row">
@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-xl-4 col-md-6">
                       <div class="card card-stats">
-                        <a href="/admin/blog">
+                        <a href="/dashboard/blog">
                           <!-- Card body -->
                           <div class="card-body">
                             <div class="row">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-xl-4 col-md-6">
                       <div class="card card-stats">
-                        <a href="/admin/gallery">
+                        <a href="/dashboard/gallery">
                           <!-- Card body -->
                           <div class="card-body">
                             <div class="row">
