@@ -59,7 +59,7 @@
                         <a href="./" class="text-light"><small>Ke halaman beranda</small></a>
                     </div>
                     <div class="col-6 text-right">
-                        <a href="/register" class="text-light"><small>Buat akun baru</small></a>
+                        {{-- <a href="/register" class="text-light"><small>Buat akun baru</small></a> --}}
                     </div>
                 </div>
             </div>

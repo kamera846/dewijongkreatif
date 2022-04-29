@@ -66,21 +66,22 @@
                                 </div>
                             </li> -->
                         </ul>
+                        <!-- Divider -->
                         <hr class="my-3">
                         <h6 class="navbar-heading p-0 text-primary">DATA</h6>
                         <ul class="navbar-nav mb-md-3">
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
-                                href="/user">
+                                href="/dashboard/user">
                                     <i class="ni ni-circle-08 text-green"></i>
                                     <span class="nav-link-text">Pengguna</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a 
-                                class="nav-link {{ ( $judul_halaman === 'Admin | Data Blog' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
-                                href="/blog">
+                                class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
+                                href="/dashboard/blog">
                                     <i class="ni ni-single-copy-04 text-orange"></i>
                                     <span class="nav-link-text">Blog</span>
                                 </a>
@@ -89,13 +90,24 @@
                                 <a 
                                 class="
                                     nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                                href="/gallery">
-                                    <i class="ni ni-album-2 text-red"></i>
+                                href="/dashboard/gallery">
+                                    <i class="ni ni-album-2 text-info"></i>
                                     <span class="nav-link-text">Galeri</span>
                                 </a>
                             </li>
                         </ul>
-                        <!-- Divider -->
+                        <hr class="my-3">
+                        <ul class="navbar-nav mb-md-3">
+                            <li class="nav-item">
+                                <a 
+                                id="logout"
+                                class="nav-link" 
+                                href="#">
+                                    <i class="ni ni-button-power text-red"></i>
+                                    <span class="nav-link-text">Keluar</span>
+                                </a>
+                            </li>
+                        </ul>
                         <!-- <hr class="my-3" /> -->
                     </div>
                 </div>
@@ -165,59 +177,46 @@
 
         </div>
 
-        <!-- Modal Profil -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        {{-- Modal Profil --}}
+        <div class="modal fade" id="profil-saya" tabindex="-1" role="dialog" aria-labelledby="profil-saya" aria-hidden="true">
+            <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <a href="modal-title" id="exampleModalLongTitle">Profil Saya</a>
+                        <h6 class="modal-title" id="modal-title-default">Profil Saya</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">×</span>
                         </button>
                     </div>
-                    {{-- @foreach ($users as $user) --}}
-                    <form action="" method="" enctype="multipart/form-data">
-                        <div class="modal-body">
-                            <div class="row">             
-                                <div class="form-group col-lg-12">
-                                    <img src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" width="200px" height="200px" class="rounded mx-auto d-block mb-2" alt="...">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-6">
-                                            <input class="form-control form-control-alternative" type="hidden" name="foto_profil" id="modal-foto">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="modal-nama">Nama</label>
-                                    <input class="form-control form-control-alternative" type="text" name="nama" id="modal-nama" value="" readonly>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="modal-email">Alamat Email</label>
-                                    <input class="form-control form-control-alternative" type="email" name="email" id="modal-email" value="alfariziuchiha@gmail.con" readonly>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="modal-pekerjaan">Pekerjaan</label>
-                                    <input class="form-control form-control-alternative" type="text" name="pekerjaan" id="modal-pekerjaan" value="Nganggur" readonly>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label class="form-control-label" for="modal-no-hp">Nomor HP</label>
-                                    <input class="form-control form-control-alternative" type="number" name="no_hp" id="modal-no-hp" value="081717582871" readonly>
-                                </div>
-                                <div class="form-group col-lg-12">
-                                    <label class="form-control-label" for="modal-alamat">Alamat</label>
-                                    <textarea class="form-control form-control-alternative" name="alamat" id="modal-alamat" rows="3" readonly>Jln R Sangapati</textarea>
-                                </div>
-                            </div>
+                    <div class="modal-body text-sm">
+                        <img src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" alt="" class="rounded d-block mx-auto mb-4" width="150ox" height="150px">
+                        <div class="row mb-2">
+                            <div class="col-4">Nama</div>
+                            <div class="col-8">Umam Alfarizi</div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary tutup" data-dismiss="modal">Tutup</button>
-                            <button type="button" class="btn btn-primary edit-profil">Edit</button>
+                        <div class="row mb-2">
+                            <div class="col-4">Email</div>
+                            <div class="col-8">alfariziuchiha@gmail.com</div>
                         </div>
-                    </form>
+                        <div class="row mb-2">
+                            <div class="col-4">Pekerjaan</div>
+                            <div class="col-8">Tidur</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">No. HP</div>
+                            <div class="col-8">081223334444</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">Alamat</div>
+                            <div class="col-8">Jln. R Sangapati km 2,5 Jenggik - Lando</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer text-end">
+                        <a href="/dashboard/edit-user" class="btn btn-primary">Edit</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    </div>
                 </div>
             </div>
         </div>
-
         <!-- Argon Scripts -->
         <!-- Core -->
         <script src="{{ asset('admin/assets/vendor/jquery/dist/jquery.min.js') }}"></script>
@@ -228,6 +227,7 @@
         <!-- Optional JS -->
         <script src="{{ asset('admin/assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
         <script src="{{ asset('admin/assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
+        
         <!-- Argon JS -->
         <script src="{{ asset('admin/assets/js/argon.js?v=1.1.0') }}"></script>
 
@@ -236,6 +236,9 @@
 
         {{-- Custom JS --}}
         <script src="{{ asset('admin/assets/js/script.js') }}"></script>
+
+        {{-- CK Editor --}}
+        <script src="//cdn.ckeditor.com/4.18.0/basic/ckeditor.js"></script>
 
     </body>
 </html>

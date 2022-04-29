@@ -23,7 +23,7 @@
 @section('page-content')
     <div class="container-fluid mt--6">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-8 col-md-10">
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
@@ -137,7 +137,7 @@
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                       <button type="submit" class="btn btn-primary">Simpan</button>
-                                      <a href="/user" class="btn btn-secondary">Batal</a> 
+                                      <a href="/dashboard/user" class="btn btn-secondary">Batal</a> 
                                     </div>
                                   </div>
                                 </form>

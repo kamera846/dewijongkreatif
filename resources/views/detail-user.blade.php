@@ -23,7 +23,7 @@
 @section('page-content')
     <div class="container-fluid mt--6">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-8 col-md-10">
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
