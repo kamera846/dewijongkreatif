@@ -33,53 +33,105 @@
                     <div class="card-body">
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-md-10">
-                                <form>
+                                <form action="/user/{{ $user->id }}/update" method="POST" enctype="multipart/form-data">
+                                  @csrf
+                                  @method('put')
                                   <div class="form-group row">
                                     <label for="nama" class="col-md-3 col-form-label form-control-label">Nama</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" value="John Snow" id="nama" name="nama" required>
+                                      <input class="form-control @error('nama') is-invalid @enderror form-control-alternative" type="text" id="nama" name="nama" required value="{{ $user->nama }}">
                                     </div>
+                                    @error('nama')
+                                      <div class="invalid-feedback">
+                                        {{ $message }}
+                                      </div>
+                                    @enderror
                                   </div>
                                   <div class="form-group row">
                                     <label for="email" class="col-md-3 col-form-label form-control-label">Alamat Email</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="email" value="argon@example.com" id="email" readonly>
+                                      <input class="form-control @error('email') is-invalid @enderror form-control-alternative" type="email" value="{{ $user->email }}" id="email"  name="email">
                                     </div>
+                                    @error('email')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                    @enderror
                                   </div>
                                   <div class="form-group row">
                                     <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
                                     <div class="col-md-9">
-                                      <select name="role" id="role" class="form-control form-control-alternative" required>
+                                      <select name="role" id="role" class="form-control @error('role') is-invalid @enderror form-control-alternative" required>
                                         <option value="">-- Pilih Role --</option>
-                                        <option value="admin" selected>Admin</option>
-                                        <option value="super-admin">Super-admin</option>
+                                        <option value="Admin">Admin</option>
+                                        <option value="Super-admin">Super-admin</option>
                                       </select>
+                                      @error('role')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                    @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="pekerjaan" class="col-md-3 col-form-label form-control-label">Pekerjaan</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" value="Tidur" id="pekerjaan" name="pekerjaan">
+                                      <input class="form- control @error('pekerjaan') is-invalid @enderror form-control-alternative" type="text" value="{{ $user->pekerjaan }}" id="pekerjaan" name="pekerjaan">
                                     </div>
+                                    @error('pekerjaan')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                    @enderror
                                   </div>
                                   <div class="form-group row">
                                     <label for="no_hp" class="col-md-3 col-form-label form-control-label">Nomor HP</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="number" value="123456789" id="no_hp" name="no_hp">
+                                      <input class="form-control @error('no_hp') is-invalid @enderror form-control-alternative" type="number" value="{{ $user->no_hp }}" id="no_hp" name="no_hp">
                                     </div>
+                                    @error('no_hp')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                    @enderror
                                   </div>
                                   <div class="form-group row">
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
+                                    <input type="hidden" name="oldImage" value="{{ $user->foto_profil }}">
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="file"id="foto" name="foto">
-                                      <img id="image-preview-update-2" src="admin/assets/img/theme/team-4.jpg" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                      <input class="form-control form-control-alternative" type="file"id="foto" name="foto_profil">
+                                      @if($user->foto_profil)
+                                        <img id="image-preview-update-2" src="{{ asset('storage/' . $user->foto_profil) }}" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                      @else
+                                        <img id="image-preview-update-2" src="{{ asset('storage/foto-profil/defaultuserimage.png') }}" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                      @endif
                                     </div>
                                   </div>
+                                  {{-- <div class="form-group row">
+                                    <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
+                                    <div class="col-md-9">
+                                      <input type="hidden" name="gambarLama" value="{{ $user->foto_profil }}">
+                                      @if ($user->foto_profil)
+                                              <img id="image-preview-update-2" src="{{ asset('storage/' . $user->foto_profil) }}" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                      @endif
+                                    </div>
+                                    <input class="form-control form-control-alternative @error('foto_profil')is-invalid @enderror " type="file" id="foto_profil" name="foto_profil" onchange="previewImage()">
+                                    @error('foto_profil')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                    @enderror
+                                  </div> --}}
                                   <div class="form-group row">
                                     <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control form-control-alternative" name="alamat" id="alamat" rows="3">Jalan-jalan</textarea>
+                                        <textarea class="form-control @error('alamat') is-invalid @enderror form-control-alternative" name="alamat" id="alamat" rows="3">{{ $user->alamat }}</textarea>
                                     </div>
+                                    @error('alamat')
+                                      <div class="invalid-feedback">
+                                        {{ $message }}
+                                      </div>
+                                    @enderror
                                   </div>
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
@@ -91,7 +143,7 @@
                                 </form>
                             </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,4 +151,20 @@
         <!-- Footer -->
         @include('partials.footer-admin')
     </div>
+    <script>
+      function previewImage(){
+        const fotoProfil = document.querySelector('#foto_profil');
+        const previewImage = document.querySelector('.img-preview');
+
+        previewImage.style.display = 'block';
+
+        const oFReader = new FileReader();
+
+        oFReader.readAsDataURL(gambar.files[0]);
+
+        oFReader.onload = function(oFREvent){
+          previewImage.src = oFREvent.target.result;
+        }
+      }
+    </script>
 @endsection

@@ -1,19 +1,19 @@
 // Logout
-document.getElementById("logout").addEventListener("click", function () {
-    Swal.fire({
-        title: "Are you sure?",
-        text: "Your session will end!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, Logout",
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href = "/logout";
-        }
-    });
-});
+// document.getElementById("logout").addEventListener("click", function () {
+//     Swal.fire({
+//         title: "Are you sure?",
+//         text: "Your session will end!",
+//         icon: "warning",
+//         showCancelButton: true,
+//         confirmButtonColor: "#3085d6",
+//         cancelButtonColor: "#d33",
+//         confirmButtonText: "Yes, Logout",
+//     }).then((result) => {
+//         if (result.isConfirmed) {
+//             window.location.href = "/logout";
+//         }
+//     });
+// });
 
 // Edit Profil
 const edit = document.querySelector(".edit-profil");
@@ -86,7 +86,22 @@ function hapusPengguna() {
         confirmButtonText: "Yes, delete it!",
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "/delete-user";
+            window.location.href = "/user/$user->id/delete";
+        }
+    });
+}
+function logout() {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "Your session will end!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Logout",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "/logout";
         }
     });
 }

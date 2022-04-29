@@ -1,6 +1,4 @@
 @extends('layouts.admin')
-
-
 @section('page-header')
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -24,7 +22,7 @@
                           <div class="row">
                             <div class="col">
                               <h5 class="card-title text-uppercase text-muted mb-0">Pengguna</h5>
-                              <span class="h2 font-weight-bold mb-0">350</span>
+                              <span class="h2 font-weight-bold mb-0">{{ $jumlahusers }}</span>
                             </div>
                             <div class="col-auto">
                               <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -42,7 +40,7 @@
                           <div class="row">
                             <div class="col">
                               <h5 class="card-title text-uppercase text-muted mb-0">Post Blog</h5>
-                              <span class="h2 font-weight-bold mb-0">2,356</span>
+                              <span class="h2 font-weight-bold mb-0">{{ $jumlahblog }}</span>
                             </div>
                             <div class="col-auto">
                               <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">

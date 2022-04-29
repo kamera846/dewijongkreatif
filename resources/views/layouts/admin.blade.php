@@ -25,7 +25,7 @@
                 <!-- Brand -->
                 <div class="sidenav-header d-flex align-items-center">
                     <a class="navbar-brand" href="/dashboard">
-                        <img src="admin/assets/img/brand/blue.png" class="navbar-brand-img" alt="..." />
+                        <img src="{{ asset('admin/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="..." />
                     </a>
                     <div class="ml-auto">
                         <!-- Sidenav toggler -->
@@ -122,26 +122,35 @@
                         </ul>
                         <ul class="navbar-nav align-items-center ml-auto ml-md-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <div class="media align-items-center">
-                                        <div class="media-body mr-2 d-none d-lg-block">
-                                            <span class="mb-0 text-sm font-weight-bold">John Snow</span>
+                                @auth
+                                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <div class="media align-items-center">
+                                            <div class="media-body mr-2 d-none d-lg-block">
+                                                <span class="mb-0 text-sm font-weight-bold">{{ Auth::user()->nama }}</span>
+                                            </div>
+                                            @if (Auth::user()->foto_profil != null)
+                                                <span class="avatar avatar-sm rounded-circle">
+                                                    <img alt="Image placeholder" src="{{ asset('storage/' . Auth::user()->foto_profil)}}" />
+                                                </span>
+                                            @else
+                                                <img src="/storage/foto-profil/defaultuserimage.png" class="avatar rounded-circle mr-3">
+                                            @endif
                                         </div>
-                                        <span class="avatar avatar-sm rounded-circle">
-                                            <img alt="Image placeholder" src="admin/assets/img/theme/team-4.jpg" />
-                                        </span>
-                                    </div>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="dropdown-item">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="dropdown-item">
                                         <i class="ni ni-single-02"></i>
                                         <span>Profil Saya</span>
                                     </a>
-                                    <a href="#" id="logout" class="dropdown-item">
-                                        <i class="ni ni-user-run"></i>
-                                        <span>Keluar</span>
-                                    </a>
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button type="submit" class=" dropdown-item">
+                                            <i class="ni ni-user-run"></i>
+                                            <span>Keluar</span>
+                                        </button>
+                                    </form> 
                                 </div>
+                                @endauth
                             </li>
                         </ul>
                     </div>
@@ -161,16 +170,17 @@
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Profil Saya</h5>
+                        <a href="modal-title" id="exampleModalLongTitle">Profil Saya</a>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    {{-- @foreach ($users as $user) --}}
                     <form action="" method="" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <div class="row">
+                            <div class="row">             
                                 <div class="form-group col-lg-12">
-                                    <img src="admin/assets/img/theme/team-4.jpg" width="200px" height="200px" class="rounded mx-auto d-block mb-2" alt="...">
+                                    <img src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" width="200px" height="200px" class="rounded mx-auto d-block mb-2" alt="...">
                                     <div class="row justify-content-center">
                                         <div class="col-lg-6">
                                             <input class="form-control form-control-alternative" type="hidden" name="foto_profil" id="modal-foto">
@@ -179,7 +189,7 @@
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label class="form-control-label" for="modal-nama">Nama</label>
-                                    <input class="form-control form-control-alternative" type="text" name="nama" id="modal-nama" value="Umam Alfarizi" readonly>
+                                    <input class="form-control form-control-alternative" type="text" name="nama" id="modal-nama" value="" readonly>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label class="form-control-label" for="modal-email">Alamat Email</label>

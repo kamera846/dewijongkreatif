@@ -33,58 +33,99 @@
                     <div class="card-body">
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-md-10">
-                                <form>
+                                <form action="/user/store" method="post" enctype="multipart/form-data">
+                                  @csrf
                                   <div class="form-group row">
                                     <label for="nama" class="col-md-3 col-form-label form-control-label">Nama</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" id="nama" name="nama" required>
+                                      <input class="form-control form-control-alternative @error('nama') is-invalid @enderror" type="text" id="nama" name="nama" required value="{{ old('nama') }}">
+                                      @error('nama')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                      @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="email" class="col-md-3 col-form-label form-control-label">Alamat Email</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="email" id="email" required>
+                                      <input class="form-control form-control-alternative @error ('email') is-invalid @enderror" type="email" id="email" name="email" required value="{{ old('email') }}">
+                                      @error('email')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                      @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="password" class="col-md-3 col-form-label form-control-label">Password</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="password" id="password" name="password" required>
+                                      <input class="form-control @error('password') is-invalid @enderror form-control-alternative" type="password" id="password" name="password" required>
+                                      @error('password')
+                                          <div class="invalid-feedback">
+                                            {{ $message }}
+                                          </div>
+                                      @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
                                     <div class="col-md-9">
-                                      <select name="role" id="role" class="form-control form-control-alternative" required>
+                                      <select name="role" id="role" class="form-control form-control-alternative @error('role') is-invalid @enderror" required>
                                         <option value="">-- Pilih Role --</option>
                                         <option value="admin">Admin</option>
                                         <option value="super-admin">Super-admin</option>
                                       </select>
+                                      @error('role')
+                                          <div class="invalid-feedback">
+                                            {{ $message }}
+                                          </div>
+                                      @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="pekerjaan" class="col-md-3 col-form-label form-control-label">Pekerjaan</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" id="pekerjaan" name="pekerjaan">
+                                      <input class="form-control @error('pekerjaan') is-invalid  @enderror form-control-alternative" type="text" id="pekerjaan" name="pekerjaan" value="{{ old('pekerjaan') }}">
                                     </div>
+                                    @error('pekerjaan')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                    @enderror
                                   </div>
                                   <div class="form-group row">
                                     <label for="no_hp" class="col-md-3 col-form-label form-control-label">Nomor HP</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="number" id="no_hp" name="no_hp">
+                                      <input class="form-control form-control-alternative @error('no_hp') is-invalid @enderror " type="number" id="no_hp" name="no_hp" value="{{ old('no_hp') }}">
                                     </div>
+                                    @error('no_hp')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                    @enderror
                                   </div>
                                   <div class="form-group row">
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="file" id="foto" name="foto">
+                                      <input class="form-control form-control-alternative @error('foto_profil') is-invalid @enderror" type="file" id="foto" name="foto_profil" value="{{ old('foto_profil') }}">
                                     </div>
+                                    @error('foto_profile')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                    @enderror
                                   </div>
                                   <div class="form-group row">
                                     <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control form-control-alternative" name="alamat" id="alamat" rows="3" required></textarea>
+                                        <textarea class="form-control form-control-alternative @error('alamar') is-invalid @enderror" name="alamat" id="alamat" rows="3" required>{{ old('alamat') }}</textarea>
                                     </div>
+                                    @error('alamat')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                    @enderror
                                   </div>
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
