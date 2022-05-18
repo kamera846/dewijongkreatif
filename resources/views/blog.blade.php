@@ -39,6 +39,9 @@
                             </div>
                         </div>
                     </div>
+                    {{-- alerts --}}
+                    {{-- isi atribut flashdata sesuai kondisi session untuk menampilan alert berhasil manipulasi(menambahkan, mengubah, menghapus) data, kalo flashdata gagal isi 'gagal' untuk menampilakan alert error --}}
+                    <div class="flash-data" data-flashdata="tes"></div>
                     <!-- Light table -->
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush table-hover">
@@ -72,28 +75,13 @@
                                         <a href="/dashboard/edit-post" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="#" onclick="return hapusPostingan()" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus postingan">
+                                        <a href="#" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus postingan">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                        {{-- alerts --}}
-                        {{-- <div class="px-4">
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <span class="alert-text"><strong>Sukses!</strong> Berhasil menambah data!</span>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <span class="alert-text"><strong>Gagal!</strong> Ada kesalahan menginput data!</span>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>

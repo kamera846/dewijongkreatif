@@ -67,6 +67,10 @@ Route::get('dashboard/add-gallery', function () {
 Route::get('dashboard/edit-gallery', function () {
         return view('edit-gallery', ['judul_halaman' => 'Admin | Edit Galeri']);
     });
-Route::get('dashboard/detail-gallery', function () {
-        return view('detail-gallery', ['judul_halaman' => 'Admin | Detail Galeri']);
-    });
+
+Route::get('dashboard/contact', function () {
+    return view('contact', ['judul_halaman' => 'Admin | Profil Kontak']);
+});
+Route::get('dashboard/social', function () {
+    return view('social', ['judul_halaman' => 'Admin | Profil Sosial Media']);
+});

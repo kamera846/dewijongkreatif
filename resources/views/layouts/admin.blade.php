@@ -66,8 +66,10 @@
                                 </div>
                             </li> -->
                         </ul>
+
                         <!-- Divider -->
                         <hr class="my-3">
+
                         <h6 class="navbar-heading p-0 text-primary">DATA</h6>
                         <ul class="navbar-nav mb-md-3">
                             <li class="nav-item">
@@ -96,13 +98,39 @@
                                 </a>
                             </li>
                         </ul>
+
+                        <!-- Divider -->
                         <hr class="my-3">
+
+                        <h6 class="navbar-heading p-0 text-primary">PROFIL</h6>
+                        <ul class="navbar-nav mb-md-3">
+                            <li class="nav-item">
+                                <a 
+                                class="nav-link {{ ( $judul_halaman === 'Admin | Profil Kontak') ? 'active' : '' }}" 
+                                href="/dashboard/contact">
+                                    <i class="ni ni-email-83 text-red"></i>
+                                    <span class="nav-link-text">Kontak</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a 
+                                class="nav-link {{ ( $judul_halaman === 'Admin | Profil Sosial Media') ? 'active' : '' }}" 
+                                href="/dashboard/social">
+                                    <i class="ni ni-like-2 text-purple"></i>
+                                    <span class="nav-link-text">Sosial Media</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Divider -->
+                        <hr class="my-3">
+
                         <ul class="navbar-nav mb-md-3">
                             <li class="nav-item">
                                 <a 
                                 id="logout"
                                 class="nav-link" 
-                                href="#">
+                                href="logout">
                                     <i class="ni ni-button-power text-red"></i>
                                     <span class="nav-link-text">Keluar</span>
                                 </a>
