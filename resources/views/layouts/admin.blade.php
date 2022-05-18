@@ -162,16 +162,35 @@
                         </ul>
                         <ul class="navbar-nav align-items-center ml-auto ml-md-0">
                             <li class="nav-item dropdown">
-                                <a href="#"data-toggle="modal" data-target="#profil-saya">
-                                    <div class="media align-items-center">
-                                        <div class="media-body mr-2 d-none d-lg-block">
-                                            <span class="mb-0 text-sm text-white font-weight-bold">John Snow</span>
+                                @auth
+                                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <div class="media align-items-center">
+                                            <div class="media-body mr-2 d-none d-lg-block">
+                                                <span class="mb-0 text-sm font-weight-bold">{{ Auth::user()->nama }}</span>
+                                            </div>
+                                            @if (Auth::user()->foto_profil != null)
+                                                <span class="avatar avatar-sm rounded-circle">
+                                                    <img alt="Image placeholder" src="{{ asset('storage/' . Auth::user()->foto_profil)}}" />
+                                                </span>
+                                            @else
+                                                <img src="/storage/foto-profil/defaultuserimage.png" class="avatar rounded-circle mr-3">
+                                            @endif
                                         </div>
-                                        <span class="avatar avatar-sm rounded-circle">
-                                            <img alt="Image placeholder" src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" />
-                                        </span>
-                                    </div>
-                                </a>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="dropdown-item">
+                                        <i class="ni ni-single-02"></i>
+                                        <span>Profil Saya</span>
+                                    </a>
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button type="submit" class=" dropdown-item">
+                                            <i class="ni ni-user-run"></i>
+                                            <span>Keluar</span>
+                                        </button>
+                                    </form> 
+                                </div>
+                                @endauth
                             </li>
                         </ul>
                     </div>

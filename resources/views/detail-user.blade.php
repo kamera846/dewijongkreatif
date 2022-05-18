@@ -31,59 +31,68 @@
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <form>
-                                  <div class="form-group row">
-                                    <label for="nama" class="col-md-3 col-form-label form-control-label">Nama</label>
-                                    <div class="col-md-9">
-                                      <input class="form-control form-control-flush px-3" type="text" value="John Snow" id="nama" name="nama" readonly>
-                                    </div>
+                      <div class="row justify-content-center">
+                          <div class="col-lg-8 col-md-10">
+                              <form action="" method="" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group row">
+                                  <label for="nama" class="col-md-3 col-form-label form-control-label">Nama</label>
+                                  <div class="col-md-9">
+                                    <input class="form-control form-control-alternative" type="text" id="nama" name="nama" required value="{{ $user->nama }}" disabled>
                                   </div>
-                                  <div class="form-group row">
-                                    <label for="email" class="col-md-3 col-form-label form-control-label">Alamat Email</label>
-                                    <div class="col-md-9">
-                                      <input class="form-control form-control-flush px-3" type="email" value="argon@example.com" id="email" readonly>
-                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="email" class="col-md-3 col-form-label form-control-label">Alamat Email</label>
+                                  <div class="col-md-9">
+                                    <input class="form-control form-control-alternative" type="email" value="{{ $user->email }}" id="email"  name="email" disabled>
                                   </div>
-                                  <div class="form-group row">
-                                    <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
-                                    <div class="col-md-9">
-                                      <select name="role" id="role" class="form-control form-control-flush px-3" readonly>
-                                        <option value="">-- Pilih Role --</option>
-                                        <option value="admin" selected>Admin</option>
-                                        <option value="super-admin">Super-admin</option>
-                                      </select>
-                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
+                                  <div class="col-md-9">
+                                    <select name="role" id="role" class="form-control form-control-alternative" required>
+                                      <option value="">-- Pilih Role --</option>
+                                      <option value="admin">Admin</option>
+                                      <option value="superadmin">Super-admin</option>
+                                    </select disabled>
                                   </div>
-                                  <div class="form-group row">
-                                    <label for="pekerjaan" class="col-md-3 col-form-label form-control-label">Pekerjaan</label>
-                                    <div class="col-md-9">
-                                      <input class="form-control form-control-flush px-3" type="text" value="Tidur" id="pekerjaan" name="pekerjaan" readonly>
-                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="pekerjaan" class="col-md-3 col-form-label form-control-label">Pekerjaan</label>
+                                  <div class="col-md-9">
+                                    <input class="form-control form-control-alternative" type="text" value="{{ $user->pekerjaan }}" id="pekerjaan" name="pekerjaan" disabled>
                                   </div>
-                                  <div class="form-group row">
-                                    <label for="no_hp" class="col-md-3 col-form-label form-control-label">Nomor HP</label>
-                                    <div class="col-md-9">
-                                      <input class="form-control form-control-flush px-3" type="number" value="123456789" id="no_hp" name="no_hp" readonly>
-                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="no_hp" class="col-md-3 col-form-label form-control-label">Nomor HP</label>
+                                  <div class="col-md-9">
+                                    <input class="form-control form-control-alternative" type="number" value="{{ $user->no_hp }}" id="no_hp" name="no_hp" disabled>
                                   </div>
-                                  <div class="form-group row">
-                                    <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
-                                    <div class="col-md-9">
-                                      <img id="image-preview-update-2" src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" width="100px" height="100px" class="rounded mt-2" alt="...">
-                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
+                                  <div class="col-md-9">
+                                    <input class="form-control form-control-alternative" type="file"id="foto" name="foto_profil" disabled>
+                                    <img id="image-preview-update-2" src="{{ asset('storage/' . $user->foto_profil) }}" width="100px" height="100px" class="rounded mt-2" alt="...">
                                   </div>
-                                  <div class="form-group row">
-                                    <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat</label>
-                                    <div class="col-md-9">
-                                        <textarea class="form-control form-control-flush px-3" name="alamat" id="alamat" rows="3" readonly>Jalan-jalan</textarea>
-                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat</label>
+                                  <div class="col-md-9">
+                                      <textarea class="form-control form-control-alternative" name="alamat" id="alamat" rows="3" disabled>{{ $user->alamat }}</textarea>
                                   </div>
-                                </form>
-                            </div>
-                        </div>
+                                </div>
+                                <div class="form-group row">
+                                <div class="col-md-3"></div>
+                                  <div class="col-md-9">
+                                    <a href="/user/{{ $user->id }}/edit" class="btn btn-primary">Edit</a>
+                                    <a href="/user" class="btn btn-secondary">Kembali</a> 
+                                  </div>
+                                </div>
+                              </form>
+                          </div>
                       </div>
+                   </div>
                 </div>
             </div>
         </div>
