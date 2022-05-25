@@ -44,7 +44,7 @@ function hapusPostingan() {
         confirmButtonText: "Yes, delete it!",
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "/admin/delete-post";
+            window.location.href = "";
         }
     });
 }
@@ -65,18 +65,18 @@ function hapusGaleri() {
         }
     });
 }
-function logout() {
-    Swal.fire({
-        title: "Are you sure?",
-        text: "Your session will end!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, Logout",
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href = "/logout";
-        }
-    });
-}
+// function logout() {
+//     Swal.fire({
+//         title: "Are you sure?",
+//         text: "Your session will end!",
+//         icon: "warning",
+//         showCancelButton: true,
+//         confirmButtonColor: "#3085d6",
+//         cancelButtonColor: "#d33",
+//         confirmButtonText: "Yes, Logout",
+//     }).then((result) => {
+//         if (result.isConfirmed) {
+//             window.location.href = "/logout";
+//         }
+//     });
+// }

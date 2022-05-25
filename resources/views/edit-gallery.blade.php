@@ -33,32 +33,44 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form>
+                                <form action="/gallery/{{ $gallery->id }}/update" enctype="multipart/form-data" method="POST">
+                                    @csrf
+                                    @method('put')
                                   <div class="form-group row">
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
+                                    <input type="hidden" name="fotoLama" value="{{ $gallery->foto }}">
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="file" id="foto" name="foto" required>
-                                      <img id="image-preview-update-2" src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" width="100px" height="100px" class="rounded mt-2" alt="...">
-
+                                      <input class="form-control form-control-alternative" type="file" id="foto" name="foto"  value="{{ $gallery->foto, old('foto') }}">
+                                      <img id="image-preview-update-2" src="{{ asset('storage/' . $gallery->foto) }}" width="100px" height="100px" class="rounded mt-2" alt="...">
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="judul" class="col-md-3 col-form-label form-control-label">Judul</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" id="judul" name="judul" value="Persatuan Sepak Bola Kampung" required>
+                                      <input class="form-control @error('is-invalid') @enderror form-control-alternative" type="text" id="judul" name="judul"   value="{{ $gallery->judul, old('judul') }}">
+                                      @error('judul')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                      @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="deskripsi" class="col-md-3 col-form-label form-control-label">Deskripsi</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control" name="deskripsi" id="deskripsi" rows="3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores atque impedit maxime provident soluta molestias voluptatem amet, cupiditate cum accusamus non sequi illo quam enim dolorem obcaecati incidunt! Quaerat, unde.</textarea>
+                                        <textarea class="form-control @error('is-invalid') @enderror" name="deskripsi" id="deskripsi" rows="3">{{ $gallery->deskripsi, old('deskripsi') }}</textarea>
+                                        @error('deskripsi')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                      @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
-                                        <button type="submit" class="btn btn-primary">Tambah</button>
-                                        <a href="/dashboard/gallery" class="btn btn-secondary">Batal</a>
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                        <a href="/gallery" class="btn btn-secondary">Batal</a>
                                     </div>
                                   </div>
                                 </form>

@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-md-10">
-                                <form action="/user/{{ Auth::user()->id }}/updateprofile" method="POST" enctype="multipart/form-data">
+                                <form action="/user/{{ Auth::user()->id }}/updateprofil" method="POST" enctype="multipart/form-data">
                                   @csrf
                                   @method('put')
                                   <div class="form-group row">
@@ -58,7 +58,7 @@
                                         </div>
                                     @enderror
                                   </div>
-                                  <div class="form-group row">
+                                  {{-- <div class="form-group row">
                                     <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
                                     <div class="col-md-9">
                                       <select name="role" id="role" class="form-control @error('role') is-invalid @enderror form-control-alternative" required>
@@ -72,11 +72,11 @@
                                         </div>
                                     @enderror
                                     </div>
-                                  </div>
+                                  </div> --}}
                                   <div class="form-group row">
                                     <label for="pekerjaan" class="col-md-3 col-form-label form-control-label">Pekerjaan</label>
                                     <div class="col-md-9">
-                                      <input class="form- control @error('pekerjaan') is-invalid @enderror form-control-alternative" type="text" value="{{ Auth::user()->pekerjaan }}" id="pekerjaan" name="pekerjaan">
+                                      <input class="form-control @error('pekerjaan') is-invalid @enderror form-control-alternative" type="text" value="{{ Auth::user()->pekerjaan }}" id="pekerjaan" name="pekerjaan">
                                     </div>
                                     @error('pekerjaan')
                                         <div class="invalid-feedback">
@@ -97,9 +97,14 @@
                                   </div>
                                   <div class="form-group row">
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
+                                    <input type="hidden" name="gambarLama">
                                     <div class="col-md-9">
                                       <input class="form-control @error('foto_profil') is-invalid @enderror form-control-alternative" type="file"id="foto" name="foto_profil">
-                                      <img id="image-preview-update-2" src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                      @if(Auth::user()->foto_profil != null)
+                                        <img id="image-preview-update-2" src="{{ asset('storage/' . Auth::user()->foto_profil) }}" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                      @else
+                                        <img id="image-preview-update-2" src="{{ asset('storage/foto-profil/defaultuserimage.png') }}" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                      @endif
                                     </div>
                                     @error('foto_profil')
                                         <div class="invalid-feedback">

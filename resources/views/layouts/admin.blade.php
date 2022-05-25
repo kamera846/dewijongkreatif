@@ -14,6 +14,8 @@
         <!-- Icons -->
         <link rel="stylesheet" href="{{ asset('admin/assets/vendor/nucleo/css/nucleo.css') }}" type="text/css" />
         <link rel="stylesheet" href="{{ asset('admin/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css" />
+        {{-- boostrap css --}}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- Argon CSS -->
         <link rel="stylesheet" href="{{ asset('admin/assets/css/argon.css?v=1.1.0') }}" type="text/css" />
     </head>
@@ -73,7 +75,7 @@
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
-                                href="/dashboard/user">
+                                href="/user">
                                     <i class="ni ni-circle-08 text-green"></i>
                                     <span class="nav-link-text">Pengguna</span>
                                 </a>
@@ -81,7 +83,7 @@
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
-                                href="/dashboard/blog">
+                                href="/blog">
                                     <i class="ni ni-single-copy-04 text-orange"></i>
                                     <span class="nav-link-text">Blog</span>
                                 </a>
@@ -90,7 +92,7 @@
                                 <a 
                                 class="
                                     nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                                href="/dashboard/gallery">
+                                href="/gallery">
                                     <i class="ni ni-album-2 text-info"></i>
                                     <span class="nav-link-text">Galeri</span>
                                 </a>
@@ -150,13 +152,13 @@
                                         </div>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="dropdown-item">
+                                        <a href="/user/{{ Auth::user()->id }}/profil" class="dropdown-item">
                                         <i class="ni ni-single-02"></i>
                                         <span>Profil Saya</span>
                                     </a>
                                     <form action="/logout" method="POST">
                                         @csrf
-                                        <button type="submit" class=" dropdown-item">
+                                        <button type="submit" class="dropdown-item" onclick="return confirm('Apakah anda ingin keluar?')">
                                             <i class="ni ni-user-run"></i>
                                             <span>Keluar</span>
                                         </button>
@@ -217,6 +219,8 @@
                 </div>
             </div>
         </div>
+        {{-- boostrap js --}}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <!-- Argon Scripts -->
         <!-- Core -->
         <script src="{{ asset('admin/assets/vendor/jquery/dist/jquery.min.js') }}"></script>

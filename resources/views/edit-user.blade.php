@@ -62,9 +62,13 @@
                                     <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
                                     <div class="col-md-9">
                                       <select name="role" id="role" class="form-control @error('role') is-invalid @enderror form-control-alternative" required>
-                                        <option value="">-- Pilih Role --</option>
-                                        <option value="Admin">Admin</option>
+                                        @if($user->role == 'admin')
+                                        <option value="{{ $user->role }}">{{ $user->role }}</option>
                                         <option value="Super-admin">Super-admin</option>
+                                        @else
+                                        <option value="Admin">Admin</option>
+                                        <option value="{{ $user->role }}">{{ $user->role }}</option>
+                                        @endif
                                       </select>
                                       @error('role')
                                         <div class="invalid-feedback">
@@ -76,7 +80,7 @@
                                   <div class="form-group row">
                                     <label for="pekerjaan" class="col-md-3 col-form-label form-control-label">Pekerjaan</label>
                                     <div class="col-md-9">
-                                      <input class="form- control @error('pekerjaan') is-invalid @enderror form-control-alternative" type="text" value="{{ $user->pekerjaan }}" id="pekerjaan" name="pekerjaan">
+                                      <input class="form-control @error('pekerjaan') is-invalid @enderror form-control-alternative" type="text" value="{{ $user->pekerjaan }}" id="pekerjaan" name="pekerjaan">
                                     </div>
                                     @error('pekerjaan')
                                         <div class="invalid-feedback">
@@ -99,7 +103,7 @@
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
                                     <input type="hidden" name="oldImage" value="{{ $user->foto_profil }}">
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="file"id="foto" name="foto_profil">
+                                      <input class="form-control form-control-alternative" type="file"id="foto" name="foto_profil" value="{{ $user->foto_profil }}">
                                       @if($user->foto_profil)
                                         <img id="image-preview-update-2" src="{{ asset('storage/' . $user->foto_profil) }}" width="100px" height="100px" class="rounded mt-2" alt="...">
                                       @else
@@ -107,21 +111,6 @@
                                       @endif
                                     </div>
                                   </div>
-                                  {{-- <div class="form-group row">
-                                    <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
-                                    <div class="col-md-9">
-                                      <input type="hidden" name="gambarLama" value="{{ $user->foto_profil }}">
-                                      @if ($user->foto_profil)
-                                              <img id="image-preview-update-2" src="{{ asset('storage/' . $user->foto_profil) }}" width="100px" height="100px" class="rounded mt-2" alt="...">
-                                      @endif
-                                    </div>
-                                    <input class="form-control form-control-alternative @error('foto_profil')is-invalid @enderror " type="file" id="foto_profil" name="foto_profil" onchange="previewImage()">
-                                    @error('foto_profil')
-                                        <div class="invalid-feedback">
-                                          {{ $message }}
-                                        </div>
-                                    @enderror
-                                  </div> --}}
                                   <div class="form-group row">
                                     <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat</label>
                                     <div class="col-md-9">
@@ -137,7 +126,7 @@
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                       <button type="submit" class="btn btn-primary">Simpan</button>
-                                      <a href="/dashboard/user" class="btn btn-secondary">Batal</a> 
+                                      <a href="/user" class="btn btn-secondary">Batal</a> 
                                     </div>
                                   </div>
                                 </form>
@@ -152,19 +141,5 @@
         @include('partials.footer-admin')
     </div>
     <script>
-      function previewImage(){
-        const fotoProfil = document.querySelector('#foto_profil');
-        const previewImage = document.querySelector('.img-preview');
-
-        previewImage.style.display = 'block';
-
-        const oFReader = new FileReader();
-
-        oFReader.readAsDataURL(gambar.files[0]);
-
-        oFReader.onload = function(oFREvent){
-          previewImage.src = oFREvent.target.result;
-        }
-      }
     </script>
 @endsection

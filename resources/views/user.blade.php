@@ -39,6 +39,25 @@
                             </div>
                         </div>
                     </div>
+                    {{-- alert --}}
+                    <div class="px-4">
+                        @if (session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <span class="alert-text">{{ session('success') }}</span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        @endif
+                        @if(session()->has('error'))
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <span class="alert-text">{{ session('error') }}</span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+                    </div>
                     <!-- Light table -->
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush table-hover">
@@ -55,6 +74,9 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @guest
+                                    
+                                @endguest
                                 @foreach ($users as $user)
                                 <tr>
                                     <td class="table-user">
@@ -102,24 +124,6 @@
                             </tbody>
                         </table>
                         {{-- alerts --}}
-                         <div class="px-4">
-                                @if (session()->has('success'))
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <span class="alert-text">{{ session('success') }}</span>
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                @endif
-                                @if(session()->has('error'))
-                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                        <span class="alert-text">{{ session('error') }}</span>
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                @endif
-                            </div>
                     </div>
                 </div>
             </div>

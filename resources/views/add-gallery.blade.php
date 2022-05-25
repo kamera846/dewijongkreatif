@@ -33,30 +33,46 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form>
+                                <form action="/gallery/store" method="POST" enctype="multipart/form-data">
+                                    @csrf
                                   <div class="form-group row">
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="file" id="foto" name="foto" required>
+                                      <input class="form-control @error('is-invalid')@enderror form-control-alternative" type="file" id="foto" name="foto" required value="{{ old('foto') }}">
+                                      @error('foto')
+                                          <div class="invalid-feedback">
+                                            {{ $message }}
+                                          </div>
+                                      @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="judul" class="col-md-3 col-form-label form-control-label">Judul</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" id="judul" name="judul" required>
+                                      <input class="form-control @error('is-invalid') @enderror form-control-alternative" type="text" id="judul" name="judul" required value="{{ old('judul') }}">
                                     </div>
+                                    @error('judul')
+                                          <div class="invalid-feedback">
+                                            {{ $message }}
+                                          </div>
+                                      @enderror
                                   </div>
                                   <div class="form-group row">
                                     <label for="deskripsi" class="col-md-3 col-form-label form-control-label">Deskripsi</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control" name="deskripsi" id="deskripsi" rows="3"></textarea>
+                                        <textarea class="form-control @error('is-invalid') @enderror" name="deskripsi" id="deskripsi" rows="3">{{ old('deskripsi') }}</textarea>
+                                        @error('deskripsi')
+                                          <div class="invalid-feedback">
+                                            {{ $message }}
+                                          </div>
+                                      @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                         <button type="submit" class="btn btn-primary">Tambah</button>
-                                        <a href="/dashboard/gallery" class="btn btn-secondary">Batal</a>
+                                        <a href="/gallery" class="btn btn-secondary">Batal</a>
                                     </div>
                                   </div>
                                 </form>

@@ -15,15 +15,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-4 col-md-6">
+                    <div class="col-lg-12 col-md-12">
                       <div class="card card-stats">
                         <a href="/dashboard/user">
                         <!-- Card body -->
                         <div class="card-body">
                           <div class="row">
-                            <div class="col">
+                            <div class="col-lg-12 col-md-12">
                               <h5 class="card-title text-uppercase text-muted mb-0">Pengguna</h5>
-                              <span class="h2 font-weight-bold mb-0">{{ $jumlahusers }}</span>
+                              <span class="h2 font-weight-bold mb-0">{{ $jumlahUsers }}</span>
                             </div>
                             <div class="col-auto">
                               <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -36,12 +36,11 @@
                     </div>
                     <div class="col-xl-4 col-md-6">
                       <div class="card card-stats">
-                        <!-- Card body -->
                         <div class="card-body">
                           <div class="row">
                             <div class="col">
                               <h5 class="card-title text-uppercase text-muted mb-0">Post Blog</h5>
-                              <span class="h2 font-weight-bold mb-0">{{ $jumlahblog }}</span>
+                              <span class="h2 font-weight-bold mb-0">{{ $jumlahBlogs }}</span>
                             </div>
                             <div class="col-auto">
                               <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -52,7 +51,7 @@
                         </a>
                       </div>
                     </div>
-                    <div class="col-xl-4 col-md-6">
+                    <div class="col-lg6 col-md-12">
                       <div class="card card-stats">
                         <a href="/dashboard/gallery">
                           <!-- Card body -->
@@ -60,7 +59,7 @@
                             <div class="row">
                               <div class="col">
                                 <h5 class="card-title text-uppercase text-muted mb-0">Galeri</h5>
-                                <span class="h2 font-weight-bold mb-0">924</span>
+                                <span class="h2 font-weight-bold mb-0">{{ $jumlahGalleries }}</span>
                               </div>
                               <div class="col-auto">
                                 <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">

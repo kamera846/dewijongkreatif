@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text('pekerjaan')->nullable();
             $table->string('no_hp')->nullable();
             $table->string('role')->nullable();
+            $table->string('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

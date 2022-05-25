@@ -50,11 +50,20 @@
                                 <div class="form-group row">
                                   <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
                                   <div class="col-md-9">
-                                    <select name="role" id="role" class="form-control form-control-alternative" required>
-                                      <option value="">-- Pilih Role --</option>
-                                      <option value="admin">Admin</option>
-                                      <option value="superadmin">Super-admin</option>
-                                    </select disabled>
+                                    <select name="role" id="role" class="form-control @error('role') is-invalid @enderror form-control-alternative" required>
+                                      @if($user->role == 'admin')
+                                      <option value="{{ $user->role }}">{{ $user->role }}</option>
+                                      <option value="Super-admin">Super-admin</option>
+                                      @else
+                                      <option value="Admin">Admin</option>
+                                      <option value="{{ $user->role }}">{{ $user->role }}</option>
+                                      @endif
+                                    </select>
+                                    @error('role')
+                                      <div class="invalid-feedback">
+                                        {{ $message }}
+                                      </div>
+                                  @enderror
                                   </div>
                                 </div>
                                 <div class="form-group row">
@@ -73,7 +82,11 @@
                                   <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
                                   <div class="col-md-9">
                                     <input class="form-control form-control-alternative" type="file"id="foto" name="foto_profil" disabled>
+                                  @if($user->foto_profil)
                                     <img id="image-preview-update-2" src="{{ asset('storage/' . $user->foto_profil) }}" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                  @else
+                                    <img id="image-preview-update-2" src="{{ asset('storage/foto-profil/defaultuserimage.png') }}" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                  @endif
                                   </div>
                                 </div>
                                 <div class="form-group row">

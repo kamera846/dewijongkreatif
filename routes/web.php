@@ -2,9 +2,11 @@
 
 use App\Models\Blog;
 use App\Models\User;
+use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 
@@ -26,8 +28,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard', [
             'judul_halaman' => 'Admin | Dashboard',
-            'jumlahusers' => User::count(),
-            'jumlahblog' => Blog::count()
+            'jumlahUsers' => User::count(),
+            'jumlahBlogs' => Blog::count(),
+            'jumlahGalleries' => Gallery::count()
         ]);
     });
     // user route
@@ -38,17 +41,26 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/{user}/detail', [UserController::class, 'show']);
     Route::get('/user/{user}/edit', [UserController::class, 'edit']);
     Route::delete('/user/{user}/delete', [UserController::class, 'destroy']);
-    Route::get('/user/{user}/editprofile', [UserController::class, 'editProfile']);
-    Route::put('/user/{user}/updateprofile', [UserController::class, 'updateProfile']);
+    Route::get('/user/{user}/profil', [UserController::class, 'editProfile']);
+    Route::put('/user/{user}/updateprofil', [UserController::class, 'updateProfile']);
 
     //blog route
     Route::get('/blog', [BlogController::class, 'index']);
     Route::get('/blog/create', [BlogController::class, 'create']);
-    Route::get('/blog/{blog}/detail', [BlogController::class, 'show']);
-    Route::get('/blog/{blog}/edit', [BlogController::class, 'edit']);
-    Route::put('/blog/{blog}/update', [BlogController::class, 'update']);
-    Route::delete('/blog/{blog}/delete', [BlogController::class, 'destroy']);
     Route::post('/blog/store', [BlogController::class, 'store']);
+    Route::get('/blog/{blog:slug}/detail', [BlogController::class, 'show']);
+    Route::get('/blog/{blog:slug}/edit', [BlogController::class, 'edit']);
+    Route::put('/blog/{blog:slug}/update', [BlogController::class, 'update']);
+    Route::delete('/blog/{blog}/delete', [BlogController::class, 'destroy']);
+
+    // gallery route 
+    Route::get('/gallery', [GalleryController::class, 'index']);
+    Route::get('/gallery/create', [GalleryController::class, 'create']);
+    Route::post('/gallery/store', [GalleryController::class, 'store']);
+    Route::get('/gallery/{gallery}/detail', [GalleryController::class, 'show']);
+    Route::get('/gallery/{gallery}/edit', [GalleryController::class, 'edit']);
+    Route::put('/gallery/{gallery}/update', [GalleryController::class, 'update']);
+    Route::delete('/gallery/{gallery}/delete', [GalleryController::class, 'destroy']);
 });
 
 

@@ -32,13 +32,23 @@
                                 <h3 class="mb-0">Data Postingan</h3>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="/dashboard/add-post" class="btn btn-sm btn-primary">
+                                <a href="/blog/create" class="btn btn-sm btn-primary">
                                     <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
                                     <span class="btn-inner--text">Tambah Data</span>
                                 </a>
                             </div>
                         </div>
                     </div>
+                    {{-- alert info --}}
+                    <div class="px-4">
+                        @if(session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <span class="alert-text">{{ session('success') }}</span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                         @endif
+                        </div>
                     <!-- Light table -->
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush table-hover">
@@ -52,48 +62,49 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($blogs as $blog)
                                 <tr>
                                     <td>
-                                        <img src="{{ asset('admin/assets/img/theme/team-1.jpg') }}" width="70px" class="rounded">
+                                        <img src="{{ asset('storage/' . $blog->gambar_blog) }}" width="70px" class="rounded">
                                     </td>
                                     <td>
-                                        <b>Tutorial Internet Gratis No Root</b>
+                                        <b>{{ $blog->judul }}</b>
                                     </td>
                                     <td>
-                                        <span class="font-weight-bold">32/13/2200</span>
+                                        <span class="font-weight-bold">{{  $blog->created_at }}</span>
                                     </td>
                                     <td>
-                                        <span class="font-weight-bold">Umam Alfarizi</span>
+                                        <span class="font-weight-bold">{{ $blog->penulis }}</span>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="/dashboard/detail-post" class="table-action" data-toggle="tooltip" data-original-title="Detail postingan">
+                                        <a href="/blog/{{ $blog->slug }}/detail" class="table-action" data-toggle="tooltip" data-original-title="Detail postingan">
                                             <i class="fas fa-info-circle"></i>
                                         </a>
-                                        <a href="/dashboard/edit-post" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
+                                        <a href="/blog/{{ $blog->slug }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="#" onclick="return hapusPostingan()" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus postingan">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
+                                        <form action="/blog/{{ $blog->id }}/delete"  method="post">
+                                            @csrf
+                                            @method('delete')
+                                            {{-- <a href="#" type="submit" onclick="return confirm('Apakah anda ingin menghapus data ini?')" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus postingan"> --}}
+                                            <button type="submit" onclick="return confirm('Apakah anda ingin menghapus data ini?')" class="table-action table-action-delete" style="border: none; background:none">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                            </a>
+                                        </form>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                         {{-- alerts --}}
-                        {{-- <div class="px-4">
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <span class="alert-text"><strong>Sukses!</strong> Berhasil menambah data!</span>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                 <span class="alert-text"><strong>Gagal!</strong> Ada kesalahan menginput data!</span>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                            </div>
-                        </div> --}}
+                            </div> --}}
+                        </div>
                     </div>
                 </div>
             </div>

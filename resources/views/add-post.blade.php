@@ -33,43 +33,53 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form>
+                                <form action="/blog/store" method="post" enctype="multipart/form-data">
+                                  @csrf
                                   <div class="form-group row">
                                     <label for="judul" class="col-md-3 col-form-label form-control-label">Judul</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" id="judul" name="judul" required>
+                                      <input class="form-control @error('judul') is-invalid @enderror form-control-alternative" type="text" id="judul" name="judul" required  value="{{ old('judul') }}">
+                                      @error('judul')
+                                          <div class="invalid-feedback">
+                                            {{ $message }}
+                                          </div>
+                                      @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="file" id="foto" name="foto">
+                                    <input class="form-control @error('is-invalid') @enderror form-control-alternative" type="file" id="gambar_blog" name="gambar_blog">
+                                    @error('gambar_blog')
+                                          <div class="invalid-feedback">
+                                            {{ $message }}
+                                          </div>
+                                      @enderror
                                     </div>
+                                    
                                   </div>
-                                  <div class="form-group row">
-                                    <label for="slug" class="col-md-3 col-form-label form-control-label">Slug</label>
-                                    <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" id="slug" name="slug" required>
-                                    </div>
-                                  </div>
-
                                   {{-- Penulis --}}
-                                  <input type="hidden" name="penulis" value="Umam Alfarizi">
+                                  <input type="hidden" name="penulis">
 
                                   {{-- Tanggal Dibuat --}}
-                                  <input type="hidden" name="tanggal" value="{{ date('Y/m/d') }}">
+                                  <input type="hidden" name="created_at" value="{{ date('Y/m/d') }}">
 
                                   <div class="form-group row">
                                     <label for="konten" class="col-md-3 col-form-label form-control-label">Konten</label>
                                     <div class="col-md-9">
-                                        <textarea class="ckeditor" name="konten" id="konten" rows="3" required></textarea>
+                                        <textarea class="ckeditor @error('konten') is-invalid @enderror" name="konten" id="konten" rows="3" required >{{ old('konten') }}</textarea>
+                                        @error('konten')
+                                            <div class="invalid-feedback">
+                                              {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                         <button type="submit" class="btn btn-primary">Tambah</button>
-                                        <a href="/dashboard/blog" class="btn btn-secondary">Batal</a>
+                                        <a href="/blog" class="btn btn-secondary">Batal</a>
                                     </div>
                                   </div>
                                 </form>
