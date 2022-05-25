@@ -81,17 +81,9 @@
                                         <a href="/gallery/{{ $gallery->id }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit galeri">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <form action="/gallery/{{ $gallery->id }}/delete" method="POST">
-                                            @csrf
-                                            @method('delete')
-                                            {{-- <a href="#"  class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus galeri">
-                                                
-                                            </a> --}}
-                                            <button type="submit" onclick="return confirm('Apakah anda ingin menghapus data ini?')" class="table-action table-action-delete" style="border: none; background:none">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                            
-                                        </form>
+                                        <a href="#" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus galeri">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach

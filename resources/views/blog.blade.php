@@ -83,28 +83,14 @@
                                         <a href="/blog/{{ $blog->slug }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <form action="/blog/{{ $blog->id }}/delete"  method="post">
-                                            @csrf
-                                            @method('delete')
-                                            {{-- <a href="#" type="submit" onclick="return confirm('Apakah anda ingin menghapus data ini?')" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus postingan"> --}}
-                                            <button type="submit" onclick="return confirm('Apakah anda ingin menghapus data ini?')" class="table-action table-action-delete" style="border: none; background:none">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                            </a>
-                                        </form>
+                                        <a href="#" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus postingan">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        {{-- alerts --}}
-                            {{-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <span class="alert-text"><strong>Gagal!</strong> Ada kesalahan menginput data!</span>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div> --}}
-                        </div>
                     </div>
                 </div>
             </div>

@@ -64,20 +64,19 @@ Route::middleware('auth')->group(function () {
 });
 
 
-// route baru
-// Route::get('/dashboard', function () {
-//     return view('dashboard', ['judul_halaman' => 'Admin | Dashboard']);
-// });
+Route::get('/gallery', function () {
+    return view('gallery', ['judul_halaman' => 'Admin | Data Galeri']);
+});
+Route::get('/add-gallery', function () {
+        return view('add-gallery', ['judul_halaman' => 'Admin | Tambah Galeri']);
+    });
+Route::get('/edit-gallery', function () {
+        return view('edit-gallery', ['judul_halaman' => 'Admin | Edit Galeri']);
+    });
 
-// Route::get('/user', function () {
-//     return view('user', ['judul_halaman' => 'Admin | Data Pengguna']);
-// });
-// Route::get('/create-user', function () {
-//     return view('create-user', ['judul_halaman' => 'Admin | Tambah Pengguna']);
-// });
-// Route::get('/edit-user', function () {
-//     return view('edit-user', ['judul_halaman' => 'Admin | Edit Pengguna']);
-// });
-// Route::get('/detail-user', function () {
-//     return view('detail-user', ['judul_halaman' => 'Admin | Detail Pengguna']);
-// });
+Route::get('/contact', function () {
+    return view('contact', ['judul_halaman' => 'Admin | Profil Kontak']);
+});
+Route::get('/social', function () {
+    return view('social', ['judul_halaman' => 'Admin | Profil Sosial Media']);
+});

@@ -111,10 +111,13 @@
                                         <a href="/user/{{ $user->id }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit pengguna">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
+                                        {{-- <a href="/dashboard/delete-user/19" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus pengguna">
+                                            <i class="fas fa-trash"></i>
+                                        </a> --}}
                                         <form action="/user/{{ $user->id }}/delete" method="post">
                                             @csrf
                                             @method('delete')
-                                            <button type="submit" onclick="return hapusPengguna()" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus pengguna" style="border: none; background:none;">
+                                            <button type="submit" id="hapus" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus pengguna" style="border: none; background:none;">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </form>
@@ -124,6 +127,24 @@
                             </tbody>
                         </table>
                         {{-- alerts --}}
+                         {{-- <div class="px-4">
+                                @if (session()->has('success'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <span class="alert-text">{{ session('success') }}</span>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                @endif
+                                @if(session()->has('error'))
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <span class="alert-text">{{ session('error') }}</span>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                @endif
+                            </div> --}}
                     </div>
                 </div>
             </div>
