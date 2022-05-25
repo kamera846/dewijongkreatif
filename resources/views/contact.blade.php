@@ -1,81 +1,162 @@
-@extends('layouts.admin')
+@extends('layouts.main')
 
-@section('page-header')
-    <div class="header bg-primary pb-6">
-        <div class="container-fluid">
-            <div class="header-body">
-                <div class="row align-items-center py-4">
-                    <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Kontak</h6>
-                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Profil Kontak</li>
-                            </ol>
-                        </nav>
+@section('page-content')
+    <section class="page-title" style="background-image: url(assets/images/background/bg-9.jpg)">
+        <div class="auto-container">
+            <div class="content-box">
+                <div class="content-wrapper">
+                    <div class="title">
+                        <h1>Kontak Kami.</h1>
                     </div>
+                    <ul class="bread-crumb">
+                        <li><a href="./">Beranda</a></li>
+                        <li>Kontak Kami</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+    </section>
 
-@section('page-content')
-    <div class="container-fluid mt--6">
-        <div class="row">
-            <div class="col-lg-8 col-md-10">
-                <div class="card">
-                    <!-- Card header -->
-                    <div class="card-header">
-                        <h3 class="mb-0">Profil Kontak</h3>
+    <!-- Contact Form section -->
+    <section class="contact-form-section">
+        <div class="auto-container">
+            <div class="wrapper-box">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="our-facts" style="background-image: url(assets/images/resource/image-54.jpg)">
+                            <div class="column counter-column">
+                                <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                    <div class="icon-outer">
+                                        <div class="icon"><span class="icon-ambulance"></span></div>
+                                    </div>
+                                    <div class="count-outer count-box">
+                                        <span class="count-text" data-speed="3000" data-stop="345">0</span>
+                                    </div>
+                                    <div class="text">
+                                        For Any Type of <br />
+                                        Medical Emergency
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column counter-column">
+                                <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                    <div class="icon-outer">
+                                        <div class="icon"><span class="icon-police"></span></div>
+                                    </div>
+                                    <div class="count-outer count-box">
+                                        <span class="count-text" data-speed="3000" data-stop="911">0</span>
+                                    </div>
+                                    <div class="text">
+                                        For Police and <br />
+                                        Law Enforcement
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column counter-column">
+                                <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                    <div class="icon-outer">
+                                        <div class="icon"><span class="icon-recyclebin"></span></div>
+                                    </div>
+                                    <div class="count-outer count-box">
+                                        <span class="count-text" data-speed="3000" data-stop="667">0</span>
+                                    </div>
+                                    <div class="text">
+                                        For Recycling And <br />
+                                        Garbage Related
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    {{-- alerts --}}
-                    {{-- isi atribut flashdata sesuai kondisi session untuk menampilan alert berhasil mengubah data, kalo flashdata gagal isi 'gagal' untuk menampilakan alert error --}}
-                    <div class="flash-data" data-flashdata=""></div>
-                    <!-- Card Body -->
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <form>
-                                  <div class="form-group row">
-                                    <label for="email" class="col-md-3 col-form-label form-control-label">Alamat Email</label>
-                                    <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="email" id="email" name="email" value="desakami@keren.tes" readonly>
+                    <div class="col-lg-7">
+                        <div class="contact-form-area">
+                            <div class="sec-title mb-30">
+                                <h2>
+                                    Mencari Bantuan <br />
+                                    Atau Punya Pertanyaan
+                                </h2>
+                            </div>
+                            <div class="text mb-30">
+                                Enim ad minim veniam quis nostrud exercitation ullamco laboris aliquip <br />
+                                ex ea reprehenderit sint occaecat cupidata proids.
+                            </div>
+                            <!--Contact Form-->
+                            <div class="contact-form">
+                                <form method="post" action="inc/sendemail.php" id="contact-form">
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <input type="text" name="form_name" value="" placeholder="Your Name" required />
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <input type="text" name="email" value="" placeholder="Your Email" required />
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <input type="text" name="form_subject" value="" placeholder="Subject" required />
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <textarea name="form_message" placeholder="Massage"></textarea>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="" />
+                                            <button class="theme-btn btn-style-one" type="submit" data-loading-text="Please wait..."><span>Send Message</span></button>
+                                        </div>
                                     </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="no_telp" class="col-md-3 col-form-label form-control-label">Nomor Telepon</label>
-                                    <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" id="no_telp" name="no_telp" value="+62 817 1758 2871" readonly>
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="no_wa" class="col-md-3 col-form-label form-control-label">Nomor Whatsapp</label>
-                                    <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="number" id="no_wa" name="no_wa" value="6281717582871" readonly>
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat Desa</label>
-                                    <div class="col-md-9">
-                                      <textarea class="form-control form-control-alternative" name="alamat" id="alamat" rows="3" readonly>Desa kami, kec Apa 86228, prov DKI Djakarta, Indonesia</textarea>
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <div class="col-md-3"></div>
-                                    <div class="col-md-9" id="pembungkus">
-                                        <button type="button" class="btn btn-primary" id="edit">Edit</button>
-                                    </div>
-                                  </div>
                                 </form>
                             </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Footer -->
-        @include('partials.footer-admin')
-    </div>
+    <!-- Contact Info section -->
+    <section class="contact-info-section">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info-block">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63121.39474257329!2d116.08157380300491!3d-8.58761734979695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdbf5f22de1ef1%3A0x3030bfbcaf7d0d0!2sMataram%2C%20Mataram%20City%2C%20West%20Nusa%20Tenggara!5e0!3m2!1sen!2sid!4v1650996049299!5m2!1sen!2sid"
+                            width="100%"
+                            height="450"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-info-block">
+                        <h3>City Muncipal Office</h3>
+                        <div class="text mb-30">
+                            Fugiat nulla pariatur excepteur sint occaecat proident <br />
+                            sunt in culp mollit anim id est laborum.
+                        </div>
+                        <ul class="contact-info">
+                            <li>
+                                <div class="icon"><img src="assets/images/icons/icon-1.png" alt="" /></div>
+                                <div class="text"><strong>Lokasi</strong> 36 King Street, LaneWalk, Governlia 030204 - US</div>
+                            </li>
+                            <li>
+                                <div class="icon"><img src="assets/images/icons/icon-2.png" alt="" /></div>
+                                <div class="text">
+                                    <strong>Telepon</strong>
+                                    <a href="tel:+1(345)2067849">+ 1 (345) 206 7849</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><img src="assets/images/icons/icon-3.png" alt="" /></div>
+                                <div class="text">
+                                    <strong>Email</strong>
+                                    <a href="mailto:munciple@example.net">munciple@example.net</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

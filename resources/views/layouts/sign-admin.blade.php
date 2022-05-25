@@ -69,43 +69,19 @@
         {{-- SweetAlert2 --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        {{-- Alert Admin --}}
-        
-        {{-- Login --}}
+        {{-- Custom JS --}}
         <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Mohon periksa email dan password anda',
-            })
+            // login alert
+            const flashData = document.querySelector(".flash-data").dataset["flashdata"];
+
+            if (flashData === "gagal") {
+                Swal.fire("Gagal", "Email / kata sandi salah!", "error");
+            } else if (flashData === "password") {
+            }
+
         </script>
 
-        {{-- <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Kata sandi salah!',
-            })
-        </script> --}}
-
         
-        {{-- Register --}}
-        {{-- <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Harap menggunakan email yang valid!',
-            })
-        </script> --}}
-
-        {{-- Berhasil register --}}
-        {{-- <script>
-                Swal.fire(
-            'Good job!',
-            'Daftar admin berhasil!',
-            'success'
-            )
-        </script> --}}
 
     </body>
 </html>

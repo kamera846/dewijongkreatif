@@ -86,14 +86,7 @@ if (document.location.pathname == "/dashboard/contact") {
         alamat.removeAttribute("readonly");
 
         batal.addEventListener("click", function () {
-            batal.remove();
-            simpan.remove();
-            edit.style.display = "inline";
-
-            email.setAttribute("readonly", "");
-            noTelp.setAttribute("readonly", "");
-            noWa.setAttribute("readonly", "");
-            alamat.setAttribute("readonly", "");
+            location.reload();
         });
     });
 }
@@ -133,15 +126,7 @@ if (document.location.pathname == "/dashboard/social") {
         pinterest.removeAttribute("readonly");
 
         batal.addEventListener("click", function () {
-            batal.remove();
-            simpan.remove();
-            edit.style.display = "inline";
-
-            twitter.setAttribute("readonly", "");
-            facebook.setAttribute("readonly", "");
-            instagram.setAttribute("readonly", "");
-            youtube.setAttribute("readonly", "");
-            pinterest.setAttribute("readonly", "");
+            location.reload();
         });
     });
 }

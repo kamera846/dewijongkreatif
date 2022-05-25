@@ -75,7 +75,7 @@
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
-                                href="/dashboard/user">
+                                href="/dashboard/users">
                                     <i class="ni ni-circle-08 text-green"></i>
                                     <span class="nav-link-text">Pengguna</span>
                                 </a>
@@ -83,7 +83,7 @@
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
-                                href="/dashboard/blog">
+                                href="/dashboard/blogs">
                                     <i class="ni ni-single-copy-04 text-orange"></i>
                                     <span class="nav-link-text">Blog</span>
                                 </a>
@@ -92,7 +92,7 @@
                                 <a 
                                 class="
                                     nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                                href="/dashboard/gallery">
+                                href="/dashboard/galleries">
                                     <i class="ni ni-album-2 text-info"></i>
                                     <span class="nav-link-text">Galeri</span>
                                 </a>
@@ -163,7 +163,7 @@
                         <ul class="navbar-nav align-items-center ml-auto ml-md-0">
                             <li class="nav-item dropdown">
                                 @auth
-                                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link pr-0" href="#"data-toggle="modal" data-target="#profil-saya">
                                         <div class="media align-items-center">
                                             <div class="media-body mr-2 d-none d-lg-block">
                                                 <span class="mb-0 text-sm font-weight-bold">{{ Auth::user()->nama }}</span>
@@ -177,19 +177,6 @@
                                             @endif
                                         </div>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="dropdown-item">
-                                        <i class="ni ni-single-02"></i>
-                                        <span>Profil Saya</span>
-                                    </a>
-                                    <form action="/logout" method="POST">
-                                        @csrf
-                                        <button type="submit" class=" dropdown-item">
-                                            <i class="ni ni-user-run"></i>
-                                            <span>Keluar</span>
-                                        </button>
-                                    </form> 
-                                </div>
                                 @endauth
                             </li>
                         </ul>
@@ -216,30 +203,34 @@
                         </button>
                     </div>
                     <div class="modal-body text-sm">
-                        <img src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" alt="" class="rounded d-block mx-auto mb-4" width="150ox" height="150px">
-                        <div class="row mb-2">
+                        @if (Auth::user()->foto_profil != null)
+                            <img src="{{ asset('storage/' . Auth::user()->foto_profil)}}" alt="" class="rounded d-block mx-auto mb-4" width="150ox" height="150px">
+                        @else
+                            <img src="/storage/foto-profil/defaultuserimage.png" alt="" class="rounded d-block mx-auto mb-4" width="150ox" height="150px">
+                        @endif
+                        <div class="row mb-3">
                             <div class="col-4">Nama</div>
-                            <div class="col-8">Umam Alfarizi</div>
+                            <div class="col-8 font-weight-bold">{{ Auth::user()->nama }}</div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-3">
                             <div class="col-4">Email</div>
-                            <div class="col-8">alfariziuchiha@gmail.com</div>
+                            <div class="col-8 font-weight-bold">{{ Auth::user()->email }}</div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-3">
                             <div class="col-4">Pekerjaan</div>
-                            <div class="col-8">Tidur</div>
+                            <div class="col-8 font-weight-bold">{{ Auth::user()->pekerjaan }}</div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-3">
                             <div class="col-4">No. HP</div>
-                            <div class="col-8">081223334444</div>
+                            <div class="col-8 font-weight-bold">{{ Auth::user()->no_hp }}</div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-3">
                             <div class="col-4">Alamat</div>
-                            <div class="col-8">Jln. R Sangapati km 2,5 Jenggik - Lando</div>
+                            <div class="col-8 font-weight-bold">{{ Auth::user()->alamat }}</div>
                         </div>
                     </div>
                     <div class="modal-footer text-end">
-                        <a href="/dashboard/edit-user" class="btn btn-primary">Edit</a>
+                        <a href="/dashboard/profile-edit/{{ Auth::user()->id }}" class="btn btn-primary">Edit</a>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                     </div>
                 </div>

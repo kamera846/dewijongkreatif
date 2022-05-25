@@ -1,82 +1,228 @@
-@extends('layouts.admin')
-
-@section('page-header')
-    <div class="header bg-primary pb-6">
-        <div class="container-fluid">
-            <div class="header-body">
-                <div class="row align-items-center py-4">
-                    <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Galeri</h6>
-                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Data Galeri</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
+@extends('layouts.main')
 
 @section('page-content')
-    <div class="container-fluid mt--6">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <!-- Card header -->
-                    <div class="card-header border-0">
-                        <div class="row">
-                            <div class="col-6">
-                                <h3 class="mb-0">Data Galeri</h3>
-                            </div>
-                            <div class="col-6 text-right">
-                                <a href="/dashboard/add-gallery" class="btn btn-sm btn-primary">
-                                    <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
-                                    <span class="btn-inner--text">Tambah Data</span>
-                                </a>
-                            </div>
-                        </div>
+    <section class="page-title" style="background-image: url(assets/images/background/bg-9.jpg)">
+        <div class="auto-container">
+            <div class="content-box">
+                <div class="content-wrapper">
+                    <div class="title">
+                        <h1>Galeri.</h1>
                     </div>
-                    {{-- alerts --}}
-                    {{-- isi atribut flashdata sesuai kondisi session untuk menampilan alert berhasil manipulasi(menambahkan, mengubah, menghapus) data, kalo flashdata gagal isi 'gagal' untuk menampilakan alert error --}}
-                    <div class="flash-data" data-flashdata="tes"></div>
-                    <!-- Light table -->
-                    <div class="table-responsive">
-                        <table class="table align-items-center table-flush table-hover">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th>Foto</th>
-                                    <th>Judul</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img src="{{ asset('admin/assets/img/theme/team-1.jpg') }}" width="70px" class="rounded">
-                                    </td>
-                                    <td>
-                                        <b>Tutorial Internet Gratis No Root</b>
-                                    </td>
-                                    <td class="table-actions">
-                                        <a href="/dashboard/edit-gallery" class="table-action" data-toggle="tooltip" data-original-title="Edit galeri">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        <a href="#" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus galeri">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <ul class="bread-crumb">
+                        <li><a href="./">Beranda</a></li>
+                        <li>Galeri</li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Footer -->
-        @include('partials.footer-admin')
-    </div>
+    <!-- News section Three -->
+    <section class="news-section-three">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-6 news-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="assets/images/resource/news-1.jpg" alt=""/>
+                            <div class="overlay">
+                                <div class="link-btn">
+                                    <a href="assets/images/resource/news-1.jpg"><i class="icon-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>
+                                <a href="blog-details.php"
+                                    >Assistance For Homes And <br />
+                                    Properties Real Estate</a
+                                >
+                            </h4>
+                            <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 news-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="assets/images/resource/news-2.jpg" alt="" />
+                            <div class="overlay">
+                                <div class="link-btn">
+                                    <a href="blog-details.php"><i class="icon-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>
+                                <a href="blog-details.php"
+                                    >Long-Term Vision Of Health <br />
+                                    & Attractive Facility</a
+                                >
+                            </h4>
+                            <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 news-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="assets/images/resource/news-3.jpg" alt="" />
+                            <div class="overlay">
+                                <div class="link-btn">
+                                    <a href="blog-details.php"><i class="icon-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>
+                                <a href="blog-details.php"
+                                    >Recreation Programs From <br />
+                                    Watery Landscapes</a
+                                >
+                            </h4>
+                            <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 news-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="assets/images/resource/news-9.jpg" alt="" />
+                            <div class="overlay">
+                                <div class="link-btn">
+                                    <a href="blog-details.php"><i class="icon-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>
+                                <a href="blog-details.php"
+                                    >Assistance For Homes And <br />
+                                    Properties Real Estate</a
+                                >
+                            </h4>
+                            <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 news-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="assets/images/resource/news-10.jpg" alt="" />
+                            <div class="overlay">
+                                <div class="link-btn">
+                                    <a href="blog-details.php"><i class="icon-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>
+                                <a href="blog-details.php"
+                                    >Long-Term Vision Of Health <br />
+                                    & Attractive Facility</a
+                                >
+                            </h4>
+                            <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 news-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="assets/images/resource/news-11.jpg" alt="" />
+                            <div class="overlay">
+                                <div class="link-btn">
+                                    <a href="blog-details.php"><i class="icon-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>
+                                <a href="blog-details.php"
+                                    >Recreation Programs From <br />
+                                    Watery Landscapes</a
+                                >
+                            </h4>
+                            <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 news-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="assets/images/resource/news-12.jpg" alt="" />
+                            <div class="overlay">
+                                <div class="link-btn">
+                                    <a href="blog-details.php"><i class="icon-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>
+                                <a href="blog-details.php"
+                                    >Assistance For Homes And <br />
+                                    Properties Real Estate</a
+                                >
+                            </h4>
+                            <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 news-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="assets/images/resource/news-13.jpg" alt="" />
+                            <div class="overlay">
+                                <div class="link-btn">
+                                    <a href="blog-details.php"><i class="icon-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>
+                                <a href="blog-details.php"
+                                    >Long-Term Vision Of Health <br />
+                                    & Attractive Facility</a
+                                >
+                            </h4>
+                            <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 news-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="assets/images/resource/news-14.jpg" alt="" />
+                            <div class="overlay">
+                                <div class="link-btn">
+                                    <a href="blog-details.php"><i class="icon-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>
+                                <a href="blog-details.php"
+                                    >Recreation Programs From <br />
+                                    Watery Landscapes</a
+                                >
+                            </h4>
+                            <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Post Pagination -->
+            <ul class="post-pagination mt-5 mb-30">
+                <li class="prev-page">
+                    <a href="#"><i class="icon-arrow"></i></a>
+                </li>
+                <li class="current"><span> 1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li class="next-page">
+                    <a href="#"><i class="icon-arrow"></i></a>
+                </li>
+            </ul>
+        </div>
+    </section>
 @endsection
