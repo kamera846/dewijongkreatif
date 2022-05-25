@@ -22,8 +22,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard.dashboard', [
             'judul_halaman' => 'Admin | Dashboard',
-            'jumlahusers' => User::count(),
-            'jumlahblog' => Blog::count(),
+            'jumlahUsers' => User::count(),
+            'jumlahBlogs' => Blog::count(),
             'jumlahGalleries' => Gallery::count()
         ]);
     });
@@ -63,11 +63,6 @@ Route::middleware('auth')->group(function () {
 
 
 // admin
-
-Route::get('dashboard/galleries', function () {
-    return view('dashboard.gallery', ['judul_halaman' => 'Admin | Data Galeri']);
-});
-
 Route::get('dashboard/contact', function () {
     return view('dashboard.contact', ['judul_halaman' => 'Admin | Profil Kontak']);
 });

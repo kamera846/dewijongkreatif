@@ -78,6 +78,9 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @guest
+                                    
+                                @endguest
                                 @foreach ($users as $user)
                                 <tr>
                                     <td class="table-user">
