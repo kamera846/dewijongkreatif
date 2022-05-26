@@ -23,7 +23,7 @@
                                 <div class="row">
                                     <div class="col">
                                       <h5 class="card-title text-uppercase text-muted mb-0">Pengguna</h5>
-                                      <span class="h2 font-weight-bold mb-0">{{ $jumlahusers }}</span>
+                                      <span class="h2 font-weight-bold mb-0">{{ $jumlah_pengguna }}</span>
                                     </div>
                                     <div class="col-auto">
                                       <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -43,7 +43,7 @@
                                   <div class="row">
                                       <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Post Blog</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{ $jumlahblog }}</span>
+                                        <span class="h2 font-weight-bold mb-0">{{ $jumlah_blog }}</span>
                                       </div>
                                       <div class="col-auto">
                                         <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -63,7 +63,7 @@
                             <div class="row">
                               <div class="col">
                                 <h5 class="card-title text-uppercase text-muted mb-0">Galeri</h5>
-                                <span class="h2 font-weight-bold mb-0">{{ $jumlahGalleries }}</span>
+                                <span class="h2 font-weight-bold mb-0">{{ $jumlah_galeri }}</span>
                               </div>
                               <div class="col-auto">
                                 <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">

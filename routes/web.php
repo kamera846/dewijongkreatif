@@ -15,16 +15,16 @@ use App\Http\Controllers\RegisterController;
 // Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::get('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', function () {
         return view('dashboard.dashboard', [
             'judul_halaman' => 'Admin | Dashboard',
-            'jumlahUsers' => User::count(),
-            'jumlahBlogs' => Blog::count(),
-            'jumlahGalleries' => Gallery::count()
+            'jumlah_pengguna' => User::count(),
+            'jumlah_blog' => Blog::count(),
+            'jumlah_galeri' => Gallery::count()
         ]);
     });
 
@@ -35,18 +35,18 @@ Route::middleware('auth')->group(function () {
     Route::put('dashboard/user-update/{user}', [UserController::class, 'update']);
     Route::get('/dashboard/user-details/{user}', [UserController::class, 'show']);
     Route::get('/dashboard/user-edit/{user}', [UserController::class, 'edit']);
-    Route::get('/dashboard/user-delete/{user}', [UserController::class, 'destroy']);
+    Route::delete('/dashboard/user-delete/{user}', [UserController::class, 'destroy']);
     Route::get('/dashboard/profile-edit/{user}', [UserController::class, 'editProfile']);
     Route::put('/dashboard/profile-update/{user}', [UserController::class, 'updateProfile']);
 
     //blog route
     Route::get('/dashboard/blogs', [BlogController::class, 'index']);
     Route::get('/dashboard/blog-create', [BlogController::class, 'create']);
-    Route::get('/dashboard/blog-details', [BlogController::class, 'show']);
-    Route::get('dashboard//blog-edit/{blog}', [BlogController::class, 'edit']);
+    Route::post('/dashboard/blog-store', [BlogController::class, 'store']);
+    Route::get('/dashboard/blog-details/{blog}', [BlogController::class, 'show']);
+    Route::get('/dashboard/blog-edit/{blog}', [BlogController::class, 'edit']);
     Route::put('/dashboard/blog-update/{blog}', [BlogController::class, 'update']);
     Route::delete('/dashboard/blog-delete/{blog}', [BlogController::class, 'destroy']);
-    Route::post('/dashboard/blog-store', [BlogController::class, 'store']);
 
     // gallery route 
     Route::get('/dashboard/galleries', [GalleryController::class, 'index']);
@@ -63,10 +63,10 @@ Route::middleware('auth')->group(function () {
 
 
 // admin
-Route::get('dashboard/contact', function () {
+Route::get('/dashboard/contact', function () {
     return view('dashboard.contact', ['judul_halaman' => 'Admin | Profil Kontak']);
 });
-Route::get('dashboard/social', function () {
+Route::get('/dashboard/social', function () {
     return view('dashboard.social', ['judul_halaman' => 'Admin | Profil Sosial Media']);
 });
 

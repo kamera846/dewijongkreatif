@@ -132,7 +132,7 @@
                                 <a 
                                 id="logout"
                                 class="nav-link" 
-                                href="logout">
+                                href="/logout">
                                     <i class="ni ni-button-power text-red"></i>
                                     <span class="nav-link-text">Keluar</span>
                                 </a>

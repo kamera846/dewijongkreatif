@@ -41,7 +41,7 @@
                     </div>
                     {{-- alerts --}}
                     {{-- isi atribut flashdata sesuai kondisi session untuk menampilan alert berhasil manipulasi(menambahkan, mengubah, menghapus) data, kalo flashdata gagal isi 'gagal' untuk menampilakan alert error --}}
-                    <div class="flash-data" data-flashdata="{{ (session()->has('success'))?session('seccues'):'' }}{{ (session()->has('error'))?'gagal':'' }}"></div>
+                    <div class="flash-data" data-flashdata="{{ (session()->has('success'))?session('success'):'' }}{{ (session()->has('error'))?'gagal':'' }}"></div>
                     <!-- Light table -->
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush table-hover">

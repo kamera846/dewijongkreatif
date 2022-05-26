@@ -23,7 +23,7 @@
 @section('page-content')
     <div class="container-fluid mt--6">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-8 col-md-10">
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
@@ -31,8 +31,8 @@
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-10">
+                        <div class="row">
+                            <div class="col">
                                 <form action="/dashboard/profile-update/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data">
                                   @csrf
                                   @method('put')

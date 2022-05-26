@@ -32,20 +32,20 @@
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-12 text-center">
-                                <img src="{{ asset('storage/' . $blog->gambar_blog) }}" height="300px" width="500px" class="rounded mx-auto d-block mb-4" alt="">
-                                <h1 class="text-center">{{ $blog->judul }}</h1>
-                              <div class="row justify-content-center">
-                                <span class="text-xs text-muted" style="text-transform: capitalize">{{ $blog->penulis }}</span>
-                                <span class="text-xs text-muted mx-2">|</span>
-                                <span class="text-xs text-muted">{{ $blog->created_at }}</span>
-                              </div>
-                              <div class="row px-3 py-4">
-                                <p>{!! $blog->konten !!}</p>
-                              </div>
+                            <div class="col-12">
+                                <div class="row justify-content-center">
+                                    <div>
+                                        <img src="{{ asset('storage/' . $blog->gambar_blog) }}" width="70%" class="rounded mx-auto d-block mb-4" alt="">
+                                    </div>
+                                    <h1 class="text-center">{{ $blog->judul }}</h1>
+                                    <span class="text-xs text-center text-muted">{{ $blog->penulis }} | {{ $blog->created_at }}</span>
+                                </div>
+                                <div class="row px-3 py-4">
+                                    <p>{!! $blog->konten !!}</p>
+                                </div>
                             </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>

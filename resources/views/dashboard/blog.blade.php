@@ -41,7 +41,7 @@
                     </div>
                     {{-- alerts --}}
                     {{-- isi atribut flashdata sesuai kondisi session untuk menampilan alert berhasil manipulasi(menambahkan, mengubah, menghapus) data, kalo flashdata gagal isi 'gagal' untuk menampilakan alert error --}}
-                    <div class="flash-data" data-flashdata=""></div>
+                    <div class="flash-data" data-flashdata="{{ (session()->has('success'))?session('success'):'' }}"></div>
                     <!-- Light table -->
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush table-hover">
@@ -55,31 +55,33 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($blogs as $blog)
                                 <tr>
                                     <td>
-                                        <img src="{{ asset('admin/assets/img/theme/team-1.jpg') }}" width="70px" class="rounded">
+                                        <img src="{{ asset('storage/' . $blog->gambar_blog) }}" width="70px" class="rounded">
                                     </td>
                                     <td>
-                                        <b>Tutorial Internet Gratis No Root</b>
+                                        <b>{{ $blog->judul }}</b>
                                     </td>
                                     <td>
-                                        <span class="font-weight-bold">32/13/2200</span>
+                                        <span class="font-weight-bold">{{  $blog->created_at }}</span>
                                     </td>
                                     <td>
-                                        <span class="font-weight-bold">Umam Alfarizi</span>
+                                        <span class="font-weight-bold">{{ $blog->penulis }}</span>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="/dashboard/blog-details" class="table-action" data-toggle="tooltip" data-original-title="Detail postingan">
+                                        <a href="/dashboard/blog-details/{{ $blog->id }}" class="table-action" data-toggle="tooltip" data-original-title="Detail postingan">
                                             <i class="fas fa-info-circle"></i>
                                         </a>
-                                        <a href="/dashboard/blog-edit/{{ '1' }}" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
+                                        <a href="/dashboard/blog-edit/{{ $blog->id }}" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="/dashboard/blog-delete/{{ '1' }}" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus postingan">
+                                        <a href="/dashboard/blog-delete/{{ $blog->id }}" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus postingan">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
