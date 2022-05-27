@@ -97,8 +97,8 @@
                                 <div class="form-group row">
                                 <div class="col-md-3"></div>
                                   <div class="col-md-9">
-                                    <a href="/dashboard/user-edit/{{ $user->id }}" class="btn btn-primary">Edit</a>
-                                    <a href="/dashboard/users" class="btn btn-secondary">Kembali</a> 
+                                    <a href="/dashboard/user/{{ $user->id }}/edit" class="btn btn-primary">Edit</a>
+                                    <a href="/dashboard/user" class="btn btn-secondary">Kembali</a> 
                                   </div>
                                 </div>
                               </form>

@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-xl-4 col-md-6">
                         <div class="card card-stats">
-                            <a href="/dashboard/users">
+                            <a href="/dashboard/user">
                             <!-- Card body -->
                               <div class="card-body">
                                 <div class="row">
@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-xl-4 col-md-6">
                         <div class="card card-stats">
-                            <a href="/dashboard/blogs">
+                            <a href="/dashboard/blog">
                               <!-- Card body -->
                               <div class="card-body">
                                   <div class="row">
@@ -57,7 +57,7 @@
                     </div>
                     <div class="col-xl-4 col-md-6">
                       <div class="card card-stats">
-                        <a href="/dashboard/galleries">
+                        <a href="/dashboard/gallery">
                           <!-- Card body -->
                           <div class="card-body">
                             <div class="row">

@@ -47,7 +47,7 @@ class BlogController extends Controller
             'konten' => $request->konten
         ]);
 
-        return redirect('/dashboard/blogs')->with('success', 'menambahkan');
+        return redirect('/dashboard/blog')->with('success', 'menambahkan');
     }
 
 
@@ -97,7 +97,7 @@ class BlogController extends Controller
                 'konten' => $request->konten
             ]);
 
-        return redirect('/dashboard/blogs')->with('success', 'mengubah');
+        return redirect('/dashboard/blog')->with('success', 'mengubah');
     }
 
 
@@ -107,6 +107,6 @@ class BlogController extends Controller
             Storage::delete($blog->gambar_blog);
         }
         Blog::destroy($blog->id);
-        return redirect('/dashboard/blogs')->with('success', 'menghapus');
+        return redirect('/dashboard/blog')->with('success', 'menghapus');
     }
 }

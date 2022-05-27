@@ -56,7 +56,7 @@ class UserController extends Controller
             'no_hp' => $request->no_hp,
             'role' => $request->role,
         ]);
-        return redirect('/dashboard/users')->with('success', 'menambahkan');
+        return redirect('/dashboard/user')->with('success', 'menambahkan');
     }
 
 
@@ -111,7 +111,7 @@ class UserController extends Controller
                 'role' => $request->role,
             ]);
 
-        return redirect('/dashboard/users')->with('success', 'mengedit');
+        return redirect('/dashboard/user')->with('success', 'mengubah');
     }
     public function editProfile()
     {
@@ -153,7 +153,7 @@ class UserController extends Controller
                 'no_hp' => $request->no_hp,
             ]);
 
-        return redirect('/dashboard/users')->with('success', 'memperbarui');
+        return redirect('/dashboard/user')->with('success', 'memperbarui');
     }
 
 
@@ -163,6 +163,6 @@ class UserController extends Controller
             Storage::delete($user->foto_profil);
         }
         User::destroy($user->id);
-        return redirect('/dashboard/users')->with('success', 'menghapus');
+        return redirect('/dashboard/user')->with('success', 'menghapus');
     }
 }

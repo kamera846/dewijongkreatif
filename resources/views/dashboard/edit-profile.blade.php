@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/profile-update/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data">
+                                <form action="/dashboard/user/{{ Auth::user()->id }}/profile-update" method="POST" enctype="multipart/form-data">
                                   @csrf
                                   @method('put')
                                   <div class="form-group row">
@@ -127,7 +127,7 @@
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                       <button type="submit" class="btn btn-primary">Simpan</button>
-                                      <a href="/dashboard/users" class="btn btn-secondary">Batal</a> 
+                                      <a href="/dashboard/user" class="btn btn-secondary">Batal</a> 
                                     </div>
                                   </div>
                                 </form>

@@ -77,7 +77,7 @@
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
-                                href="/dashboard/users">
+                                href="/dashboard/user">
                                     <i class="ni ni-circle-08 text-green"></i>
                                     <span class="nav-link-text">Pengguna</span>
                                 </a>
@@ -85,7 +85,7 @@
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
-                                href="/dashboard/blogs">
+                                href="/dashboard/blog">
                                     <i class="ni ni-single-copy-04 text-orange"></i>
                                     <span class="nav-link-text">Blog</span>
                                 </a>
@@ -94,7 +94,7 @@
                                 <a 
                                 class="
                                     nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                                href="/dashboard/galleries">
+                                href="/dashboard/gallery">
                                     <i class="ni ni-album-2 text-info"></i>
                                     <span class="nav-link-text">Galeri</span>
                                 </a>
@@ -232,7 +232,7 @@
                         </div>
                     </div>
                     <div class="modal-footer text-end">
-                        <a href="/dashboard/profile-edit/{{ Auth::user()->id }}" class="btn btn-primary">Edit</a>
+                        <a href="/dashboard/user/{{ Auth::user()->id }}/profile-edit" class="btn btn-primary">Edit</a>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                     </div>
                 </div>

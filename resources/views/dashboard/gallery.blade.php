@@ -32,7 +32,7 @@
                                 <h3 class="mb-0">Data Galeri</h3>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="/dashboard/gallery-create" class="btn btn-sm btn-primary">
+                                <a href="/dashboard/gallery/create" class="btn btn-sm btn-primary">
                                     <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
                                     <span class="btn-inner--text">Tambah Data</span>
                                 </a>
@@ -49,7 +49,7 @@
                                 <tr>
                                     <th>Foto</th>
                                     <th>Judul</th>
-                                    <th></th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,12 +62,19 @@
                                         <b>{{ $gallery->judul }}</b>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="/dashboard/gallery-edit/{{ $gallery->id }}" class="table-action" data-toggle="tooltip" data-original-title="Edit galeri">
+                                        <a href="/dashboard/gallery/{{ $gallery->id }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit galeri">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="/dashboard/gallery-delete/{{ $gallery->id }}" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus galeri">
+                                        <a href="/dashboard/gallery/{{ $gallery->id }}/delete" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus galeri">
                                             <i class="fas fa-trash"></i>
                                         </a>
+                                        {{-- <form action="/dashboard/gallery/{{ $gallery->id }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" id="hapus" class="table-action table-action-delete border-0 p-0 m-0" data-toggle="tooltip" data-original-title="Hapus galeri" style="background:none;">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form> --}}
                                     </td>
                                 </tr>
                                 @endforeach

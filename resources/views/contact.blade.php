@@ -82,23 +82,22 @@
                             </div>
                             <!--Contact Form-->
                             <div class="contact-form">
-                                <form method="post" action="inc/sendemail.php" id="contact-form">
+                                <form method="post" target="_blank" action="/wa-me" id="contact-form">
                                     <div class="row">
                                         <div class="form-group col-md-12">
-                                            <input type="text" name="form_name" value="" placeholder="Your Name" required />
+                                            <input type="text" name="nama" value="" placeholder="Your Name" required />
                                         </div>
                                         <div class="form-group col-md-12">
                                             <input type="text" name="email" value="" placeholder="Your Email" required />
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <input type="text" name="form_subject" value="" placeholder="Subject" required />
+                                            <input type="text" name="subjek" value="" placeholder="Subject" required />
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <textarea name="form_message" placeholder="Massage"></textarea>
+                                            <textarea name="pesan" placeholder="MEssage"></textarea>
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="" />
-                                            <button class="theme-btn btn-style-one" type="submit" data-loading-text="Please wait..."><span>Send Message</span></button>
+                                            <button class="theme-btn btn-style-one" type="submit" name="submit" data-loading-text="Please wait..."><span>Send Message</span></button>
                                         </div>
                                     </div>
                                 </form>

@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/user-store" method="post" enctype="multipart/form-data">
+                                <form action="/dashboard/user/store" method="post" enctype="multipart/form-data">
                                   @csrf
                                   <div class="form-group row">
                                     <label for="nama" class="col-md-3 col-form-label form-control-label">Nama<span class="text-danger">*</span></label>
@@ -131,7 +131,7 @@
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                         <button type="submit" class="btn btn-primary">Tambah</button>
-                                        <a href="/dashboard/users" class="btn btn-secondary">Batal</a> 
+                                        <a href="/dashboard/user" class="btn btn-secondary">Batal</a> 
                                     </div>
                                   </div>
                                 </form>

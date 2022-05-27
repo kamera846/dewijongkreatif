@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/user-update/{{ $user->id }}" method="POST" enctype="multipart/form-data">
+                                <form action="/dashboard/user/{{ $user->id }}/update" method="POST" enctype="multipart/form-data">
                                   @csrf
                                   @method('put')
                                   <div class="form-group row">

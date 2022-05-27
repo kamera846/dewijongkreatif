@@ -32,32 +32,13 @@
                                 <h3 class="mb-0">Data Pengguna</h3>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="/dashboard/user-create" class="btn btn-sm btn-primary">
+                                <a href="/dashboard/user/create" class="btn btn-sm btn-primary">
                                     <span class="btn-inner--icon"><i class="fas fa-user-plus"></i></span>
                                     <span class="btn-inner--text">Tambah Data</span>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    {{-- alerts --}}
-                        {{-- <div class="px-4">
-                            @if (session()->has('success'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <span class="alert-text">{{ session('success') }}</span>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            @endif
-                            @if(session()->has('error'))
-                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <span class="alert-text">{{ session('error') }}</span>
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                            @endif
-                        </div> --}}
 
                     {{-- isi atribut flashdata sesuai kondisi session untuk menampilan alert berhasil manipulasi(menambahkan, mengubah, menghapus) data, kalo flashdata gagal isi 'gagal' untuk menampilakan alert error --}}
                     <div class="flash-data" data-flashdata="{{ (session()->has('success'))?session('success'):'' }}{{ (session()->has('error'))?session('error'):'' }}"></div>
@@ -74,7 +55,7 @@
                                     <th>Pekerjaan</th>
                                     <th>Nomor HP</th>
                                     <th>Role</th>
-                                    <th>action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -109,19 +90,19 @@
                                         <span class="font-weight-bold">{{ $user->role }}</span>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="/dashboard/user-details/{{ $user->id }}" class="table-action" data-toggle="tooltip" data-original-title="Detail pengguna">
+                                        <a href="/dashboard/user/{{ $user->id }}/detail" class="table-action" data-toggle="tooltip" data-original-title="Detail pengguna">
                                             <i class="fas fa-info-circle"></i>
                                         </a>
-                                        <a href="/dashboard/user-edit/{{ $user->id }}" class="table-action" data-toggle="tooltip" data-original-title="Edit pengguna">
+                                        <a href="/dashboard/user/{{ $user->id }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit pengguna">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
-                                        <a href="/dashboard/user-delete/{{ $user->id }}" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus pengguna">
+                                        <a href="/dashboard/user/{{ $user->id }}/delete" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus pengguna">
                                             <i class="fas fa-trash"></i>
                                         </a>
-                                        {{-- <form action="/user/{{ $user->id }}/delete" method="post">
+                                        {{-- <form action="/dashboard/user/{{ $user->id }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
                                             @csrf
                                             @method('delete')
-                                            <button type="submit" id="hapus" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Hapus pengguna" style="border: none; background:none;">
+                                            <button type="submit" id="hapus" class="table-action table-action-delete border-0 p-0 m-0" data-toggle="tooltip" data-original-title="Hapus pengguna" style="background:none;">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </form> --}}

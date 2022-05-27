@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/blog-update/{{ $blog->id }}" method="post" enctype="multipart/form-data">
+                                <form action="/dashboard/blog/{{ $blog->id }}/update" method="post" enctype="multipart/form-data">
                                   @csrf
                                   @method('put')
                                   <div class="form-group row">
@@ -69,7 +69,7 @@
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                         <button type="submit" class="btn btn-primary">Simpan</button>
-                                        <a href="/dashboard/blogs" class="btn btn-secondary">Batal</a>
+                                        <a href="/dashboard/blog" class="btn btn-secondary">Batal</a>
                                     </div>
                                   </div>
                                 </form>

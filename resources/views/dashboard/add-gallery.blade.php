@@ -72,7 +72,7 @@
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                         <button type="submit" class="btn btn-primary">Tambah</button>
-                                        <a href="/dashboard/galleries" class="btn btn-secondary">Batal</a>
+                                        <a href="/dashboard/gallery" class="btn btn-secondary">Batal</a>
                                     </div>
                                   </div>
                                 </form>

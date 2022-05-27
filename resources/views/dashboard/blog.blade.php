@@ -32,7 +32,7 @@
                                 <h3 class="mb-0">Data Postingan</h3>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="/dashboard/blog-create" class="btn btn-sm btn-primary">
+                                <a href="/dashboard/blog/create" class="btn btn-sm btn-primary">
                                     <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
                                     <span class="btn-inner--text">Tambah Data</span>
                                 </a>
@@ -51,7 +51,7 @@
                                     <th>Judul</th>
                                     <th>Tanggal Dibuat</th>
                                     <th>Penulis</th>
-                                    <th></th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,15 +70,22 @@
                                         <span class="font-weight-bold">{{ $blog->penulis }}</span>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="/dashboard/blog-details/{{ $blog->id }}" class="table-action" data-toggle="tooltip" data-original-title="Detail postingan">
+                                        <a href="/dashboard/blog/{{ $blog->id }}/detail" class="table-action" data-toggle="tooltip" data-original-title="Detail postingan">
                                             <i class="fas fa-info-circle"></i>
                                         </a>
-                                        <a href="/dashboard/blog-edit/{{ $blog->id }}" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
+                                        <a href="/dashboard/blog/{{ $blog->id }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="/dashboard/blog-delete/{{ $blog->id }}" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus postingan">
+                                        <a href="/dashboard/blog/{{ $blog->id }}/delete" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus postingan">
                                             <i class="fas fa-trash"></i>
                                         </a>
+                                        {{-- <form action="/dashboard/blog/{{ $blog->id }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" id="hapus" class="table-action table-action-delete border-0 p-0 m-0" data-toggle="tooltip" data-original-title="Hapus postingan" style="background:none;">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form> --}}
                                     </td>
                                 </tr>
                                 @endforeach

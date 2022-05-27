@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/gallery-update/{{ $gallery->id }}" enctype="multipart/form-data" method="POST">
+                                <form action="/dashboard/gallery/{{ $gallery->id }}/update" enctype="multipart/form-data" method="POST">
                                     @csrf
                                     @method('put')
                                   <div class="form-group row">
@@ -70,7 +70,7 @@
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                         <button type="submit" class="btn btn-primary">Update</button>
-                                        <a href="/dashboard/galleries" class="btn btn-secondary">Batal</a>
+                                        <a href="/dashboard/gallery" class="btn btn-secondary">Batal</a>
                                     </div>
                                   </div>
                                 </form>

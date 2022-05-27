@@ -29,33 +29,33 @@ Route::middleware('auth')->group(function () {
     });
 
     // user route
-    Route::get('/dashboard/users', [UserController::class, 'index']);
-    Route::get('/dashboard/user-create', [UserController::class, 'create']);
-    Route::post('/dashboard/user-store', [UserController::class, 'store']);
-    Route::put('dashboard/user-update/{user}', [UserController::class, 'update']);
-    Route::get('/dashboard/user-details/{user}', [UserController::class, 'show']);
-    Route::get('/dashboard/user-edit/{user}', [UserController::class, 'edit']);
-    Route::delete('/dashboard/user-delete/{user}', [UserController::class, 'destroy']);
-    Route::get('/dashboard/profile-edit/{user}', [UserController::class, 'editProfile']);
-    Route::put('/dashboard/profile-update/{user}', [UserController::class, 'updateProfile']);
+    Route::get('/dashboard/user', [UserController::class, 'index']);
+    Route::get('/dashboard/user/create', [UserController::class, 'create']);
+    Route::post('/dashboard/user/store', [UserController::class, 'store']);
+    Route::put('/dashboard/user/{user}/update', [UserController::class, 'update']);
+    Route::get('/dashboard/user/{user}/detail', [UserController::class, 'show']);
+    Route::get('/dashboard/user/{user}/edit', [UserController::class, 'edit']);
+    Route::get('/dashboard/user/{user}/delete', [UserController::class, 'destroy']);
+    Route::get('/dashboard/user/{user}/profile-edit', [UserController::class, 'editProfile']);
+    Route::put('/dashboard/user/{user}/profile-update', [UserController::class, 'updateProfile']);
 
     //blog route
-    Route::get('/dashboard/blogs', [BlogController::class, 'index']);
-    Route::get('/dashboard/blog-create', [BlogController::class, 'create']);
-    Route::post('/dashboard/blog-store', [BlogController::class, 'store']);
-    Route::get('/dashboard/blog-details/{blog}', [BlogController::class, 'show']);
-    Route::get('/dashboard/blog-edit/{blog}', [BlogController::class, 'edit']);
-    Route::put('/dashboard/blog-update/{blog}', [BlogController::class, 'update']);
-    Route::delete('/dashboard/blog-delete/{blog}', [BlogController::class, 'destroy']);
+    Route::get('/dashboard/blog', [BlogController::class, 'index']);
+    Route::get('/dashboard/blog/create', [BlogController::class, 'create']);
+    Route::post('/dashboard/blog/store', [BlogController::class, 'store']);
+    Route::get('/dashboard/blog/{blog}/detail', [BlogController::class, 'show']);
+    Route::get('/dashboard/blog/{blog}/edit', [BlogController::class, 'edit']);
+    Route::put('/dashboard/blog/{blog}/update', [BlogController::class, 'update']);
+    Route::delete('/dashboard/blog/{blog}/delete', [BlogController::class, 'destroy']);
 
     // gallery route 
-    Route::get('/dashboard/galleries', [GalleryController::class, 'index']);
-    Route::get('/dashboard/gallery-create', [GalleryController::class, 'create']);
-    Route::post('/dashboard/gallery-store', [GalleryController::class, 'store']);
-    Route::get('/dashboard/gallery-details/{gallery}', [GalleryController::class, 'show']);
-    Route::get('/dashboard/gallery-edit/{gallery}', [GalleryController::class, 'edit']);
-    Route::put('/dashboard/gallery-update/{gallery}', [GalleryController::class, 'update']);
-    Route::delete('/dashboard/gallery-delete/{gallery}', [GalleryController::class, 'destroy']);
+    Route::get('/dashboard/gallery', [GalleryController::class, 'index']);
+    Route::get('/dashboard/gallery/create', [GalleryController::class, 'create']);
+    Route::post('/dashboard/gallery/store', [GalleryController::class, 'store']);
+    Route::get('/dashboard/gallery/{gallery}/detail', [GalleryController::class, 'show']);
+    Route::get('/dashboard/gallery/{gallery}/edit', [GalleryController::class, 'edit']);
+    Route::put('/dashboard/gallery/{gallery}/update', [GalleryController::class, 'update']);
+    Route::delete('/dashboard/gallery/{gallery}/delete', [GalleryController::class, 'destroy']);
 
 });
 

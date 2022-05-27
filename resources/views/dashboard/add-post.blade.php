@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/blog-store" method="post" enctype="multipart/form-data">
+                                <form action="/dashboard/blog/store" method="post" enctype="multipart/form-data">
                                   @csrf
                                   <div class="form-group row">
                                     <label for="judul" class="col-md-3 col-form-label form-control-label">Judul</label>
@@ -79,7 +79,7 @@
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                         <button type="submit" class="btn btn-primary">Tambah</button>
-                                        <a href="/dashboard/blogs" class="btn btn-secondary">Batal</a>
+                                        <a href="/dashboard/blog" class="btn btn-secondary">Batal</a>
                                     </div>
                                   </div>
                                 </form>

@@ -77,7 +77,7 @@
                             <!--Logo-->
                             <div class="logo-box">
                                 <div class="logo">
-                                    <a href="./"><img src="assets/images/logo-preview.png" alt="" /></a>
+                                    <a href="./"><img src="assets/images/tes.png" alt="" /></a>
                                 </div>
                             </div>
                             <!--Nav Box-->
@@ -261,15 +261,15 @@
                                             <li>
                                                 <div class="icon"><img src="assets/images/icons/icon-1.png" alt="" /></div>
                                                 <div class="text">
-                                                    <strong>Lokasi</strong> 36 King Street, LaneWalk, <br />
-                                                    Governlia 030204 - US
+                                                    <strong>Lokasi</strong> Desa Loha, kecamatan Pacar,<br />
+                                                    kabupaten Manggarai Barat - NTT
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="icon"><img src="assets/images/icons/icon-2.png" alt="" /></div>
                                                 <div class="text">
                                                     <strong>Telepon</strong>
-                                                    <a href="tel:+1(345)2067849">+ 1 (345) 206 7849</a>
+                                                    <a href="tel:+62 823 3976 5401">+62 823 3976 5401</a>
                                                 </div>
                                             </li>
                                             <li>
