@@ -105,7 +105,7 @@
                                     <div class="col-md-9">
                                       <input class="form-control form-control-alternative" type="file"id="foto" name="foto_profil" value="{{ $user->foto_profil }}">
                                       @if($user->foto_profil)
-                                        <img id="image-preview-update-2" src="{{ asset('storage/' . $user->foto_profil) }}" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                        <img id="image-preview-update-2" src="{{ asset('storage/' . $user->foto_profil) }}" height="100px" class="rounded mt-2" alt="...">
                                       @else
                                         <img id="image-preview-update-2" src="{{ asset('storage/foto-profil/defaultuserimage.png') }}" width="100px" height="100px" class="rounded mt-2" alt="...">
                                       @endif

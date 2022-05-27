@@ -3,7 +3,7 @@ const keluar = document.getElementById("logout");
 if (keluar != undefined) {
     keluar.addEventListener("click", function (e) {
         e.preventDefault();
-        const href = this.href;
+        const formLogout = this.parentElement;
 
         Swal.fire({
             title: "Are you sure?",
@@ -15,7 +15,7 @@ if (keluar != undefined) {
             confirmButtonText: "Yes, logout",
         }).then((result) => {
             if (result.isConfirmed) {
-                document.location.href = href;
+                formLogout.submit();
             }
         });
     });
@@ -26,7 +26,7 @@ const hapus = document.getElementById("hapus");
 if (hapus != undefined) {
     hapus.addEventListener("click", function (e) {
         e.preventDefault();
-        const href = this.href;
+        const formHapus = this.parentElement;
 
         Swal.fire({
             title: "Are you sure?",
@@ -38,7 +38,7 @@ if (hapus != undefined) {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                document.location.href = href;
+                formHapus.submit();
             }
         });
     });

@@ -129,13 +129,21 @@
 
                         <ul class="navbar-nav mb-md-3">
                             <li class="nav-item">
-                                <a 
+                                
+                                <form action="/logout" method="post" class="d-inline">
+                                    @csrf
+                                    <button type="submit" id="logout" class="nav-link border-0 px-3 m-0" data-toggle="tooltip" style="background:none;">
+                                        <i class="ni ni-button-power text-red"></i>
+                                        <span class="nav-link-text ml-2">Keluar</span>
+                                    </button>
+                                </form>
+                                {{-- <a 
                                 id="logout"
                                 class="nav-link" 
                                 href="/logout">
                                     <i class="ni ni-button-power text-red"></i>
                                     <span class="nav-link-text">Keluar</span>
-                                </a>
+                                </a> --}}
                             </li>
                         </ul>
                         <!-- <hr class="my-3" /> -->

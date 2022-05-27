@@ -23,7 +23,7 @@
 @section('page-content')
     <div class="container-fluid mt--6">
         <div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-8 col-md-10">
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
@@ -41,7 +41,7 @@
                                     <input type="hidden" name="fotoLama" value="{{ $gallery->foto }}">
                                     <div class="col-md-9">
                                       <input class="form-control form-control-alternative" type="file" id="foto" name="foto"  value="{{ $gallery->foto, old('foto') }}">
-                                      <img id="image-preview-update-2" src="{{ asset('storage/' . $gallery->foto) }}" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                      <img id="image-preview-update-2" src="{{ asset('storage/' . $gallery->foto) }}" height="100px" class="rounded mt-2" alt="...">
                                     </div>
                                   </div>
                                   <div class="form-group row">
@@ -58,7 +58,7 @@
                                   <div class="form-group row">
                                     <label for="deskripsi" class="col-md-3 col-form-label form-control-label">Deskripsi</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control @error('is-invalid') @enderror" name="deskripsi" id="deskripsi" rows="3">{{ $gallery->deskripsi, old('deskripsi') }}</textarea>
+                                        <textarea class="form-control form-control-alternative @error('is-invalid') @enderror" name="deskripsi" id="deskripsi" rows="3">{{ $gallery->deskripsi, old('deskripsi') }}</textarea>
                                         @error('deskripsi')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -69,7 +69,7 @@
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
-                                        <button type="submit" class="btn btn-primary">Update</button>
+                                        <button type="submit" class="btn btn-primary">Simpan</button>
                                         <a href="/dashboard/gallery" class="btn btn-secondary">Batal</a>
                                     </div>
                                   </div>

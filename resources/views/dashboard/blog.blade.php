@@ -76,16 +76,16 @@
                                         <a href="/dashboard/blog/{{ $blog->id }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="/dashboard/blog/{{ $blog->id }}/delete" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus postingan">
+                                        {{-- <a href="/dashboard/blog/{{ $blog->id }}/delete" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus postingan">
                                             <i class="fas fa-trash"></i>
-                                        </a>
-                                        {{-- <form action="/dashboard/blog/{{ $blog->id }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
+                                        </a> --}}
+                                        <form action="/dashboard/blog/{{ $blog->id }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" id="hapus" class="table-action table-action-delete border-0 p-0 m-0" data-toggle="tooltip" data-original-title="Hapus postingan" style="background:none;">
                                                 <i class="fas fa-trash"></i>
                                             </button>
-                                        </form> --}}
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

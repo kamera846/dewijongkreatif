@@ -40,7 +40,7 @@ class GalleryController extends Controller
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
         ]);
-        return redirect('/dashboard/galleries')->with('success', 'menambahkan');
+        return redirect('/dashboard/gallery')->with('success', 'menambahkan');
     }
 
 
@@ -82,7 +82,7 @@ class GalleryController extends Controller
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
             ]);
-        return redirect('/dashboard/galleries')->with('success', 'mengubah');
+        return redirect('/dashboard/gallery')->with('success', 'mengubah');
     }
 
 
@@ -92,6 +92,6 @@ class GalleryController extends Controller
             Storage::delete($gallery->foto);
         }
         gallery::destroy($gallery->id);
-        return redirect('/dashboard/galleries')->with('success', 'menghapus');
+        return redirect('/dashboard/gallery')->with('success', 'menghapus');
     }
 }

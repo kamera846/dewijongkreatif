@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/dashboard/user/{user}/update', [UserController::class, 'update']);
     Route::get('/dashboard/user/{user}/detail', [UserController::class, 'show']);
     Route::get('/dashboard/user/{user}/edit', [UserController::class, 'edit']);
-    Route::get('/dashboard/user/{user}/delete', [UserController::class, 'destroy']);
+    Route::delete('/dashboard/user/{user}/delete', [UserController::class, 'destroy']);
     Route::get('/dashboard/user/{user}/profile-edit', [UserController::class, 'editProfile']);
     Route::put('/dashboard/user/{user}/profile-update', [UserController::class, 'updateProfile']);
 

@@ -47,7 +47,7 @@
                                     <input type="hidden" name="oldBlog" value="{{ $blog->gambar_blog }}">
                                     <div class="col-md-9">
                                       <input class="form-control form-control-alternative" type="file"id="gambar_blog" name="gambar_blog" value="{{ $blog->gambar_blog }}">
-                                      <img id="image-preview-update-2" src="{{ asset('storage/' . $blog->gambar_blog) }}" width="100px" height="100px" class="rounded mt-2" alt="...">
+                                      <img id="image-preview-update-2" src="{{ asset('storage/' . $blog->gambar_blog) }}" height="100px" class="rounded mt-2" alt="...">
                                     </div>
                                   </div>
                                   {{-- Penulis --}}

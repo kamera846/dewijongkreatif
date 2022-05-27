@@ -65,16 +65,16 @@
                                         <a href="/dashboard/gallery/{{ $gallery->id }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit galeri">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="/dashboard/gallery/{{ $gallery->id }}/delete" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus galeri">
+                                        {{-- <a href="/dashboard/gallery/{{ $gallery->id }}/delete" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus galeri">
                                             <i class="fas fa-trash"></i>
-                                        </a>
-                                        {{-- <form action="/dashboard/gallery/{{ $gallery->id }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
+                                        </a> --}}
+                                        <form action="/dashboard/gallery/{{ $gallery->id }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" id="hapus" class="table-action table-action-delete border-0 p-0 m-0" data-toggle="tooltip" data-original-title="Hapus galeri" style="background:none;">
                                                 <i class="fas fa-trash"></i>
                                             </button>
-                                        </form> --}}
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

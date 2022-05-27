@@ -23,7 +23,7 @@
 @section('page-content')
     <div class="container-fluid mt--6">
         <div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-8 col-md-10">
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/gallery-store" method="POST" enctype="multipart/form-data">
+                                <form action="/dashboard/gallery/store" method="POST" enctype="multipart/form-data">
                                     @csrf
                                   <div class="form-group row">
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
@@ -60,7 +60,7 @@
                                   <div class="form-group row">
                                     <label for="deskripsi" class="col-md-3 col-form-label form-control-label">Deskripsi</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control @error('is-invalid') @enderror" name="deskripsi" id="deskripsi" rows="3">{{ old('deskripsi') }}</textarea>
+                                        <textarea class="form-control @error('is-invalid') @enderror form-control-alternative" name="deskripsi" id="deskripsi" rows="4">{{ old('deskripsi') }}</textarea>
                                         @error('deskripsi')
                                           <div class="invalid-feedback">
                                             {{ $message }}
