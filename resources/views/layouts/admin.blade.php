@@ -102,7 +102,7 @@
                         </ul>
 
                         <!-- Divider -->
-                        <hr class="my-3">
+                        {{-- <hr class="my-3">
 
                         <h6 class="navbar-heading p-0 text-primary">PROFIL</h6>
                         <ul class="navbar-nav mb-md-3">
@@ -122,7 +122,7 @@
                                     <span class="nav-link-text">Sosial Media</span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> --}}
 
                         <!-- Divider -->
                         <hr class="my-3">
@@ -132,7 +132,7 @@
                                 
                                 <form action="/logout" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" id="logout" class="nav-link border-0 px-3 m-0" data-toggle="tooltip" style="background:none;">
+                                    <button type="submit" id="logout" class="nav-link border-0" data-toggle="tooltip" style="background:none; width:100%;">
                                         <i class="ni ni-button-power text-red"></i>
                                         <span class="nav-link-text ml-2">Keluar</span>
                                     </button>
@@ -263,11 +263,11 @@
         <script src="{{ asset('admin/assets/js/argon.js?v=1.1.0') }}"></script>
 
         {{-- SweetAlert2 --}}
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="{{ asset('admin/assets/js/sweetalert.js') }}"></script>
 
         {{-- Custom JS --}}
         <script src="{{ asset('admin/assets/js/script.js') }}"></script>
-
+        
         {{-- CK Editor --}}
         <script src="//cdn.ckeditor.com/4.18.0/basic/ckeditor.js"></script>
 

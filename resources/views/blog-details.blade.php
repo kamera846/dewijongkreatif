@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
-@section('page-content')    
-    <section class="page-title style-two" style="background-image: url(assets/images/background/bg-11.jpg)">
+@section('page-content')
+    <section class="page-title style-two" style="background-image: url({{ asset('assets/images/background/bg-11.jpg') }})">
         <div class="auto-container">
             <div class="content-box">
                 <div class="content-wrapper">
@@ -29,7 +29,7 @@
                 <div class="col-lg-8">
                     <div class="blog-single-post">
                         <div class="top-content">
-                            <div class="image mb-5"><img src="assets/images/resource/news-23.jpg" alt="" /></div>
+                            <div class="image mb-5"><img src="{{ asset('assets/images/resource/news-23.jpg') }}" alt="" /></div>
                             <h4>
                                 Eabore dolore magn aliqua enim veniam quis nostrud exercitas reprehenderit sint voluptate <br />
                                 cillum dolore fugiat nulla pariatur excepteur sint occaecat cupidats.
@@ -46,10 +46,10 @@
                             </div>
                             <div class="row mb-30">
                                 <div class="col-md-6">
-                                    <div class="image mb-30"><img src="assets/images/resource/news-24.jpg" alt="" /></div>
+                                    <div class="image mb-30"><img src="{{ asset('assets/images/resource/news-24.jpg') }}" alt="" /></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="image mb-30"><img src="assets/images/resource/news-25.jpg" alt="" /></div>
+                                    <div class="image mb-30"><img src="{{ asset('assets/images/resource/news-25.jpg') }}" alt="" /></div>
                                 </div>
                             </div>
                             <h3>Start An Evening With Drinks At Rooftop Bars</h3>
@@ -57,7 +57,7 @@
                                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium tom rem aperiam, eaque ipsa quae ab illo inventore veritatiset quasi architecto beatae vitae dicta sunt
                                 explic abo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut.
                             </div>
-                            <blockquote style="background-image: url(assets/images/resource/news-26.jpg)">
+                            <blockquote style="background-image: url({{ asset('assets/images/resource/news-26.jpg') }})">
                                 <div class="quote"><span class="icon-quote"></span></div>
                                 <p>
                                     Fugiat nula pariatur excepteur sint ocaecat cupidata proident euntin <br />

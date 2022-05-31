@@ -153,7 +153,7 @@ class UserController extends Controller
                 'no_hp' => $request->no_hp,
             ]);
 
-        return redirect('/dashboard/user')->with('success', 'memperbarui');
+        return redirect('/dashboard')->with('success', 'memperbarui');
     }
 
 

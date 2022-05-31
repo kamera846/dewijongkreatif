@@ -33,12 +33,12 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/blog/store" method="post" enctype="multipart/form-data">
+                                <form action="/dashboard/blog/store" method="post" enctype="multipart/form-data" >
                                   @csrf
                                   <div class="form-group row">
-                                    <label for="judul" class="col-md-3 col-form-label form-control-label">Judul</label>
+                                    <label for="judul" class="col-md-3 col-form-label form-control-label">Judul<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
-                                      <input class="form-control @error('judul') is-invalid @enderror form-control-alternative" type="text" id="judul" name="judul" required  value="{{ old('judul') }}">
+                                      <input class="form-control @error('judul') is-invalid @enderror form-control-alternative" type="text" id="judul" name="judul" required  value="{{ old('judul') }}" autocomplete="off">
                                       @error('judul')
                                           <div class="invalid-feedback">
                                             {{ $message }}
@@ -47,9 +47,9 @@
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
+                                    <label for="foto" class="col-md-3 col-form-label form-control-label">Foto<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
-                                        <input class="form-control @error('is-invalid') @enderror form-control-alternative" type="file" id="gambar_blog" name="gambar_blog">
+                                        <input class="form-control @error('is-invalid') @enderror form-control-alternative" type="file" id="gambar_blog" name="gambar_blog" required>
                                         @error('gambar_blog')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -65,9 +65,9 @@
                                   <input type="hidden" name="created_at" value="{{ date('Y/m/d') }}">
 
                                   <div class="form-group row">
-                                    <label for="konten" class="col-md-3 col-form-label form-control-label">Konten</label>
+                                    <label for="konten" class="col-md-3 col-form-label form-control-label">Konten<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
-                                        <textarea class="ckeditor @error('konten') is-invalid @enderror" name="konten" id="konten" rows="3" required >{{ old('konten') }}</textarea>
+                                        <textarea class="ckeditor @error('konten') is-invalid @enderror" name="konten" id="konten" required >{{ old('konten') }}</textarea>
                                         @error('konten')
                                             <div class="invalid-feedback">
                                               {{ $message }}

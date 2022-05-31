@@ -23,7 +23,7 @@
 @section('page-content')
     <div class="container-fluid mt--6">
         <div class="row">
-            <div class="col-lg-8 col-md-10">
+            <div class="col-lg-10">
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
@@ -37,7 +37,7 @@
                                     @csrf
                                     @method('put')
                                   <div class="form-group row">
-                                    <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
+                                    <label for="foto" class="col-md-3 col-form-label form-control-label">Foto<span class="text-danger">*</span></label>
                                     <input type="hidden" name="fotoLama" value="{{ $gallery->foto }}">
                                     <div class="col-md-9">
                                       <input class="form-control form-control-alternative" type="file" id="foto" name="foto"  value="{{ $gallery->foto, old('foto') }}">
@@ -45,9 +45,9 @@
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="judul" class="col-md-3 col-form-label form-control-label">Judul</label>
+                                    <label for="judul" class="col-md-3 col-form-label form-control-label">Judul<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
-                                      <input class="form-control @error('is-invalid') @enderror form-control-alternative" type="text" id="judul" name="judul"   value="{{ $gallery->judul, old('judul') }}">
+                                      <input class="form-control @error('is-invalid') @enderror form-control-alternative" type="text" id="judul" name="judul"   value="{{ $gallery->judul, old('judul') }}" autocomplete="off">
                                       @error('judul')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -58,7 +58,7 @@
                                   <div class="form-group row">
                                     <label for="deskripsi" class="col-md-3 col-form-label form-control-label">Deskripsi</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control form-control-alternative @error('is-invalid') @enderror" name="deskripsi" id="deskripsi" rows="3">{{ $gallery->deskripsi, old('deskripsi') }}</textarea>
+                                        <textarea class="form-control form-control-alternative @error('is-invalid') @enderror" name="deskripsi" id="deskripsi" rows="4">{{ $gallery->deskripsi, old('deskripsi') }}</textarea>
                                         @error('deskripsi')
                                         <div class="invalid-feedback">
                                             {{ $message }}

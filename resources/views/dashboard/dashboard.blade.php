@@ -14,6 +14,10 @@
                         </nav>
                     </div>
                 </div>
+
+                {{-- alert edit profile --}}
+                <div class="flash-data" data-flashdata="{{ (session()->has('success'))?session('success'):'' }}{{ (session()->has('error'))?session('error'):'' }}"></div>
+
                 <div class="row">
                     <div class="col-xl-4 col-md-6">
                         <div class="card card-stats">

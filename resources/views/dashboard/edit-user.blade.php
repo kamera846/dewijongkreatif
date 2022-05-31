@@ -33,11 +33,11 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/user/{{ $user->id }}/update" method="POST" enctype="multipart/form-data">
+                                <form action="/dashboard/user/{{ $user->id }}/update" method="POST" enctype="multipart/form-data" autocomplete="off">
                                   @csrf
                                   @method('put')
                                   <div class="form-group row">
-                                    <label for="nama" class="col-md-3 col-form-label form-control-label">Nama</label>
+                                    <label for="nama" class="col-md-3 col-form-label form-control-label">Nama<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
                                       <input class="form-control @error('nama') is-invalid @enderror form-control-alternative" type="text" id="nama" name="nama" required value="{{ $user->nama }}">
                                     </div>
@@ -48,7 +48,7 @@
                                     @enderror
                                   </div>
                                   <div class="form-group row">
-                                    <label for="email" class="col-md-3 col-form-label form-control-label">Alamat Email</label>
+                                    <label for="email" class="col-md-3 col-form-label form-control-label">Alamat Email<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
                                       <input class="form-control @error('email') is-invalid @enderror form-control-alternative" type="email" value="{{ $user->email }}" id="email"  name="email">
                                     </div>
@@ -59,7 +59,7 @@
                                     @enderror
                                   </div>
                                   <div class="form-group row">
-                                    <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
+                                    <label for="role" class="col-md-3 col-form-label form-control-label">Role<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
                                       <select name="role" id="role" class="form-control @error('role') is-invalid @enderror form-control-alternative" required>
                                         @if($user->role == 'admin')
@@ -112,9 +112,9 @@
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat</label>
+                                    <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control @error('alamat') is-invalid @enderror form-control-alternative" name="alamat" id="alamat" rows="3">{{ $user->alamat }}</textarea>
+                                        <textarea class="form-control @error('alamat') is-invalid @enderror form-control-alternative" name="alamat" id="alamat" rows="3" required>{{ $user->alamat }}</textarea>
                                     </div>
                                     @error('alamat')
                                       <div class="invalid-feedback">
@@ -126,7 +126,7 @@
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                       <button type="submit" class="btn btn-primary">Simpan</button>
-                                      <a href="/dashboard/users" class="btn btn-secondary">Batal</a> 
+                                      <a href="/dashboard/user" class="btn btn-secondary">Batal</a> 
                                     </div>
                                   </div>
                                 </form>

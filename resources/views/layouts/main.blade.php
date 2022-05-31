@@ -4,17 +4,17 @@
         <meta charset="utf-8" />
         <title>{{ $judul_halaman }}</title>
         <!-- Stylesheets -->
-        <link href="assets/css/bootstrap.css" rel="stylesheet" />
-        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet" />
+        <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
         <!-- Responsive File -->
-        <link href="assets/css/responsive.css" rel="stylesheet" />
+        <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet" />
         <!-- Color File -->
-        <link href="assets/css/color.css" rel="stylesheet" />
+        <link href="{{ asset('assets/css/color.css') }}" rel="stylesheet" />
 
         <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Merriweather:ital@0;1&display=swap" rel="stylesheet" />
 
-        <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
-        <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" />
+        <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" />
 
         <!-- Responsive -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -77,13 +77,13 @@
                             <!--Logo-->
                             <div class="logo-box">
                                 <div class="logo">
-                                    <a href="./"><img src="assets/images/tes.png" alt="" /></a>
+                                    <a href="./"><img src="{{ asset('assets/images/tes.png') }}" alt="" /></a>
                                 </div>
                             </div>
                             <!--Nav Box-->
                             <div class="nav-outer">
                                 <!--Mobile Navigation Toggler-->
-                                <div class="mobile-nav-toggler"><img src="assets/images/icons/icon-bar-2.png" alt="" /></div>
+                                <div class="mobile-nav-toggler"><img src="{{ asset('assets/images/icons/icon-bar-2.png') }}" alt="" /></div>
 
                                 <!-- Main Menu -->
                                 <nav class="main-menu navbar-expand-md navbar-light">
@@ -119,7 +119,7 @@
                                 <!--Logo-->
                                 <div class="logo-box">
                                     <div class="logo">
-                                        <a href="./"><img src="assets/images/logo.png" alt="" /></a>
+                                        <a href="./"><img src="{{ asset('assets/images/logo.png') }}" alt="" /></a>
                                     </div>
                                 </div>
                                 <!--Nav Box-->
@@ -150,7 +150,7 @@
 
                     <nav class="menu-box">
                         <div class="nav-logo">
-                            <a href="./"><img src="assets/images/logo.png" alt="" title="" /></a>
+                            <a href="./"><img src="{{ asset('assets/images/logo.png') }}" alt="" title="" /></a>
                         </div>
                         <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                         <!--Social Links-->
@@ -303,23 +303,23 @@
         <!--Scroll to top-->
         <div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon-arrow"></span></div>
 
-        <script src="assets/js/jquery.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/bootstrap-select.min.js"></script>
-        <script src="assets/js/jquery.fancybox.js"></script>
-        <script src="assets/js/isotope.js"></script>
-        <script src="assets/js/owl.js"></script>
-        <script src="assets/js/appear.js"></script>
-        <script src="assets/js/wow.js"></script>
-        <script src="assets/js/lazyload.js"></script>
-        <script src="assets/js/scrollbar.js"></script>
-        <script src="assets/js/TweenMax.min.js"></script>
-        <script src="assets/js/swiper.min.js"></script>
-        <script src="assets/js/jquery.polyglot.language.switcher.js"></script>
-        <script src="assets/js/jquery.ajaxchimp.min.js"></script>
-        <script src="assets/js/parallax-scroll.js"></script>
+        <script src="{{ asset('assets/js/jquery.js') }}"></script>
+        <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.fancybox.js') }}"></script>
+        <script src="{{ asset('assets/js/isotope.js') }}"></script>
+        <script src="{{ asset('assets/js/owl.js') }}"></script>
+        <script src="{{ asset('assets/js/appear.js') }}"></script>
+        <script src="{{ asset('assets/js/wow.js') }}"></script>
+        <script src="{{ asset('assets/js/lazyload.js') }}"></script>
+        <script src="{{ asset('assets/js/scrollbar.js') }}"></script>
+        <script src="{{ asset('assets/js/TweenMax.min.js') }}"></script>
+        <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.polyglot.language.switcher') }}.js"></script>
+        <script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+        <script src="{{ asset('assets/js/parallax-scroll.js') }}"></script>
 
-        <script src="assets/js/script.js"></script>
+        <script src="{{ asset('assets/js/script.js') }}"></script>
     </body>
 </html>

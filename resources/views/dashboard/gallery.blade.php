@@ -56,7 +56,7 @@
                                 @foreach ($galleries as $gallery)
                                 <tr>
                                     <td>
-                                        <img src="{{ asset('storage/' . $gallery->foto) }}" width="70px" class="rounded">
+                                        <img src="{{ asset('storage/' . $gallery->foto) }}" height="70px" class="rounded">
                                     </td>
                                     <td>
                                         <b>{{ $gallery->judul }}</b>

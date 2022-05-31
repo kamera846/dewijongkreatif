@@ -37,13 +37,13 @@
                                   @csrf
                                   @method('put')
                                   <div class="form-group row">
-                                    <label for="judul" class="col-md-3 col-form-label form-control-label">Judul</label>
+                                    <label for="judul" class="col-md-3 col-form-label form-control-label">Judul<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" id="judul" name="judul" value="{{ $blog->judul, old('judul') }}" required>
+                                      <input class="form-control form-control-alternative" type="text" id="judul" name="judul" value="{{ $blog->judul, old('judul') }}" required autocomplete="off">
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
+                                    <label for="foto" class="col-md-3 col-form-label form-control-label">Foto<span class="text-danger">*</span></label>
                                     <input type="hidden" name="oldBlog" value="{{ $blog->gambar_blog }}">
                                     <div class="col-md-9">
                                       <input class="form-control form-control-alternative" type="file"id="gambar_blog" name="gambar_blog" value="{{ $blog->gambar_blog }}">
@@ -58,9 +58,9 @@
 
 
                                   <div class="form-group row">
-                                    <label for="konten" class="col-md-3 col-form-label form-control-label">Konten</label>
+                                    <label for="konten" class="col-md-3 col-form-label form-control-label">Konten<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
-                                        <textarea class="ckeditor" name="konten" id="konten" rows="3" required>
+                                        <textarea class="ckeditor" name="konten" id="konten" required>
                                             {{ $blog->konten, old('konten') }}
                                         </textarea>
                                     </div>

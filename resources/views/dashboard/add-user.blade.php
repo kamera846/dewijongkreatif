@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/user/store" method="post" enctype="multipart/form-data">
+                                <form action="/dashboard/user/store" method="post" enctype="multipart/form-data" autocomplete="off">
                                   @csrf
                                   <div class="form-group row">
                                     <label for="nama" class="col-md-3 col-form-label form-control-label">Nama<span class="text-danger">*</span></label>
@@ -84,7 +84,7 @@
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="pekerjaan" class="col-md-3 col-form-label form-control-label">Pekerjaan<span class="text-danger">*</span></label>
+                                    <label for="pekerjaan" class="col-md-3 col-form-label form-control-label">Pekerjaan</label>
                                     <div class="col-md-9">
                                       <input class="form-control @error('pekerjaan') is-invalid  @enderror form-control-alternative" type="text" id="pekerjaan" name="pekerjaan" value="{{ old('pekerjaan') }}">
                                     </div>
@@ -95,9 +95,9 @@
                                     @enderror
                                   </div>
                                   <div class="form-group row">
-                                    <label for="no_hp" class="col-md-3 col-form-label form-control-label">Nomor HP<span class="text-danger">*</span></label>
+                                    <label for="no_hp" class="col-md-3 col-form-label form-control-label">Nomor HP</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative @error('no_hp') is-invalid @enderror " type="number" id="no_hp" name="no_hp" value="{{ old('no_hp') }}">
+                                      <input class="form-control form-control-alternative @error('no_hp') is-invalid @enderror" type="number" id="no_hp" name="no_hp" value="{{ old('no_hp') }}">
                                     </div>
                                     @error('no_hp')
                                         <div class="invalid-feedback">

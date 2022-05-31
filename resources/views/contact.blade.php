@@ -82,19 +82,19 @@
                             </div>
                             <!--Contact Form-->
                             <div class="contact-form">
-                                <form method="post" target="_blank" action="/wa-me" id="contact-form">
+                                <form method="post" target="_blank" id="contact-form">
                                     <div class="row">
                                         <div class="form-group col-md-12">
-                                            <input type="text" name="nama" value="" placeholder="Your Name" required />
+                                            <input type="text" name="nama" placeholder="Your Name" required />
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <input type="text" name="email" value="" placeholder="Your Email" required />
+                                            <input type="email" name="email" placeholder="Your Email" required />
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <input type="text" name="subjek" value="" placeholder="Subject" required />
+                                            <input type="text" name="subjek" placeholder="Subject" required />
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <textarea name="pesan" placeholder="MEssage"></textarea>
+                                            <textarea name="pesan" placeholder="Message"></textarea>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <button class="theme-btn btn-style-one" type="submit" name="submit" data-loading-text="Please wait..."><span>Send Message</span></button>

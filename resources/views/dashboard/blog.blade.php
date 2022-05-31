@@ -58,7 +58,7 @@
                                 @foreach ($blogs as $blog)
                                 <tr>
                                     <td>
-                                        <img src="{{ asset('storage/' . $blog->gambar_blog) }}" width="70px" class="rounded">
+                                        <img src="{{ asset('storage/' . $blog->gambar_blog) }}" height="70px" class="rounded">
                                     </td>
                                     <td>
                                         <b>{{ $blog->judul }}</b>

@@ -67,7 +67,7 @@
         <script src="{{ asset('admin/assets/js/argon.js?v=1.1.0') }}"></script>
 
         {{-- SweetAlert2 --}}
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="{{ asset('admin/assets/js/sweetalert.js') }}"></script>
 
         {{-- Custom JS --}}
         <script>

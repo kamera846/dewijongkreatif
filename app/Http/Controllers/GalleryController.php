@@ -21,7 +21,7 @@ class GalleryController extends Controller
     public function create()
     {
         return view('dashboard.add-gallery', [
-            'judul_halaman' => 'Admin | Tambah Data Galeri'
+            'judul_halaman' => 'Admin | Tambah Galeri'
         ]);
     }
 

@@ -50,7 +50,7 @@
                                 <div class="form-group row">
                                   <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
                                   <div class="col-md-9">
-                                    <select name="role" id="role" class="form-control @error('role') is-invalid @enderror form-control-alternative" required>
+                                    <select name="role" id="role" class="form-control @error('role') is-invalid @enderror form-control-alternative" disabled>
                                       @if($user->role == 'admin')
                                       <option value="{{ $user->role }}">{{ $user->role }}</option>
                                       <option value="Super-admin">Super-admin</option>
