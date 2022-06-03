@@ -13,8 +13,8 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Merriweather:ital@0;1&display=swap" rel="stylesheet" />
 
-        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" />
-        <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" />
+        <!-- <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" />
+        <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" /> -->
 
         <!-- Responsive -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -77,7 +77,8 @@
                             <!--Logo-->
                             <div class="logo-box">
                                 <div class="logo">
-                                    <a href="./"><img src="{{ asset('assets/images/tes.png') }}" alt="" /></a>
+                                    <!-- <a href="./"><img src="{{ asset('assets/images/tes.png') }}" alt="" /></a> -->
+                                    <a href="/"><h1 class="text-white">Loha</h1><p class="text-white">Desa Wisata</p></a>
                                 </div>
                             </div>
                             <!--Nav Box-->
@@ -119,7 +120,8 @@
                                 <!--Logo-->
                                 <div class="logo-box">
                                     <div class="logo">
-                                        <a href="./"><img src="{{ asset('assets/images/logo.png') }}" alt="" /></a>
+                                        <!-- <a href="./"><img src="{{ asset('assets/images/logo.png') }}" alt="" /></a> -->
+                                        <a href="/"><h1 class="text-white">Loha</h1><p class="text-white">Desa Wisata</p></a>
                                     </div>
                                 </div>
                                 <!--Nav Box-->
@@ -150,7 +152,8 @@
 
                     <nav class="menu-box">
                         <div class="nav-logo">
-                            <a href="./"><img src="{{ asset('assets/images/logo.png') }}" alt="" title="" /></a>
+                            <!-- <a href="./"><img src="{{ asset('assets/images/logo.png') }}" alt="" title="" /></a> -->
+                            <a href="/">Desa Wisata Loha</a>
                         </div>
                         <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                         <!--Social Links-->

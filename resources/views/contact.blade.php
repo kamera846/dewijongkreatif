@@ -116,7 +116,7 @@
                 <div class="col-lg-6">
                     <div class="contact-info-block">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63121.39474257329!2d116.08157380300491!3d-8.58761734979695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdbf5f22de1ef1%3A0x3030bfbcaf7d0d0!2sMataram%2C%20Mataram%20City%2C%20West%20Nusa%20Tenggara!5e0!3m2!1sen!2sid!4v1650996049299!5m2!1sen!2sid"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58425.99808385405!2d120.12797910318749!3d-8.505105885592616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db47f56982b004d%3A0xb945a6dc254731d5!2sLoha%2C%20Macang%20Pacar%2C%20West%20Manggarai%20Regency%2C%20East%20Nusa%20Tenggara!5e0!3m2!1sen!2sid!4v1654243517231!5m2!1sen!2sid"
                             width="100%"
                             height="450"
                             style="border: 0"
@@ -136,7 +136,7 @@
                         <ul class="contact-info">
                             <li>
                                 <div class="icon"><img src="assets/images/icons/icon-1.png" alt="" /></div>
-                                <div class="text"><strong>Lokasi</strong> 36 King Street, LaneWalk, Governlia 030204 - US</div>
+                                <div class="text"><strong>Lokasi</strong> Desa Loha, kecamatan pacar, kabupaten Manggarai Barat - NTT</div>
                             </li>
                             <li>
                                 <div class="icon"><img src="assets/images/icons/icon-2.png" alt="" /></div>
