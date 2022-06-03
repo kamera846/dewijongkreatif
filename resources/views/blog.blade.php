@@ -83,9 +83,14 @@
                                         <a href="/blog/{{ $blog->slug }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit postingan">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="#" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus postingan">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
+                                        <form action="/blog/{{ $blog->id }}/delete" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            {{-- <a href="#" class="table-action table-action-delete" id="hapus" data-toggle="tooltip" data-original-title="Hapus postingan">
+                                            </a>
+                                                <i class="fas fa-trash"></i> --}}
+                                            <button type="submit" onclick="return confirm('apakah anda ingin menghapus data ini?')" style="background: none; border:none; color:#adb5bd;"><i class="fas fa-trash"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

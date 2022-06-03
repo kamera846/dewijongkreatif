@@ -72,13 +72,13 @@
         {{-- Alert Admin --}}
         
         {{-- Login --}}
-        <script>
+        {{-- <script>
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Mohon periksa email dan password anda',
             })
-        </script>
+        </script> --}}
 
         {{-- <script>
             Swal.fire({

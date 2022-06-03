@@ -65,14 +65,17 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/gallery', function () {
-    return view('gallery', ['judul_halaman' => 'Admin | Data Galeri']);
+    return view('gallery', [
+        'judul_halaman' => 'Admin | Data Galeri',
+        'galleries' => Gallery::latest()->get()
+    ]);
 });
 Route::get('/add-gallery', function () {
-        return view('add-gallery', ['judul_halaman' => 'Admin | Tambah Galeri']);
-    });
+    return view('add-gallery', ['judul_halaman' => 'Admin | Tambah Galeri']);
+});
 Route::get('/edit-gallery', function () {
-        return view('edit-gallery', ['judul_halaman' => 'Admin | Edit Galeri']);
-    });
+    return view('edit-gallery', ['judul_halaman' => 'Admin | Edit Galeri']);
+});
 
 Route::get('/contact', function () {
     return view('contact', ['judul_halaman' => 'Admin | Profil Kontak']);

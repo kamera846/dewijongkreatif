@@ -71,7 +71,7 @@
 
                         <!-- Divider -->
                         <hr class="my-3">
-
+                        @can('isSuperAdmin')     
                         <h6 class="navbar-heading p-0 text-primary">DATA</h6>
                         <ul class="navbar-nav mb-md-3">
                             <li class="nav-item">
@@ -94,54 +94,114 @@
                                 <a 
                                 class="
                                     nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                                href="/gallery">
+                                    href="/gallery">
                                     <i class="ni ni-album-2 text-info"></i>
                                     <span class="nav-link-text">Galeri</span>
                                 </a>
                             </li>
                         </ul>
-
-                        <!-- Divider -->
+                        
                         <hr class="my-3">
-
+                        
                         <h6 class="navbar-heading p-0 text-primary">PROFIL</h6>
                         <ul class="navbar-nav mb-md-3">
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Profil Kontak') ? 'active' : '' }}" 
-                                href="/dashboard/contact">
-                                    <i class="ni ni-email-83 text-red"></i>
-                                    <span class="nav-link-text">Kontak</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a 
-                                class="nav-link {{ ( $judul_halaman === 'Admin | Profil Sosial Media') ? 'active' : '' }}" 
-                                href="/dashboard/social">
-                                    <i class="ni ni-like-2 text-purple"></i>
-                                    <span class="nav-link-text">Sosial Media</span>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <!-- Divider -->
-                        <hr class="my-3">
-
-                        <ul class="navbar-nav mb-md-3">
-                            <li class="nav-item">
-                                <a 
-                                id="logout"
-                                class="nav-link" 
-                                href="logout">
-                                    <i class="ni ni-button-power text-red"></i>
-                                    <span class="nav-link-text">Keluar</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- <hr class="my-3" /> -->
-                    </div>
-                </div>
-            </div>
+                                href="/contact">
+                                <i class="ni ni-email-83 text-red"></i>
+                                <span class="nav-link-text">Kontak</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a 
+                            class="nav-link {{ ( $judul_halaman === 'Admin | Profil Sosial Media') ? 'active' : '' }}" 
+                            href="/social">
+                            <i class="ni ni-like-2 text-purple"></i>
+                            <span class="nav-link-text">Sosial Media</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Divider -->
+                
+                <!-- Divider -->
+                <hr class="my-3">
+                
+                <ul class="navbar-nav mb-md-3">
+                    <li class="nav-item">
+                        <a 
+                        id="logout"
+                        class="nav-link" 
+                        href="logout">
+                        <i class="ni ni-button-power text-red"></i>
+                        <span class="nav-link-text">Keluar</span>
+                    </a>
+                </li>
+            </ul>
+            @elsecan('isAdmin')
+            <h6 class="navbar-heading p-0 text-primary">DATA</h6>
+            <ul class="navbar-nav mb-md-3">
+                <li class="nav-item">
+                    <a 
+                    class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
+                    href="/blog">
+                        <i class="ni ni-single-copy-04 text-orange"></i>
+                        <span class="nav-link-text">Blog</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a 
+                    class="
+                        nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
+                        href="/gallery">
+                        <i class="ni ni-album-2 text-info"></i>
+                        <span class="nav-link-text">Galeri</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <hr class="my-3">
+            
+            <h6 class="navbar-heading p-0 text-primary">PROFIL</h6>
+            <ul class="navbar-nav mb-md-3">
+                <li class="nav-item">
+                    <a 
+                    class="nav-link {{ ( $judul_halaman === 'Admin | Profil Kontak') ? 'active' : '' }}" 
+                    href="/contact">
+                    <i class="ni ni-email-83 text-red"></i>
+                    <span class="nav-link-text">Kontak</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a 
+                class="nav-link {{ ( $judul_halaman === 'Admin | Profil Sosial Media') ? 'active' : '' }}" 
+                href="/social">
+                <i class="ni ni-like-2 text-purple"></i>
+                <span class="nav-link-text">Sosial Media</span>
+            </a>
+        </li>
+    </ul>
+    <!-- Divider -->
+    
+    <!-- Divider -->
+    <hr class="my-3">
+    
+    <ul class="navbar-nav mb-md-3">
+        <li class="nav-item">
+            <a 
+            id="logout"
+            class="nav-link" 
+            href="logout">
+            <i class="ni ni-button-power text-red"></i>
+            <span class="nav-link-text">Keluar</span>
+        </a>
+    </li>
+</ul>
+            @endcan
+            <!-- <hr class="my-3" /> -->
+        </div>
+    </div>
+</div>
         </nav>
         <!-- Main content -->
         <div class="main-content" id="panel">
