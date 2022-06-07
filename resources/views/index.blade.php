@@ -88,38 +88,38 @@
             <div class="sec-title text-center">
                 <div class="sub-title">City With Equity - Efficiency - Opportunity</div>
                 <h2>
-                    Infrastructures, Wide Spaces <br />
-                    & Flawless Attractions
+                    Infrastruktur, Ruang Luas <br />
+                     & Atraksi Sempurna
                 </h2>
             </div>
             <div class="row">
                 <div class="col-lg-5">
                     <div class="content-block wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <h3>Voice Of The People: <strong> Governlia</strong></h3>
+                        <h3>Suara dari penduduk: <strong> Governlia</strong></h3>
                         <div class="text">
                             Veniam quis nostrud exercitation llamco laboris nis aliquip conseqa rure dolorn repreh derit luptate velit excepteur ocaecats aliquip ex duis aute irure dolor in reprehenderit voluptate velitey cillum
                             dolore ipsum dolor consectetur.
                         </div>
                         <ul class="list">
-                            <li>Improving all types of opportunities</li>
-                            <li>Quick solutions for daily problems</li>
-                            <li>Best time and place to start business</li>
-                            <li>Community that grows larger</li>
+                            <li>Meningkatkat semua jenis peluang</li>
+                            <li>Solusi cepat untuk masalah sehari-hari</li>
+                            <li>Waktu dan tempt terbaik untuk memulai bisnis</li>
+                            <li>Komunitas yang tumbuh lebih besar</li>
                         </ul>
                         <div class="bottom-content">
                             <div class="text">
-                                For Any Help, Questions <br />
-                                or Suggestions, Contact Us
+                                Untuk Bantuan, Pertanyaan <br />
+                                atau Saran, Hubungi Kami
                             </div>
                             <ul class="contact-link">
                                 <li>
-                                    <a href="tel:+1(345)20678"><i class="icon-phone"></i></a>
+                                    <a href="tel:+62 823 3976 5401"><i class="icon-phone"></i></a>
                                 </li>
                                 <li>
                                     <a href="mailto:munciple@example.net"><i class="icon-envelope"></i></a>
                                 </li>
                                 <li>
-                                    <a href="contact.php"><i class="icon-placeholder"></i></a>
+                                    <a href="https://goo.gl/maps/FJ7tb6KtzutPCNjh8" target="_blank"><i class="icon-placeholder"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -153,7 +153,7 @@
                             <div class="icon"><span class="icon-area"></span></div>
                         </div>
                         <div class="content">
-                            <div class="text">Area Covered</div>
+                            <div class="text">Luas Area</div>
                             <div class="count-outer count-box"><span class="count-text" data-speed="3000" data-stop="790.3">0</span><span>km²</span></div>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                             <div class="icon"><span class="icon-people"></span></div>
                         </div>
                         <div class="content">
-                            <div class="text">Peoples Lived</div>
+                            <div class="text">Jumlah Penduduk</div>
                             <div class="count-outer count-box"><span class="count-text" data-speed="3000" data-stop="5.39">0</span><span>million</span></div>
                         </div>
                     </div>
@@ -177,7 +177,7 @@
                             <div class="icon"><span class="icon-language"></span></div>
                         </div>
                         <div class="content">
-                            <div class="text">Languages Spoken</div>
+                            <div class="text">Bahasa Diucapkan</div>
                             <div class="count-outer count-box"><span>Over</span><span class="count-text" data-speed="3000" data-stop="460">0</span></div>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
         <div class="auto-container">
             <div class="sec-title text-center">
                 <div class="sub-title">City With Equity - Efficiency - Opportunity</div>
-                <h2>City Programs & Initiatives</h2>
+                <h2>Program & Inisiatif Desa</h2>
             </div>
             <div class="row">
                 <div class="col-lg-4 program-block">
@@ -221,14 +221,11 @@
                             </svg>
                         </div>
                         <div class="icon"><span class="icon-home"></span></div>
-                        <div class="category"><a href="#">Real Estate</a></div>
+                        <div class="category"><span>Perumahan</span></div>
                         <h4>
-                            Assistance For <br />
-                            Properties Area
+                            Bantuan Untuk <br />
+                             Area Properti
                         </h4>
-                        <div class="link-btn">
-                            <a href="#"><i class="icon-arrow"></i></a>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 program-block">
@@ -258,11 +255,8 @@
                             </svg>
                         </div>
                         <div class="icon"><span class="icon-flower"></span></div>
-                        <div class="category"><a href="#">City Culture</a></div>
-                        <h4>Recreation Programs <br />For All Citizens</h4>
-                        <div class="link-btn">
-                            <a href="#"><i class="icon-arrow"></i></a>
-                        </div>
+                        <div class="category"><span>Adat Desa</span></div>
+                        <h4>Program Rekreasi <br />Untuk Semua Masyarakat</h4>
                     </div>
                 </div>
                 <div class="col-lg-4 program-block">
@@ -292,14 +286,11 @@
                             </svg>
                         </div>
                         <div class="icon"><span class="icon-health"></span></div>
-                        <div class="category"><a href="#">Physical Health</a></div>
+                        <div class="category"><span>Kesehatan Jasmani</span></div>
                         <h4>
-                            A Long-Term Vision Of <br />
-                            Healthy & Active
+                            Visi Jangka Panjang <br />
+                             Sehat & Aktif
                         </h4>
-                        <div class="link-btn">
-                            <a href="#"><i class="icon-arrow"></i></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -493,13 +484,12 @@
         <div class="auto-container">
             <div class="sec-title">
                 <div class="sub-title">City With Equity - Efficiency - Opportunity</div>
-                <h2>City Municipality Services <br />And Departments</h2>
+                <h2>Galeri Desa</h2>
             </div>
             <div class="highlight-block-area">
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="text-blcok">
-                            <h4>Luxe Street With Buildings</h4>
                             <div class="text">
                                 Hiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniay <br />
                                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ela reprehenderit in <br />
@@ -589,7 +579,7 @@
         <div class="auto-container">
             <div class="wrapper-box" style="background-image: url(assets/images/background/bg-4.jpg)">
                 <div class="top-content">
-                    <h2>Untuk Saran dan Pertanyaan</h2>
+                    <h2>Untuk Bantuan atau Pertanyaan</h2>
                     <div class="text">
                         Tempor incididunt ut labore et dolore magna aliqua. Ut minim veniay quis nostrud <br />
                         exercitation ullamco laboris nisi ut aliquip ex ela reprehenderit

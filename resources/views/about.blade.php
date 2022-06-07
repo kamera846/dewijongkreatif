@@ -24,36 +24,36 @@
                 <div class="col-lg-6">
                     <div class="sec-title mb-30">
                         <h2>
-                            Clean Infrastructures <br />
-                            & Flawless Attractions
+                            Infrastruktur Bersih <br />
+                            & Atraksi Sempurna
                         </h2>
                     </div>
                     <div class="content-block">
-                        <h3>Voice Of The People: <strong> Governlia</strong></h3>
+                        <h3>Suara dari penduduk: <strong> Governlia</strong></h3>
                         <div class="text">
                             Veniam quis nostrud exercitation llamco laboris nis aliquip conseqa rure dolorn repreh derit luptate velit excepteur ocaecats aliquip ex duis aute irure dolor in reprehenderit voluptate velitey cillum
                             dolore ipsum dolor consectetur.
                         </div>
                         <ul class="list">
-                            <li>Improving all types of opportunities</li>
-                            <li>Quick solutions for daily problems</li>
-                            <li>Best time and place to start business</li>
-                            <li>Community that grows larger</li>
+                            <li>Meningkatkat semua jenis peluang</li>
+                            <li>Solusi cepat untuk masalah sehari-hari</li>
+                            <li>Waktu dan tempt terbaik untuk memulai bisnis</li>
+                            <li>Komunitas yang tumbuh lebih besar</li>
                         </ul>
                         <div class="bottom-content">
                             <div class="text">
-                                For Any Help, Questions <br />
-                                or Suggestions, Contact Us
+                                Untuk Bantuan, Pertanyaan <br />
+                                atau Saran, Hubungi Kami
                             </div>
                             <ul class="contact-link">
                                 <li>
-                                    <a href="tel:+1(345)20678"><i class="icon-phone"></i></a>
+                                    <a href="tel:+62 823 3976 5401"><i class="icon-phone"></i></a>
                                 </li>
                                 <li>
                                     <a href="mailto:munciple@example.net"><i class="icon-envelope"></i></a>
                                 </li>
                                 <li>
-                                    <a href="contact.php"><i class="icon-placeholder"></i></a>
+                                    <a href="https://goo.gl/maps/FJ7tb6KtzutPCNjh8" target="_blank"><i class="icon-placeholder"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -87,7 +87,7 @@
                             <div class="icon"><span class="icon-area"></span></div>
                         </div>
                         <div class="content">
-                            <div class="text">Area Covered</div>
+                            <div class="text">Luas Area</div>
                             <div class="count-outer count-box"><span class="count-text" data-speed="3000" data-stop="790.3">0</span><span>km²</span></div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                             <div class="icon"><span class="icon-people"></span></div>
                         </div>
                         <div class="content">
-                            <div class="text">Peoples Lived</div>
+                            <div class="text">Jumlah Penduduk</div>
                             <div class="count-outer count-box"><span class="count-text" data-speed="3000" data-stop="5.39">0</span><span>million</span></div>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                             <div class="icon"><span class="icon-language"></span></div>
                         </div>
                         <div class="content">
-                            <div class="text">Languages Spoken</div>
+                            <div class="text">Bahasa Diucapkan</div>
                             <div class="count-outer count-box"><span>Over</span><span class="count-text" data-speed="3000" data-stop="460">0</span></div>
                         </div>
                     </div>

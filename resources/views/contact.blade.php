@@ -73,7 +73,7 @@
                             <div class="sec-title mb-30">
                                 <h2>
                                     Mencari Bantuan <br />
-                                    Atau Punya Pertanyaan
+                                    Atau Punya Pertanyaan?
                                 </h2>
                             </div>
                             <div class="text mb-30">
@@ -85,19 +85,19 @@
                                 <form method="post" target="_blank" id="contact-form">
                                     <div class="row">
                                         <div class="form-group col-md-12">
-                                            <input type="text" name="nama" placeholder="Your Name" required />
+                                            <input type="text" name="nama" placeholder="Nama" required />
+                                        </div>
+                                            <div class="form-group col-md-12">
+                                            <input type="email" name="email" placeholder="Email" required />
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <input type="email" name="email" placeholder="Your Email" required />
+                                            <input type="text" name="subjek" placeholder="Subjek" required />
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <input type="text" name="subjek" placeholder="Subject" required />
+                                            <textarea name="pesan" placeholder="Pesan"></textarea>
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <textarea name="pesan" placeholder="Message"></textarea>
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <button class="theme-btn btn-style-one" type="submit" name="submit" data-loading-text="Please wait..."><span>Send Message</span></button>
+                                            <button class="theme-btn btn-style-one" type="submit" name="submit" data-loading-text="Please wait..."><span>Kirim Pesan</span></button>
                                         </div>
                                     </div>
                                 </form>
@@ -116,7 +116,7 @@
                 <div class="col-lg-6">
                     <div class="contact-info-block">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63121.39474257329!2d116.08157380300491!3d-8.58761734979695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdbf5f22de1ef1%3A0x3030bfbcaf7d0d0!2sMataram%2C%20Mataram%20City%2C%20West%20Nusa%20Tenggara!5e0!3m2!1sen!2sid!4v1650996049299!5m2!1sen!2sid"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11160.046290709839!2d120.14141150700297!3d-8.531169585666012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db47f68c228c91f%3A0xd9ee4fa3474613c!2sDESA%20LOHA!5e0!3m2!1sid!2slk!4v1654579427339!5m2!1sid!2slk"
                             width="100%"
                             height="450"
                             style="border: 0"
@@ -136,13 +136,15 @@
                         <ul class="contact-info">
                             <li>
                                 <div class="icon"><img src="assets/images/icons/icon-1.png" alt="" /></div>
-                                <div class="text"><strong>Lokasi</strong> 36 King Street, LaneWalk, Governlia 030204 - US</div>
+                                <div class="text">
+                                    <strong>Lokasi</strong> Desa Loha, kecamatan Pacar,<br />
+                                    kabupaten Manggarai Barat - NTT</div>
                             </li>
                             <li>
                                 <div class="icon"><img src="assets/images/icons/icon-2.png" alt="" /></div>
                                 <div class="text">
                                     <strong>Telepon</strong>
-                                    <a href="tel:+1(345)2067849">+ 1 (345) 206 7849</a>
+                                    <a href="tel:+62 823 3976 5401">+62 823 3976 5401</a>
                                 </div>
                             </li>
                             <li>
