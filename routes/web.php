@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Contact;
 
 
 // Route::get('/register', [RegisterController::class, 'index']);
@@ -86,6 +87,8 @@ Route::get('/blog', function() {
 Route::get('/blog/slug', function() {
     return view('blog-details', ['judul_halaman' => 'Judul Postingan | Desa Wisata Loha']);
 });
-Route::get('/contact', function() {
-    return view('contact', ['judul_halaman' => 'Kontak Kami | Desa Wisata Loha']);
-});
+// Route::get('/contact', function() {
+//     return view('contact', ['judul_halaman' => 'Kontak Kami | Desa Wisata Loha']);
+// });
+Route::get('/contact', [Contact::class, 'show']);
+Route::post('/contact', [Contact::class, 'sendMail']);

@@ -76,7 +76,6 @@
 
             if (flashData === "gagal") {
                 Swal.fire("Gagal", "Email / kata sandi salah!", "error");
-            } else if (flashData === "password") {
             }
 
         </script>
