@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('foto_profil')->nullable();
             $table->text('nama');
-            $table->text('email')->unique();
+            $table->string('email')->unique();
             $table->string('password');
             $table->text('alamat');
             $table->text('pekerjaan')->nullable();

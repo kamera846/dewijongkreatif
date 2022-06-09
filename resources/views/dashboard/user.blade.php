@@ -59,9 +59,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @guest
-                                    
-                                @endguest
                                 @foreach ($users as $user)
                                 <tr>
                                     <td class="table-user">
@@ -105,7 +102,7 @@
                                             <button type="submit" id="hapus" class="table-action table-action-delete border-0 p-0 m-0" data-toggle="tooltip" data-original-title="Hapus pengguna" style="background:none;">
                                                 <i class="fas fa-trash"></i>
                                             </button>
-                                        </form>
+                                        </form> --}}
                                     </td>
                                 </tr>
                                 @endforeach

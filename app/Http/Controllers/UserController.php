@@ -46,17 +46,19 @@ class UserController extends Controller
                 'no_hp' => $request->no_hp,
                 'role' => $request->role,
             ]);
+        } else {
+            User::create([
+                'nama' => $request->nama,
+                'email' => $request->email,
+                'password' => hash::make($request->password),
+                'alamat' => $request->alamat,
+                'pekerjaan' => $request->pekerjaan,
+                'no_hp' => $request->no_hp,
+                'role' => $request->role,
+            ]);
         }
-        User::create([
-            'nama' => $request->nama,
-            'email' => $request->email,
-            'password' => hash::make($request->password),
-            'alamat' => $request->alamat,
-            'pekerjaan' => $request->pekerjaan,
-            'no_hp' => $request->no_hp,
-            'role' => $request->role,
-        ]);
-        return redirect('/dashboard/user')->with('success', 'menambahkan');
+        
+        return redirect('/dashboard/user')->with('menambahkan');
     }
 
 

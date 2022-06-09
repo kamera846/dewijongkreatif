@@ -71,7 +71,7 @@
 
                         <!-- Divider -->
                         <hr class="my-3">
-
+                        @can('isSuperAdmin')     
                         <h6 class="navbar-heading p-0 text-primary">DATA</h6>
                         <ul class="navbar-nav mb-md-3">
                             <li class="nav-item">
