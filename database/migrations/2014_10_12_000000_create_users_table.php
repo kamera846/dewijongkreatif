@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('foto_profil')->nullable();
             $table->text('nama');
-            $table->text('email')->unique();
+            $table->string('email')->unique();
             $table->string('password');
             $table->text('alamat');
             $table->text('pekerjaan')->nullable();
             $table->string('no_hp')->nullable();
-            $table->string('role')->nullable();
+            $table->string('role');
             $table->string('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

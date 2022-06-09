@@ -46,16 +46,18 @@ class UserController extends Controller
                 'no_hp' => $request->no_hp,
                 'role' => $request->role,
             ]);
+        } else {
+            User::create([
+                'nama' => $request->nama,
+                'email' => $request->email,
+                'password' => hash::make($request->password),
+                'alamat' => $request->alamat,
+                'pekerjaan' => $request->pekerjaan,
+                'no_hp' => $request->no_hp,
+                'role' => $request->role,
+            ]);
         }
-        User::create([
-            'nama' => $request->nama,
-            'email' => $request->email,
-            'password' => hash::make($request->password),
-            'alamat' => $request->alamat,
-            'pekerjaan' => $request->pekerjaan,
-            'no_hp' => $request->no_hp,
-            'role' => $request->role,
-        ]);
+
         return redirect('/user')->with('success', 'Data user berhasil ditambahkan');
     }
 
@@ -143,17 +145,19 @@ class UserController extends Controller
                     'pekerjaan' => $request->pekerjaan,
                     'no_hp' => $request->no_hp,
                 ]);
+        } else {
+            User::where('id', Auth::user()->id)
+                ->update([
+                    'nama' => $request->nama,
+                    'email' => $request->email,
+                    'alamat' => $request->alamat,
+                    'pekerjaan' => $request->pekerjaan,
+                    'no_hp' => $request->no_hp,
+                ]);
         }
-        User::where('id', Auth::user()->id)
-            ->update([
-                'nama' => $request->nama,
-                'email' => $request->email,
-                'alamat' => $request->alamat,
-                'pekerjaan' => $request->pekerjaan,
-                'no_hp' => $request->no_hp,
-            ]);
 
-        return redirect('/user')->with('success', 'Sukses, Update Data Profil Berhasil!');
+
+        return redirect('/dashboard')->with('success', 'Sukses, Update Data Profil Berhasil!');
     }
 
 
