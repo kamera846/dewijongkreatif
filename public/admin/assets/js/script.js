@@ -23,8 +23,6 @@ if (keluar != undefined) {
 
 // hapus data
 const hapus = document.getElementById("hapus");
-const form = document.getElementById('formDelete');
-const getAtribut= form.getAttribute('action');
 if (hapus != undefined) {
     hapus.addEventListener("click", function (e) {
         e.preventDefault();

@@ -58,7 +58,7 @@ class UserController extends Controller
             ]);
         }
         
-        return redirect('/dashboard/user')->with('menambahkan');
+        return redirect('/dashboard/user')->with('success', 'menambahkan');
     }
 
 

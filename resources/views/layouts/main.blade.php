@@ -13,8 +13,8 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Merriweather:ital@0;1&display=swap" rel="stylesheet" />
 
-        <!-- <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" />
-        <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" /> -->
+        {{-- <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" />
+        <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" /> --}}
 
         <!-- Responsive -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />

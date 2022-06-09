@@ -51,54 +51,61 @@
                                     <span class="nav-link-text">Dashboard</span>
                                 </a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
-                                    <i class="ni ni-map-big text-primary"></i>
-                                    <span class="nav-link-text">Maps</span>
-                                </a>
-                                <div class="collapse" id="navbar-maps">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="./pages/maps/google.html" class="nav-link">Google</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="./pages/maps/vector.html" class="nav-link">Vector</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li> -->
                         </ul>
 
                         <!-- Divider -->
                         <hr class="my-3">
-                        @can('isSuperAdmin')     
                         <h6 class="navbar-heading p-0 text-primary">DATA</h6>
                         <ul class="navbar-nav mb-md-3">
-                            <li class="nav-item">
-                                <a 
-                                class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
-                                href="/dashboard/user">
-                                    <i class="ni ni-circle-08 text-green"></i>
-                                    <span class="nav-link-text">Pengguna</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a 
-                                class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
-                                href="/dashboard/blog">
-                                    <i class="ni ni-single-copy-04 text-orange"></i>
-                                    <span class="nav-link-text">Blog</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a 
-                                class="
-                                    nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                                href="/dashboard/gallery">
-                                    <i class="ni ni-album-2 text-info"></i>
-                                    <span class="nav-link-text">Galeri</span>
-                                </a>
-                            </li>
+
+                            @can('isSuperAdmin')
+                                <li class="nav-item">
+                                    <a 
+                                    class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
+                                    href="/dashboard/user">
+                                        <i class="ni ni-circle-08 text-green"></i>
+                                        <span class="nav-link-text">Pengguna</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a 
+                                    class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
+                                    href="/dashboard/blog">
+                                        <i class="ni ni-single-copy-04 text-orange"></i>
+                                        <span class="nav-link-text">Blog</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a 
+                                    class="
+                                        nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
+                                    href="/dashboard/gallery">
+                                        <i class="ni ni-album-2 text-info"></i>
+                                        <span class="nav-link-text">Galeri</span>
+                                    </a>
+                                </li>
+
+                            @elsecan('isAdmin')
+                                <li class="nav-item">
+                                    <a 
+                                    class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
+                                    href="/dashboard/blog">
+                                        <i class="ni ni-single-copy-04 text-orange"></i>
+                                        <span class="nav-link-text">Blog</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a 
+                                    class="
+                                        nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
+                                    href="/dashboard/gallery">
+                                        <i class="ni ni-album-2 text-info"></i>
+                                        <span class="nav-link-text">Galeri</span>
+                                    </a>
+                                </li>
+
+                            @endcan
+
                         </ul>
 
                         <!-- Divider -->
@@ -137,13 +144,6 @@
                                         <span class="nav-link-text ml-2">Keluar</span>
                                     </button>
                                 </form>
-                                {{-- <a 
-                                id="logout"
-                                class="nav-link" 
-                                href="/logout">
-                                    <i class="ni ni-button-power text-red"></i>
-                                    <span class="nav-link-text">Keluar</span>
-                                </a> --}}
                             </li>
                         </ul>
                         <!-- <hr class="my-3" /> -->
@@ -214,9 +214,9 @@
                     </div>
                     <div class="modal-body text-sm">
                         @if (Auth::user()->foto_profil != null)
-                            <img src="{{ asset('storage/' . Auth::user()->foto_profil)}}" alt="" class="rounded d-block mx-auto mb-4" width="150ox" height="150px">
+                            <img src="{{ asset('storage/' . Auth::user()->foto_profil) }}" alt="" class="rounded d-block mx-auto mb-4" width="150px" height="150px">
                         @else
-                            <img src="/storage/foto-profil/defaultuserimage.png" alt="" class="rounded d-block mx-auto mb-4" width="150ox" height="150px">
+                            <img src="/storage/foto-profil/defaultuserimage.png" alt="" class="rounded d-block mx-auto mb-4" width="150px" height="150px">
                         @endif
                         <div class="row mb-3">
                             <div class="col-4">Nama</div>
@@ -246,8 +246,10 @@
                 </div>
             </div>
         </div>
+
         {{-- boostrap js --}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
         <!-- Argon Scripts -->
         <!-- Core -->
         <script src="{{ asset('admin/assets/vendor/jquery/dist/jquery.min.js') }}"></script>
@@ -273,3 +275,4 @@
 
     </body>
 </html>
+
