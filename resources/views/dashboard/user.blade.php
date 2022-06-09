@@ -65,7 +65,7 @@
                                     @if ($user->foto_profil != null)
                                         <img src="{{asset('storage/' . $user->foto_profil)}}" class="avatar rounded-circle mr-3">
                                     @else
-                                        <img src="/storage/foto-profil/defaultuserimage.png" class="avatar rounded-circle mr-3">
+                                        <img src="{{ asset('/storage/foto-profil/defaultuserimage.png') }}" class="avatar rounded-circle mr-3">
                                     @endif
                                     </td>
                                     <td>

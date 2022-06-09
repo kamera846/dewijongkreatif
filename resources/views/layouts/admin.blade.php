@@ -57,8 +57,8 @@
                         <hr class="my-3">
                         <h6 class="navbar-heading p-0 text-primary">DATA</h6>
                         <ul class="navbar-nav mb-md-3">
-{{-- 
-                            @can('isSuperAdmin') --}}
+
+                            @if( Auth::user()->role === 'super-admin' )
                                 <li class="nav-item">
                                     <a 
                                     class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
@@ -67,44 +67,25 @@
                                         <span class="nav-link-text">Pengguna</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a 
-                                    class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
-                                    href="/dashboard/blog">
-                                        <i class="ni ni-single-copy-04 text-orange"></i>
-                                        <span class="nav-link-text">Blog</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a 
-                                    class="
-                                        nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                                    href="/dashboard/gallery">
-                                        <i class="ni ni-album-2 text-info"></i>
-                                        <span class="nav-link-text">Galeri</span>
-                                    </a>
-                                </li>
+                            @endif
 
-                            {{-- @elsecan('isAdmin')
-                                <li class="nav-item">
-                                    <a 
-                                    class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
-                                    href="/dashboard/blog">
-                                        <i class="ni ni-single-copy-04 text-orange"></i>
-                                        <span class="nav-link-text">Blog</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a 
-                                    class="
-                                        nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                                    href="/dashboard/gallery">
-                                        <i class="ni ni-album-2 text-info"></i>
-                                        <span class="nav-link-text">Galeri</span>
-                                    </a>
-                                </li>
-
-                            @endcan --}}
+                            <li class="nav-item">
+                                <a 
+                                class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
+                                href="/dashboard/blog">
+                                    <i class="ni ni-single-copy-04 text-orange"></i>
+                                    <span class="nav-link-text">Blog</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a 
+                                class="
+                                    nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
+                                href="/dashboard/gallery">
+                                    <i class="ni ni-album-2 text-info"></i>
+                                    <span class="nav-link-text">Galeri</span>
+                                </a>
+                            </li>
 
                         </ul>
 
@@ -176,14 +157,14 @@
                                     <a class="nav-link pr-0" href="#"data-toggle="modal" data-target="#profil-saya">
                                         <div class="media align-items-center">
                                             <div class="media-body mr-2 d-none d-lg-block">
-                                                <span class="mb-0 text-sm font-weight-bold">{{ Auth::user()->nama }}</span>
+                                                <span class="mb-0 text-sm font-weight-bold">{{ ucwords(Auth::user()->nama) }}</span>
                                             </div>
                                             @if (Auth::user()->foto_profil != null)
                                                 <span class="avatar avatar-sm rounded-circle">
                                                     <img alt="Image placeholder" src="{{ asset('storage/' . Auth::user()->foto_profil)}}" />
                                                 </span>
                                             @else
-                                                <img src="/storage/foto-profil/defaultuserimage.png" class="avatar rounded-circle mr-3">
+                                                <img src="{{ asset('/storage/foto-profil/defaultuserimage.png') }}" class="avatar rounded-circle mr-3">
                                             @endif
                                         </div>
                                     </a>
@@ -216,7 +197,7 @@
                         @if (Auth::user()->foto_profil != null)
                             <img src="{{ asset('storage/' . Auth::user()->foto_profil) }}" alt="" class="rounded d-block mx-auto mb-4" width="150px" height="150px">
                         @else
-                            <img src="/storage/foto-profil/defaultuserimage.png" alt="" class="rounded d-block mx-auto mb-4" width="150px" height="150px">
+                            <img src="{{ asset('/storage/foto-profil/defaultuserimage.png') }}" alt="" class="rounded d-block mx-auto mb-4" width="150px" height="150px">
                         @endif
                         <div class="row mb-3">
                             <div class="col-4">Nama</div>
