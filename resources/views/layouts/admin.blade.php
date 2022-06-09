@@ -57,8 +57,8 @@
                         <hr class="my-3">
                         <h6 class="navbar-heading p-0 text-primary">DATA</h6>
                         <ul class="navbar-nav mb-md-3">
-
-                            @can('isSuperAdmin')
+{{-- 
+                            @can('isSuperAdmin') --}}
                                 <li class="nav-item">
                                     <a 
                                     class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
@@ -85,7 +85,7 @@
                                     </a>
                                 </li>
 
-                            @elsecan('isAdmin')
+                            {{-- @elsecan('isAdmin')
                                 <li class="nav-item">
                                     <a 
                                     class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
@@ -104,7 +104,7 @@
                                     </a>
                                 </li>
 
-                            @endcan
+                            @endcan --}}
 
                         </ul>
 
