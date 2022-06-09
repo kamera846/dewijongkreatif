@@ -91,15 +91,12 @@
                                         <div class="form-group col-md-12">
                                             <input type="email" name="email" placeholder="Email" required />
                                         </div>
-                                        <div class="form-group col-md-12">
-                                            <input type="text" name="subjek" placeholder="Subjek" required />
-                                        </div>
                                         
                                         {{-- nomor --}}
                                         <input type="hidden" name="nomor" value="6282339765401" />
 
                                         <div class="form-group col-md-12">
-                                            <textarea name="pesan" placeholder="Pesan" required></textarea>
+                                            <textarea name="pesan" placeholder="Isi pesan" required></textarea>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <button class="theme-btn btn-style-one" type="submit"><span>Kirim Pesan</span></button>

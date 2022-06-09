@@ -16,11 +16,10 @@ class Contact extends Controller
         
         $nama = ucwords($request->input('nama'));
         $email = $request->input('email');
-        $subjek = $request->input('subjek');
         $pesan = $request->input('pesan');
         $nomor = $request->input('nomor');
         
-            header("location: https://api.whatsapp.com/send?phone={$nomor}&text=Nama:%20{$nama}%0D%0AEmail:%20{$email}%0D%0ASubjek:%20{$subjek}%0D%0APesan:%20{$pesan}");
+            header("location: https://api.whatsapp.com/send?phone={$nomor}&text=Nama:%20{$nama}%0D%0AEmail:%20{$email}%0D%0APesan:%20{$pesan}");
         
 
     }
