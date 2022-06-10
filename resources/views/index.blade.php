@@ -82,46 +82,20 @@
     </section>
     <!-- End Bnner Section -->
 
-    <!-- About section -->
-    <section class="about-section">
+<!-- About section -->
+<section class="about-section">
         <div class="auto-container">
             <div class="sec-title text-center">
-                <div class="sub-title">City With Equity - Efficiency - Opportunity</div>
+                <!-- <div class="sub-title">City With Equity - Efficiency - Opportunity</div> -->
                 <h2>
-                    Infrastruktur, Ruang Luas <br />
-                     & Atraksi Sempurna
+                    Cerita Desa
                 </h2>
             </div>
             <div class="row">
                 <div class="col-lg-5">
                     <div class="content-block wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <h3>Suara dari penduduk: <strong> Governlia</strong></h3>
                         <div class="text">
-                            Veniam quis nostrud exercitation llamco laboris nis aliquip conseqa rure dolorn repreh derit luptate velit excepteur ocaecats aliquip ex duis aute irure dolor in reprehenderit voluptate velitey cillum
-                            dolore ipsum dolor consectetur.
-                        </div>
-                        <ul class="list">
-                            <li>Meningkatkat semua jenis peluang</li>
-                            <li>Solusi cepat untuk masalah sehari-hari</li>
-                            <li>Waktu dan tempt terbaik untuk memulai bisnis</li>
-                            <li>Komunitas yang tumbuh lebih besar</li>
-                        </ul>
-                        <div class="bottom-content">
-                            <div class="text">
-                                Untuk Bantuan, Pertanyaan <br />
-                                atau Saran, Hubungi Kami
-                            </div>
-                            <ul class="contact-link">
-                                <li>
-                                    <a href="tel:+62 823 3976 5401"><i class="icon-phone"></i></a>
-                                </li>
-                                <li>
-                                    <a href="mailto:munciple@example.net"><i class="icon-envelope"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://goo.gl/maps/FJ7tb6KtzutPCNjh8" target="_blank"><i class="icon-placeholder"></i></a>
-                                </li>
-                            </ul>
+                            "Sejarah peradaban masyarakat penghuni kampung sowang yang berlokasi Didesa Loha, Kecamatan Pacar, Kabupaten Manggarai Barat. kampung sowang diberi nama oleh leluhur “empo” yang datang dari suku nawangkarena sebelum dijadikan sebuah tempat pemukiman. Wilayah kampung sowang pada saat itu banyak tumbuh pohon gebang (sowang) sehingga nama tersebut diambil dari nama pohon gebang yang dalam bahasa daerah setempat adalah sowang Kampung sowang dihuni oleh beberapa suku diantaranya Suku Nawang, Suku Jao,Suku Dangka Dan Suku Nduri. Kedatangan nenek moyang pertama yang menghuni kampung sowang adalah leluhur dari keturunan suku nawang dan diikuti oleh suku jao, suku dangka dan suku nduri. Suku nawang datang dan menghuni wilayah kampong sowing karena diutus oleh suku jao yang berada di dangka dengan tujuan untuk menguasai wilayah dan hak atas ulaiat kekuasaan suku jao. Semua suku yang berada di kampung sowang memiliki hubungan kekeluargaan yang sangat dekat. Hal itu terjadi karena adanya hubungan perkawinan antara suku."
                         </div>
                     </div>
                 </div>
@@ -142,235 +116,6 @@
         </div>
     </section>
 
-    <!-- Funfacts Section -->
-    <section class="funfacts-section" style="background-image: url(assets/images/background/bg-1.jpg)">
-        <div class="auto-container">
-            <div class="row">
-                <!--Column-->
-                <div class="column counter-column col-lg-4 col-md-6">
-                    <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="icon-outer">
-                            <div class="icon"><span class="icon-area"></span></div>
-                        </div>
-                        <div class="content">
-                            <div class="text">Luas Area</div>
-                            <div class="count-outer count-box"><span class="count-text" data-speed="3000" data-stop="790.3">0</span><span>km²</span></div>
-                        </div>
-                    </div>
-                </div>
-                <!--Column-->
-                <div class="column counter-column col-lg-4 col-md-6">
-                    <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="icon-outer">
-                            <div class="icon"><span class="icon-people"></span></div>
-                        </div>
-                        <div class="content">
-                            <div class="text">Jumlah Penduduk</div>
-                            <div class="count-outer count-box"><span class="count-text" data-speed="3000" data-stop="5.39">0</span><span>million</span></div>
-                        </div>
-                    </div>
-                </div>
-                <!--Column-->
-                <div class="column counter-column col-lg-4 col-md-6">
-                    <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="icon-outer">
-                            <div class="icon"><span class="icon-language"></span></div>
-                        </div>
-                        <div class="content">
-                            <div class="text">Bahasa Diucapkan</div>
-                            <div class="count-outer count-box"><span>Over</span><span class="count-text" data-speed="3000" data-stop="460">0</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- City Program section-->
-    <section class="city-program-section" style="background-image: url(assets/images/background/bg-2.jpg)">
-        <div class="auto-container">
-            <div class="sec-title text-center">
-                <div class="sub-title">City With Equity - Efficiency - Opportunity</div>
-                <h2>Program & Inisiatif Desa</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 program-block">
-                    <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="shape">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <defs>
-                                    <filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="413px" height="325px">
-                                        <feOffset in="SourceAlpha" dx="0" dy="10" />
-                                        <feGaussianBlur result="blurOut" stdDeviation="5" />
-                                        <feFlood flood-color="rgb(0, 0, 0)" result="floodOut" />
-                                        <feComposite operator="atop" in="floodOut" in2="blurOut" />
-                                        <feComponentTransfer><feFuncA type="linear" slope="0.06" /></feComponentTransfer>
-                                        <feMerge>
-                                            <feMergeNode />
-                                            <feMergeNode in="SourceGraphic" />
-                                        </feMerge>
-                                    </filter>
-                                </defs>
-                                <g filter="url(#Filter_0)">
-                                    <path
-                                        fill-rule="evenodd"
-                                        fill="rgb(255, 255, 255)"
-                                        d="M386.000,287.999 L26.000,287.999 L26.000,96.000 L26.000,61.000 L26.000,16.000 L177.000,16.000 L177.000,61.000 L386.000,61.000 L386.000,287.999 Z"
-                                    />
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="icon"><span class="icon-home"></span></div>
-                        <div class="category"><span>Perumahan</span></div>
-                        <h4>
-                            Bantuan Untuk <br />
-                             Area Properti
-                        </h4>
-                    </div>
-                </div>
-                <div class="col-lg-4 program-block">
-                    <div class="inner-box wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="shape">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <defs>
-                                    <filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="413px" height="325px">
-                                        <feOffset in="SourceAlpha" dx="0" dy="10" />
-                                        <feGaussianBlur result="blurOut" stdDeviation="5" />
-                                        <feFlood flood-color="rgb(0, 0, 0)" result="floodOut" />
-                                        <feComposite operator="atop" in="floodOut" in2="blurOut" />
-                                        <feComponentTransfer><feFuncA type="linear" slope="0.06" /></feComponentTransfer>
-                                        <feMerge>
-                                            <feMergeNode />
-                                            <feMergeNode in="SourceGraphic" />
-                                        </feMerge>
-                                    </filter>
-                                </defs>
-                                <g filter="url(#Filter_0)">
-                                    <path
-                                        fill-rule="evenodd"
-                                        fill="rgb(255, 255, 255)"
-                                        d="M386.000,287.999 L26.000,287.999 L26.000,96.000 L26.000,61.000 L26.000,16.000 L177.000,16.000 L177.000,61.000 L386.000,61.000 L386.000,287.999 Z"
-                                    />
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="icon"><span class="icon-flower"></span></div>
-                        <div class="category"><span>Adat Desa</span></div>
-                        <h4>Program Rekreasi <br />Untuk Semua Masyarakat</h4>
-                    </div>
-                </div>
-                <div class="col-lg-4 program-block">
-                    <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="shape">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <defs>
-                                    <filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="413px" height="325px">
-                                        <feOffset in="SourceAlpha" dx="0" dy="10" />
-                                        <feGaussianBlur result="blurOut" stdDeviation="5" />
-                                        <feFlood flood-color="rgb(0, 0, 0)" result="floodOut" />
-                                        <feComposite operator="atop" in="floodOut" in2="blurOut" />
-                                        <feComponentTransfer><feFuncA type="linear" slope="0.06" /></feComponentTransfer>
-                                        <feMerge>
-                                            <feMergeNode />
-                                            <feMergeNode in="SourceGraphic" />
-                                        </feMerge>
-                                    </filter>
-                                </defs>
-                                <g filter="url(#Filter_0)">
-                                    <path
-                                        fill-rule="evenodd"
-                                        fill="rgb(255, 255, 255)"
-                                        d="M386.000,287.999 L26.000,287.999 L26.000,96.000 L26.000,61.000 L26.000,16.000 L177.000,16.000 L177.000,61.000 L386.000,61.000 L386.000,287.999 Z"
-                                    />
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="icon"><span class="icon-health"></span></div>
-                        <div class="category"><span>Kesehatan Jasmani</span></div>
-                        <h4>
-                            Visi Jangka Panjang <br />
-                             Sehat & Aktif
-                        </h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mayor Message section -->
-    <section class="mayor-message-section">
-        <div class="auto-container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="image"><img src="assets/images/resource/image-4.jpg" alt="" /></div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="content-block pl-lg-5">
-                        <div class="sec-title">
-                            <div class="sub-title">City With Equity - Efficiency - Opportunity</div>
-                            <h2>Message From City Mayor</h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <h3><span>Meet</span> Tim Brexton</h3>
-                                <h4>Elected since August 25, 2017</h4>
-                                <div class="text">
-                                    <p>
-                                        Hiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur.
-                                    </p>
-                                    <p>Excepteur sint occaecat cupidatat non proident suntin culpa qui officia deserunt mollit anim idm est laborum. Sed perspiciatis und omnis iste natus error sit voluptatem accusantium.</p>
-                                </div>
-                                <div class="sign"><img src="assets/images/resource/sign.png" alt="" /></div>
-                                <div class="designation">The City Mayor</div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="funfacts">
-                                    <div class="column counter-column">
-                                        <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                            <div class="content">
-                                                <div class="text">Years Of <br />Experience</div>
-                                                <div class="count-outer count-box">
-                                                    <span class="count-text" data-speed="3000" data-stop="25">0</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column counter-column">
-                                        <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                            <div class="content">
-                                                <div class="text">
-                                                    programs <br />
-                                                    for the city
-                                                </div>
-                                                <div class="count-outer count-box">
-                                                    <span class="count-text" data-speed="3000" data-stop="80">0</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column counter-column">
-                                        <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                            <div class="content">
-                                                <div class="text">
-                                                    Approved <br />
-                                                    covid-19 centers
-                                                </div>
-                                                <div class="count-outer count-box">
-                                                    <span class="count-text" data-speed="3000" data-stop="63">0</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Projects section -->
     <section class="projects-section">
         <div class="auto-container">
@@ -379,7 +124,7 @@
                     <div class="inner-box">
                         <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
                         <div class="content">
-                            <h4>Explore Governlia</h4>
+                            <h4>Explore Loha</h4>
                             <h3>Our City Guides</h3>
                             <div class="link-btn">
                                 <a href="#"><i class="icon-arrow"></i></a>
@@ -387,7 +132,7 @@
                         </div>
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Explore Governlia</h4>
+                                <h4>Explore Loha</h4>
                                 <h3>Our City Guides</h3>
                                 <div class="text">
                                     Veniam quis nostrud exercitation sed llamco <br />
@@ -404,7 +149,7 @@
                     <div class="inner-box">
                         <div class="image"><img src="assets/images/resource/image-6.jpg" alt="" /></div>
                         <div class="content">
-                            <h4>Explore Governlia</h4>
+                            <h4>Explore Loha</h4>
                             <h3>Main Tourist Spots</h3>
                             <div class="link-btn">
                                 <a href="#"><i class="icon-arrow"></i></a>
@@ -412,7 +157,7 @@
                         </div>
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Explore Governlia</h4>
+                                <h4>Explore Loha</h4>
                                 <h3>Main Tourist Spots</h3>
                                 <div class="text">
                                     Veniam quis nostrud exercitation sed llamco <br />
@@ -429,7 +174,7 @@
                     <div class="inner-box">
                         <div class="image"><img src="assets/images/resource/image-7.jpg" alt="" /></div>
                         <div class="content">
-                            <h4>Explore Governlia</h4>
+                            <h4>Explore Loha</h4>
                             <h3>Experience Now</h3>
                             <div class="link-btn">
                                 <a href="#"><i class="icon-arrow"></i></a>
@@ -437,7 +182,7 @@
                         </div>
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Explore Governlia</h4>
+                                <h4>Explore Loha</h4>
                                 <h3>Experience Now</h3>
                                 <div class="text">
                                     Veniam quis nostrud exercitation sed llamco <br />
@@ -454,7 +199,7 @@
                     <div class="inner-box">
                         <div class="image"><img src="assets/images/resource/image-8.jpg" alt="" /></div>
                         <div class="content">
-                            <h4>Explore Governlia</h4>
+                            <h4>Explore Loha</h4>
                             <h3>Culture & History</h3>
                             <div class="link-btn">
                                 <a href="#"><i class="icon-arrow"></i></a>
@@ -462,7 +207,7 @@
                         </div>
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Explore Governlia</h4>
+                                <h4>Explore Loha</h4>
                                 <h3>Culture & History</h3>
                                 <div class="text">
                                     Veniam quis nostrud exercitation sed llamco <br />
@@ -483,7 +228,7 @@
     <section class="highlights-section">
         <div class="auto-container">
             <div class="sec-title">
-                <div class="sub-title">City With Equity - Efficiency - Opportunity</div>
+                <!-- <div class="sub-title">City With Equity - Efficiency - Opportunity</div> -->
                 <h2>Galeri Desa</h2>
             </div>
             <div class="highlight-block-area">
@@ -560,22 +305,8 @@
         </div>
     </section>
 
-    <!-- Video section -->
-    <section class="video-section" style="background-image: url(assets/images/background/bg-3.jpg)">
-        <div class="auto-container">
-            <h2>
-                <strong>Experience The Great</strong> <br />
-                Countryside And Enjoy Hiking
-            </h2>
-            <div class="text">Eabore ipsum dolor sit amet consectetur adipisicing tempor</div>
-            <div class="video-btn">
-                <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="overlay-link play-now ripple" data-fancybox="gallery" data-caption=""><span class="fas fa-play"></span> </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Info section -->
-    <section class="contact-info-section">
+    <section class="contact-info-section" style="margin-top: 210px; padding: 0">
         <div class="auto-container">
             <div class="wrapper-box" style="background-image: url(assets/images/background/bg-4.jpg)">
                 <div class="top-content">
@@ -616,7 +347,7 @@
     <section class="news-section">
         <div class="auto-container">
             <div class="sec-title text-center">
-                <div class="sub-title">City With Equity - Efficiency - Opportunity</div>
+                <!-- <div class="sub-title">City With Equity - Efficiency - Opportunity</div> -->
                 <h2>Blog Terbaru</h2>
             </div>
             <div class="row">
@@ -700,22 +431,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brand Logo section -->
-    <section class="brand-logo-section">
-        <div class="auto-container">
-            <div
-                class="theme_carousel owl-theme owl-carousel"
-                data-options='{"loop": true, "center": false, "margin": 0, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 1000, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "2" }, "768" :{ "items" : "4" } , "992":{ "items" : "5" }, "1200":{ "items" : "5" }}}'
-            >
-                <div class="single-logo"><img src="assets/images/resource/client-logo-1.png" alt="" /></div>
-                <div class="single-logo"><img src="assets/images/resource/client-logo-2.png" alt="" /></div>
-                <div class="single-logo"><img src="assets/images/resource/client-logo-3.png" alt="" /></div>
-                <div class="single-logo"><img src="assets/images/resource/client-logo-4.png" alt="" /></div>
-                <div class="single-logo"><img src="assets/images/resource/client-logo-5.png" alt="" /></div>
             </div>
         </div>
     </section>

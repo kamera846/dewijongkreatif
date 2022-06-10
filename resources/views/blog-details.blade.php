@@ -63,7 +63,7 @@
                                     Fugiat nula pariatur excepteur sint ocaecat cupidata proident euntin <br />
                                     culp qui officia deserunt mollit anim esta laborum sed.
                                 </p>
-                                <cite>-- Governlia City Mayor</cite>
+                                <cite>-- Loha City Mayor</cite>
                             </blockquote>
                             <div class="text">
                                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.

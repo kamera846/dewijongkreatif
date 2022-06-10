@@ -6482,3 +6482,9 @@ blockquote cite {
 .theme-color-two .news-block .overlay {
     background-color: rgb(234 178 7 / 0.8);
 }
+
+.image-about {
+    width: 390px;
+    height: 430px;
+    object-fit: cover;
+}
