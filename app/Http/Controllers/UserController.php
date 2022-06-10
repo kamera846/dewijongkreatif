@@ -165,15 +165,16 @@ class UserController extends Controller
                     'pekerjaan' => $request->pekerjaan,
                     'no_hp' => $request->no_hp,
                 ]);
+        } else {
+            User::where('id', Auth::user()->id)
+                ->update([
+                    'nama' => $request->nama,
+                    'email' => $request->email,
+                    'alamat' => $request->alamat,
+                    'pekerjaan' => $request->pekerjaan,
+                    'no_hp' => $request->no_hp,
+                ]);
         }
-        User::where('id', Auth::user()->id)
-            ->update([
-                'nama' => $request->nama,
-                'email' => $request->email,
-                'alamat' => $request->alamat,
-                'pekerjaan' => $request->pekerjaan,
-                'no_hp' => $request->no_hp,
-            ]);
 
         return redirect('/dashboard')->with('success', 'memperbarui');
     }

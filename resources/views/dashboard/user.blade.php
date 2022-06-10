@@ -61,7 +61,7 @@
                             <tbody>
                                 @foreach ($users as $user)
                                 <tr>
-                                    <td class="table-user">
+                                    <td class="table-user" style="object-fit: cover;overflow:hidden !important">
                                     @if ($user->foto_profil != null)
                                         <img src="{{asset('storage/' . $user->foto_profil)}}" class="avatar rounded-circle mr-3">
                                     @else

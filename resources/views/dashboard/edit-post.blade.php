@@ -69,7 +69,7 @@
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                         <button type="submit" class="btn btn-primary">Simpan</button>
-                                        <a href="/dashboard/blog" class="btn btn-secondary">Batal</a>
+                                        <a href="/blog" class="btn btn-secondary">Batal</a>
                                     </div>
                                   </div>
                                 </form>

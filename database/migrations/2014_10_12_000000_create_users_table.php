@@ -22,7 +22,7 @@ return new class extends Migration
             $table->text('alamat');
             $table->text('pekerjaan')->nullable();
             $table->string('no_hp')->nullable();
-            $table->string('role')->nullable();
+            $table->string('role');
             $table->string('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
