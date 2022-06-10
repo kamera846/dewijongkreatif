@@ -19,7 +19,8 @@ class Contact extends Controller
         $pesan = $request->input('pesan');
         $nomor = $request->input('nomor');
         
-            header("location: https://api.whatsapp.com/send?phone={$nomor}&text=Nama:%20{$nama}%0D%0AEmail:%20{$email}%0D%0APesan:%20{$pesan}");
+        echo "<script>window.location.href = 'https://api.whatsapp.com/send?phone={$nomor}&text=Nama:%20{$nama}%0D%0AEmail:%20{$email}%0D%0APesan:%20{$pesan}'</script>";
+        // header("location: https://api.whatsapp.com/send?phone={$nomor}&text=Nama:%20{$nama}%0D%0AEmail:%20{$email}%0D%0APesan:%20{$pesan}");
         
 
     }
