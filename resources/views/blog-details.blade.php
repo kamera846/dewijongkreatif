@@ -121,67 +121,6 @@
                                 </ul>
                             </div>
                         </div> -->
-                        <!--Popular Posts-->
-                        <div class="widget widget_popular_post">
-                            <h3 class="widget-title">Postingan Terpopuler</h3>
-
-                            <article class="post">
-                                <figure class="post-thumb">
-                                    <a href="blog-details.php"><img src="assets/images/resource/news-19.jpg" alt="" /></a>
-                                </figure>
-                                <div class="content">
-                                    <h5>
-                                        <a href="blog-details.php"
-                                            >Recreation Programs <br />
-                                            From Landscapes</a
-                                        >
-                                    </h5>
-                                    <div class="post-info"><i class="far fa-calendar-alt"></i> Sep 3, 2020</div>
-                                </div>
-                            </article>
-                            <article class="post">
-                                <figure class="post-thumb">
-                                    <a href="blog-details.php"><img src="assets/images/resource/news-20.jpg" alt="" /></a>
-                                </figure>
-                                <div class="content">
-                                    <h5>
-                                        <a href="blog-details.php"
-                                            >Start An Evening With <br />
-                                            Drinks At Rooftop</a
-                                        >
-                                    </h5>
-                                    <div class="post-info"><i class="far fa-calendar-alt"></i> Sep 3, 2020</div>
-                                </div>
-                            </article>
-                            <article class="post">
-                                <figure class="post-thumb">
-                                    <a href="blog-details.php"><img src="assets/images/resource/news-21.jpg" alt="" /></a>
-                                </figure>
-                                <div class="content">
-                                    <h5>
-                                        <a href="blog-details.php"
-                                            >Self-Guided Driving & <br />
-                                            Tours Walk Of City</a
-                                        >
-                                    </h5>
-                                    <div class="post-info"><i class="far fa-calendar-alt"></i> Sep 3, 2020</div>
-                                </div>
-                            </article>
-                            <article class="post">
-                                <figure class="post-thumb">
-                                    <a href="blog-details.php"><img src="assets/images/resource/news-22.jpg" alt="" /></a>
-                                </figure>
-                                <div class="content">
-                                    <h5>
-                                        <a href="blog-details.php"
-                                            >Recreation Programs <br />
-                                            From Landscapes</a
-                                        >
-                                    </h5>
-                                    <div class="post-info"><i class="far fa-calendar-alt"></i> Sep 3, 2020</div>
-                                </div>
-                            </article>
-                        </div>
                         <div class="widget widget_popular_post">
                             <h3 class="widget-title">Postingan Terbaru</h3>
 
