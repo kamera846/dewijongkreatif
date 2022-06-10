@@ -69,8 +69,8 @@
                                         <span class="nav-link-text">Pengguna</span>
                                     </a>
                                 </li>
-                            @endif
-
+                                
+                                @endif
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 

@@ -13,7 +13,7 @@ class GalleryController extends Controller
     {
         return view('dashboard.gallery', [
             'judul_halaman' => 'Admin | Data Galeri',
-            'galleries' => Gallery::latest()->get()
+            'galleries' => Gallery::latest('updated_at')->get()
         ]);
     }
 

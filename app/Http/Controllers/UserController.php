@@ -13,24 +13,22 @@ class UserController extends Controller
 {
     public function index()
     {
-        if( Auth::user()->role === 'super-admin' ) {
+        if (Auth::user()->role === 'super-admin') {
             return view('dashboard.user', [
                 'judul_halaman' => 'Admin | Data Pengguna',
-                'users' => User::latest()->get()
+                'users' => User::latest('updated_at')->get()
             ]);
-        }
-        else{
+        } else {
             return redirect('/dashboard');
         }
     }
     public function create()
     {
-        if( Auth::user()->role === 'super-admin' ) {
+        if (Auth::user()->role === 'super-admin') {
             return view('dashboard.add-user', [
                 'judul_halaman' => 'Admin | Tambah Pengguna'
             ]);
-        }
-        else{
+        } else {
             return redirect('/dashboard');
         }
     }
@@ -67,33 +65,31 @@ class UserController extends Controller
                 'role' => $request->role,
             ]);
         }
-        
+
         return redirect('/dashboard/user')->with('success', 'menambahkan');
     }
 
 
     public function show(User $user)
     {
-        if( Auth::user()->role === 'super-admin' ) {
+        if (Auth::user()->role === 'super-admin') {
             return view('dashboard.detail-user', [
                 'judul_halaman' => 'Admin | Detail Pengguna',
                 'user' => $user
             ]);
-        }
-        else{
+        } else {
             return redirect('/dashboard');
         }
     }
 
     public function edit(User $user)
     {
-        if( Auth::user()->role === 'super-admin' ) {
+        if (Auth::user()->role === 'super-admin') {
             return view('dashboard.edit-user', [
                 'judul_halaman' => 'Admin | Edit Pengguna',
                 'user' => $user
             ]);
-        }
-        else{
+        } else {
             return redirect('/dashboard');
         }
     }
@@ -182,14 +178,13 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
-        if( Auth::user()->role === 'super-admin' ) {
+        if (Auth::user()->role === 'super-admin') {
             if ($user->foto_profil) {
                 Storage::delete($user->foto_profil);
             }
             User::destroy($user->id);
             return redirect('/dashboard/user')->with('success', 'menghapus');
-        }
-        else {
+        } else {
             return redirect('/dashboard');
         }
     }
