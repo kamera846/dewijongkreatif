@@ -53,41 +53,28 @@
                                     <span class="nav-link-text">Dashboard</span>
                                 </a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
-                                    <i class="ni ni-map-big text-primary"></i>
-                                    <span class="nav-link-text">Maps</span>
-                                </a>
-                                <div class="collapse" id="navbar-maps">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="./pages/maps/google.html" class="nav-link">Google</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="./pages/maps/vector.html" class="nav-link">Vector</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li> -->
                         </ul>
 
                         <!-- Divider -->
                         <hr class="my-3">
-                        @can('isSuperAdmin')     
                         <h6 class="navbar-heading p-0 text-primary">DATA</h6>
                         <ul class="navbar-nav mb-md-3">
-                            <li class="nav-item">
-                                <a 
-                                class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
-                                href="/user">
-                                    <i class="ni ni-circle-08 text-green"></i>
-                                    <span class="nav-link-text">Pengguna</span>
-                                </a>
-                            </li>
+
+                            @if( Auth::user()->role === 'super-admin' )
+                                <li class="nav-item">
+                                    <a 
+                                    class="nav-link {{ ( $judul_halaman === 'Admin | Data Pengguna' || $judul_halaman === 'Admin | Edit Pengguna' || $judul_halaman === 'Admin | Tambah Pengguna' || $judul_halaman === 'Admin | Detail Pengguna' ) ? 'active' : '' }}" 
+                                    href="/dashboard/user">
+                                        <i class="ni ni-circle-08 text-green"></i>
+                                        <span class="nav-link-text">Pengguna</span>
+                                    </a>
+                                </li>
+                            @endif
+
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
-                                href="/blog">
+                                href="/dashboard/blog">
                                     <i class="ni ni-single-copy-04 text-orange"></i>
                                     <span class="nav-link-text">Blog</span>
                                 </a>
@@ -96,114 +83,56 @@
                                 <a 
                                 class="
                                     nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                                    href="/gallery">
+                                href="/dashboard/gallery">
                                     <i class="ni ni-album-2 text-info"></i>
                                     <span class="nav-link-text">Galeri</span>
                                 </a>
                             </li>
+
                         </ul>
-                        
-                        <hr class="my-3">
-                        
+
+                        <!-- Divider -->
+                        {{-- <hr class="my-3">
+
                         <h6 class="navbar-heading p-0 text-primary">PROFIL</h6>
                         <ul class="navbar-nav mb-md-3">
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Profil Kontak') ? 'active' : '' }}" 
-                                href="/contact">
-                                <i class="ni ni-email-83 text-red"></i>
-                                <span class="nav-link-text">Kontak</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a 
-                            class="nav-link {{ ( $judul_halaman === 'Admin | Profil Sosial Media') ? 'active' : '' }}" 
-                            href="/social">
-                            <i class="ni ni-like-2 text-purple"></i>
-                            <span class="nav-link-text">Sosial Media</span>
-                        </a>
-                    </li>
-                </ul>
-                <!-- Divider -->
-                
-                <!-- Divider -->
-                <hr class="my-3">
-                
-                <ul class="navbar-nav mb-md-3">
-                    <li class="nav-item">
-                        <a 
-                        id="logout"
-                        class="nav-link" 
-                        href="logout">
-                        <i class="ni ni-button-power text-red"></i>
-                        <span class="nav-link-text">Keluar</span>
-                    </a>
-                </li>
-            </ul>
-            @elsecan('isAdmin')
-            <h6 class="navbar-heading p-0 text-primary">DATA</h6>
-            <ul class="navbar-nav mb-md-3">
-                <li class="nav-item">
-                    <a 
-                    class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
-                    href="/blog">
-                        <i class="ni ni-single-copy-04 text-orange"></i>
-                        <span class="nav-link-text">Blog</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a 
-                    class="
-                        nav-link {{ ( $judul_halaman === 'Admin | Data Galeri' || $judul_halaman === 'Admin | Edit Galeri' || $judul_halaman === 'Admin | Tambah Galeri' ) ? 'active' : '' }}" 
-                        href="/gallery">
-                        <i class="ni ni-album-2 text-info"></i>
-                        <span class="nav-link-text">Galeri</span>
-                    </a>
-                </li>
-            </ul>
-            
-            <hr class="my-3">
-            
-            <h6 class="navbar-heading p-0 text-primary">PROFIL</h6>
-            <ul class="navbar-nav mb-md-3">
-                <li class="nav-item">
-                    <a 
-                    class="nav-link {{ ( $judul_halaman === 'Admin | Profil Kontak') ? 'active' : '' }}" 
-                    href="/contact">
-                    <i class="ni ni-email-83 text-red"></i>
-                    <span class="nav-link-text">Kontak</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a 
-                class="nav-link {{ ( $judul_halaman === 'Admin | Profil Sosial Media') ? 'active' : '' }}" 
-                href="/social">
-                <i class="ni ni-like-2 text-purple"></i>
-                <span class="nav-link-text">Sosial Media</span>
-            </a>
-        </li>
-    </ul>
-    <!-- Divider -->
-    
-    <!-- Divider -->
-    <hr class="my-3">
-    
-    <ul class="navbar-nav mb-md-3">
-        <li class="nav-item">
-            <a 
-            id="logout"
-            class="nav-link" 
-            href="logout">
-            <i class="ni ni-button-power text-red"></i>
-            <span class="nav-link-text">Keluar</span>
-        </a>
-    </li>
-</ul>
-            @endcan
-            <!-- <hr class="my-3" /> -->
-        </div>
-    </div>
-</div>
+                                href="/dashboard/contact">
+                                    <i class="ni ni-email-83 text-red"></i>
+                                    <span class="nav-link-text">Kontak</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a 
+                                class="nav-link {{ ( $judul_halaman === 'Admin | Profil Sosial Media') ? 'active' : '' }}" 
+                                href="/dashboard/social">
+                                    <i class="ni ni-like-2 text-purple"></i>
+                                    <span class="nav-link-text">Sosial Media</span>
+                                </a>
+                            </li>
+                        </ul> --}}
+
+                        <!-- Divider -->
+                        <hr class="my-3">
+
+                        <ul class="navbar-nav mb-md-3">
+                            <li class="nav-item">
+                                
+                                <form action="/logout" method="post" class="d-inline">
+                                    @csrf
+                                    <button type="submit" id="logout" class="nav-link border-0" data-toggle="tooltip" style="background:none; width:100%;">
+                                        <i class="ni ni-button-power text-red"></i>
+                                        <span class="nav-link-text ml-2">Keluar</span>
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                        <!-- <hr class="my-3" /> -->
+                    </div>
+                </div>
+            </div>
         </nav>
         <!-- Main content -->
         <div class="main-content" id="panel">
@@ -227,33 +156,20 @@
                         <ul class="navbar-nav align-items-center ml-auto ml-md-0">
                             <li class="nav-item dropdown">
                                 @auth
-                                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link pr-0" href="#"data-toggle="modal" data-target="#profil-saya">
                                         <div class="media align-items-center">
                                             <div class="media-body mr-2 d-none d-lg-block">
-                                                <span class="mb-0 text-sm font-weight-bold">{{ Auth::user()->nama }}</span>
+                                                <span class="mb-0 text-sm font-weight-bold">{{ ucwords(Auth::user()->nama) }}</span>
                                             </div>
                                             @if (Auth::user()->foto_profil != null)
                                                 <span class="avatar avatar-sm rounded-circle">
                                                     <img alt="Image placeholder" style="width: 100%;height:100%;object-fit:cover;" src="{{ asset('storage/' . Auth::user()->foto_profil)}}" />
                                                 </span>
                                             @else
-                                                <img src="/storage/foto-profil/defaultuserimage.png" class="avatar rounded-circle mr-3">
+                                                <img src="{{ asset('/storage/foto-profil/defaultuserimage.png') }}" class="avatar rounded-circle mr-3">
                                             @endif
                                         </div>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a href="/user/{{ Auth::user()->id }}/profil" class="dropdown-item">
-                                        <i class="ni ni-single-02"></i>
-                                        <span>Profil Saya</span>
-                                    </a>
-                                    <form action="/logout" method="POST">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item" onclick="return confirm('Apakah anda ingin keluar?')">
-                                            <i class="ni ni-user-run"></i>
-                                            <span>Keluar</span>
-                                        </button>
-                                    </form> 
-                                </div>
                                 @endauth
                             </li>
                         </ul>
@@ -280,37 +196,43 @@
                         </button>
                     </div>
                     <div class="modal-body text-sm">
-                        <img src="{{ asset('admin/assets/img/theme/team-4.jpg') }}" alt="" class="rounded d-block mx-auto mb-4" width="150ox" height="150px">
-                        <div class="row mb-2">
+                        @if (Auth::user()->foto_profil != null)
+                            <img src="{{ asset('storage/' . Auth::user()->foto_profil) }}" alt="" class="rounded d-block mx-auto mb-4" width="150px" height="150px">
+                        @else
+                            <img src="{{ asset('/storage/foto-profil/defaultuserimage.png') }}" alt="" class="rounded d-block mx-auto mb-4" width="150px" height="150px">
+                        @endif
+                        <div class="row mb-3">
                             <div class="col-4">Nama</div>
-                            <div class="col-8">Umam Alfarizi</div>
+                            <div class="col-8 font-weight-bold">{{ Auth::user()->nama }}</div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-3">
                             <div class="col-4">Email</div>
-                            <div class="col-8">alfariziuchiha@gmail.com</div>
+                            <div class="col-8 font-weight-bold">{{ Auth::user()->email }}</div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-3">
                             <div class="col-4">Pekerjaan</div>
-                            <div class="col-8">Tidur</div>
+                            <div class="col-8 font-weight-bold">{{ Auth::user()->pekerjaan }}</div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-3">
                             <div class="col-4">No. HP</div>
-                            <div class="col-8">081223334444</div>
+                            <div class="col-8 font-weight-bold">{{ Auth::user()->no_hp }}</div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-3">
                             <div class="col-4">Alamat</div>
-                            <div class="col-8">Jln. R Sangapati km 2,5 Jenggik - Lando</div>
+                            <div class="col-8 font-weight-bold">{{ Auth::user()->alamat }}</div>
                         </div>
                     </div>
                     <div class="modal-footer text-end">
-                        <a href="/dashboard/edit-user" class="btn btn-primary">Edit</a>
+                        <a href="/dashboard/user/{{ Auth::user()->id }}/profile-edit" class="btn btn-primary">Edit</a>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                     </div>
                 </div>
             </div>
         </div>
+
         {{-- boostrap js --}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
         <!-- Argon Scripts -->
         <!-- Core -->
         <script src="{{ asset('admin/assets/vendor/jquery/dist/jquery.min.js') }}"></script>
@@ -326,13 +248,14 @@
         <script src="{{ asset('admin/assets/js/argon.js?v=1.1.0') }}"></script>
 
         {{-- SweetAlert2 --}}
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="{{ asset('admin/assets/js/sweetalert.js') }}"></script>
 
         {{-- Custom JS --}}
         <script src="{{ asset('admin/assets/js/script.js') }}"></script>
-
+        
         {{-- CK Editor --}}
         <script src="//cdn.ckeditor.com/4.18.0/basic/ckeditor.js"></script>
 
     </body>
 </html>
+

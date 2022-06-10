@@ -3,7 +3,7 @@ const keluar = document.getElementById("logout");
 if (keluar != undefined) {
     keluar.addEventListener("click", function (e) {
         e.preventDefault();
-        const href = this.href;
+        const formLogout = this.parentElement;
 
         Swal.fire({
             title: "Are you sure?",
@@ -15,7 +15,7 @@ if (keluar != undefined) {
             confirmButtonText: "Yes, logout",
         }).then((result) => {
             if (result.isConfirmed) {
-                document.location.href = href;
+                formLogout.submit();
             }
         });
     });
@@ -23,12 +23,10 @@ if (keluar != undefined) {
 
 // hapus data
 const hapus = document.getElementById("hapus");
-const form = document.getElementById('formDelete');
-const getAtribut= form.getAttribute('action');
 if (hapus != undefined) {
     hapus.addEventListener("click", function (e) {
         e.preventDefault();
-        const href = getAtribut;
+        const formHapus = this.parentElement;
 
         Swal.fire({
             title: "Are you sure?",
@@ -40,7 +38,7 @@ if (hapus != undefined) {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                document.location.href = href;
+                formHapus.submit();
             }
         });
     });
@@ -88,14 +86,7 @@ if (document.location.pathname == "/dashboard/contact") {
         alamat.removeAttribute("readonly");
 
         batal.addEventListener("click", function () {
-            batal.remove();
-            simpan.remove();
-            edit.style.display = "inline";
-
-            email.setAttribute("readonly", "");
-            noTelp.setAttribute("readonly", "");
-            noWa.setAttribute("readonly", "");
-            alamat.setAttribute("readonly", "");
+            location.reload();
         });
     });
 }
@@ -135,15 +126,7 @@ if (document.location.pathname == "/dashboard/social") {
         pinterest.removeAttribute("readonly");
 
         batal.addEventListener("click", function () {
-            batal.remove();
-            simpan.remove();
-            edit.style.display = "inline";
-
-            twitter.setAttribute("readonly", "");
-            facebook.setAttribute("readonly", "");
-            instagram.setAttribute("readonly", "");
-            youtube.setAttribute("readonly", "");
-            pinterest.setAttribute("readonly", "");
+            location.reload();
         });
     });
 }

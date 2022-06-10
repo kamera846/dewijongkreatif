@@ -695,7 +695,9 @@ class Router implements BindingRegistrar, RegistrarContract
      */
     protected function runRoute(Request $request, Route $route)
     {
-        $request->setRouteResolver(fn () => $route);
+        $request->setRouteResolver(function () use ($route) {
+            return $route;
+        });
 
         $this->events->dispatch(new RouteMatched($route, $request));
 
@@ -721,9 +723,11 @@ class Router implements BindingRegistrar, RegistrarContract
         return (new Pipeline($this->container))
                         ->send($request)
                         ->through($middleware)
-                        ->then(fn ($request) => $this->prepareResponse(
-                            $request, $route->run()
-                        ));
+                        ->then(function ($request) use ($route) {
+                            return $this->prepareResponse(
+                                $request, $route->run()
+                            );
+                        });
     }
 
     /**
@@ -771,9 +775,9 @@ class Router implements BindingRegistrar, RegistrarContract
 
             $reflection = new ReflectionClass($name);
 
-            return collect($excluded)->contains(
-                fn ($exclude) => class_exists($exclude) && $reflection->isSubclassOf($exclude)
-            );
+            return collect($excluded)->contains(function ($exclude) use ($reflection) {
+                return class_exists($exclude) && $reflection->isSubclassOf($exclude);
+            });
         })->values();
 
         return $this->sortMiddleware($middleware);

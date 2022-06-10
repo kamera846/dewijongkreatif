@@ -11,8 +11,8 @@ class GalleryController extends Controller
 
     public function index()
     {
-        return view('gallery', [
-            'judul_halaman' => 'Gallery',
+        return view('dashboard.gallery', [
+            'judul_halaman' => 'Admin | Data Galeri',
             'galleries' => Gallery::latest()->get()
         ]);
     }
@@ -20,8 +20,8 @@ class GalleryController extends Controller
 
     public function create()
     {
-        return view('add-gallery', [
-            'judul_halaman' => 'Admin | Tambah Data Gambar'
+        return view('dashboard.add-gallery', [
+            'judul_halaman' => 'Admin | Tambah Galeri'
         ]);
     }
 
@@ -40,7 +40,7 @@ class GalleryController extends Controller
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
         ]);
-        return redirect('/gallery')->with('success', 'Data Galeri berhasil ditambah');
+        return redirect('/dashboard/gallery')->with('success', 'menambahkan');
     }
 
 
@@ -52,7 +52,7 @@ class GalleryController extends Controller
 
     public function edit(Gallery $gallery)
     {
-        return view('edit-gallery', [
+        return view('dashboard.edit-gallery', [
             'gallery' => $gallery,
             'judul_halaman' => 'Admin | Edit Galeri'
         ]);
@@ -82,7 +82,7 @@ class GalleryController extends Controller
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
             ]);
-        return redirect('/gallery')->with('success', 'Data Galeri berhasil diupdate');
+        return redirect('/dashboard/gallery')->with('success', 'mengubah');
     }
 
 
@@ -92,6 +92,6 @@ class GalleryController extends Controller
             Storage::delete($gallery->foto);
         }
         gallery::destroy($gallery->id);
-        return redirect('/gallery')->with('success', 'Data galeri Berhasil Dihapus!');
+        return redirect('/dashboard/gallery')->with('success', 'menghapus');
     }
 }

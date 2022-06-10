@@ -14,17 +14,17 @@ class BlogController extends Controller
 
     public function index()
     {
-        return view('blog', [
+        return view('dashboard.blog', [
             'blogs' => Blog::latest('updated_at')->get(),
-            'judul_halaman' => 'Admin | Data Blog'
+            'judul_halaman' => 'Admin | Data Postingan'
         ]);
     }
 
 
     public function create()
     {
-        return view('add-post', [
-            'judul_halaman' => 'Admin | Tambah Data Blog'
+        return view('dashboard.add-post', [
+            'judul_halaman' => 'Admin | Tambah Postingan'
         ]);
     }
 
@@ -47,14 +47,14 @@ class BlogController extends Controller
             'konten' => $request->konten
         ]);
 
-        return redirect('/blog')->with('success', 'Post berhasil ditambahkan');
+        return redirect('/dashboard/blog')->with('success', 'menambahkan');
     }
 
 
     public function show(Blog $blog)
     {
-        return view('detail-post', [
-            'judul_halaman' => 'Admin | Detail Post',
+        return view('dashboard.detail-post', [
+            'judul_halaman' => 'Admin | Detail Postingan',
             'blog' => $blog
         ]);
     }
@@ -62,8 +62,8 @@ class BlogController extends Controller
 
     public function edit(Blog $blog)
     {
-        return view('edit-post', [
-            'judul_halaman' => 'Admin | Edit Post',
+        return view('dashboard.edit-post', [
+            'judul_halaman' => 'Admin | Edit Postingan',
             'blog' => $blog
         ]);
     }
@@ -81,7 +81,7 @@ class BlogController extends Controller
                 Storage::delete($request->oldBlog);
             }
             $updateGambarBlog = $request->file('gambar_blog')->store('image_blog');
-            Blog::where('slug', $blog->slug)
+            Blog::where('id', $blog->id)
                 ->update([
                     'gambar_blog' => $updateGambarBlog,
                     'judul' => $request->judul,
@@ -90,14 +90,14 @@ class BlogController extends Controller
                 ]);
         };
 
-        Blog::where('slug', $blog->slug)
+        Blog::where('id', $blog->id)
             ->update([
                 'judul' => $request->judul,
                 'slug' => str::of($request->judul)->slug('-'),
                 'konten' => $request->konten
             ]);
 
-        return redirect('/blog')->with('success', 'Post berhasil diupdate');
+        return redirect('/dashboard/blog')->with('success', 'mengubah');
     }
 
 
@@ -107,6 +107,6 @@ class BlogController extends Controller
             Storage::delete($blog->gambar_blog);
         }
         Blog::destroy($blog->id);
-        return redirect('/blog')->with('success', 'Data Berhasil Dihapus!');
+        return redirect('/dashboard/blog')->with('success', 'menghapus');
     }
 }

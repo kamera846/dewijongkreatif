@@ -210,15 +210,11 @@ class Stringable implements JsonSerializable
     /**
      * Determine if the string is an exact match with the given value.
      *
-     * @param  \Illuminate\Support\Stringable|string  $value
+     * @param  string  $value
      * @return bool
      */
     public function exactly($value)
     {
-        if ($value instanceof Stringable) {
-            $value = $value->toString();
-        }
-
         return $this->value === $value;
     }
 

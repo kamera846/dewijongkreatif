@@ -19,7 +19,6 @@ use Illuminate\Database\Query\Grammars\Grammar as QueryGrammar;
 use Illuminate\Database\Query\Processors\Processor;
 use Illuminate\Database\Schema\Builder as SchemaBuilder;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Traits\Macroable;
 use LogicException;
 use PDO;
 use PDOStatement;
@@ -29,8 +28,7 @@ class Connection implements ConnectionInterface
 {
     use DetectsConcurrencyErrors,
         DetectsLostConnections,
-        Concerns\ManagesTransactions,
-        Macroable;
+        Concerns\ManagesTransactions;
 
     /**
      * The active PDO connection.
@@ -334,33 +332,6 @@ class Connection implements ConnectionInterface
         $records = $this->select($query, $bindings, $useReadPdo);
 
         return array_shift($records);
-    }
-
-    /**
-     * Run a select statement and return the first column of the first row.
-     *
-     * @param  string  $query
-     * @param  array  $bindings
-     * @param  bool  $useReadPdo
-     * @return mixed
-     *
-     * @throws \Illuminate\Database\MultipleColumnsSelectedException
-     */
-    public function scalar($query, $bindings = [], $useReadPdo = true)
-    {
-        $record = $this->selectOne($query, $bindings, $useReadPdo);
-
-        if (is_null($record)) {
-            return null;
-        }
-
-        $record = (array) $record;
-
-        if (count($record) > 1) {
-            throw new MultipleColumnsSelectedException;
-        }
-
-        return reset($record);
     }
 
     /**

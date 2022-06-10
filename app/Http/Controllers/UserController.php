@@ -13,16 +13,26 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('user', [
-            'judul_halaman' => 'Admin | Data Pengguna',
-            'users' => User::latest()->get()
-        ]);
+        if( Auth::user()->role === 'super-admin' ) {
+            return view('dashboard.user', [
+                'judul_halaman' => 'Admin | Data Pengguna',
+                'users' => User::latest()->get()
+            ]);
+        }
+        else{
+            return redirect('/dashboard');
+        }
     }
     public function create()
     {
-        return view('add-user', [
-            'judul_halaman' => 'Admin | Tambah Pengguna'
-        ]);
+        if( Auth::user()->role === 'super-admin' ) {
+            return view('dashboard.add-user', [
+                'judul_halaman' => 'Admin | Tambah Pengguna'
+            ]);
+        }
+        else{
+            return redirect('/dashboard');
+        }
     }
     public function store(Request $request)
     {
@@ -57,25 +67,35 @@ class UserController extends Controller
                 'role' => $request->role,
             ]);
         }
-
-        return redirect('/user')->with('success', 'Data user berhasil ditambahkan');
+        
+        return redirect('/dashboard/user')->with('success', 'menambahkan');
     }
 
 
     public function show(User $user)
     {
-        return view('detail-user', [
-            'judul_halaman' => 'Admin | Detail Pengguna',
-            'user' => $user
-        ]);
+        if( Auth::user()->role === 'super-admin' ) {
+            return view('dashboard.detail-user', [
+                'judul_halaman' => 'Admin | Detail Pengguna',
+                'user' => $user
+            ]);
+        }
+        else{
+            return redirect('/dashboard');
+        }
     }
 
     public function edit(User $user)
     {
-        return view('edit-user', [
-            'judul_halaman' => 'Admin | Edit Pengguna',
-            'user' => $user
-        ]);
+        if( Auth::user()->role === 'super-admin' ) {
+            return view('dashboard.edit-user', [
+                'judul_halaman' => 'Admin | Edit Pengguna',
+                'user' => $user
+            ]);
+        }
+        else{
+            return redirect('/dashboard');
+        }
     }
     public function update(Request $request, User $user)
     {
@@ -113,12 +133,12 @@ class UserController extends Controller
                 'role' => $request->role,
             ]);
 
-        return redirect('/user')->with('success', 'Sukses. Update Data Berhasil!');
+        return redirect('/dashboard/user')->with('success', 'mengubah');
     }
     public function editProfile()
     {
-        return view('edit-userProfile', [
-            'judul_halaman' => 'Admin | Edit Pengguna',
+        return view('dashboard.edit-profile', [
+            'judul_halaman' => 'Admin | Edit Profil',
         ]);
     }
 
@@ -156,17 +176,21 @@ class UserController extends Controller
                 ]);
         }
 
-
-        return redirect('/dashboard')->with('success', 'Sukses, Update Data Profil Berhasil!');
+        return redirect('/dashboard')->with('success', 'memperbarui');
     }
 
 
     public function destroy(User $user)
     {
-        if ($user->foto_profil) {
-            Storage::delete($user->foto_profil);
+        if( Auth::user()->role === 'super-admin' ) {
+            if ($user->foto_profil) {
+                Storage::delete($user->foto_profil);
+            }
+            User::destroy($user->id);
+            return redirect('/dashboard/user')->with('success', 'menghapus');
         }
-        User::destroy($user->id);
-        return redirect('/user')->with('success', 'Data Berhasil Dihapus!');
+        else {
+            return redirect('/dashboard');
+        }
     }
 }
