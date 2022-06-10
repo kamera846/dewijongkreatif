@@ -23,8 +23,8 @@
             <div class="wrapper-box">
                 <div class="row">
                     <div class="col-lg-5">
-                        <div class="our-facts" style="background-image: url(assets/images/resource/image-54.jpg)">
-                            <div class="column counter-column">
+                        <div class="our-facts" style="background-image: url(assets/images/resource/image-54.jpg); height: 100%!important;">
+                            <!-- <div class="column counter-column">
                                 <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                                     <div class="icon-outer">
                                         <div class="icon"><span class="icon-ambulance"></span></div>
@@ -65,20 +65,16 @@
                                         Garbage Related
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-lg-7">
                         <div class="contact-form-area">
                             <div class="sec-title mb-30">
-                                <h2>
-                                    Mencari Bantuan <br />
-                                    Atau Punya Pertanyaan?
-                                </h2>
+                                <h2>Bantuan dan pertanyaan?</h2>
                             </div>
                             <div class="text mb-30">
-                                Enim ad minim veniam quis nostrud exercitation ullamco laboris aliquip <br />
-                                ex ea reprehenderit sint occaecat cupidata proids.
+                                Hubungi kami melalui whatsapp dengan mengisi formulir yang ada di bawah ini.
                             </div>
                             <!--Contact Form-->
                             <div class="contact-form">

@@ -19,6 +19,7 @@
                 <div class="flash-data" data-flashdata="{{ (session()->has('success'))?session('success'):'' }}{{ (session()->has('error'))?session('error'):'' }}"></div>
 
                 <div class="row">
+                  @if(Auth::user()->role === 'super-admin')
                     <div class="col-xl-4 col-md-6">
                         <div class="card card-stats">
                             <a href="/dashboard/user">
@@ -39,6 +40,7 @@
                             </a>
                         </div>
                     </div>
+                    @endif
                     <div class="col-xl-4 col-md-6">
                         <div class="card card-stats">
                             <a href="/dashboard/blog">

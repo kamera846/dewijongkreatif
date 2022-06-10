@@ -23,39 +23,11 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="sec-title mb-30">
-                        <h2>
-                            Infrastruktur Bersih <br />
-                            & Atraksi Sempurna
-                        </h2>
+                        <h2>Cerita Desa</h2>
                     </div>
                     <div class="content-block">
-                        <h3>Suara dari penduduk: <strong> Governlia</strong></h3>
                         <div class="text">
-                            Veniam quis nostrud exercitation llamco laboris nis aliquip conseqa rure dolorn repreh derit luptate velit excepteur ocaecats aliquip ex duis aute irure dolor in reprehenderit voluptate velitey cillum
-                            dolore ipsum dolor consectetur.
-                        </div>
-                        <ul class="list">
-                            <li>Meningkatkat semua jenis peluang</li>
-                            <li>Solusi cepat untuk masalah sehari-hari</li>
-                            <li>Waktu dan tempt terbaik untuk memulai bisnis</li>
-                            <li>Komunitas yang tumbuh lebih besar</li>
-                        </ul>
-                        <div class="bottom-content">
-                            <div class="text">
-                                Untuk Bantuan, Pertanyaan <br />
-                                atau Saran, Hubungi Kami
-                            </div>
-                            <ul class="contact-link">
-                                <li>
-                                    <a href="tel:+62 823 3976 5401"><i class="icon-phone"></i></a>
-                                </li>
-                                <li>
-                                    <a href="mailto:munciple@example.net"><i class="icon-envelope"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://goo.gl/maps/FJ7tb6KtzutPCNjh8" target="_blank"><i class="icon-placeholder"></i></a>
-                                </li>
-                            </ul>
+                            "Sejarah peradaban masyarakat penghuni kampung sowang yang berlokasi Didesa Loha, Kecamatan Pacar, Kabupaten Manggarai Barat. kampung sowang diberi nama oleh leluhur “empo” yang datang dari suku nawangkarena sebelum dijadikan sebuah tempat pemukiman. Wilayah kampung sowang pada saat itu banyak tumbuh pohon gebang (sowang) sehingga nama tersebut diambil dari nama pohon gebang yang dalam bahasa daerah setempat adalah sowang Kampung sowang dihuni oleh beberapa suku diantaranya Suku Nawang, Suku Jao,Suku Dangka Dan Suku Nduri. Kedatangan nenek moyang pertama yang menghuni kampung sowang adalah leluhur dari keturunan suku nawang dan diikuti oleh suku jao, suku dangka dan suku nduri. Suku nawang datang dan menghuni wilayah kampong sowing karena diutus oleh suku jao yang berada di dangka dengan tujuan untuk menguasai wilayah dan hak atas ulaiat kekuasaan suku jao. Semua suku yang berada di kampung sowang memiliki hubungan kekeluargaan yang sangat dekat. Hal itu terjadi karena adanya hubungan perkawinan antara suku."
                         </div>
                     </div>
                 </div>
@@ -75,466 +47,41 @@
             </div>
         </div>
     </section>
-
-    <!-- Funfacts Section -->
-    <section class="funfacts-section mb-0" style="background-image: url(assets/images/background/bg-1.jpg)">
-        <div class="auto-container">
-            <div class="row">
-                <!--Column-->
-                <div class="column counter-column col-lg-4 col-md-6">
-                    <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="icon-outer">
-                            <div class="icon"><span class="icon-area"></span></div>
-                        </div>
-                        <div class="content">
-                            <div class="text">Luas Area</div>
-                            <div class="count-outer count-box"><span class="count-text" data-speed="3000" data-stop="790.3">0</span><span>km²</span></div>
-                        </div>
-                    </div>
-                </div>
-                <!--Column-->
-                <div class="column counter-column col-lg-4 col-md-6">
-                    <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="icon-outer">
-                            <div class="icon"><span class="icon-people"></span></div>
-                        </div>
-                        <div class="content">
-                            <div class="text">Jumlah Penduduk</div>
-                            <div class="count-outer count-box"><span class="count-text" data-speed="3000" data-stop="5.39">0</span><span>million</span></div>
-                        </div>
-                    </div>
-                </div>
-                <!--Column-->
-                <div class="column counter-column col-lg-4 col-md-6">
-                    <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="icon-outer">
-                            <div class="icon"><span class="icon-language"></span></div>
-                        </div>
-                        <div class="content">
-                            <div class="text">Bahasa Diucapkan</div>
-                            <div class="count-outer count-box"><span>Over</span><span class="count-text" data-speed="3000" data-stop="460">0</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section mb-30">
-        <div class="auto-container">
-            <div class="row no-gutters">
-                <div class="col-xl-3 col-lg-6 feature-block">
-                    <div class="inner-box">
-                        <div class="icon"><span class="icon-train"></span></div>
-                        <div class="content">
-                            <div class="category"><span>Transportation</span></div>
-                            <h3>
-                                Find a Public Transport <br />
-                                or Locate Parking
-                            </h3>
-                        </div>
-                        <div class="overlay" style="background-image: url(assets/images/resource/image-16.jpg)">
-                            <div class="category"><span>Transportation</span></div>
-                            <h3>
-                                Find a Public Transport <br />
-                                or Locate Parking
-                            </h3>
-                            <div class="text">
-                                Dolore magna aliquat minim veniay quis <br />
-                                exercit ullamco laboris aliquip...
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 feature-block">
-                    <div class="inner-box">
-                        <div class="icon"><span class="icon-pets-2"></span></div>
-                        <div class="content">
-                            <div class="category"><span>Wildlife Animals</span></div>
-                            <h3>
-                                Search for an Animal or <br />
-                                Pet for Adoption
-                            </h3>
-                        </div>
-                        <div class="overlay" style="background-image: url(assets/images/resource/image-16.jpg)">
-                            <div class="category"><span>Wildlife Animals</span></div>
-                            <h3>
-                                Search for an Animal or <br />
-                                Pet for Adoption
-                            </h3>
-                            <div class="text">
-                                Dolore magna aliquat minim veniay quis <br />
-                                exercit ullamco laboris aliquip...
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 feature-block">
-                    <div class="inner-box">
-                        <div class="icon"><span class="icon-laptop"></span></div>
-                        <div class="content">
-                            <div class="category"><span>Utility Services</span></div>
-                            <h3>
-                                Pay any Utility Bill Easily <br />
-                                by Access Account
-                            </h3>
-                        </div>
-                        <div class="overlay" style="background-image: url(assets/images/resource/image-16.jpg)">
-                            <div class="category"><span>Utility Services</span></div>
-                            <h3>
-                                Pay any Utility Bill Easily <br />
-                                by Access Account
-                            </h3>
-                            <div class="text">
-                                Dolore magna aliquat minim veniay quis <br />
-                                exercit ullamco laboris aliquip...
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 feature-block">
-                    <div class="inner-box">
-                        <div class="icon"><span class="icon-report"></span></div>
-                        <div class="content">
-                            <div class="category"><span>Municipal Court</span></div>
-                            <h3>
-                                Did any Violation? Submit <br />
-                                Ticket(s) or Pay Tax
-                            </h3>
-                        </div>
-                        <div class="overlay" style="background-image: url(assets/images/resource/image-16.jpg)">
-                            <div class="category"><span>Transportation</span></div>
-                            <h3>
-                                Find a Public Transport <br />
-                                or Locate Parking
-                            </h3>
-                            <div class="text">
-                                Dolore magna aliquat minim veniay quis <br />
-                                exercit ullamco laboris aliquip...
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mayor Message section -->
-    <section class="mayor-message-section">
-        <div class="auto-container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="image"><img src="assets/images/resource/image-4.jpg" alt="" /></div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="content-block pl-lg-5">
-                        <div class="sec-title">
-                            <div class="sub-title">City With Equity - Efficiency - Opportunity</div>
-                            <h2>Message From City Mayor</h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <h3><span>Meet</span> Tim Brexton</h3>
-                                <h4>Elected since August 25, 2017</h4>
-                                <div class="text">
-                                    <p>
-                                        Hiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur.
-                                    </p>
-                                    <p>Excepteur sint occaecat cupidatat non proident suntin culpa qui officia deserunt mollit anim idm est laborum. Sed perspiciatis und omnis iste natus error sit voluptatem accusantium.</p>
-                                </div>
-                                <div class="sign"><img src="assets/images/resource/sign.png" alt="" /></div>
-                                <div class="designation">The City Mayor</div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="funfacts">
-                                    <div class="column counter-column">
-                                        <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                            <div class="content">
-                                                <div class="text">Years Of <br />Experience</div>
-                                                <div class="count-outer count-box">
-                                                    <span class="count-text" data-speed="3000" data-stop="25">0</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column counter-column">
-                                        <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                            <div class="content">
-                                                <div class="text">
-                                                    programs <br />
-                                                    for the city
-                                                </div>
-                                                <div class="count-outer count-box">
-                                                    <span class="count-text" data-speed="3000" data-stop="80">0</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column counter-column">
-                                        <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                            <div class="content">
-                                                <div class="text">
-                                                    Approved <br />
-                                                    covid-19 centers
-                                                </div>
-                                                <div class="count-outer count-box">
-                                                    <span class="count-text" data-speed="3000" data-stop="63">0</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video section -->
-    <section class="video-section" style="background-image: url(assets/images/background/bg-3.jpg)">
-        <div class="auto-container">
-            <h2>
-                <strong>Experience The Great</strong> <br />
-                Countryside And Enjoy Hiking
-            </h2>
-            <div class="text">Eabore ipsum dolor sit amet consectetur adipisicing tempor</div>
-            <div class="video-btn">
-                <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="overlay-link play-now ripple" data-fancybox="gallery" data-caption=""><span class="fas fa-play"></span> </a>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Team section -->
     <section class="team-section">
         <div class="auto-container">
             <div class="sec-title style-two text-center">
-                <div class="big-title">Governlia</div>
-                <div class="sub-title">City With Equity - Efficiency - Opportunity</div>
-                <h2>Upcoming City Events</h2>
+                <div class="big-title">Loha</div>
+                <h2>Acara Adat di Desa Kami</h2>
             </div>
             <div class="row">
                 <div class="col-xl-4 col-md-6 team-block">
                     <div class="inner-box">
-                        <div class="image"><img src="assets/images/resource/team-1.jpg" alt="" /></div>
-                        <div class="content">
-                            <h4>Paul Wilson</h4>
-                            <div class="designation">mayor / Chairman</div>
-                        </div>
+                        <div class="image"><img src="https://i0.wp.com/rimbakita.com/wp-content/uploads/2019/09/upacara-adat-bali.jpg" class="image-about" alt="" /></div>
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Paul Wilson</h4>
-                                <div class="designation">mayor / Chairman</div>
-                                <ul class="contact-info">
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-phone"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-envelope-open"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                </ul>
-                                <ul class="social-links">
-                                    <li>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-linked-in"></i></a>
-                                    </li>
-                                </ul>
+                                <h4>Upacara Adat di 34 Provinsi di Indonesia</h4>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 team-block">
                     <div class="inner-box">
-                        <div class="image"><img src="assets/images/resource/team-2.jpg" alt="" /></div>
-                        <div class="content">
-                            <h4>Robert Gates</h4>
-                            <div class="designation">Ambassador</div>
-                        </div>
+                        <div class="image"><img src="https://i0.wp.com/rimbakita.com/wp-content/uploads/2019/09/upacara-adat-bali.jpg" class="image-about" alt="" /></div>
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Robert Gates</h4>
-                                <div class="designation">Ambassador</div>
-                                <ul class="contact-info">
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-phone"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-envelope-open"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                </ul>
-                                <ul class="social-links">
-                                    <li>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-linked-in"></i></a>
-                                    </li>
-                                </ul>
+                                <h4>Upacara Adat di 34 Provinsi di Indonesia</h4>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 team-block">
                     <div class="inner-box">
-                        <div class="image"><img src="assets/images/resource/team-3.jpg" alt="" /></div>
-                        <div class="content">
-                            <h4>Amanda Tim</h4>
-                            <div class="designation">Mayor Assistant</div>
-                        </div>
+                        <div class="image"><img src="https://i0.wp.com/rimbakita.com/wp-content/uploads/2019/09/upacara-adat-bali.jpg" class="image-about" alt="" /></div>
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Amanda Tim</h4>
-                                <div class="designation">Mayor Assistant</div>
-                                <ul class="contact-info">
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-phone"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-envelope-open"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                </ul>
-                                <ul class="social-links">
-                                    <li>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-linked-in"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 team-block">
-                    <div class="inner-box">
-                        <div class="image"><img src="assets/images/resource/team-4.jpg" alt="" /></div>
-                        <div class="content">
-                            <h4>Richard Auston</h4>
-                            <div class="designation">Council Member</div>
-                        </div>
-                        <div class="overlay">
-                            <div class="content-two">
-                                <h4>Paul Wilson</h4>
-                                <div class="designation">Council Member</div>
-                                <ul class="contact-info">
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-phone"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-envelope-open"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                </ul>
-                                <ul class="social-links">
-                                    <li>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-linked-in"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 team-block">
-                    <div class="inner-box">
-                        <div class="image"><img src="assets/images/resource/team-5.jpg" alt="" /></div>
-                        <div class="content">
-                            <h4>Harry Arther</h4>
-                            <div class="designation">Council Member</div>
-                        </div>
-                        <div class="overlay">
-                            <div class="content-two">
-                                <h4>Harry Arther</h4>
-                                <div class="designation">Council Member</div>
-                                <ul class="contact-info">
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-phone"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-envelope-open"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                </ul>
-                                <ul class="social-links">
-                                    <li>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-linked-in"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 team-block">
-                    <div class="inner-box">
-                        <div class="image"><img src="assets/images/resource/team-1.jpg" alt="" /></div>
-                        <div class="content">
-                            <h4>Jack W. Oliver</h4>
-                            <div class="designation">Council Member</div>
-                        </div>
-                        <div class="overlay">
-                            <div class="content-two">
-                                <h4>Jack W. Oliver</h4>
-                                <div class="designation">Council Member</div>
-                                <ul class="contact-info">
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-phone"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+1(852)6105599"><i class="fas fa-envelope-open"></i>+ 1 (852) 610 5599</a>
-                                    </li>
-                                </ul>
-                                <ul class="social-links">
-                                    <li>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-linked-in"></i></a>
-                                    </li>
-                                </ul>
+                                <h4>Upacara Adat di 34 Provinsi di Indonesia</h4>
                             </div>
                         </div>
                     </div>

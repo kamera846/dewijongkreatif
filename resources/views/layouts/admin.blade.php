@@ -19,6 +19,7 @@
         <!-- Argon CSS -->
         <link rel="stylesheet" href="{{ asset('admin/assets/css/argon.css?v=1.1.0') }}" type="text/css" />
         <link rel="stylesheet" href="mycss.css">
+        {{-- <link rel="stylesheet" href="{{ asset('/mycss.css') }}"> --}}
     </head>
 
     <body>
@@ -68,8 +69,8 @@
                                         <span class="nav-link-text">Pengguna</span>
                                     </a>
                                 </li>
-                            @endif
-
+                                
+                                @endif
                             <li class="nav-item">
                                 <a 
                                 class="nav-link {{ ( $judul_halaman === 'Admin | Data Postingan' || $judul_halaman === 'Admin | Edit Postingan' || $judul_halaman === 'Admin | Tambah Postingan' || $judul_halaman === 'Admin | Detail Postingan' ) ? 'active' : '' }}" 
@@ -162,7 +163,7 @@
                                             </div>
                                             @if (Auth::user()->foto_profil != null)
                                                 <span class="avatar avatar-sm rounded-circle">
-                                                    <img alt="Image placeholder" src="{{ asset('storage/' . Auth::user()->foto_profil)}}" />
+                                                    <img alt="Image placeholder" style="width: 100%;height:100%;object-fit:cover;" src="{{ asset('storage/' . Auth::user()->foto_profil)}}" />
                                                 </span>
                                             @else
                                                 <img src="{{ asset('/storage/foto-profil/defaultuserimage.png') }}" class="avatar rounded-circle mr-3">

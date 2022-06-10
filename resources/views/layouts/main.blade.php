@@ -99,14 +99,14 @@
                                     </div>
                                 </nav>
                             </div>
-                            <div class="navbar-right">
+                            <!-- <div class="navbar-right">
                                 <div class="search-form-two">
                                     <form>
                                         <input type="search" placeholder="Ketikkan sesuatu ..." />
                                         <button type="submit"><i class="icon-search"></i></button>
                                     </form>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -131,14 +131,14 @@
                                     <!-- Main Menu -->
                                     <nav class="main-menu navbar-expand-md navbar-light"></nav>
                                 </div>
-                                <div class="navbar-right">
+                                <!-- <div class="navbar-right">
                                     <div class="search-form-two">
                                         <form>
                                             <input type="search" placeholder="Ketikkan sesuatu ..." />
                                             <button type="submit"><i class="icon-search"></i></button>
                                         </form>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -218,7 +218,7 @@
                             <div class="column col-lg-4 col-md-6">
                                 <div class="widget about-widget">
                                     <h3 class="widget-title">Tentang Kami</h3>
-                                    <div class="text">Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
+                                    <div class="text">Kedatangan nenek moyang pertama yang menghuni kampung sowang adalah leluhur dari keturunan suku nawang dan diikuti oleh suku jao, suku dangka dan suku nduri.</div>
                                     <ul class="social-links">
                                         <li>
                                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -294,7 +294,7 @@
                     <div class="auto-container">
                         <div class="wrapper-box">
                             <div class="copyright">
-                                <div class="text">© 1995-2020 <a href="#">GOVERNLIA</a> - The City Govt All rights reserved.</div>
+                                <div class="text">© 2022 <a href="/">LOHA</a> - Powered by <a href="https://jongkreatif.id/">JongKreatif</a>.</div>
                             </div>
                         </div>
                     </div>
