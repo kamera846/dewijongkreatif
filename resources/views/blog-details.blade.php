@@ -60,15 +60,6 @@
                 </div>
                 <div class="col-lg-4">
                     <aside class="sidebar blog-sidebar sidebar-style-two">
-                        <div class="widget widget_search">
-                            <h3 class="widget-title">Cari</h3>
-                            <form action="#" method="post" class="search-form">
-                                <div class="form-group">
-                                    <input type="search" name="search-field" placeholder="Cari Postingan ..." required="" />
-                                    <button type="search"><i class="fas fa-search"></i></button>
-                                </div>
-                            </form>
-                        </div>
                         <!-- <div class="widget widget_categories style-two">
                             <h3 class="widget-title">Blog Categories</h3>
                             <div class="widget-content">

@@ -175,7 +175,7 @@
 
 @media only screen and (max-width: 575px) {
     .news-block .image img {
-        max-height: 270px;
+        height: 270px;
     }
     .news-block-two .image img {
         max-height: 270px;
