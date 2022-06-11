@@ -87,9 +87,9 @@
                                         <span class="font-weight-bold">{{ $user->role }}</span>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="/dashboard/user/{{ $user->id }}/detail" class="table-action" data-toggle="tooltip" data-original-title="Detail pengguna">
+                                        {{-- <a href="/dashboard/user/{{ $user->id }}/detail" class="table-action" data-toggle="tooltip" data-original-title="Detail pengguna">
                                             <i class="fas fa-info-circle"></i>
-                                        </a>
+                                        </a> --}}
                                         <a href="/dashboard/user/{{ $user->id }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit pengguna">
                                             <i class="fas fa-user-edit"></i>
                                         </a>

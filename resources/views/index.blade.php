@@ -241,29 +241,16 @@
                                 voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                             </div>
                             <div class="link-btn">
-                                <a href="/gallery" class="theme-btn btn-style-one"><span>View Details</span></a>
+                                <a href="/gallery" class="theme-btn btn-style-one"><span>Selengkapnya</span></a>
                             </div>
                         </div>
                         <div class="swiper-container highlight-thumbs">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="thumb"><img src="assets/images/resource/image-9.jpg" alt="" /></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="thumb"><img src="assets/images/resource/image-10.jpg" alt="" /></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="thumb"><img src="assets/images/resource/image-11.jpg" alt="" /></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="thumb"><img src="assets/images/resource/image-9.jpg" alt="" /></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="thumb"><img src="assets/images/resource/image-10.jpg" alt="" /></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="thumb"><img src="assets/images/resource/image-11.jpg" alt="" /></div>
-                                </div>
+                                @foreach($galleries as $gallery)
+                                    <div class="swiper-slide">
+                                        <div class="thumb"><img src="{{ asset('storage/'.$gallery->foto) }}" alt="" /></div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="highlight-slider-nav">
@@ -279,24 +266,11 @@
                         <!-- Swiper -->
                         <div class="swiper-container highlight-image">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="image"><img src="assets/images/resource/image-12.jpg" alt="" /></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image"><img src="assets/images/resource/image-12.jpg" alt="" /></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image"><img src="assets/images/resource/image-12.jpg" alt="" /></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image"><img src="assets/images/resource/image-12.jpg" alt="" /></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image"><img src="assets/images/resource/image-12.jpg" alt="" /></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image"><img src="assets/images/resource/image-12.jpg" alt="" /></div>
-                                </div>
+                                @foreach($galleries as $gallery)
+                                    <div class="swiper-slide">
+                                        <div class="image"><img src="{{ asset('storage/'.$gallery->foto) }}" alt="" /></div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -352,84 +326,37 @@
             </div>
             <div class="row">
                 <div class="theme_carousel owl-theme owl-carousel">
-                    <div class="col-xl-12 news-block">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="assets/images/resource/news-2.jpg" alt="" />
-                                <div class="overlay">
-                                    <div class="link-btn">
-                                        <a href="blog-details.php"><i class="icon-arrow"></i></a>
+                    
+                    @foreach($blogs as $blog)
+
+                        <div class="col-xl-12 news-block">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <img src="{{ asset('storage/'.$blog->gambar_blog) }}" alt="{{ $blog->judul }}" style="height: 270px;"/>
+                                    <div class="overlay">
+                                        <div class="link-btn">
+                                            <a href="/blog/{{ $blog->slug }}"><i class="icon-arrow"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="lower-content">
-                                <!-- <div class="category"><a href="#">Health & Fitness</a></div> -->
-                                <h4>
-                                    <a href="blog-details.php"
-                                        >Long-Term Vision Of Health <br />
-                                        & Attractive Facility</a
-                                    >
-                                </h4>
-                                <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
-                                <ul class="post-meta">
-                                    <li><i class="far fa-user"></i>Admin</li>
-                                    <li><i class="far fa-calendar"></i>Sep 3, 2020</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-12 news-block">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="assets/images/resource/news-3.jpg" alt="" />
-                                <div class="overlay">
-                                    <div class="link-btn">
-                                        <a href="blog-details.php"><i class="icon-arrow"></i></a>
+                                <div class="lower-content">
+                                    <!-- <div class="category"><a href="#">Health & Fitness</a></div> -->
+                                    <h4>
+                                        <a href="/blog/{{ $blog->slug }}">{{ $blog->judul }}</a>
+                                    </h4>
+                                    <div class="text">
+                                        {{ substr(strip_tags($blog->konten), 0, 79) }}...
                                     </div>
+                                    <ul class="post-meta">
+                                        <li><i class="far fa-user"></i>{{ ucwords($blog->penulis) }}</li>
+                                        <li><i class="far fa-calendar"></i>{{ $blog->created_at->isoFormat('d MMMM') }}</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="lower-content">
-                                <!-- <div class="category"><a href="#">Tourists Guide</a></div> -->
-                                <h4>
-                                    <a href="blog-details.php"
-                                        >Recreation Programs From <br />
-                                        Watery Landscapes</a
-                                    >
-                                </h4>
-                                <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
-                                <ul class="post-meta">
-                                    <li><i class="far fa-user"></i>Admin</li>
-                                    <li><i class="far fa-calendar"></i>Sep 3, 2020</li>
-                                </ul>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-12 news-block">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="assets/images/resource/news-4.jpg" alt="" />
-                                <div class="overlay">
-                                    <div class="link-btn">
-                                        <a href="blog-details.php"><i class="icon-arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <!-- <div class="category"><a href="#">Public Awareness</a></div> -->
-                                <h4>
-                                    <a href="blog-details.php"
-                                        >Self-Guided Driving & Tours <br />
-                                        Walk Of Greater City</a
-                                    >
-                                </h4>
-                                <div class="text">Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip...</div>
-                                <ul class="post-meta">
-                                    <li><i class="far fa-user"></i>Admin</li>
-                                    <li><i class="far fa-calendar"></i>Sep 3, 2020</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+
+                    @endforeach
+
                 </div>
             </div>
         </div>

@@ -44,17 +44,19 @@ if (hapus != undefined) {
     });
 }
 
-// flashdata
-const flashData = document.querySelector(".flash-data").dataset["flashdata"];
+const flashData = document.querySelector(".flash-data");
+if (flashData != undefined) {
+    const flashData = flashData.dataset["flashdata"];
 
-if (flashData && flashData !== "gagal") {
-    Swal.fire("Sukses", "Berhasil " + flashData + " data!", "success");
-} else if (flashData === "gagal") {
-    Swal.fire("Gagal", "Ada kesalahan!", "error");
+    if (flashData !== "gagal") {
+        Swal.fire("Sukses", "Berhasil " + flashData + " data!", "success");
+    } else if (flashData === "gagal") {
+        Swal.fire("Gagal", "Ada kesalahan!", "error");
+    }
 }
 
 // edit kontak
-if (document.location.pathname == "/dashboard/contact") {
+if (document.location.pathname === "/dashboard/contact") {
     const email = document.getElementById("email");
     const noTelp = document.getElementById("no_telp");
     const noWa = document.getElementById("no_wa");
@@ -92,7 +94,7 @@ if (document.location.pathname == "/dashboard/contact") {
 }
 
 // edit akun sosmed
-if (document.location.pathname == "/dashboard/social") {
+if (document.location.pathname === "/dashboard/social") {
     const twitter = document.getElementById("twitter");
     const facebook = document.getElementById("facebook");
     const instagram = document.getElementById("instagram");
@@ -129,4 +131,15 @@ if (document.location.pathname == "/dashboard/social") {
             location.reload();
         });
     });
+}
+
+// memberitahu batas 200 karakter input deskripsi galelery
+function limit(element) {
+    const max_chars = 200;
+    if (element.value.length > max_chars) {
+        element.value = element.value.substr(0, max_chars);
+        element.nextElementSibling.classList.remove("d-none");
+    } else if (element.value.length < max_chars) {
+        element.nextElementSibling.classList.add("d-none");
+    }
 }

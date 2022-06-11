@@ -147,6 +147,9 @@
 }
 
 @media only screen and (max-width: 767px) {
+    .highlights-section .highlight-thumbs .thumb img {
+        height: 70px;
+    }
     br {
         display: none;
     }
@@ -174,11 +177,14 @@
 }
 
 @media only screen and (max-width: 575px) {
+    .highlights-section .highlight-thumbs .thumb img {
+        height: 50px;
+    }
     .news-block .image img {
         height: 270px;
     }
     .news-block-two .image img {
-        max-height: 270px;
+        height: 270px;
     }
     .project-block .content {
         left: 30px;

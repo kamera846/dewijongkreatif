@@ -10,6 +10,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Contact;
+use App\Http\Controllers\MainController;
 
 
 // Route::get('/register', [RegisterController::class, 'index']);
@@ -63,6 +64,7 @@ Route::middleware('auth')->group(function () {
 
 
 // Landing Page
+Route::get('/', [MainController::class, 'index']);
 Route::get('/blog', [BlogController::class, 'landingPage']);
 Route::get('/blog/{blog:slug}', [BlogController::class, 'postDetails']);
 Route::get('/gallery', [GalleryController::class, 'landingPage']);
@@ -80,10 +82,6 @@ Route::post('/contact', [Contact::class, 'sendMail']);
 //     return view('dashboard.social', ['judul_halaman' => 'Admin | Profil Sosial Media']);
 // });
 
-// landing page
-Route::get('/', function() {
-    return view('index', ['judul_halaman' => 'Desa Wisata Loha']);
-});
 Route::get('/about', function() {
     return view('about', ['judul_halaman' => 'Tentang Kami | Desa Wisata Loha']);
 });
