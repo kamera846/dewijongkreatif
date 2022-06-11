@@ -94,4 +94,11 @@ class GalleryController extends Controller
         gallery::destroy($gallery->id);
         return redirect('/dashboard/gallery')->with('success', 'menghapus');
     }
+    public function landingPage()
+    {
+        return view('gallery', [
+            'judul_halaman' => 'Galeri | Desa Wisata Loha',
+            'galleries' => Gallery::latest('updated_at')->get()
+        ]);
+    }
 }

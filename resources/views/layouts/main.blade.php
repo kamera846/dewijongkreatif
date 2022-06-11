@@ -93,7 +93,7 @@
                                             <li><a href="./">Beranda</a></li>
                                             <li class="{{ ($judul_halaman === 'Tentang Kami | Desa Wisata Loha')?'current':'' }}"><a href="/about">Tentang Kami</a></li>
                                             <li class="{{ ($judul_halaman === 'Galeri | Desa Wisata Loha')?'current':'' }}"><a href="/gallery">Galeri</a></li>
-                                            <li class="{{ ($judul_halaman === 'Blog | Desa Wisata Loha')?'current':'' }}"><a href="/blog">Blog</a></li>
+                                            <li class="{{ ($judul_halaman === 'Blog | Desa Wisata Loha' || isset($blog))?'current':''}}"><a href="/blog">Blog</a></li>
                                             <li class="{{ ($judul_halaman === 'Kontak Kami | Desa Wisata Loha')?'current':'' }}"><a href="/contact">Kontak</a></li>
                                         </ul>
                                     </div>

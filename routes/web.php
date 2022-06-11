@@ -57,10 +57,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/gallery/{gallery}/edit', [GalleryController::class, 'edit']);
     Route::put('/dashboard/gallery/{gallery}/update', [GalleryController::class, 'update']);
     Route::delete('/dashboard/gallery/{gallery}/delete', [GalleryController::class, 'destroy']);
-
+    
+    
 });
 
 
+// Landing Page
+Route::get('/blog', [BlogController::class, 'landingPage']);
+Route::get('/blog/{blog:slug}', [BlogController::class, 'postDetails']);
+Route::get('/gallery', [GalleryController::class, 'landingPage']);
+
+
+Route::get('/contact', [Contact::class, 'show']);
+Route::post('/contact', [Contact::class, 'sendMail']);
 
 
 // admin
@@ -78,17 +87,6 @@ Route::get('/', function() {
 Route::get('/about', function() {
     return view('about', ['judul_halaman' => 'Tentang Kami | Desa Wisata Loha']);
 });
-Route::get('/gallery', function() {
-    return view('gallery', ['judul_halaman' => 'Galeri | Desa Wisata Loha']);
-});
-Route::get('/blog', function() {
-    return view('blog', ['judul_halaman' => 'Blog | Desa Wisata Loha']);
-});
 Route::get('/blog/slug', function() {
     return view('blog-details', ['judul_halaman' => 'Judul Postingan | Desa Wisata Loha']);
 });
-// Route::get('/contact', function() {
-//     return view('contact', ['judul_halaman' => 'Kontak Kami | Desa Wisata Loha']);
-// });
-Route::get('/contact', [Contact::class, 'show']);
-Route::post('/contact', [Contact::class, 'sendMail']);
