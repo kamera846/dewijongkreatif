@@ -93,26 +93,6 @@
                                 </ul>
                             </div>
                         </div> -->
-                        <div class="widget widget_popular_post">
-                            <h3 class="widget-title">Postingan Terbaru</h3>
-
-                            @foreach($recentPosts as $post)
-                                
-                                <article class="post">
-                                    <figure class="post-thumb">
-                                        <a href="/blog/{{ $post->slug }}"><img src="{{ asset('storage/' . $post->gambar_blog) }}" alt="{{ $post->judul }}" /></a>
-                                    </figure>
-                                    <div class="content">
-                                        <h5>
-                                            <a href="/blog/{{ $post->slug }}"">{{ $post->judul }}</a>
-                                        </h5>
-                                        <div class="post-info"><i class="far fa-calendar-alt"></i>{{ $post->created_at->isoFormat('d MMMM Y') }}</div>
-                                    </div>
-                                </article>
-                            
-                            @endforeach
-
-                        </div>
                         <!-- Tag-cloud Widget -->
                         <!-- <div class="widget widget_tag_cloud">
                             <h3 class="widget-title">Tags Cloud</h3>

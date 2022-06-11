@@ -115,7 +115,6 @@ class BlogController extends Controller
         return view('blog', [
             'blogs' => Blog::latest('updated_at')->get(),
             'judul_halaman' => 'Blog | Desa Wisata Loha',
-            'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
         ]);
     }
     
@@ -126,6 +125,7 @@ class BlogController extends Controller
             'judul_halaman' => $blog->judul . ' | Desa Wisata Loha',
             'blog' => $blog,
             'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+            'tes' => 'oke',
         ]);
     }
 }

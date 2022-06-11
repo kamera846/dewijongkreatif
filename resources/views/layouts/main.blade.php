@@ -90,7 +90,7 @@
                                 <nav class="main-menu navbar-expand-md navbar-light">
                                     <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                         <ul class="navigation">
-                                            <li><a href="./">Beranda</a></li>
+                                            <li><a href="{{ isset($tes)?'../':'./' }}">Beranda</a></li>
                                             <li class="{{ ($judul_halaman === 'Tentang Kami | Desa Wisata Loha')?'current':'' }}"><a href="/about">Tentang Kami</a></li>
                                             <li class="{{ ($judul_halaman === 'Galeri | Desa Wisata Loha')?'current':'' }}"><a href="/gallery">Galeri</a></li>
                                             <li class="{{ ($judul_halaman === 'Blog | Desa Wisata Loha' || isset($blog))?'current':''}}"><a href="/blog">Blog</a></li>
@@ -245,7 +245,7 @@
                                     <h3 class="widget-title">Navigasi</h3>
                                     <div class="widget-content">
                                         <ul>
-                                            <li><a href="./">Beranda</a></li>
+                                            <li><a href="{{ isset($tes)?'../':'./' }}">Beranda</a></li>
                                             <li><a href="/about">Tentang Kami</a></li>
                                             <li><a href="/gallery">Galeri</a></li>
                                             <li><a href="/blog">Blog</a></li>
