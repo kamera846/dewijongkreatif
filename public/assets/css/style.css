@@ -3757,6 +3757,18 @@ img {
     height: 430px;
     object-fit: cover;
 }
+.news-block .image-two {
+    position: relative;
+    overflow: hidden;
+}
+
+.news-block .image-two img {
+    position: relative;
+    transition: 0.5s;
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
 
 .news-block .inner-box:hover .image img {
     transform: scale(1.05);

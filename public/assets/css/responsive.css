@@ -30,6 +30,9 @@
     }
 }
 @media only screen and (max-width: 1400px) {
+    .news-block .image-two img {
+        height: 250px;
+    }
     .main-header .header-upper .navbar-right {
         display: none;
     }
@@ -93,6 +96,9 @@
 }
 
 @media only screen and (max-width: 991px) {
+    .news-block .image-two img {
+        height: 230px;
+    }
     .services-section-three .content-block {
         padding: 30px;
     }

@@ -59,31 +59,16 @@
                 <div class="col-xl-4 col-md-6 team-block">
                     <div class="inner-box">
                         <div class="image"><img src="https://i0.wp.com/rimbakita.com/wp-content/uploads/2019/09/upacara-adat-bali.jpg" class="image-about" alt="" /></div>
-                        <div class="overlay">
-                            <div class="content-two">
-                                <h4>Upacara Adat di 34 Provinsi di Indonesia</h4>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 team-block">
                     <div class="inner-box">
                         <div class="image"><img src="https://i0.wp.com/rimbakita.com/wp-content/uploads/2019/09/upacara-adat-bali.jpg" class="image-about" alt="" /></div>
-                        <div class="overlay">
-                            <div class="content-two">
-                                <h4>Upacara Adat di 34 Provinsi di Indonesia</h4>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 team-block">
                     <div class="inner-box">
                         <div class="image"><img src="https://i0.wp.com/rimbakita.com/wp-content/uploads/2019/09/upacara-adat-bali.jpg" class="image-about" alt="" /></div>
-                        <div class="overlay">
-                            <div class="content-two">
-                                <h4>Upacara Adat di 34 Provinsi di Indonesia</h4>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

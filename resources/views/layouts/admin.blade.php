@@ -140,7 +140,7 @@
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Navbar links -->
-                        <ul class="navbar-nav align-items-center ml-md-auto">
+                        <ul class="navbar-nav align-items-center">
                             <li class="nav-item d-xl-none">
                                 <!-- Sidenav toggler -->
                                 <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
@@ -151,6 +151,9 @@
                                     </div>
                                 </div>
                             </li>
+                        </ul>
+                        <ul class="navbar-nav align-items-center mr-md-auto">
+                            <h1 class="text-white mb-0">Selamat Datang!</h1>
                         </ul>
                         <ul class="navbar-nav align-items-center ml-auto ml-md-0">
                             <li class="nav-item dropdown">

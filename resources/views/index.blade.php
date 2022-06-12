@@ -325,39 +325,37 @@
                 <h2>Blog Terbaru</h2>
             </div>
             <div class="row">
-                <div class="theme_carousel owl-theme owl-carousel">
                     
-                    @foreach($blogs as $blog)
+                @foreach($blogs as $blog)
 
-                        <div class="col-xl-12 news-block">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <img src="{{ asset('storage/'.$blog->gambar_blog) }}" alt="{{ $blog->judul }}" style="height: 270px;"/>
-                                    <div class="overlay">
-                                        <div class="link-btn">
-                                            <a href="/blog/{{ $blog->slug }}"><i class="icon-arrow"></i></a>
-                                        </div>
+                    <div class="col-lg-4 col-md-6 news-block">
+                        <div class="inner-box">
+                            <div class="image-two">
+                                <img src="{{ asset('storage/'.$blog->gambar_blog) }}" alt="{{ $blog->judul }}" class="img"/>
+                                <div class="overlay">
+                                    <div class="link-btn">
+                                        <a href="/blog/{{ $blog->slug }}"><i class="icon-arrow"></i></a>
                                     </div>
-                                </div>
-                                <div class="lower-content">
-                                    <!-- <div class="category"><a href="#">Health & Fitness</a></div> -->
-                                    <h4>
-                                        <a href="/blog/{{ $blog->slug }}">{{ $blog->judul }}</a>
-                                    </h4>
-                                    <div class="text">
-                                        {{ substr(strip_tags($blog->konten), 0, 79) }}...
-                                    </div>
-                                    <ul class="post-meta">
-                                        <li><i class="far fa-user"></i>{{ ucwords($blog->penulis) }}</li>
-                                        <li><i class="far fa-calendar"></i>{{ $blog->created_at->isoFormat('d MMMM') }}</li>
-                                    </ul>
                                 </div>
                             </div>
+                            <div class="lower-content">
+                                <!-- <div class="category"><a href="#">Health & Fitness</a></div> -->
+                                <h4>
+                                    <a href="/blog/{{ $blog->slug }}">{{ $blog->judul }}</a>
+                                </h4>
+                                <div class="text">
+                                    {{ substr(strip_tags($blog->konten), 0, 79) }}...
+                                </div>
+                                <ul class="post-meta">
+                                    <li><i class="far fa-user"></i>{{ ucwords($blog->penulis) }}</li>
+                                    <li><i class="far fa-calendar"></i>{{ $blog->created_at->isoFormat('d MMMM') }}</li>
+                                </ul>
+                            </div>
                         </div>
+                    </div>
 
-                    @endforeach
+                @endforeach
 
-                </div>
             </div>
         </div>
     </section>

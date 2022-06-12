@@ -69,7 +69,7 @@
                                     @endif
                                     </td>
                                     <td>
-                                        <b>{{ $user->nama }}</b>
+                                        <b>{{ ucwords($user->nama) }}</b>
                                     </td>
                                     <td>
                                         <a href="mailto:jhonmichael@gmail.com" target="_blank" class="font-weight-bold">{{ $user->email }}</a>
@@ -78,7 +78,7 @@
                                         <span class="font-weight-bold">{{ $user->alamat }}</span>
                                     </td>
                                     <td>
-                                        <span class="font-weight-bold">{{ $user->pekerjaan }}</span>
+                                        <span class="font-weight-bold">{{ ucwords($user->pekerjaan) }}</span>
                                     </td>
                                     <td>
                                         <span class="font-weight-bold">{{ $user->no_hp }}</span>

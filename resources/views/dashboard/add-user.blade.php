@@ -68,8 +68,8 @@
                                       @enderror
                                     </div>
                                   </div>
-                                   <div class="form-group row">
-                                    {{-- <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
+                                   {{-- <div class="form-group row">
+                                    <label for="role" class="col-md-3 col-form-label form-control-label">Role</label>
                                     <div class="col-md-9">
                                       <select name="role" id="role" class="form-control form-control-alternative @error('role') is-invalid @enderror" required>
                                         <option value="">-- Pilih Role --</option>
@@ -81,9 +81,9 @@
                                             {{ $message }}
                                           </div>
                                       @enderror
-                                    </div> --}}
-                                    <input type="hidden" value="admin" name="role">
-                                  </div>
+                                    </div>
+                                  </div> --}}
+                                  <input type="hidden" value="admin" name="role">
                                   <div class="form-group row">
                                     <label for="pekerjaan" class="col-md-3 col-form-label form-control-label">Pekerjaan</label>
                                     <div class="col-md-9">
