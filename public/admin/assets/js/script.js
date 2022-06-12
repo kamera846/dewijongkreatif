@@ -57,8 +57,8 @@ if (flashData && flashData !== "gagal") {
 if (document.location.pathname == "/dashboard/contact") {
     const email = document.getElementById("email");
     const noTelp = document.getElementById("no_telp");
-    const noWa = document.getElementById("no_wa");
-    const alamat = document.getElementById("alamat");
+    const lokasi = document.getElementById("lokasi");
+    const logo = document.getElementById("logo");
 
     const edit = document.getElementById("edit");
     const pembungkus = document.getElementById("pembungkus");
@@ -82,12 +82,13 @@ if (document.location.pathname == "/dashboard/contact") {
 
         email.removeAttribute("readonly");
         noTelp.removeAttribute("readonly");
-        noWa.removeAttribute("readonly");
-        alamat.removeAttribute("readonly");
+        lokasi.removeAttribute("readonly");
+        logo.removeAttribute("readonly");
 
         batal.addEventListener("click", function () {
             location.reload();
         });
+        
     });
 }
 

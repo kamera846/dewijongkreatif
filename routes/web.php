@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Contact;
-
+use App\Http\Controllers\SosmedController;
 
 // Route::get('/register', [RegisterController::class, 'index']);
 // Route::post('/register', [RegisterController::class, 'store']);
@@ -58,33 +60,44 @@ Route::middleware('auth')->group(function () {
     Route::put('/dashboard/gallery/{gallery}/update', [GalleryController::class, 'update']);
     Route::delete('/dashboard/gallery/{gallery}/delete', [GalleryController::class, 'destroy']);
 
+    Route::get('/dashboard/menu', [MenuController::class, 'index']);
+    Route::get('/dashboard/menu/create', [MenuController::class, 'create']);
+    Route::post('/dashboard/menu/store', [MenuController::class, 'store']);
+    Route::get('/dashboard/menu/{menu:slug}/detail', [MenuController::class, 'show']);
+    Route::get('/dashboard/menu/{menu:slug}/edit', [MenuController::class, 'edit']);
+    Route::put('/dashboard/menu/{menu:slug}/update', [MenuController::class, 'update']);
+    Route::delete('/dashboard/menu/{menu:slug}/delete', [MenuController::class, 'destroy']);
 });
 
 
 
 
 // admin
+Route::get('/dashboard/contact', [ContactController::class, 'index']);
+Route::put('/dashboard/contact/{contact}/update', [ContactController::class, 'update']);
 // Route::get('/dashboard/contact', function () {
 //     return view('dashboard.contact', ['judul_halaman' => 'Admin | Profil Kontak']);
 // });
 // Route::get('/dashboard/social', function () {
 //     return view('dashboard.social', ['judul_halaman' => 'Admin | Profil Sosial Media']);
 // });
+Route::get('/dashboard/social', [SosmedController::class, 'index']);
+Route::get('/dashboard/social/create', [SosmedController::class, 'create']);
 
 // landing page
-Route::get('/', function() {
+Route::get('/', function () {
     return view('index', ['judul_halaman' => 'Desa Wisata Loha']);
 });
-Route::get('/about', function() {
+Route::get('/about', function () {
     return view('about', ['judul_halaman' => 'Tentang Kami | Desa Wisata Loha']);
 });
-Route::get('/gallery', function() {
+Route::get('/gallery', function () {
     return view('gallery', ['judul_halaman' => 'Galeri | Desa Wisata Loha']);
 });
-Route::get('/blog', function() {
+Route::get('/blog', function () {
     return view('blog', ['judul_halaman' => 'Blog | Desa Wisata Loha']);
 });
-Route::get('/blog/slug', function() {
+Route::get('/blog/slug', function () {
     return view('blog-details', ['judul_halaman' => 'Judul Postingan | Desa Wisata Loha']);
 });
 // Route::get('/contact', function() {

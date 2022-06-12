@@ -88,11 +88,19 @@
                                     <span class="nav-link-text">Galeri</span>
                                 </a>
                             </li>
-
+                            <li class="nav-item">
+                                <a 
+                                class="
+                                    nav-link {{ ( $judul_halaman === 'Admin | Data Menu' || $judul_halaman === 'Admin | Edit Menu' || $judul_halaman === 'Admin | Tambah Menu' ) ? 'active' : '' }}" 
+                                href="/dashboard/menu">
+                                    <i class="ni ni-single-copy-04 default"></i>
+                                    <span class="nav-link-text">Menu</span>
+                                </a>
+                            </li>
                         </ul>
 
                         <!-- Divider -->
-                        {{-- <hr class="my-3">
+                        <hr class="my-3">
 
                         <h6 class="navbar-heading p-0 text-primary">PROFIL</h6>
                         <ul class="navbar-nav mb-md-3">
@@ -112,7 +120,7 @@
                                     <span class="nav-link-text">Sosial Media</span>
                                 </a>
                             </li>
-                        </ul> --}}
+                        </ul>
 
                         <!-- Divider -->
                         <hr class="my-3">

@@ -6,11 +6,11 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Sosial Media</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Menu</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a hrefdashboarddashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Data Sosial Media</li>
+                                <li class="breadcrumb-item active" aria-current="page">Data Menu</li>
                             </ol>
                         </nav>
                     </div>
@@ -29,13 +29,7 @@
                     <div class="card-header border-0">
                         <div class="row">
                             <div class="col-6">
-                                <h3 class="mb-0">Data Sosial Media</h3>
-                            </div>
-                            <div class="col-6 text-right">
-                                <a href="/dashboard/social/create" class="btn btn-sm btn-primary">
-                                    <span class="btn-inner--icon"><i class="fas fa-user-plus"></i></span>
-                                    <span class="btn-inner--text">Tambah Data</span>
-                                </a>
+                                <h3 class="mb-0">Data Menu</h3>
                             </div>
                         </div>
                     </div>
@@ -48,28 +42,42 @@
                         <table class="table align-items-center table-flush table-hover">
                             <thead class="thead-light">
                                 <tr>
-                                    <th>Tipe sosial media</th>
-                                    <th>link</th>
+                                    <th>Title</th>
+                                    {{-- <th>Description</th>
+                                    <th>Cover</th> --}}
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($socials as $sosmed)
+                                @foreach ($menus as $menu)
                                 <tr>
+                                    {{-- <td class="table-user" style="object-fit: cover;overflow:hidden !important">
+                                    @if ($menu->foto_profil != null)
+                                        <img src="{{asset('storage/' . $menu->foto_profil)}}" class="avatar rounded-circle mr-3">
+                                    @else
+                                        <img src="{{ asset('/storage/foto-profil/defaultmenuimage.png') }}" class="avatar rounded-circle mr-3">
+                                    @endif
+                                    </td> --}}
                                     <td>
-                                        <b>{{ $sosmed->tipe_sosmed }}</b>
+                                        <b>{{ $menu->title }}</b>
+                                    </td>
+                                    {{-- <td>
+                                        <span class="font-weight-bold">{{ $menu->description }}</span>
                                     </td>
                                     <td>
-                                        <span class="font-weight-bold">{{ $sosmed->link_sosmed }}</span>
-                                    </td>
+                                        <span class="font-weight-bold">{{ $menu->cover }}</span>
+                                    </td> --}}
                                     <td class="table-actions">
-                                        <a href="/dashboard/social/{{ $sosmed->id }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit pengguna">
-                                            <i class="fas fa-social-edit"></i>
+                                        <a href="/dashboard/menu/{{ $menu->slug }}/detail" class="table-action" data-toggle="tooltip" data-original-title="Detail Menu">
+                                            <i class="fas fa-info-circle"></i>
                                         </a>
-                                        <form action="/dashboard/social/{{ $sosmed->id }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
+                                        <a href="/dashboard/menu/{{ $menu->slug }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit Menu">
+                                            <i class="fas fa-user-edit"></i>
+                                        </a>
+                                        <form action="/dashboard/menu/{{ $menu->slug }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
                                             @csrf
                                             @method('delete')
-                                            <button type="submit" id="hapus" class="table-action table-action-delete border-0 p-0 m-0" data-toggle="tooltip" data-original-title="Hapus pengguna" style="background:none;">
+                                            <button type="submit" id="hapus" class="table-action table-action-delete border-0 p-0 m-0" data-toggle="tooltip" data-original-title="Hapus Menu" style="background:none;">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </form>

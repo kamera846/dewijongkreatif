@@ -31,43 +31,49 @@
                     </div>
                     {{-- alerts --}}
                     {{-- isi atribut flashdata sesuai kondisi session untuk menampilan alert berhasil mengubah data, kalo flashdata gagal isi 'gagal' untuk menampilakan alert error --}}
-                    <div class="flash-data" data-flashdata=""></div>
+                    <div class="flash-data" data-flashdata="{{ (session()->has('success'))?session('success'):'' }}{{ (session()->has('error'))?session('error'):'' }}"></div>
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="row">
-                            <div class="col">
-                                <form>
+                          <div class="col">
+                              @foreach ($contacts as $contact)
+                              <form action="/dashboard/contact/{{ $contact->id }}/update" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                @method('put')
                                   <div class="form-group row">
                                     <label for="email" class="col-md-3 col-form-label form-control-label">Alamat Email</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="email" id="email" name="email" value="desakami@keren.tes" readonly>
+                                      <input class="form-control form-control-alternative" type="email" id="email" name="email" value="{{ $contact->email }}" readonly>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="no_telp" class="col-md-3 col-form-label form-control-label">Nomor Telepon</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" id="no_telp" name="no_telp" value="+62 817 1758 2871" readonly>
+                                      <input class="form-control form-control-alternative" type="number" id="no_telp" name="telpon" value="{{ $contact->telpon }}" readonly>
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="no_wa" class="col-md-3 col-form-label form-control-label">Nomor Whatsapp</label>
+                                    <label for="logo" class="col-md-3 col-form-label form-control-label">Logo</label>
+                                    <input type="hidden" name="oldLogo" value="{{ $contact->logo }}">
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="number" id="no_wa" name="no_wa" value="6281717582871" readonly>
+                                      <input class="form-control form-control-alternative" type="file" id="logo" name="logo" value="{{ $contact->logo }}" readonly>
+                                      <img id="image-preview-update-2" src="{{ asset('storage/' . $contact->logo) }}" height="100px" class="rounded mt-2" alt="...">
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="alamat" class="col-md-3 col-form-label form-control-label">Alamat Desa</label>
+                                    <label for="lokasi" class="col-md-3 col-form-label form-control-label">Lokasi</label>
                                     <div class="col-md-9">
-                                      <textarea class="form-control form-control-alternative" name="alamat" id="alamat" rows="3" readonly>Desa kami, kec Apa 86228, prov DKI Djakarta, Indonesia</textarea>
+                                      <textarea class="form-control form-control-alternative" name="lokasi" id="lokasi" rows="3" readonly>{{ $contact->lokasi }}</textarea>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9" id="pembungkus">
-                                        <button type="button" class="btn btn-primary" id="edit">Edit</button>
+                                      <button type="button" class="btn btn-primary" id="edit">Edit</button>
                                     </div>
                                   </div>
                                 </form>
+                                @endforeach
                             </div>
                         </div>
                       </div>
