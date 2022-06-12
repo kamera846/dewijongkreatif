@@ -112,8 +112,10 @@ class BlogController extends Controller
     public function landingPage()
     {
         return view('blog', [
-            'blogs' => Blog::latest('updated_at')->get(),
+            'blogs' => Blog::latest('updated_at')->cari()->paginate(3),
             'judul_halaman' => 'Blog | Desa Wisata Loha',
+            'jumlah_blog' => Blog::cari()->count(),
+            'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
         ]);
     }
     

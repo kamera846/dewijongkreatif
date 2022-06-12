@@ -98,7 +98,8 @@ class GalleryController extends Controller
     {
         return view('gallery', [
             'judul_halaman' => 'Galeri | Desa Wisata Loha',
-            'galleries' => Gallery::latest('updated_at')->get()
+            'galleries' => Gallery::latest('updated_at')->paginate(4),
+            'jumlah_galeri' => Gallery::count(),
         ]);
     }
 }

@@ -10,7 +10,7 @@
                         <ul class="post-meta">
                             <li><i class="far fa-user"></i>{{ ucwords($blog->penulis) }}</li>
 
-                            <li><i class="far fa-calendar"></i>{{ $blog->created_at->isoFormat('d MMMM Y') }}</li>
+                            <li><i class="far fa-calendar"></i>{{ $blog->created_at->isoFormat('dddd, d MMMM Y') }}</li>
                             {{-- <li><i class="far fa-calendar"></i>{{ $blog->created_at->isoFormat('d MMMM Y') }}</li> --}}
                         </ul>
                     </div>
@@ -60,6 +60,15 @@
                 </div>
                 <div class="col-lg-4">
                     <aside class="sidebar blog-sidebar sidebar-style-two">
+                        <div class="widget widget_search">
+                            <h3 class="widget-title">Cari</h3>
+                            <form action="/blog" autocomplete="off" class="search-form">
+                                <div class="form-group">
+                                    <input type="search" name="cari" placeholder="Cari Postingan ..."/>
+                                    <button type="submit"><i class="fas fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
                         <!-- <div class="widget widget_categories style-two">
                             <h3 class="widget-title">Blog Categories</h3>
                             <div class="widget-content">
