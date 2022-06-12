@@ -22,134 +22,105 @@
         <div class="auto-container">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="news-block-two">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="assets/images/resource/news-15.jpg" alt="" />
-                                <div class="overlay">
-                                    <div class="link-btn">
-                                        <a href="blog-details.php"><i class="icon-arrow"></i></a>
+
+                    @if($jumlah_blog >= 1 )
+
+                        @foreach($blogs as $blog)
+
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <img src="{{ asset('storage/' . $blog->gambar_blog) }}" alt="{{ $blog->judul }}" />
+                                        <div class="overlay">
+                                            <div class="link-btn">
+                                                <a href="/blog/{{ $blog->slug }}"><i class="icon-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lower-content">
+                                        <h4><a href="/blog/{{ $blog->slug }}">{{ $blog->judul }}</a></h4>
+                                        <div class="text">
+                                            {{ substr(strip_tags($blog->konten), 0, 285) }}...
+                                        </div>
+                                        <ul class="post-meta">
+                                            <li><i class="far fa-user"></i>{{ ucwords($blog->penulis) }}</li>
+                                            {{-- <li><i class="far fa-calendar"></i>{{ $tanggal . ' ' . $bulan}}</li> --}}
+                                            {{-- <li><i class="far fa-calendar"></i>{{ date('d-m-Y', strtotime($blog->created_at))}}</li> --}}
+                                            <li><i class="far fa-calendar"></i>{{ $blog->created_at->isoFormat('d MMMM Y') }}</li>
+                                            <li class="read-more">
+                                                <a href="/blog/{{ $blog->slug }}"><i class="icon-arrow"></i>Selengkapnya</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="lower-content">
-                                <h4><a href="blog-details.php">Assistance For Homes & Real Estate</a></h4>
-                                <div class="text">
-                                    Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore magna aliqua. Ut enim
-                                    quis nostrud exercitation ullamco laboris aliquip.
-                                </div>
-                                <ul class="post-meta">
-                                    <li><i class="far fa-user"></i>City Admin</li>
-                                    <li><i class="far fa-calendar"></i>Sep 3, 2020</li>
-                                    <li class="read-more">
-                                        <a href="blog-details.php"><i class="icon-arrow"></i>Read More</a>
-                                    </li>
-                                </ul>
-                            </div>
+
+                        @endforeach
+
+                        <!-- Post Pagination -->
+                        {{-- <ul class="post-pagination mt-5 mb-30">
+                            <li class="prev-page">
+                                <a href="#"><i class="icon-arrow"></i></a>
+                            </li>
+                            <li class="current"><span> 1</span></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li class="next-page">
+                                <a href="#"><i class="icon-arrow"></i></a>
+                            </li>
+                        </ul> --}}
+
+                        <div class="row justify-content-center">
+                            {{ $blogs->links() }}
                         </div>
-                    </div>
-                    <div class="news-block-two">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="assets/images/resource/news-16.jpg" alt="" />
-                                <div class="overlay">
-                                    <div class="link-btn">
-                                        <a href="blog-details.php"><i class="icon-arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="blog-details.php">Highest Attraction Is Most Visited Market</a></h4>
-                                <div class="text">
-                                    Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore magna aliqua. Ut enim
-                                    quis nostrud exercitation ullamco laboris aliquip.
-                                </div>
-                                <ul class="post-meta">
-                                    <li><i class="far fa-user"></i>City Admin</li>
-                                    <li><i class="far fa-calendar"></i>Sep 3, 2020</li>
-                                    <li class="read-more">
-                                        <a href="blog-details.php"><i class="icon-arrow"></i>Read More</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news-block-two">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="assets/images/resource/news-17.jpg" alt="" />
-                                <div class="overlay">
-                                    <div class="link-btn">
-                                        <a href="blog-details.php"><i class="icon-arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="blog-details.php">Long Term Vision For Health Facilities</a></h4>
-                                <div class="text">
-                                    Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore magna aliqua. Ut enim
-                                    quis nostrud exercitation ullamco laboris aliquip.
-                                </div>
-                                <ul class="post-meta">
-                                    <li><i class="far fa-user"></i>City Admin</li>
-                                    <li><i class="far fa-calendar"></i>Sep 3, 2020</li>
-                                    <li class="read-more">
-                                        <a href="blog-details.php"><i class="icon-arrow"></i>Read More</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news-block-two">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="assets/images/resource/news-18.jpg" alt="" />
-                                <div class="overlay">
-                                    <div class="link-btn">
-                                        <a href="blog-details.php"><i class="icon-arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="blog-details.php">Self-Guided Driving & Tours Of City</a></h4>
-                                <div class="text">
-                                    Dolore magna aliquat minim veniay quis nos exercitation ullamco laboris aliquip ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore magna aliqua. Ut enim
-                                    quis nostrud exercitation ullamco laboris aliquip.
-                                </div>
-                                <ul class="post-meta">
-                                    <li><i class="far fa-user"></i>City Admin</li>
-                                    <li><i class="far fa-calendar"></i>Sep 3, 2020</li>
-                                    <li class="read-more">
-                                        <a href="blog-details.php"><i class="icon-arrow"></i>Read More</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Post Pagination -->
-                    <ul class="post-pagination mt-5 mb-30">
-                        <li class="prev-page">
-                            <a href="#"><i class="icon-arrow"></i></a>
-                        </li>
-                        <li class="current"><span> 1</span></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li class="next-page">
-                            <a href="#"><i class="icon-arrow"></i></a>
-                        </li>
-                    </ul>
+
+                    @else
+                        
+                        @if(request('cari'))
+                            <h4 class="text-center">Tidak ada hasil.</h3>
+                        @else
+                            <h4 class="text-center">Belum ada postingan.</h3>
+                        @endif
+
+                    @endif
+
                 </div>
                 <div class="col-lg-4">
                     <aside class="sidebar blog-sidebar sidebar-style-two">
-                        <!-- <div class="widget widget_search">
+                        <div class="widget widget_search">
                             <h3 class="widget-title">Cari</h3>
-                            <form action="#" method="post" class="search-form">
+                            <form action="/blog" autocomplete="off" class="search-form">
                                 <div class="form-group">
-                                    <input type="search" name="search-field" placeholder="Cari Postingan ..." required="" />
-                                    <button type="search"><i class="fas fa-search"></i></button>
+                                    <input type="search" name="cari" placeholder="Cari Postingan ..." value="{{ request('cari') }}"/>
+                                    <button type="submit"><i class="fas fa-search"></i></button>
                                 </div>
                             </form>
-                        </div> -->
+                        </div>
+
+                        @if(request('cari'))
+
+                            <div class="widget widget_popular_post">
+                                <h3 class="widget-title">Postingan Terbaru</h3>
+
+                                @foreach($recentPosts as $post)
+                                    
+                                    <article class="post">
+                                        <figure class="post-thumb">
+                                            <a href="/blog/{{ $post->slug }}"><img src="{{ asset('storage/' . $post->gambar_blog) }}" alt="{{ $post->judul }}" /></a>
+                                        </figure>
+                                        <div class="content">
+                                            <h5>
+                                                <a href="/blog/{{ $post->slug }}"">{{ $post->judul }}</a>
+                                            </h5>
+                                            <div class="post-info"><i class="far fa-calendar-alt"></i>{{ $post->created_at->isoFormat('d MMMM Y') }}</div>
+                                        </div>
+                                    </article>
+                                
+                                @endforeach
+
+                            </div>
+                            
+                        @endif
                         <!-- <div class="widget widget_categories style-two">
                             <h3 class="widget-title">Blog Categories</h3>
                             <div class="widget-content">
@@ -162,66 +133,6 @@
                                 </ul>
                             </div>
                         </div> -->
-                        <div class="widget widget_popular_post">
-                            <h3 class="widget-title">Postingan Terbaru</h3>
-
-                            <article class="post">
-                                <figure class="post-thumb">
-                                    <a href="blog-details.php"><img src="assets/images/resource/news-19.jpg" alt="" /></a>
-                                </figure>
-                                <div class="content">
-                                    <h5>
-                                        <a href="blog-details.php"
-                                            >Recreation Programs <br />
-                                            From Landscapes</a
-                                        >
-                                    </h5>
-                                    <div class="post-info"><i class="far fa-calendar-alt"></i> Sep 3, 2020</div>
-                                </div>
-                            </article>
-                            <article class="post">
-                                <figure class="post-thumb">
-                                    <a href="blog-details.php"><img src="assets/images/resource/news-20.jpg" alt="" /></a>
-                                </figure>
-                                <div class="content">
-                                    <h5>
-                                        <a href="blog-details.php"
-                                            >Start An Evening With <br />
-                                            Drinks At Rooftop</a
-                                        >
-                                    </h5>
-                                    <div class="post-info"><i class="far fa-calendar-alt"></i> Sep 3, 2020</div>
-                                </div>
-                            </article>
-                            <article class="post">
-                                <figure class="post-thumb">
-                                    <a href="blog-details.php"><img src="assets/images/resource/news-21.jpg" alt="" /></a>
-                                </figure>
-                                <div class="content">
-                                    <h5>
-                                        <a href="blog-details.php"
-                                            >Self-Guided Driving & <br />
-                                            Tours Walk Of City</a
-                                        >
-                                    </h5>
-                                    <div class="post-info"><i class="far fa-calendar-alt"></i> Sep 3, 2020</div>
-                                </div>
-                            </article>
-                            <article class="post">
-                                <figure class="post-thumb">
-                                    <a href="blog-details.php"><img src="assets/images/resource/news-22.jpg" alt="" /></a>
-                                </figure>
-                                <div class="content">
-                                    <h5>
-                                        <a href="blog-details.php"
-                                            >Recreation Programs <br />
-                                            From Landscapes</a
-                                        >
-                                    </h5>
-                                    <div class="post-info"><i class="far fa-calendar-alt"></i> Sep 3, 2020</div>
-                                </div>
-                            </article>
-                        </div>
                         <!-- Tag-cloud Widget -->
                         <!-- <div class="widget widget_tag_cloud">
                             <h3 class="widget-title">Tags Cloud</h3>

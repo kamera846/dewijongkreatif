@@ -58,16 +58,16 @@
                                 @foreach ($blogs as $blog)
                                 <tr>
                                     <td>
-                                        <img src="{{ asset('storage/' . $blog->gambar_blog) }}" height="70px" class="rounded">
+                                        <img src="{{ asset('storage/' . $blog->gambar_blog) }}" style="height: 70px; max-width: 112px; object-fit:cover;" class="rounded">
                                     </td>
                                     <td>
                                         <b>{{ $blog->judul }}</b>
                                     </td>
                                     <td>
-                                        <span class="font-weight-bold">{{  $blog->created_at }}</span>
+                                        <span class="font-weight-bold">{{  $blog->created_at->isoFormat('d MMMM Y') }}</span>
                                     </td>
                                     <td>
-                                        <span class="font-weight-bold">{{ $blog->penulis }}</span>
+                                        <span class="font-weight-bold">{{ ucwords($blog->penulis) }}</span>
                                     </td>
                                     <td class="table-actions">
                                         <a href="/dashboard/blog/{{ $blog->id }}/detail" class="table-action" data-toggle="tooltip" data-original-title="Detail postingan">

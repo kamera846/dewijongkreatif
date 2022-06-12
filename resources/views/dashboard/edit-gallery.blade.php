@@ -58,7 +58,10 @@
                                   <div class="form-group row">
                                     <label for="deskripsi" class="col-md-3 col-form-label form-control-label">Deskripsi</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control form-control-alternative @error('is-invalid') @enderror" name="deskripsi" id="deskripsi" rows="4">{{ $gallery->deskripsi, old('deskripsi') }}</textarea>
+                                        <textarea class="form-control form-control-alternative @error('is-invalid') @enderror" name="deskripsi" id="deskripsi" onkeydown="limit(this);" onkeyup="limit(this);" rows="4">{{ $gallery->deskripsi, old('deskripsi') }}</textarea>
+                                        <span class="text-xs text-danger d-none">
+                                            Maksimal 200 karakter diperbolehkan!
+                                        </span>
                                         @error('deskripsi')
                                         <div class="invalid-feedback">
                                             {{ $message }}

@@ -33,14 +33,14 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
-                                <div class="row justify-content-center">
+                                <div class="row">
                                     <div>
-                                        <img src="{{ asset('storage/' . $blog->gambar_blog) }}" width="70%" class="rounded mx-auto d-block mb-4" alt="">
+                                        <img src="{{ asset('storage/' . $blog->gambar_blog) }}" style="width: 100%; max-height:470px; object-fit: cover;" class="rounded mx-auto d-block mb-4" alt="">
                                     </div>
-                                    <h1 class="text-center">{{ $blog->judul }}</h1>
-                                    <span class="text-xs text-center text-muted">{{ $blog->penulis }} | {{ $blog->created_at }}</span>
+                                    <h1>{{ $blog->judul }}</h1>
+                                    <span class="text-xs text-muted">{{ ucwords($blog->penulis) }} | {{ $blog->created_at->isoFormat('dddd, d MMMM Y') }} {{ '(terakhir diubah '. $blog->updated_at->diffForHumans() .')' }}</span>
                                 </div>
-                                <div class="row px-3 py-4">
+                                <div class="row text-justify mt-2">
                                     <p>{!! $blog->konten !!}</p>
                                 </div>
                             </div>

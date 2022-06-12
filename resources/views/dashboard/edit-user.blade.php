@@ -58,15 +58,15 @@
                                         </div>
                                     @enderror
                                   </div>
-                                  <div class="form-group row">
+                                  {{-- <div class="form-group row">
                                     <label for="role" class="col-md-3 col-form-label form-control-label">Role<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
                                       <select name="role" id="role" class="form-control @error('role') is-invalid @enderror form-control-alternative" required>
                                         @if($user->role == 'admin')
                                         <option value="{{ $user->role }}">{{ $user->role }}</option>
-                                        <option value="Super-admin">Super-admin</option>
+                                        <option value="super-admin">Super-admin</option>
                                         @else
-                                        <option value="Admin">Admin</option>
+                                        <option value="admin">Admin</option>
                                         <option value="{{ $user->role }}">{{ $user->role }}</option>
                                         @endif
                                       </select>
@@ -76,7 +76,8 @@
                                         </div>
                                     @enderror
                                     </div>
-                                  </div>
+                                  </div> --}}
+                                  <input type="hidden" value="{{ $user->role }}" name="role">
                                   <div class="form-group row">
                                     <label for="pekerjaan" class="col-md-3 col-form-label form-control-label">Pekerjaan</label>
                                     <div class="col-md-9">
