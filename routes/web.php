@@ -3,16 +3,18 @@
 use App\Models\Blog;
 use App\Models\User;
 use App\Models\Gallery;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Contact;
-use App\Http\Controllers\SosmedController;
+use App\Http\Controllers\SocialController;
+use App\Http\Controllers\MainController;
+// use App\Http\Controllers\RegisterController;
 
 // Route::get('/register', [RegisterController::class, 'index']);
 // Route::post('/register', [RegisterController::class, 'store']);
@@ -81,20 +83,26 @@ Route::get('/contact', [Contact::class, 'show']);
 Route::post('/contact', [Contact::class, 'sendMail']);
 
 
+
 // admin
-Route::get('/dashboard/contact', [ContactController::class, 'index']);
-Route::put('/dashboard/contact/{contact}/update', [ContactController::class, 'update']);
+Route::get('/dashboard/setting', [SettingController::class, 'index']);
+Route::put('/dashboard/setting/{setting}/update', [SettingController::class, 'update']);
 // Route::get('/dashboard/contact', function () {
 //     return view('dashboard.contact', ['judul_halaman' => 'Admin | Profil Kontak']);
 // });
 // Route::get('/dashboard/social', function () {
 //     return view('dashboard.social', ['judul_halaman' => 'Admin | Profil Sosial Media']);
 // });
-Route::get('/dashboard/social', [SosmedController::class, 'index']);
-Route::get('/dashboard/social/create', [SosmedController::class, 'create']);
+Route::get('/dashboard/social', [SocialController::class, 'index']);
+Route::get('/dashboard/social/create', [SocialController::class, 'create']);
+Route::post('/dashboard/social/store', [SocialController::class, 'store']);
+Route::get('/dashboard/social/{social}/edit', [SocialController::class, 'edit']);
+Route::put('/dashboard/social/{social}/update', [SocialController::class, 'update']);
+Route::delete('/dashboard/social/{social}/delete', [SocialController::class, 'destroy']);
+
 
 Route::get('/about', function () {
-    return view('about', ['judul_halaman' => 'Tentang Kami | Desa Wisata Loha']);
+    return view('about', ['judul_halaman' => 'Tentang Kami | Desa Wisata Loha', 'settings' => Setting::get()]);
 });
 Route::get('/blog/slug', function () {
     return view('blog-details', ['judul_halaman' => 'Judul Postingan | Desa Wisata Loha']);

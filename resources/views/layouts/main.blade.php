@@ -77,8 +77,10 @@
                             <!--Logo-->
                             <div class="logo-box">
                                 <div class="logo">
-                                    <a href="./"><img src="{{ asset('assets/images/tes-logo2.png') }}" alt="" /></a>
+                                    @foreach ($settings as $setting)
+                                        <a href="./"><img src="{{ asset('storage/' . $setting->logo) }}" alt="" /></a>
                                     {{-- <a href="/"><h1 class="text-white">Loha</h1><p class="text-white">Desa Wisata</p></a> --}}
+                                    @endforeach
                                 </div>
                             </div>
                             <!--Nav Box-->
@@ -159,6 +161,7 @@
                         <!--Social Links-->
                         <div class="social-links">
                             <ul class="clearfix">
+                                {{-- @foreach ($socials as $social)   --}}
                                 <li>
                                     <a href="#"><span class="fab fa-twitter"></span></a>
                                 </li>
@@ -174,6 +177,7 @@
                                 <li>
                                     <a href="#"><span class="fab fa-youtube"></span></a>
                                 </li>
+                                {{-- @endforeach --}}
                             </ul>
                         </div>
                     </nav>
@@ -220,6 +224,7 @@
                                     <h3 class="widget-title">Tentang Kami</h3>
                                     <div class="text">Kedatangan nenek moyang pertama yang menghuni kampung sowang adalah leluhur dari keturunan suku nawang dan diikuti oleh suku jao, suku dangka dan suku nduri.</div>
                                     <ul class="social-links">
+                                        {{-- @foreach ($socials as $social) --}}
                                         <li>
                                             <a href="#"><i class="fab fa-twitter"></i></a>
                                         </li>
@@ -235,6 +240,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-youtube"></i></a>
                                         </li>
+                                        {{-- @endforeach --}}
                                     </ul>
                                 </div>
                             </div>
@@ -262,25 +268,27 @@
                                     <div class="widget-content">
                                         <ul class="contact-info">
                                             <li>
+                                                @foreach ($settings as $setting)
                                                 <div class="icon"><img src="assets/images/icons/icon-1.png" alt="" /></div>
                                                 <div class="text">
-                                                    <strong>Lokasi</strong> Desa Loha, kecamatan Pacar,<br />
-                                                    kabupaten Manggarai Barat - NTT
+                                                    <strong>Lokasi</strong>{{ $setting->lokasi }} <br />
+                                                    
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="icon"><img src="assets/images/icons/icon-2.png" alt="" /></div>
                                                 <div class="text">
                                                     <strong>Telepon</strong>
-                                                    <a href="tel:+62 823 3976 5401">+62 823 3976 5401</a>
+                                                    <a href="tel:+62 823 3976 5401">{{ $setting->telpon }}</a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="icon"><img src="assets/images/icons/icon-3.png" alt="" /></div>
                                                 <div class="text">
                                                     <strong>Email</strong>
-                                                    <a href="mailto:munciple@example.net">munciple@example.net</a>
+                                                    <a href="mailto:munciple@example.net">{{ $setting->email }}</a>
                                                 </div>
+                                                @endforeach
                                             </li>
                                         </ul>
                                     </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use App\Models\Blog;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -108,7 +109,7 @@ class BlogController extends Controller
         Blog::destroy($blog->id);
         return redirect('/dashboard/blog')->with('success', 'menghapus');
     }
-    
+
     public function landingPage()
     {
         return view('blog', [
@@ -116,10 +117,11 @@ class BlogController extends Controller
             'judul_halaman' => 'Blog | Desa Wisata Loha',
             'jumlah_blog' => Blog::cari()->count(),
             'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+            'settings' => Setting::get()
         ]);
     }
-    
-    
+
+
     public function postDetails(Blog $blog)
     {
         return view('blog-details', [

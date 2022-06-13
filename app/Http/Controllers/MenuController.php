@@ -43,21 +43,27 @@ class MenuController extends Controller
                 $extension = $file->getClientOriginalExtension();
 
                 $newName = $name . '.' . $extension;
-
-                $size = $file->getClientSize();
                 Storage::putFileAs('public', $file, $newName);
                 $data = [
                     'path' => 'storage/' . $newName,
-                    'size' => $size,
                 ];
 
                 Menu::where('slug', $menu->slug)
                     ->update([
+                        'title' => $request->title,
                         'description' => $request->description,
                         'cover' => $data,
                     ]);
             }
+        } else {
+            Menu::where('slug', $menu->slug)
+                ->update([
+                    'title' => $request->title,
+                    'description' => $request->description,
+                ]);
         }
+
+
 
         // $covers = [];
         // if ($request->file('cover')) {

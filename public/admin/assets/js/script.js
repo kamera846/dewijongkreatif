@@ -43,10 +43,9 @@ if (hapus != undefined) {
         });
     });
 }
-
-const flashData = document.querySelector(".flash-data");
-if (flashData != undefined) {
-    const flashData = flashData.dataset["flashdata"];
+const flashbanget = document.querySelector(".flash-data");
+if (flashbanget != undefined) {
+    const flashData = flashbanget.dataset["flashdata"];
 
     if (flashData !== "gagal") {
         Swal.fire("Sukses", "Berhasil " + flashData + " data!", "success");
@@ -56,11 +55,13 @@ if (flashData != undefined) {
 }
 
 // edit kontak
-if (document.location.pathname === "/dashboard/contact") {
+if (document.location.pathname === "/dashboard/setting") {
     const email = document.getElementById("email");
     const noTelp = document.getElementById("no_telp");
     const lokasi = document.getElementById("lokasi");
     const logo = document.getElementById("logo");
+    const webTitle = document.getElementById("web_title");
+    const favicon = document.getElementById("favicon");
 
     const edit = document.getElementById("edit");
     const pembungkus = document.getElementById("pembungkus");
@@ -86,6 +87,8 @@ if (document.location.pathname === "/dashboard/contact") {
         noTelp.removeAttribute("readonly");
         lokasi.removeAttribute("readonly");
         logo.removeAttribute("readonly");
+        favicon.removeAttribute("readonly");
+        webTitle.removeAttribute("readonly");
 
         batal.addEventListener("click", function () {
             location.reload();
@@ -93,6 +96,7 @@ if (document.location.pathname === "/dashboard/contact") {
         
     });
 }
+
 
 // edit akun sosmed
 if (document.location.pathname === "/dashboard/social") {

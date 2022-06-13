@@ -13,10 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('social_media', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('tipe_sosmed');
-            $table->string('link_sosmed');
+            $table->text('lokasi');
+            $table->string('telpon');
+            $table->string('email');
+            $table->string('logo');
+            $table->string('favicon')->nullable();
+            $table->string('web_title');
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('social_media');
+        Schema::dropIfExists('settings');
     }
 };

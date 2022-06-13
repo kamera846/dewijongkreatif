@@ -11,7 +11,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Tambah Sosial Media</li>
+                                <li class="breadcrumb-item active" aria-current="page">Edit Sosial Media</li>
                             </ol>
                         </nav>
                     </div>
@@ -28,56 +28,34 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
-                        <h3 class="mb-0">Tambah Sosial Media</h3>
+                        <h3 class="mb-0">Edit Sosial Media</h3>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/social/store" method="POST">
+                                <form action="/dashboard/social/{{ $social->id }}/update" method="POST">
                                     @csrf
+                                    @method('put')
                                     <div class="form-group row">
                                     <label for="tipe_sosmed" class="col-md-3 col-form-label form-control-label">Tipe Sosial Media</label>
                                     <div class="col-md-9">
                                       <select name="tipe_sosmed" id="tipe_sosmed" class="form-control form-control-alternative @error('tipe_sosmed') is-invalid @enderror" required>
-                                        <option value="">-- Pilih Tipe Sosial Media --</option>
-                                        {{-- @if ($social->tipe_sosmed === 'Facebook')
-                                            <option value="Instagram">Instagram</option>
-                                            <option value="Twitter">Twitter</option>
-                                        @endif
-                                        @if($social->tipe_sosmed === 'Instagram')
-                                            <option value="Facebook">Facebook</option>
-                                            <option value="Twitter">Twitter</option>
-                                        @endif
-                                        @if ($social->tipe_sosmed === 'Twitter')
-                                            <option value="Facebook">Facebook</option>
-                                            <option value="Instagram">Instagram</option>
-                                        @endif --}}
-                                        {{-- @if ($social->tipe_sosmed !== 'Facebook')
-                                            <option value="Facebook">Facebook</option>
-                                        @endif
-                                        @if($social->tipe_sosmed !== 'Instagram')
+                                        <option value="{{ $social->tipe_sosmed }}">{{ $social->tipe_sosmed }}</option>
                                         <option value="Instagram">Instagram</option>
-                                        @endif
-                                        @if ($social->tipe_sosmed === 'Twitter')
-                                        
                                         <option value="Twitter">Twitter</option>
-                                        @endif --}}
-                                        <option value="Facebook">Facebook</option>
-                                            <option value="Instagram">Instagram</option>
-                                            <option value="Twitter">Twitter</option>
                                       </select>
                                       @error('tipe_sosmed')
                                           <div class="invalid-feedback">
-                                            {{ $message }}
+                                              {{ $message }}
                                           </div>
-                                      @enderror
+                                          @enderror
+                                        </div>
                                     </div>
-                                </div>
-                                  <div class="form-group row">
-                                    <label for="link_sosmed" class="col-md-3 col-form-label form-control-label">Link Sosial Media<span class="text-danger">*</span></label>
+                                    <div class="form-group row">
+                                        <label for="link_sosmed" class="col-md-3 col-form-label form-control-label">Link Sosial Media<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
-                                      <input class="form-control @error('is-invalid') @enderror form-control-alternative" type="text" id="link_sosmed" name="link_sosmed" required value="{{ old('link_sosmed') }}" autocomplete="off">
+                                        <input class="form-control @error('is-invalid') @enderror form-control-alternative" type="text" id="link_sosmed" name="link_sosmed" required value="{{ $social->link_sosmed }}" autocomplete="off">
                                     </div>
                                     @error('link_sosmed')
                                           <div class="invalid-feedback">
@@ -88,7 +66,7 @@
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
-                                        <button type="submit" class="btn btn-primary">Tambah</button>
+                                        <button type="submit" class="btn btn-primary">Update</button>
                                         <a href="/dashboard/social" class="btn btn-secondary">Batal</a>
                                     </div>
                                   </div>

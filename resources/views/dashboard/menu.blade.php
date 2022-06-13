@@ -68,19 +68,9 @@
                                         <span class="font-weight-bold">{{ $menu->cover }}</span>
                                     </td> --}}
                                     <td class="table-actions">
-                                        <a href="/dashboard/menu/{{ $menu->slug }}/detail" class="table-action" data-toggle="tooltip" data-original-title="Detail Menu">
-                                            <i class="fas fa-info-circle"></i>
-                                        </a>
                                         <a href="/dashboard/menu/{{ $menu->slug }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit Menu">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
-                                        <form action="/dashboard/menu/{{ $menu->slug }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit" id="hapus" class="table-action table-action-delete border-0 p-0 m-0" data-toggle="tooltip" data-original-title="Hapus Menu" style="background:none;">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

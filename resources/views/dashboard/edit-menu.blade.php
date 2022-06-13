@@ -33,13 +33,24 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="/dashboard/menu/{{ $menu->slug }}/update" method="POST" enctype="multipart/form-data" autocomplete="off">
+                                <form action="/dashboard/menu/{{ $menu->slug }}/update" method="POST" enctype="multipart/form-data">
                                   @csrf
                                   @method('put')
                                   <div class="form-group row">
-                                    <label for="nama" class="col-md-3 col-form-label form-control-label">Title</label>
+                                    <label for="slug" class="col-md-3 col-form-label form-control-label">slug</label>
                                     <div class="col-md-9">
-                                      <input class="form-control @error('title') is-invalid @enderror form-control-alternative" type="text" id="title" name="title" required value="{{ $menu->title }}" disabled>
+                                      <input class="form-control @error('slug') is-invalid @enderror form-control-alternative" type="text" id="slug" name="slug" readonly disabled value="{{ $menu->slug }}">
+                                    </div>  
+                                    @error('slug')
+                                      <div class="invalid-feedback">
+                                        {{ $message }}
+                                      </div>
+                                    @enderror
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="title" class="col-md-3 col-form-label form-control-label">Title</label>
+                                    <div class="col-md-9">
+                                      <input class="form-control @error('title') is-invalid @enderror form-control-alternative" type="text" id="title" name="title" required value="{{ $menu->title }}">
                                     </div>  
                                     @error('title')
                                       <div class="invalid-feedback">
@@ -47,7 +58,6 @@
                                       </div>
                                     @enderror
                                   </div>
-
                                   <div class="form-group row">
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
                                     <div class="col-md-9">
@@ -57,6 +67,21 @@
                                       @else
                                         <img id="image-preview-update-2" src="{{ asset('storage/foto-profil/defaultmenuimage.png') }}" width="100px" height="100px" class="rounded mt-2" alt="...">
                                       @endif
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="role" class="col-md-3 col-form-label form-control-label">Section<span class="text-danger">*</span></label>
+                                    <div class="col-md-9">
+                                      <select name="isActive" id="isActive" class="form-control @error('role') is-invalid @enderror form-control-alternative" required>
+                                        <option value="Pilih section">Pilih section</option>
+                                        <option value="true">true</option>
+                                        <option value="false">false</option>
+                                      </select>
+                                      @error('isActive')
+                                        <div class="invalid-feedback">
+                                          {{ $message }}
+                                        </div>
+                                    @enderror
                                     </div>
                                   </div>
                                   <div class="form-group row">

@@ -105,10 +105,10 @@
                         <ul class="navbar-nav mb-md-3">
                             <li class="nav-item">
                                 <a 
-                                class="nav-link {{ ( $judul_halaman === 'Admin | Profil Kontak') ? 'active' : '' }}" 
-                                href="/dashboard/contact">
+                                class="nav-link {{ ( $judul_halaman === 'Admin | Profil Setting') ? 'active' : '' }}" 
+                                href="/dashboard/setting">
                                     <i class="ni ni-email-83 text-red"></i>
-                                    <span class="nav-link-text">Kontak</span>
+                                    <span class="nav-link-text">Setting</span>
                                 </a>
                             </li>
                             <li class="nav-item">

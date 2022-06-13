@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
 use App\Models\Gallery;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -100,6 +101,7 @@ class GalleryController extends Controller
             'judul_halaman' => 'Galeri | Desa Wisata Loha',
             'galleries' => Gallery::latest('updated_at')->paginate(4),
             'jumlah_galeri' => Gallery::count(),
+            'settings' => Setting::get(),
         ]);
     }
 }

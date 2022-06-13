@@ -64,7 +64,7 @@
                                     </td>
                                     <td class="table-actions">
                                         <a href="/dashboard/social/{{ $sosmed->id }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit pengguna">
-                                            <i class="fas fa-social-edit"></i>
+                                            <i class="fas fa-user-edit"></i>
                                         </a>
                                         <form action="/dashboard/social/{{ $sosmed->id }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
                                             @csrf

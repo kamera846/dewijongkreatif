@@ -133,24 +133,27 @@
                         </div>
                         <ul class="contact-info">
                             <li>
+                                @foreach ($settings as $setting)
+                                    
                                 <div class="icon"><img src="assets/images/icons/icon-1.png" alt="" /></div>
                                 <div class="text">
-                                    <strong>Lokasi</strong> Desa Loha, kecamatan Pacar,<br />
-                                    kabupaten Manggarai Barat - NTT</div>
+                                    <strong>Lokasi</strong>{{ $setting->lokasi }}<br />
+                                </div>
                             </li>
                             <li>
                                 <div class="icon"><img src="assets/images/icons/icon-2.png" alt="" /></div>
                                 <div class="text">
                                     <strong>Telepon</strong>
-                                    <a href="tel:+62 823 3976 5401">+62 823 3976 5401</a>
+                                    <a href="tel:+62 823 3976 5401">{{ $setting->telpon }}</a>
                                 </div>
                             </li>
                             <li>
                                 <div class="icon"><img src="assets/images/icons/icon-3.png" alt="" /></div>
                                 <div class="text">
                                     <strong>Email</strong>
-                                    <a href="mailto:munciple@example.net">munciple@example.net</a>
+                                    <a href="mailto:munciple@example.net">{{ $setting->email}}</a>
                                 </div>
+                                @endforeach
                             </li>
                         </ul>
                     </div>
