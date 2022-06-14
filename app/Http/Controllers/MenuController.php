@@ -27,41 +27,68 @@ class MenuController extends Controller
     {
         return view('dashboard.edit-menu', [
             'judul_halaman' => 'Admin | Edit Menu',
-            'menu' => $menu
+            'menu' => $menu,
+            'covers' => json_decode($menu->cover)
         ]);
     }
     public function update(Request $request, Menu $menu)
     {
+        date_default_timezone_set("Asia/Jakarta");
 
         $request->validate([
-            'cover' => 'image|file'
+            'cover[]' => 'image|file'
         ]);
 
         if ($request->hasFile('cover')) {
             $files = $request->file('cover');
 
-            foreach ($files as $file) {
-                $name = rand(1, 999);
-                $extension = $file->getClientOriginalExtension();
+            $stringRand = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            $imageArray = [];
 
-                $newName = $name . '.' . $extension;
-                Storage::putFileAs('public', $file, $newName);
-                $data = [
-                    'path' => 'storage/' . $newName,
-                ];
+            foreach ($files as $index => $file) {
+                // if ($index < 3) {
+                    $name = date("YmdHis") . substr(str_shuffle($stringRand), 10);
+                    $extension = $file->getClientOriginalExtension();
 
-                Menu::where('slug', $menu->slug)
+                    $newName = $name . '.' . $extension;
+                    Storage::putFileAs('public', $file, $newName);
+                    $imageArray[$index] = 'public/' . $newName;
+                // }
+            }
+
+            // dd($imageArray);
+
+            Menu::where('slug', $menu->slug)
                     ->update([
                         'title' => $request->title,
                         'description' => $request->description,
-                        'cover' => $data,
+                        'isActive' => $request->isActive,
+                        'cover' => $imageArray,
                     ]);
-            }
+
+            // foreach ($files as $file) {
+            //     $name = rand(1, 999);
+            //     $extension = $file->getClientOriginalExtension();
+
+            //     $newName = $name . '.' . $extension;
+            //     Storage::putFileAs('public', $file, $newName);
+            //     $data = [
+            //         'path' => 'storage/' . $newName,
+            //     ];
+
+            //     Menu::where('slug', $menu->slug)
+            //         ->update([
+            //             'title' => $request->title,
+            //             'description' => $request->description,
+            //             'cover' => $data,
+            //         ]);
+            // }
         } else {
             Menu::where('slug', $menu->slug)
                 ->update([
                     'title' => $request->title,
                     'description' => $request->description,
+                    'isActive' => $request->isActive,
                 ]);
         }
 

@@ -62,20 +62,22 @@
                                     <label for="foto" class="col-md-3 col-form-label form-control-label">Foto</label>
                                     <div class="col-md-9">
                                       <input class="form-control form-control-alternative" type="file" id="foto" name="cover[]" multiple value="{{ $menu->cover }}">
-                                      @if($menu->cover)
-                                        <img id="image-preview-update-2" src="{{ asset('storage/' . $menu->cover) }}" height="100px" class="rounded mt-2" alt="...">
+                                      @if($covers)
+                                        @foreach($covers as $index => $cover)
+                                        <img id="image-preview-update-2-{{$index}}" src="{{ asset('storage/' . $cover) }}" height="100px" class="rounded mt-2" alt="...">
+                                        @endforeach
                                       @else
                                         <img id="image-preview-update-2" src="{{ asset('storage/foto-profil/defaultmenuimage.png') }}" width="100px" height="100px" class="rounded mt-2" alt="...">
                                       @endif
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="role" class="col-md-3 col-form-label form-control-label">Section<span class="text-danger">*</span></label>
+                                    <label for="role" class="col-md-3 col-form-label form-control-label">Status Section<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
                                       <select name="isActive" id="isActive" class="form-control @error('role') is-invalid @enderror form-control-alternative" required>
-                                        <option value="Pilih section">Pilih section</option>
-                                        <option value="true">true</option>
-                                        <option value="false">false</option>
+                                        <option value="Pilih section" disabled>Pilih Status</option>
+                                        <option value="true">Aktif</option>
+                                        <option value="false">Nonaktif</option>
                                       </select>
                                       @error('isActive')
                                         <div class="invalid-feedback">
