@@ -22,7 +22,8 @@ class SocialController extends Controller
     {
         return view('dashboard.add-social', [
             'judul_halaman' => 'Admin | Tambah Pengguna',
-            'social' => $social
+            'social' => $social,
+            'settings' => Setting::get()
         ]);
     }
 
@@ -45,7 +46,8 @@ class SocialController extends Controller
     {
         return view('dashboard.edit-social', [
             'judul_halaman' => 'Admin | Edit Sosial Media',
-            'social' => $social
+            'social' => $social,
+            'settings' => Setting::get()
         ]);
     }
 

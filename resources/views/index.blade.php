@@ -4,12 +4,11 @@
 @section('page-content')
     <!-- Bnner Section -->
     <section class="banner-section">
-        @foreach ($menus as $menu)
         <div class="swiper-container banner-slider">
             <div class="swiper-wrapper">
                 <!-- Slide Item -->
-                    
-                @if($menu->title === 'Corousel-1')
+                @foreach ($menus as $menu)
+                @if($menu->slug === 'Corousel-1')
                 <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-1.jpg)">
                     <div class="content-outer">
                         <div class="content-box justify-content-center">
@@ -21,19 +20,15 @@
                                 </h1>
                                 <div class="text">
                                    {{ $menu->description }}<br />
-                                   
-                                </div>
-                                <div class="link-box">
-                                    <a href="#" class="theme-btn btn-style-one"><span>Read More</span></a>
-                                    <a href="#" class="theme-btn btn-style-one style-two"><span>Virtual tour</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 @endif
+                @endforeach
                 <!-- Slide Item -->
-                @if ($menu->title === 'Corousel-2')
+                {{-- @if ($menu->title === 'Corousel-2')
                 <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-2.jpg)">
                     <div class="content-outer">
                         <div class="content-box">
@@ -68,13 +63,14 @@
                                 </div>
                                 <div class="link-box">
                                     <a href="#" class="theme-btn btn-style-one"><span>Read More</span></a>
+                                    @endforeach
                                     <a href="#" class="theme-btn btn-style-one style-two"><span>Virtual Tour</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endif
+                @endif --}}
             </div>
         </div>
         <div class="banner-slider-nav">
@@ -85,7 +81,6 @@
                 <span><i class="icon-arrow"></i></span>
             </div>
         </div>
-        @endforeach
     </section>
     <!-- End Bnner Section -->
 

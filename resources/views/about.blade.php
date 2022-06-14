@@ -18,6 +18,8 @@
     </section>
 
     <!-- About section -->
+    @foreach ($menus as $menu)
+    @if($menu->slug === 'about')
     <section class="about-section style-two">
         <div class="auto-container">
             <div class="row">
@@ -27,7 +29,7 @@
                     </div>
                     <div class="content-block">
                         <div class="text">
-                            "Sejarah peradaban masyarakat penghuni kampung sowang yang berlokasi Didesa Loha, Kecamatan Pacar, Kabupaten Manggarai Barat. kampung sowang diberi nama oleh leluhur “empo” yang datang dari suku nawangkarena sebelum dijadikan sebuah tempat pemukiman. Wilayah kampung sowang pada saat itu banyak tumbuh pohon gebang (sowang) sehingga nama tersebut diambil dari nama pohon gebang yang dalam bahasa daerah setempat adalah sowang Kampung sowang dihuni oleh beberapa suku diantaranya Suku Nawang, Suku Jao,Suku Dangka Dan Suku Nduri. Kedatangan nenek moyang pertama yang menghuni kampung sowang adalah leluhur dari keturunan suku nawang dan diikuti oleh suku jao, suku dangka dan suku nduri. Suku nawang datang dan menghuni wilayah kampong sowing karena diutus oleh suku jao yang berada di dangka dengan tujuan untuk menguasai wilayah dan hak atas ulaiat kekuasaan suku jao. Semua suku yang berada di kampung sowang memiliki hubungan kekeluargaan yang sangat dekat. Hal itu terjadi karena adanya hubungan perkawinan antara suku."
+                            "{{ $menu->description }}"
                         </div>
                     </div>
                 </div>
@@ -47,13 +49,15 @@
             </div>
         </div>
     </section>
+    @endif
     
     <!-- Team section -->
+    @if($menu->slug === 'adat')
     <section class="team-section">
         <div class="auto-container">
             <div class="sec-title style-two text-center">
                 <div class="big-title">Loha</div>
-                <h2>Acara Adat di Desa Kami</h2>
+                <h2>{{ $menu->title }}</h2>
             </div>
             <div class="row">
                 <div class="col-xl-4 col-md-6 team-block">
@@ -74,4 +78,6 @@
             </div>
         </div>
     </section>
+    @endif
+    @endforeach
 @endsection

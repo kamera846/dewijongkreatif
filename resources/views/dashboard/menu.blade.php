@@ -43,6 +43,7 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th>Title</th>
+                                    <th>Slug</th>
                                     {{-- <th>Description</th>
                                     <th>Cover</th> --}}
                                     <th>Aksi</th>
@@ -60,6 +61,9 @@
                                     </td> --}}
                                     <td>
                                         <b>{{ $menu->title }}</b>
+                                    </td>
+                                    <td>
+                                        <b>{{ $menu->slug }}</b>
                                     </td>
                                     {{-- <td>
                                         <span class="font-weight-bold">{{ $menu->description }}</span>
