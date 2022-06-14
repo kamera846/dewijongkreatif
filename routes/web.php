@@ -4,6 +4,7 @@ use App\Models\Blog;
 use App\Models\User;
 use App\Models\Gallery;
 use App\Models\Setting;
+use App\Models\Social;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
@@ -29,7 +30,8 @@ Route::middleware('auth')->group(function () {
             'judul_halaman' => 'Admin | Dashboard',
             'jumlah_pengguna' => User::count(),
             'jumlah_blog' => Blog::count(),
-            'jumlah_galeri' => Gallery::count()
+            'jumlah_galeri' => Gallery::count(),
+            'settings' => Setting::get()
         ]);
     });
 
@@ -86,6 +88,7 @@ Route::post('/contact', [Contact::class, 'sendMail']);
 
 // admin
 Route::get('/dashboard/setting', [SettingController::class, 'index']);
+Route::post('/dashboard/setting/store', [SettingController::class, 'store']);
 Route::put('/dashboard/setting/{setting}/update', [SettingController::class, 'update']);
 // Route::get('/dashboard/contact', function () {
 //     return view('dashboard.contact', ['judul_halaman' => 'Admin | Profil Kontak']);
@@ -102,8 +105,22 @@ Route::delete('/dashboard/social/{social}/delete', [SocialController::class, 'de
 
 
 Route::get('/about', function () {
-    return view('about', ['judul_halaman' => 'Tentang Kami | Desa Wisata Loha', 'settings' => Setting::get()]);
+    $settings = Setting::get();
+    foreach ($settings as $setting) {
+        if ($setting->web_title !== null) {
+            return view('about', ['judul_halaman' => 'Tentang Kami | ' . $setting->web_title, 'settings' => Setting::get(), 'socials' => Social::get()]);
+        } else {
+            return view('about', ['judul_halaman' => 'Tentang Kami', 'settings' => Setting::get(), 'socials' => Social::get()]);
+        }
+    }
 });
 Route::get('/blog/slug', function () {
-    return view('blog-details', ['judul_halaman' => 'Judul Postingan | Desa Wisata Loha']);
+    $settings = Setting::get();
+    foreach ($settings as $setting) {
+        if ($setting->web_title !== null) {
+            return view('blog-details', ['judul_halaman' => 'Judul Postingan | ' . $setting->web_title]);
+        } else {
+            return view('blog-details', ['judul_halaman' => 'Judul Postingan']);
+        }
+    }
 });

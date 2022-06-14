@@ -2,17 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Social;
 use App\Models\Setting;
+use Illuminate\Http\Request;
 
 class Contact extends Controller
 {
     function show()
     {
-        return view('contact', [
-            'judul_halaman' => 'Kontak Kami | Desa Wisata Loha',
-            'settings' => Setting::get()
-        ]);
+        $settings = Setting::get();
+        foreach ($settings as $setting) {
+            if ($setting->web_title !== null) {
+                return view('contact', [
+                    'judul_halaman' => 'Kontak Kami | ' . $setting->web_title,
+                    'settings' => Setting::get(),
+                    'socials' => Social::get()
+                ]);
+            } else {
+                return view('contact', [
+                    'judul_halaman' => 'Kontak Kami',
+                    'settings' => Setting::get(),
+                    'socials' => Social::get()
+                ]);
+            }
+        }
     }
 
     function sendMail(Request $request)

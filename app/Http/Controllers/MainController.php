@@ -14,10 +14,10 @@ use App\Models\Social;
 
 class MainController extends Controller
 {
-    public function index()
+    public function index(Setting $setting)
     {
         return view('index', [
-            'judul_halaman' => 'Desa Wisata Loha',
+            'judul_halaman' => $setting->web_title,
             'blogs' => Blog::latest('updated_at')->limit(3)->get(),
             'jumlah_blog' => Blog::count(),
             'galleries' => Gallery::latest('updated_at')->limit(4)->get(),

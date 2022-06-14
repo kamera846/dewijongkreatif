@@ -15,25 +15,65 @@ class SettingController extends Controller
             'settings' => Setting::get()
         ]);
     }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'logo' => 'image|file',
+            'favicon' => 'image|file',
+        ]);
+        if ($request->file('favicon') && $request->file('logo')) {
+            $favicon = $request->file('favicon')->store('favicon');
+            $logo = $request->file('logo')->store('logo');
+            Setting::create([
+                'logo' => $logo,
+                'favicon' => $favicon,
+                'lokasi' => $request->lokasi,
+                'email' => $request->email,
+                'telpon' => $request->telpon,
+                'web_title' => $request->web_title,
+            ]);
+        } elseif ($request->file('favicon')) {
+            $favicon = $request->file('favicon')->store('favicon');
+            Setting::create([
+                'favicon' => $favicon,
+                'lokasi' => $request->lokasi,
+                'email' => $request->email,
+                'telpon' => $request->telpon,
+                'web_title' => $request->web_title,
+            ]);
+        } elseif ($request->file('logo')) {
+            $logo = $request->file('logo')->store('logo');
+            Setting::create([
+                'logo' => $logo,
+                'lokasi' => $request->lokasi,
+                'email' => $request->email,
+                'telpon' => $request->telpon,
+                'web_title' => $request->web_title,
+            ]);
+        } else {
+            Setting::create([
+                'lokasi' => $request->lokasi,
+                'email' => $request->email,
+                'telpon' => $request->telpon,
+                'web_title' => $request->web_title,
+            ]);
+        }
+
+        return redirect('/dashboard/setting')->with('success', 'menambah');
+    }
+
+
     public function update(Request $request, Setting $setting)
     {
         $request->validate([
             'logo' => 'image|file',
             'favicon' => 'image|file',
-            'lokasi' => 'required',
-            'email' => 'required',
-            'telpon' => 'required',
-            'web_title' => 'required'
         ]);
         if ($request->file('logo')) {
             if ($request->oldLogo != null) {
                 Storage::delete($request->oldLogo);
             }
-            // if ($request->oldFavicon != null) {
-            //     Storage::delete($request->oldFavicon);
-            // }
             $logo = $request->file('logo')->store('logo');
-            // $favicon = $request->file('favicon')->store('favicon');
             Setting::where('id', $setting->id)
                 ->update([
                     'lokasi' => $request->lokasi,

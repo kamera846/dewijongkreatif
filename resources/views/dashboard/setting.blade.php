@@ -43,28 +43,30 @@
                                   <div class="form-group row">
                                     <label for="email" class="col-md-3 col-form-label form-control-label">Alamat Email</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="email" id="email" name="email" value="{{ $setting->email }}" readonly>
+                                      <input class="form-control form-control-alternative" type="email" id="email" name="email" value="{{ $setting->email }}" >
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="no_telp" class="col-md-3 col-form-label form-control-label">Nomor Telepon</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="number" id="no_telp" name="telpon" value="{{ $setting->telpon }}" readonly>
+                                      <input class="form-control form-control-alternative" type="number" id="no_telp" name="telpon" value="{{ $setting->telpon }}" >
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="logo" class="col-md-3 col-form-label form-control-label">Logo</label>
                                     <input type="hidden" name="oldLogo" value="{{ $setting->logo }}">
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="file" id="logo" name="logo" value="{{ $setting->logo }}" readonly>
-                                      <img id="image-preview-update-2" src="{{ asset('storage/' . $setting->logo) }}" height="100px" class="rounded mt-2" alt="...">
+                                      <input class="form-control form-control-alternative" type="file" id="logo" name="logo" value="{{ $setting->logo }}" >
+                                      <div class="box-image bg-primary mt-2" style="width: 45%">
+                                        <img id="image-preview-update-2" src="{{ asset('storage/' . $setting->logo) }}" height="100px" width="200px" class="rounded mt-2" alt="..." style="object-fit: cover">
+                                      </div>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="favicon" class="col-md-3 col-form-label form-control-label">Favicon</label>
                                     <input type="hidden" name="oldFavicon" value="{{ $setting->favicon }}">
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="file" id="favicon" name="favicon" value="{{ $setting->favicon }}" readonly>
+                                      <input class="form-control form-control-alternative" type="file" id="favicon" name="favicon" value="{{ $setting->favicon }}" >
                                       @if ($setting->favicon)
                                       <img id="image-preview-update-2" src="{{ asset('storage/' . $setting->favicon) }}" height="100px" class="rounded mt-2" alt="...">    
                                       @else
@@ -75,56 +77,69 @@
                                   <div class="form-group row">
                                     <label for="web_title" class="col-md-3 col-form-label form-control-label">Web Title</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="text" id="web_title" name="web_title" value="{{ $setting->web_title }}" readonly>
+                                      <input class="form-control form-control-alternative" type="text" id="web_title" name="web_title" value="{{ $setting->web_title }}" >
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="lokasi" class="col-md-3 col-form-label form-control-label">Lokasi</label>
                                     <div class="col-md-9">
-                                      <textarea class="form-control form-control-alternative" name="lokasi" id="lokasi" rows="3" readonly>{{ $setting->lokasi }}</textarea>
+                                      <textarea class="form-control form-control-alternative" name="lokasi" id="lokasi" rows="3" >{{ $setting->lokasi }}</textarea>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
-                                    <div class="col-md-9" id="pembungkus">
-                                      <button type="button" class="btn btn-primary" id="edit">Edit</button>
+                                    <div class="col-md-9">
+                                      <button type="submit" class="btn btn-primary">Update</button>
+                                      <a href="/dashboard/setting" class="btn btn-secondary">Batal</a> 
                                     </div>
                                   </div>
                                 </form>
                                 @empty
-                                <form action="/dashboard/setting/{{ $setting->id }}/update" method="POST" enctype="multipart/form-data">
+                                <form action="/dashboard/setting/store" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                @method('put')
                                   <div class="form-group row">
                                     <label for="email" class="col-md-3 col-form-label form-control-label">Alamat Email</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="email" id="email" name="email" value="}" readonly>
+                                      <input class="form-control form-control-alternative" type="email" id="email" name="email"  >
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="no_telp" class="col-md-3 col-form-label form-control-label">Nomor Telepon</label>
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="number" id="no_telp" name="telpon" value="}" readonly>
+                                      <input class="form-control form-control-alternative" type="number" id="no_telp" name="telpon"  >
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="logo" class="col-md-3 col-form-label form-control-label">Logo</label>
-                                    <input type="hidden" name="oldLogo" value="">
                                     <div class="col-md-9">
-                                      <input class="form-control form-control-alternative" type="file" id="logo" name="logo" value="}" readonly>
-                                      <img id="image-preview-update-2" src="{{ asset('storage/' . $setting->logo) }}" height="100px" class="rounded mt-2" alt="...">
+                                      <input class="form-control form-control-alternative" type="file" id="logo" name="logo">
+                                      <i class="ni ni-image text-gray" style="font-size:8vmax;"></i>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="favicon" class="col-md-3 col-form-label form-control-label">Favicon</label>
+                                    <div class="col-md-9">
+                                      <input class="form-control form-control-alternative" type="file" id="favicon" name="favicon">
+                                      <i class="ni ni-image text-gray" style="font-size:8vmax;"></i>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="web_title" class="col-md-3 col-form-label form-control-label">Web Title</label>
+                                    <div class="col-md-9">
+                                      <input class="form-control form-control-alternative" type="text" id="web_title" name="web_title"  >
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label for="lokasi" class="col-md-3 col-form-label form-control-label">Lokasi</label>
                                     <div class="col-md-9">
-                                      <textarea class="form-control form-control-alternative" name="lokasi" id="lokasi" rows="3" readonly></textarea>
+                                      <textarea class="form-control form-control-alternative" name="lokasi" id="lokasi" rows="3" ></textarea>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <div class="col-md-3"></div>
-                                    <div class="col-md-9" id="pembungkus">
-                                      <button type="button" class="btn btn-primary" id="edit">Edit</button>
+                                    <div class="col-md-9">
+                                      <button type="submit" class="btn btn-primary">Simpan</button>
+                                      <a href="/dashboard/setting" class="btn btn-secondary">Batal</a> 
                                     </div>
                                   </div>
                                 </form>

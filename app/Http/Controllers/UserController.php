@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class UserController extends Controller
         if (Auth::user()->role === 'super-admin') {
             return view('dashboard.user', [
                 'judul_halaman' => 'Admin | Data Pengguna',
-                'users' => User::latest('updated_at')->get()
+                'users' => User::latest('updated_at')->get(),
+                'settings' => Setting::get()
             ]);
         } else {
             return redirect('/dashboard');

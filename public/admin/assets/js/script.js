@@ -43,11 +43,11 @@ if (hapus != undefined) {
         });
     });
 }
-const flashbanget = document.querySelector(".flash-data");
-if (flashbanget != undefined) {
-    const flashData = flashbanget.dataset["flashdata"];
+const flashdata = document.querySelector(".flash-data");
+if (flashdata != undefined) {
+    const flashData = flashdata.dataset["flashdata"];
 
-    if (flashData !== "gagal") {
+    if (flashData !== "success") {
         Swal.fire("Sukses", "Berhasil " + flashData + " data!", "success");
     } else if (flashData === "gagal") {
         Swal.fire("Gagal", "Ada kesalahan!", "error");
@@ -55,47 +55,46 @@ if (flashbanget != undefined) {
 }
 
 // edit kontak
-if (document.location.pathname === "/dashboard/setting") {
-    const email = document.getElementById("email");
-    const noTelp = document.getElementById("no_telp");
-    const lokasi = document.getElementById("lokasi");
-    const logo = document.getElementById("logo");
-    const webTitle = document.getElementById("web_title");
-    const favicon = document.getElementById("favicon");
+// if (document.location.pathname === "/dashboard/setting") {
+//     const email = document.getElementById("email");
+//     const noTelp = document.getElementById("no_telp");
+//     const lokasi = document.getElementById("lokasi");
+//     const logo = document.getElementById("logo");
+//     const webTitle = document.getElementById("web_title");
+//     const favicon = document.getElementById("favicon");
 
-    const edit = document.getElementById("edit");
-    const pembungkus = document.getElementById("pembungkus");
+//     const edit = document.getElementById("edit");
+//     const pembungkus = document.getElementById("pembungkus");
 
-    const simpan = document.createElement("button");
-    simpan.innerHTML = "Simpan";
-    simpan.classList.add("btn");
-    simpan.classList.add("btn-primary");
-    simpan.setAttribute("type", "submit");
+//     const simpan = document.createElement("button");
+//     simpan.innerHTML = "Simpan";
+//     simpan.classList.add("btn");
+//     simpan.classList.add("btn-primary");
+//     simpan.setAttribute("type", "submit");
 
-    const batal = document.createElement("button");
-    batal.innerHTML = "Batal";
-    batal.classList.add("btn");
-    batal.classList.add("btn-secondary");
-    batal.setAttribute("type", "button");
+//     const batal = document.createElement("button");
+//     batal.innerHTML = "Batal";
+//     batal.classList.add("btn");
+//     batal.classList.add("btn-secondary");
+//     batal.setAttribute("type", "button");
 
-    edit.addEventListener("click", function () {
-        edit.style.display = "none";
-        pembungkus.appendChild(simpan);
-        pembungkus.appendChild(batal);
+//     edit.addEventListener("click", function () {
+//         edit.style.display = "none";
+//         pembungkus.appendChild(simpan);
+//         pembungkus.appendChild(batal);
 
-        email.removeAttribute("readonly");
-        noTelp.removeAttribute("readonly");
-        lokasi.removeAttribute("readonly");
-        logo.removeAttribute("readonly");
-        favicon.removeAttribute("readonly");
-        webTitle.removeAttribute("readonly");
+//         email.removeAttribute("readonly");
+//         noTelp.removeAttribute("readonly");
+//         lokasi.removeAttribute("readonly");
+//         logo.removeAttribute("readonly");
+//         favicon.removeAttribute("readonly");
+//         webTitle.removeAttribute("readonly");
 
-        batal.addEventListener("click", function () {
-            location.reload();
-        });
-        
-    });
-}
+//         batal.addEventListener("click", function () {
+//             location.reload();
+//         });
+//     });
+// }
 
 
 // edit akun sosmed

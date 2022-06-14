@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Social;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class SocialController extends Controller
@@ -11,7 +12,8 @@ class SocialController extends Controller
     {
         return view('dashboard.social', [
             'judul_halaman' => 'Admin | Profil Sosial Media',
-            'socials' => Social::latest()->get()
+            'socials' => Social::latest()->get(),
+            'settings' => Setting::get()
         ]);
     }
 

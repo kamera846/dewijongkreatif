@@ -12,9 +12,14 @@
         <link href="{{ asset('assets/css/color.css') }}" rel="stylesheet" />
 
         <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Merriweather:ital@0;1&display=swap" rel="stylesheet" />
-
-        {{-- <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" />
-        <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" /> --}}
+        
+        @foreach ($settings as $setting)
+        @if ($setting->favicon)
+        <link rel="icon" href="{{ asset('storage/' . $setting->favicon) }}" type="image/png" />
+        @else
+        <link rel="icon" href="{{ asset('admin/assets/img/brand/favicon.png') }}" type="image/png" />
+        @endif
+        @endforeach
 
         <!-- Responsive -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -92,11 +97,21 @@
                                 <nav class="main-menu navbar-expand-md navbar-light">
                                     <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                         <ul class="navigation">
+                                            @foreach ($settings as $setting)
+                                            @if($setting->web_title !== null)
+                                                <li><a href="{{ isset($tes)?'../':'./' }}">Beranda</a></li>
+                                                <li class="{{ ($judul_halaman === 'Tentang Kami | <?= $setting->web_title ;?>')?'current':'' }}"><a href="/about">Tentang Kami</a></li>
+                                                <li class="{{ ($judul_halaman === 'Galeri | <?= $setting->web_title ;?>')?'current':'' }}"><a href="/gallery">Galeri</a></li>
+                                                <li class="{{ ($judul_halaman === 'Blog | <?= $setting->web_title ;?>' || isset($tes))?'current':''}}"><a href="/blog">Blog</a></li>
+                                                <li class="{{ ($judul_halaman === 'Kontak Kami | <?= $setting->web_title ;?>')?'current':'' }}"><a href="/contact">Kontak</a></li>
+                                            @else
                                             <li><a href="{{ isset($tes)?'../':'./' }}">Beranda</a></li>
-                                            <li class="{{ ($judul_halaman === 'Tentang Kami | Desa Wisata Loha')?'current':'' }}"><a href="/about">Tentang Kami</a></li>
-                                            <li class="{{ ($judul_halaman === 'Galeri | Desa Wisata Loha')?'current':'' }}"><a href="/gallery">Galeri</a></li>
-                                            <li class="{{ ($judul_halaman === 'Blog | Desa Wisata Loha' || isset($tes))?'current':''}}"><a href="/blog">Blog</a></li>
-                                            <li class="{{ ($judul_halaman === 'Kontak Kami | Desa Wisata Loha')?'current':'' }}"><a href="/contact">Kontak</a></li>
+                                            <li class="{{ ($judul_halaman === 'Tentang Kami')?'current':'' }}"><a href="/about">Tentang Kami</a></li>
+                                            <li class="{{ ($judul_halaman === 'Galeri')?'current':'' }}"><a href="/gallery">Galeri</a></li>
+                                            <li class="{{ ($judul_halaman === 'Blog' || isset($tes))?'current':''}}"><a href="/blog">Blog</a></li>
+                                            <li class="{{ ($judul_halaman === 'Kontak Kami')?'current':'' }}"><a href="/contact">Kontak</a></li>                                        
+                                            @endif
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </nav>
@@ -224,23 +239,23 @@
                                     <h3 class="widget-title">Tentang Kami</h3>
                                     <div class="text">Kedatangan nenek moyang pertama yang menghuni kampung sowang adalah leluhur dari keturunan suku nawang dan diikuti oleh suku jao, suku dangka dan suku nduri.</div>
                                     <ul class="social-links">
-                                        {{-- @foreach ($socials as $social) --}}
-                                        <li>
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-youtube"></i></a>
-                                        </li>
-                                        {{-- @endforeach --}}
+                                        @foreach ($socials as $social)
+                                        @if ($social->tipe_sosmed === 'Facebook')
+                                            <li>
+                                                <a href="{{ $social->link_sosmed }}"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                        @endif
+                                        @if ($social->tipe_sosmed === 'Twitter')
+                                            <li>
+                                                <a href="{{ $social->link_sosmed }}"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                        @endif
+                                        @if ($social->tipe_sosmed === 'Instagram')
+                                            <li>
+                                                <a href="{{ $social->link_sosmed }}"><i class="fab fa-instagram"></i></a>
+                                            </li>
+                                        @endif
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

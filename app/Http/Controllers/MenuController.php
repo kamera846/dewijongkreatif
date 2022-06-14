@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,6 +13,7 @@ class MenuController extends Controller
     {
         return view('dashboard.menu', [
             'menus' => Menu::latest()->get(),
+            'settings' => Setting::get(),
             'judul_halaman' => 'Admin | Data Menu'
         ]);
     }

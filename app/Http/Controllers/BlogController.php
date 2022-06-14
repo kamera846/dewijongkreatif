@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Str;
 use App\Models\Blog;
+use App\Models\Social;
 use App\Models\Setting;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
@@ -16,6 +17,7 @@ class BlogController extends Controller
     {
         return view('dashboard.blog', [
             'blogs' => Blog::latest('updated_at')->get(),
+            'settings' => Setting::get(),
             'judul_halaman' => 'Admin | Data Postingan'
         ]);
     }
@@ -112,23 +114,54 @@ class BlogController extends Controller
 
     public function landingPage()
     {
-        return view('blog', [
-            'blogs' => Blog::latest('updated_at')->cari()->paginate(3),
-            'judul_halaman' => 'Blog | Desa Wisata Loha',
-            'jumlah_blog' => Blog::cari()->count(),
-            'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
-            'settings' => Setting::get()
-        ]);
+        $settings = Setting::get();
+        foreach ($settings as $setting) {
+            if ($setting->web_title !== null) {
+                return view('blog', [
+                    'blogs' => Blog::latest('updated_at')->cari()->paginate(3),
+                    'judul_halaman' => 'Blog | '  . $setting->web_title,
+                    'jumlah_blog' => Blog::cari()->count(),
+                    'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+                    'settings' => Setting::get(),
+                    'socials' => Social::get()
+                ]);
+            } else {
+                return view('blog', [
+                    'blogs' => Blog::latest('updated_at')->cari()->paginate(3),
+                    'judul_halaman' => 'Blog',
+                    'jumlah_blog' => Blog::cari()->count(),
+                    'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+                    'settings' => Setting::get(),
+                    'socials' => Social::get()
+                ]);
+            }
+        }
     }
 
 
     public function postDetails(Blog $blog)
     {
-        return view('blog-details', [
-            'judul_halaman' => $blog->judul . ' | Desa Wisata Loha',
-            'blog' => $blog,
-            'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
-            'tes' => 'oke',
-        ]);
+        $settings = Setting::get();
+        foreach ($settings as $setting) {
+            if ($setting->web_title !== null) {
+                return view('blog-details', [
+                    'judul_halaman' => $blog->judul . ' | '  . $setting->web_title,
+                    'blog' => $blog,
+                    'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+                    'tes' => 'oke',
+                    'settings' => Setting::get(),
+                    'socials' => Social::get()
+                ]);
+            } else {
+                return view('blog-details', [
+                    'judul_halaman' => $blog->judul,
+                    'blog' => $blog,
+                    'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+                    'tes' => 'oke',
+                    'settings' => Setting::get(),
+                    'socials' => Social::get()
+                ]);
+            }
+        }
     }
 }

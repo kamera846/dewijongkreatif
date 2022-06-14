@@ -8,7 +8,14 @@
         <meta name="author" content="Creative Tim" />
         <title>{{ $judul_halaman }}</title>
         <!-- Favicon -->
+        @foreach ($settings as $setting)
+        @if ($setting->favicon)
+        <link rel="icon" href="{{ asset('storage/' . $setting->favicon) }}" type="image/png" />
+        @else
         <link rel="icon" href="{{ asset('admin/assets/img/brand/favicon.png') }}" type="image/png" />
+        @endif
+        @endforeach
+        {{-- <link rel="icon" href="{{ asset('admin/assets/img/brand/blue.png') }}" type="image/png" /> --}}
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
         <!-- Icons -->
