@@ -83,7 +83,7 @@
                             <div class="logo-box">
                                 <div class="logo">
                                     @foreach ($settings as $setting)
-                                        <a href="./"><img src="{{ asset('storage/' . $setting->logo) }}" alt="" /></a>
+                                        <a href="./"><img src="{{ asset('storage/' . $setting->logo) }}" alt="" style="max-height: 60px;" /></a>
                                     {{-- <a href="/"><h1 class="text-white">Loha</h1><p class="text-white">Desa Wisata</p></a> --}}
                                     @endforeach
                                 </div>
@@ -100,10 +100,10 @@
                                             @foreach ($settings as $setting)
                                             @if($setting->web_title !== null)
                                                 <li><a href="{{ isset($tes)?'../':'./' }}">Beranda</a></li>
-                                                <li class="{{ ($judul_halaman === 'Tentang Kami | <?= $setting->web_title ;?>')?'current':'' }}"><a href="/about">Tentang Kami</a></li>
-                                                <li class="{{ ($judul_halaman === 'Galeri | <?= $setting->web_title ;?>')?'current':'' }}"><a href="/gallery">Galeri</a></li>
-                                                <li class="{{ ($judul_halaman === 'Blog | <?= $setting->web_title ;?>' || isset($tes))?'current':''}}"><a href="/blog">Blog</a></li>
-                                                <li class="{{ ($judul_halaman === 'Kontak Kami | <?= $setting->web_title ;?>')?'current':'' }}"><a href="/contact">Kontak</a></li>
+                                                <li class="<?php if($judul_halaman == 'Tentang Kami | ' . $setting->web_title) echo "current";?>"><a href="/about">Tentang Kami</a></li>
+                                                <li class="<?php if($judul_halaman == 'Galeri | ' . $setting->web_title) echo "current";?>"><a href="/gallery">Galeri</a></li>
+                                                <li class="<?php if($judul_halaman == 'Blog | ' . $setting->web_title) echo "current";?>"><a href="/blog">Blog</a></li>
+                                                <li class="<?php if($judul_halaman == 'Kontak Kami | ' . $setting->web_title) echo "current";?>"><a href="/contact">Kontak</a></li>
                                             @else
                                             <li><a href="{{ isset($tes)?'../':'./' }}">Beranda</a></li>
                                             <li class="{{ ($judul_halaman === 'Tentang Kami')?'current':'' }}"><a href="/about">Tentang Kami</a></li>
@@ -137,8 +137,10 @@
                                 <!--Logo-->
                                 <div class="logo-box">
                                     <div class="logo">
-                                        <a href="./"><img src="{{ asset('assets/images/tes-logo.png') }}" alt="" /></a>
+                                        @foreach ($settings as $setting)
+                                        <a href="./"><img src="{{ asset('storage/' . $setting->logo) }}" alt="" style="max-height: 60px;" /></a>
                                         {{-- <a href="/"><h1 class="text-white">Loha</h1><p class="text-white">Desa Wisata</p></a> --}}
+                                        @endforeach
                                     </div>
                                 </div>
                                 <!--Nav Box-->
@@ -242,17 +244,17 @@
                                         @foreach ($socials as $social)
                                         @if ($social->tipe_sosmed === 'Facebook')
                                             <li>
-                                                <a href="{{ $social->link_sosmed }}"><i class="fab fa-facebook-f"></i></a>
+                                                <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                             </li>
                                         @endif
                                         @if ($social->tipe_sosmed === 'Twitter')
                                             <li>
-                                                <a href="{{ $social->link_sosmed }}"><i class="fab fa-twitter"></i></a>
+                                                <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-twitter"></i></a>
                                             </li>
                                         @endif
                                         @if ($social->tipe_sosmed === 'Instagram')
                                             <li>
-                                                <a href="{{ $social->link_sosmed }}"><i class="fab fa-instagram"></i></a>
+                                                <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-instagram"></i></a>
                                             </li>
                                         @endif
                                         @endforeach

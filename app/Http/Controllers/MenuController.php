@@ -85,6 +85,7 @@ class MenuController extends Controller
             //         ]);
             // }
         } else {
+            // dd($request);
             Menu::where('slug', $menu->slug)
                 ->update([
                     'title' => $request->title,
