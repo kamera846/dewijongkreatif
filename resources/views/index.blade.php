@@ -4,13 +4,15 @@
 @section('page-content')
     <!-- Bnner Section -->
     <section class="banner-section">
-        @foreach ($menus as $menu)
         <div class="swiper-container banner-slider">
             <div class="swiper-wrapper">
                 <!-- Slide Item -->
-                    
-                @if($menu->title === 'Corousel-1')
-                <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-1.jpg)">
+                @foreach ($menus as $menu)
+                @if($menu->slug === 'carousel-1' && $menu->isActive == 'true')
+                <?php 
+                    $image = json_decode($menu->cover);
+                ?>
+                <div class="swiper-slide" style="background-image: url(<?= asset('storage/'.$image[0]) ?>)">
                     <div class="content-outer">
                         <div class="content-box justify-content-center">
                             <div class="inner text-center">
@@ -23,59 +25,66 @@
                                    {{ $menu->description }}<br />
                                    
                                 </div>
-                                <div class="link-box">
+                                <!-- <div class="link-box">
                                     <a href="#" class="theme-btn btn-style-one"><span>Read More</span></a>
                                     <a href="#" class="theme-btn btn-style-one style-two"><span>Virtual tour</span></a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
                 @endif
                 <!-- Slide Item -->
-                @if ($menu->title === 'Corousel-2')
-                <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-2.jpg)">
+                @if ($menu->slug === 'carousel-2' && $menu->isActive == 'true')
+                <?php 
+                    $image = json_decode($menu->cover);
+                ?>
+                <div class="swiper-slide" style="background-image: url(<?= asset('storage/'.$image[0]) ?>)">
                     <div class="content-outer">
-                        <div class="content-box">
-                            <div class="inner">
+                        <div class="content-box justify-content-center">
+                            <div class="inner text-center">
                                 <h1>
-                                    {{ $menu->title }} <br />
+                                    {{ $menu->title }}
+                                    <br />
                                     
                                 </h1>
                                 <div class="text">
-                                    {{ $menu->description }}<br />
+                                   {{ $menu->description }}<br />
+                                   
                                 </div>
-                                <div class="link-box">
+                                <!-- <div class="link-box">
                                     <a href="#" class="theme-btn btn-style-one"><span>Read More</span></a>
-                                    <a href="#" class="theme-btn btn-style-one style-two"><span>Virtual Tour</span></a>
-                                </div>
+                                    <a href="#" class="theme-btn btn-style-one style-two"><span>Virtual tour</span></a>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
                 @endif
                 <!-- Slide Item -->
-                @if ($menu->title === 'Corousel-3')
+                @if ($menu->slug === 'carousel-3' && $menu->isActive == 'true')
                 <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-3.jpg)">
                     <div class="content-outer">
                         <div class="content-box">
                             <div class="inner">
                                 <h1>
-                                    {{ $menu->title }} <br />
+                                    {{ $menu->slug }} <br />
                                 </h1>
                                 <div class="text">
                                     {{ $menu->description }}<br />
                                 </div>
-                                <div class="link-box">
+                                <!-- <div class="link-box">
                                     <a href="#" class="theme-btn btn-style-one"><span>Read More</span></a>
                                     <a href="#" class="theme-btn btn-style-one style-two"><span>Virtual Tour</span></a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
                 @endif
+                @endforeach
             </div>
+
         </div>
         <div class="banner-slider-nav">
             <div class="banner-slider-control banner-slider-button-prev">
@@ -85,20 +94,17 @@
                 <span><i class="icon-arrow"></i></span>
             </div>
         </div>
-        @endforeach
     </section>
     <!-- End Bnner Section -->
 
 <!-- About section -->
 @foreach ($menus as $menu)
-@if ($menu->title === 'About')  
+@if ($menu->slug === 'about' && $menu->isActive == 'true')
 <section class="about-section">
     <div class="auto-container">
             <div class="sec-title text-center">
                 <!-- <div class="sub-title">City With Equity - Efficiency - Opportunity</div> -->
-                <h2>
-                    Cerita Desa
-                </h2>
+                <h2>{{$menu->title}}</h2>
             </div>
             <div class="row">
                 <div class="col-lg-5">
@@ -111,12 +117,20 @@
                 <div class="col-lg-7">
                     <div class="image-block wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="row">
+                            <?php $image = json_decode($menu->cover); ?>
                             <div class="col-lg-6 column">
-                                <div class="image"><img src="assets/images/resource/image-1.jpg" alt="" /></div>
-                                <div class="image"><img src="assets/images/resource/image-2.jpg" alt="" /></div>
+                                @foreach($image as $index => $item)
+                                    @if($index < 2)
+                                        <div class="image"><img src="{{asset('storage/' . $item)}}" alt="" style="height: 190px;object-fit: cover;"/></div>
+                                    @endif
+                                @endforeach
                             </div>
                             <div class="col-lg-6 column">
-                                <div class="image"><img src="assets/images/resource/image-3.jpg" alt="" /></div>
+                                @foreach($image as $index => $item)
+                                    @if($index === 2)
+                                        <div class="image"><img src="{{asset('storage/' . $item)}}" alt="" style="height: 390px;object-fit: cover;"/></div>
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -135,23 +149,27 @@
                     <div class="inner-box">
                         <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
                         <div class="content">
-                            <h4>Explore Loha</h4>
+                            @foreach($settings as $item)
+                            <h4>{{$item->web_title}}</h4>
+                            @endforeach
                             <h3>Our City Guides</h3>
-                            <div class="link-btn">
+                            <!-- <div class="link-btn">
                                 <a href="#"><i class="icon-arrow"></i></a>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Explore Loha</h4>
+                                @foreach($settings as $item)
+                                <h4>{{$item->web_title}}</h4>
+                                @endforeach
                                 <h3>Our City Guides</h3>
                                 <div class="text">
                                     Veniam quis nostrud exercitation sed llamco <br />
                                     conseqa rure dolorn repreh derit ...
                                 </div>
-                                <div class="link-btn">
+                                <!-- <div class="link-btn">
                                     <a href="#"><i class="icon-arrow"></i></a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

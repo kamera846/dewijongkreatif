@@ -76,8 +76,13 @@
                                     <div class="col-md-9">
                                       <select name="isActive" id="isActive" class="form-control @error('role') is-invalid @enderror form-control-alternative" required>
                                         <option value="Pilih section" disabled>Pilih Status</option>
-                                        <option value="true">Aktif</option>
+                                        @if($menu->isActive === 'true')
+                                        <option value="true" selected>Aktif</option>
                                         <option value="false">Nonaktif</option>
+                                        @else
+                                        <option value="true">Aktif</option>
+                                        <option value="false" selected>Nonaktif</option>
+                                        @endif
                                       </select>
                                       @error('isActive')
                                         <div class="invalid-feedback">

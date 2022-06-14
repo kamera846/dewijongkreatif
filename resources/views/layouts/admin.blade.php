@@ -35,7 +35,13 @@
                 <!-- Brand -->
                 <div class="sidenav-header d-flex align-items-center">
                     <a class="navbar-brand" href="./">
-                        <img src="{{ asset('admin/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="..." />
+                        @foreach($settings as $setting)
+                            @if($setting->logo)
+                            <img src="{{ asset('storage/'.$setting->logo) }}" class="navbar-brand-img" alt="..." style="min-height: 60px;"/>
+                            @else
+                            <img src="{{ asset('admin/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="..." />
+                            @endif   
+                        @endforeach
                     </a>
                     <div class="ml-auto">
                         <!-- Sidenav toggler -->

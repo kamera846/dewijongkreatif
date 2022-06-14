@@ -42,31 +42,18 @@
                         <table class="table align-items-center table-flush table-hover">
                             <thead class="thead-light">
                                 <tr>
+                                    <th>Slug</th>
                                     <th>Title</th>
-                                    {{-- <th>Description</th>
-                                    <th>Cover</th> --}}
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($menus as $menu)
                                 <tr>
-                                    {{-- <td class="table-user" style="object-fit: cover;overflow:hidden !important">
-                                    @if ($menu->foto_profil != null)
-                                        <img src="{{asset('storage/' . $menu->foto_profil)}}" class="avatar rounded-circle mr-3">
-                                    @else
-                                        <img src="{{ asset('/storage/foto-profil/defaultmenuimage.png') }}" class="avatar rounded-circle mr-3">
-                                    @endif
-                                    </td> --}}
+                                    <td>{{ $menu->slug }}</td>
                                     <td>
                                         <b>{{ $menu->title }}</b>
                                     </td>
-                                    {{-- <td>
-                                        <span class="font-weight-bold">{{ $menu->description }}</span>
-                                    </td>
-                                    <td>
-                                        <span class="font-weight-bold">{{ $menu->cover }}</span>
-                                    </td> --}}
                                     <td class="table-actions">
                                         <a href="/dashboard/menu/{{ $menu->slug }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit Menu">
                                             <i class="fas fa-user-edit"></i>
