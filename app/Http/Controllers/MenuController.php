@@ -28,6 +28,7 @@ class MenuController extends Controller
         return view('dashboard.edit-menu', [
             'judul_halaman' => 'Admin | Edit Menu',
             'menu' => $menu,
+            'settings' => Setting::get(),
             'covers' => json_decode($menu->cover)
         ]);
     }
@@ -47,24 +48,24 @@ class MenuController extends Controller
 
             foreach ($files as $index => $file) {
                 // if ($index < 3) {
-                    $name = date("YmdHis") . substr(str_shuffle($stringRand), 10);
-                    $extension = $file->getClientOriginalExtension();
+                $name = date("YmdHis") . substr(str_shuffle($stringRand), 10);
+                $extension = $file->getClientOriginalExtension();
 
-                    $newName = $name . '.' . $extension;
-                    Storage::putFileAs('public', $file, $newName);
-                    $imageArray[$index] = 'public/' . $newName;
+                $newName = $name . '.' . $extension;
+                Storage::putFileAs('public', $file, $newName);
+                $imageArray[$index] = 'public/' . $newName;
                 // }
             }
 
             // dd($imageArray);
 
             Menu::where('slug', $menu->slug)
-                    ->update([
-                        'title' => $request->title,
-                        'description' => $request->description,
-                        'isActive' => $request->isActive,
-                        'cover' => $imageArray,
-                    ]);
+                ->update([
+                    'title' => $request->title,
+                    'description' => $request->description,
+                    'isActive' => $request->isActive,
+                    'cover' => $imageArray,
+                ]);
 
             // foreach ($files as $file) {
             //     $name = rand(1, 999);

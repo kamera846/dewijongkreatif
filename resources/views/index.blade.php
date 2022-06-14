@@ -4,20 +4,24 @@
 @section('page-content')
     <!-- Bnner Section -->
     <section class="banner-section">
+        @foreach ($menus as $menu)
         <div class="swiper-container banner-slider">
             <div class="swiper-wrapper">
                 <!-- Slide Item -->
+                    
+                @if($menu->title === 'Corousel-1')
                 <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-1.jpg)">
                     <div class="content-outer">
                         <div class="content-box justify-content-center">
                             <div class="inner text-center">
                                 <h1>
-                                    Explore The Countryside <br />
-                                    With Pursuit Of Happiness
+                                    {{ $menu->title }}
+                                    <br />
+                                    
                                 </h1>
                                 <div class="text">
-                                    Eabore ipsum dolor sit amet consectetur ipsum adipisicing tempor <br />
-                                    incididunt nostrud sed axercitation sed ullamcoy laboris
+                                   {{ $menu->description }}<br />
+                                   
                                 </div>
                                 <div class="link-box">
                                     <a href="#" class="theme-btn btn-style-one"><span>Read More</span></a>
@@ -27,18 +31,19 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 <!-- Slide Item -->
+                @if ($menu->title === 'Corousel-2')
                 <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-2.jpg)">
                     <div class="content-outer">
                         <div class="content-box">
                             <div class="inner">
                                 <h1>
-                                    Best Social Care <br />
-                                    & City Center Area.
+                                    {{ $menu->title }} <br />
+                                    
                                 </h1>
                                 <div class="text">
-                                    Eabore ipsum dolor sit amet consectetur ipsum adipisicing tempor <br />
-                                    incididunt nostrud sed axercitation sed ullamcoy laboris
+                                    {{ $menu->description }}<br />
                                 </div>
                                 <div class="link-box">
                                     <a href="#" class="theme-btn btn-style-one"><span>Read More</span></a>
@@ -48,18 +53,18 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 <!-- Slide Item -->
+                @if ($menu->title === 'Corousel-3')
                 <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-3.jpg)">
                     <div class="content-outer">
                         <div class="content-box">
                             <div class="inner">
                                 <h1>
-                                    Hotels, Restaurants, <br />
-                                    Attractions & More Places.
+                                    {{ $menu->title }} <br />
                                 </h1>
                                 <div class="text">
-                                    Eabore ipsum dolor sit amet consectetur ipsum adipisicing tempor <br />
-                                    incididunt nostrud sed axercitation sed ullamcoy laboris
+                                    {{ $menu->description }}<br />
                                 </div>
                                 <div class="link-box">
                                     <a href="#" class="theme-btn btn-style-one"><span>Read More</span></a>
@@ -69,6 +74,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
         <div class="banner-slider-nav">
@@ -79,12 +85,15 @@
                 <span><i class="icon-arrow"></i></span>
             </div>
         </div>
+        @endforeach
     </section>
     <!-- End Bnner Section -->
 
 <!-- About section -->
+@foreach ($menus as $menu)
+@if ($menu->title === 'About')  
 <section class="about-section">
-        <div class="auto-container">
+    <div class="auto-container">
             <div class="sec-title text-center">
                 <!-- <div class="sub-title">City With Equity - Efficiency - Opportunity</div> -->
                 <h2>
@@ -95,7 +104,7 @@
                 <div class="col-lg-5">
                     <div class="content-block wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="text">
-                            "Sejarah peradaban masyarakat penghuni kampung sowang yang berlokasi Didesa Loha, Kecamatan Pacar, Kabupaten Manggarai Barat. kampung sowang diberi nama oleh leluhur “empo” yang datang dari suku nawangkarena sebelum dijadikan sebuah tempat pemukiman. Wilayah kampung sowang pada saat itu banyak tumbuh pohon gebang (sowang) sehingga nama tersebut diambil dari nama pohon gebang yang dalam bahasa daerah setempat adalah sowang Kampung sowang dihuni oleh beberapa suku diantaranya Suku Nawang, Suku Jao,Suku Dangka Dan Suku Nduri. Kedatangan nenek moyang pertama yang menghuni kampung sowang adalah leluhur dari keturunan suku nawang dan diikuti oleh suku jao, suku dangka dan suku nduri. Suku nawang datang dan menghuni wilayah kampong sowing karena diutus oleh suku jao yang berada di dangka dengan tujuan untuk menguasai wilayah dan hak atas ulaiat kekuasaan suku jao. Semua suku yang berada di kampung sowang memiliki hubungan kekeluargaan yang sangat dekat. Hal itu terjadi karena adanya hubungan perkawinan antara suku."
+                            "{{ $menu->description }}"
                         </div>
                     </div>
                 </div>
@@ -115,7 +124,9 @@
             </div>
         </div>
     </section>
-
+    @endif
+    @endforeach
+    
     <!-- Projects section -->
     <section class="projects-section">
         <div class="auto-container">

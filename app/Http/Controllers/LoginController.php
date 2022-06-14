@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,8 @@ class LoginController extends Controller
     public function index()
     {
         return view('login', [
-            'judul_halaman' => 'Admin Login'
+            'judul_halaman' => 'Admin Login',
+            'settings' => Setting::get()
         ]);
     }
 

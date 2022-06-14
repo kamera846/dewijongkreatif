@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Gallery;
+use App\Models\Menu;
 use App\Models\Setting;
 use App\Models\Social;
 
@@ -24,6 +25,7 @@ class MainController extends Controller
             'jumlah_galeri' => Gallery::count(),
             'settings' => Setting::get(),
             'socials' => Social::get(),
+            'menus' => Menu::get(),
         ]);
     }
 }
