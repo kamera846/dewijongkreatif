@@ -112,10 +112,11 @@ class BlogController extends Controller
     public function landingPage()
     {
         return view('blog', [
-            'blogs' => Blog::latest('updated_at')->cari()->paginate(3),
+            'blogs' => Blog::latest('updated_at')->cari()->paginate(5),
             'judul_halaman' => 'Blog | Desa Wisata Loha',
-            'jumlah_blog' => Blog::cari()->count(),
             'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+            'jumlah_blog' => Blog::cari()->count(),
+            'tes' => 'oke',
         ]);
     }
     
@@ -126,6 +127,7 @@ class BlogController extends Controller
             'judul_halaman' => $blog->judul . ' | Desa Wisata Loha',
             'blog' => $blog,
             'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+            'latestBlogs' => Blog::latest('updated_at')->limit(1)->get(),
             'tes' => 'oke',
         ]);
     }

@@ -36,11 +36,14 @@
             <!-- Main Header -->
             <header class="main-header header-style-one">
                 <!-- Header Top -->
+                @if(!isset($tes))
                 <div class="header-top">
                     <div class="auto-container">
                         <div class="inner-container">
                             <div class="left-column">
-                                <div class="text"><i class="icon-news"></i><a href="#">Latest City News</a> Coronavirus: Restrictions eased in parts of some islands</div>
+                                @foreach($latestBlogs as $blog)
+                                    <div class="text"><i class="icon-news"></i><a href="/blog/{{ $blog->slug }}">Artikel terbaru</a> {{ $blog->judul }}</div>
+                                @endforeach
                             </div>
                             <div class="right-column">
                                 <div class="phone">
@@ -69,6 +72,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
                 <!-- Header Upper -->
                 <div class="header-upper">
@@ -77,7 +81,7 @@
                             <!--Logo-->
                             <div class="logo-box">
                                 <div class="logo">
-                                    <a href="./"><img src="{{ asset('assets/images/tes-logo2.png') }}" alt="" /></a>
+                                    <a href="/"><img src="{{ asset('assets/images/tes-logo2.png') }}" alt="desa wisata loha" /></a>
                                     {{-- <a href="/"><h1 class="text-white">Loha</h1><p class="text-white">Desa Wisata</p></a> --}}
                                 </div>
                             </div>
@@ -90,7 +94,7 @@
                                 <nav class="main-menu navbar-expand-md navbar-light">
                                     <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                         <ul class="navigation">
-                                            <li><a href="{{ isset($tes)?'../':'./' }}">Beranda</a></li>
+                                            <li><a href="/">Beranda</a></li>
                                             <li class="{{ ($judul_halaman === 'Tentang Kami | Desa Wisata Loha')?'current':'' }}"><a href="/about">Tentang Kami</a></li>
                                             <li class="{{ ($judul_halaman === 'Galeri | Desa Wisata Loha')?'current':'' }}"><a href="/gallery">Galeri</a></li>
                                             <li class="{{ ($judul_halaman === 'Blog | Desa Wisata Loha' || isset($tes))?'current':''}}"><a href="/blog">Blog</a></li>
@@ -120,7 +124,7 @@
                                 <!--Logo-->
                                 <div class="logo-box">
                                     <div class="logo">
-                                        <a href="./"><img src="{{ asset('assets/images/tes-logo.png') }}" alt="" /></a>
+                                        <a href="/"><img src="{{ asset('assets/images/tes-logo.png') }}" alt="desa wisata loha" /></a>
                                         {{-- <a href="/"><h1 class="text-white">Loha</h1><p class="text-white">Desa Wisata</p></a> --}}
                                     </div>
                                 </div>
@@ -152,7 +156,7 @@
 
                     <nav class="menu-box">
                         <div class="nav-logo">
-                            <!-- <a href="./"><img src="{{ asset('assets/images/tes-logo.png') }}" alt="" title="" /></a> -->
+                            <a href="/"><img src="{{ asset('assets/images/tes-logo.png') }}" alt="desa wisata loha" title="" /></a> 
                             {{-- <a href="/">Desa Wisata Loha</a> --}}
                         </div>
                         <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
@@ -186,24 +190,6 @@
                 </div>
             </header>
             <!-- End Main Header -->
-
-            <!--Search Popup-->
-            <div id="search-popup" class="search-popup">
-                <div class="close-search theme-btn"><span class="far fa-times-circle"></span></div>
-                <div class="popup-inner">
-                    <div class="overlay-layer"></div>
-                    <div class="search-form">
-                        <form method="post" action="index.php">
-                            <div class="form-group">
-                                <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required />
-                                    <input type="submit" value="Search Now!" class="theme-btn" />
-                                </fieldset>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
 
             {{-- page content --}}
             @yield('page-content')
@@ -245,7 +231,7 @@
                                     <h3 class="widget-title">Navigasi</h3>
                                     <div class="widget-content">
                                         <ul>
-                                            <li><a href="{{ isset($tes)?'../':'./' }}">Beranda</a></li>
+                                            <li><a href="/">Beranda</a></li>
                                             <li><a href="/about">Tentang Kami</a></li>
                                             <li><a href="/gallery">Galeri</a></li>
                                             <li><a href="/blog">Blog</a></li>
@@ -294,7 +280,7 @@
                     <div class="auto-container">
                         <div class="wrapper-box">
                             <div class="copyright">
-                                <div class="text">© 2022 <a href="/">LOHA</a> - Powered by <a href="https://jongkreatif.id/">JongKreatif</a>.</div>
+                                <div class="text">© 2022 <a href="/">LOHA</a> - Powered by <a target="_blank" href="https://jongkreatif.id/">JongKreatif</a>.</div>
                             </div>
                         </div>
                     </div>

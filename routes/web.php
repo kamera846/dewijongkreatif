@@ -73,6 +73,13 @@ Route::get('/gallery', [GalleryController::class, 'landingPage']);
 Route::get('/contact', [Contact::class, 'show']);
 Route::post('/contact', [Contact::class, 'sendMail']);
 
+Route::get('/about', function() {
+    return view('about', [
+        'judul_halaman' => 'Tentang Kami | Desa Wisata Loha',
+        'latestBlogs' => Blog::latest('updated_at')->limit(1)->get(),
+    ]);
+});
+
 
 // admin
 // Route::get('/dashboard/contact', function () {
@@ -81,10 +88,3 @@ Route::post('/contact', [Contact::class, 'sendMail']);
 // Route::get('/dashboard/social', function () {
 //     return view('dashboard.social', ['judul_halaman' => 'Admin | Profil Sosial Media']);
 // });
-
-Route::get('/about', function() {
-    return view('about', ['judul_halaman' => 'Tentang Kami | Desa Wisata Loha']);
-});
-Route::get('/blog/slug', function() {
-    return view('blog-details', ['judul_halaman' => 'Judul Postingan | Desa Wisata Loha']);
-});

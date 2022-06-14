@@ -225,7 +225,6 @@
     </section>
 
     <!-- Highlights section -->
-    @if($jumlah_galeri >= 2)
         
         <section class="highlights-section">
             <div class="auto-container">
@@ -242,9 +241,15 @@
                                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ela reprehenderit in <br />
                                     voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                                 </div>
-                                <div class="link-btn">
-                                    <a href="/gallery" class="theme-btn btn-style-one"><span>Selengkapnya</span></a>
-                                </div>
+
+                                @if($jumlah_galeri >= 5)
+
+                                    <div class="link-btn">
+                                        <a href="/gallery" class="theme-btn btn-style-one"><span>Selengkapnya</span></a>
+                                    </div>
+
+                                @endif
+                                
                             </div>
                             <div class="swiper-container highlight-thumbs">
                                 <div class="swiper-wrapper">
@@ -280,8 +285,6 @@
                 </div>
             </div>
         </section>
-
-    @endif
 
     <!-- Contact Info section -->
     <section class="contact-info-section" style="margin-top: 210px; padding: 0">
@@ -326,7 +329,7 @@
         <div class="auto-container">
             <div class="sec-title text-center">
                 <!-- <div class="sub-title">City With Equity - Efficiency - Opportunity</div> -->
-                <h2>Blog Terbaru</h2>
+                <h2>Artikel Terbaru</h2>
             </div>
             <div class="row">
 
@@ -365,7 +368,7 @@
                 @else
 
                     <div class="col-12">
-                        <h3 class="text-center">(Belum ada postingan)</h3>
+                        <h3 class="text-center">(Belum ada artikel.)</h3>
                     </div>
 
                 @endif

@@ -65,7 +65,7 @@
             @else
 
                 <div class="col-12">
-                    <h3 class="text-center">Belum ada Galeri.</h3>
+                    <h3 class="text-center">Belum ada momen yang dapat dibagikan.</h3>
                 </div>
 
             @endif

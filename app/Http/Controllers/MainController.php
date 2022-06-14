@@ -17,6 +17,7 @@ class MainController extends Controller
         return view('index', [
             'judul_halaman' => 'Desa Wisata Loha',
             'blogs' => Blog::latest('updated_at')->limit(3)->get(),
+            'latestBlogs' => Blog::latest('updated_at')->limit(1)->get(),
             'jumlah_blog' => Blog::count(),
             'galleries' => Gallery::latest('updated_at')->limit(4)->get(),
             'jumlah_galeri' => Gallery::count(),

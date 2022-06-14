@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
 use App\Models\Gallery;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -98,8 +99,9 @@ class GalleryController extends Controller
     {
         return view('gallery', [
             'judul_halaman' => 'Galeri | Desa Wisata Loha',
-            'galleries' => Gallery::latest('updated_at')->paginate(4),
+            'galleries' => Gallery::latest('updated_at')->paginate(10),
             'jumlah_galeri' => Gallery::count(),
+            'latestBlogs' => Blog::latest('updated_at')->limit(1)->get(),
         ]);
     }
 }
