@@ -6,7 +6,8 @@
     <?php 
       $image = json_decode($section->cover);
     ?>
-<section class="page-title" style="background-image: url(<?= asset('storage/'.$image[0]) ?>)"> 
+    <section class="page-title" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)"> 
+    <div class="drop-layer-about"></div>
     <div class="auto-container">
         <div class="content-box">
             <div class="content-wrapper">
@@ -23,7 +24,6 @@
     </section>
     @endif
     @endforeach
-    <div class="drop-layer-about"></div>
     <!-- About section -->
     @foreach ($sections as $section )
     <?php 
@@ -47,11 +47,11 @@
                     <div class="image-block">
                         <div class="row">
                             <div class="col-lg-6 column">
-                                <div class="image"><img src="{{ asset('storage/' . $image[0]) }}" alt="" style="height: 190px;object-fit: cover;" width="100%" /></div>
-                                <div class="image"><img src="{{ asset('storage/' . $image[1]) }}" alt="" style="height: 190px;object-fit: cover;" width="100%" /></div>
+                                <div class="image"><img src="<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>" alt="" style="height: 190px;object-fit: cover;" width="100%" /></div>
+                                <div class="image"><img src="<?= asset($image != null ? 'storage/'.$image[1] : 'assets/images/background/bg-4.jpg') ?>" alt="" style="height: 190px;object-fit: cover;" width="100%" /></div>
                             </div>
                             <div class="col-lg-6 column">
-                                <div class="image"><img src="{{ asset('storage/' . $image[2]) }}" alt="" style="height: 396px;object-fit: cover;" width="100%" /></div>
+                                <div class="image"><img src="<?= asset($image != null ? 'storage/'.$image[2] : 'assets/images/background/bg-4.jpg') ?>" alt="" style="height: 396px;object-fit: cover;" width="100%" /></div>
                             </div>
                         </div>
                     </div>
@@ -74,21 +74,16 @@
                 <h2>{{ $section->title }}</h2>
             </div>
             <div class="row">
+                <?php $images = json_decode($section->cover) ?>
+                @if($images != null)
+                @foreach($images as $image)
                 <div class="col-xl-4 col-md-6 team-block">
                     <div class="inner-box">
-                        <div class="image"><img src="{{ asset('storage/' . $image[0]) }}" class="image-about" alt="" /></div>
+                        <div class="image"><img src="{{ asset('storage/' . $image) }}" class="image-about" alt="" /></div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 team-block">
-                    <div class="inner-box">
-                        <div class="image"><img src="{{ asset('storage/' . $image[1]) }}" class="image-about" alt="" /></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 team-block">
-                    <div class="inner-box">
-                        <div class="image"><img src="{{ asset('storage/' . $image[2]) }}" class="image-about" alt="" /></div>
-                    </div>
-                </div>
+                @endforeach
+                @endif
             </div>
         </div>
     </section>

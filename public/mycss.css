@@ -5,10 +5,10 @@
     position: absolute;
     top: 0;
 }
-.drop-layer-about, .drop-layer-gallery, .drop-layer-blog, .drop-layer-contact{
+.drop-layer-about, .drop-layer-gallery, .drop-layer-blog, .drop-layer-contact, .drop-layer-detail{
     width: 100%;
-    min-height: 77.4vh;
-    max-height: 100vh;
+    min-height: 100%;
+    /* max-height: 100vh; */
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0;

@@ -12,7 +12,8 @@
                 <?php 
                     $image = json_decode($section->cover);
                 ?>
-                <div class="swiper-slide" style="background-image: url(<?= asset('storage/'.$image[0]) ?>)">
+                <div class="swiper-slide" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)">
+                    <div class="drop-layer"></div>
                     <div class="content-outer">
                         <div class="content-box justify-content-center">
                             <div class="inner text-center inner-corousel">
@@ -35,7 +36,8 @@
                 <?php 
                     $image = json_decode($section->cover);
                 ?>
-                <div class="swiper-slide" style="background-image: url(<?= asset('storage/'.$image[0]) ?>)">
+                <div class="swiper-slide" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)">
+                    <div class="drop-layer"></div>
                     <div class="content-outer">
                         <div class="content-box justify-content-center">
                             <div class="inner text-center">
@@ -58,7 +60,8 @@
                 <?php 
                     $image = json_decode($section->cover);
                 ?>
-                <div class="swiper-slide" style="background-image: url(<?= asset('storage/'.$image[0]) ?>)">
+                <div class="swiper-slide" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)">
+                    <div class="drop-layer"></div>
                     <div class="content-outer">
                         <div class="content-box">
                             <div class="inner">
@@ -75,7 +78,6 @@
                 @endif
                 @endforeach
             </div>
-            <div class="drop-layer"></div>
         </div>
         <div class="banner-slider-nav">
             <div class="banner-slider-control banner-slider-button-prev">
@@ -110,18 +112,22 @@
                         <div class="row">
                             <?php $image = json_decode($section->cover); ?>
                             <div class="col-lg-6 column">
+                                @if($image != null)
                                 @foreach($image as $index => $item)
                                     @if($index < 2)
                                         <div class="image"><img src="{{asset('storage/' . $item)}}" alt="" style="height: 190px;object-fit: cover;" width="100%"/></div>
                                     @endif
                                 @endforeach
+                                @endif
                             </div>
                             <div class="col-lg-6 column">
+                                @if($image != null)
                                 @foreach($image as $index => $item)
                                     @if($index === 2)
                                         <div class="image"><img src="{{asset('storage/' . $item)}}" alt="" style="height: 390px;object-fit: cover;" width="100%"/></div>
                                     @endif
                                 @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -229,7 +235,7 @@
     <!-- Highlights section -->
     @foreach ($sections as $section)
     @if ($section->slug === 'gallery')
-    @if($jumlah_galeri >= 2)
+    @if($jumlah_galeri != 0)
         <section class="highlights-section">
             <div class="auto-container">
                 <div class="sec-title">
@@ -240,12 +246,14 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="text-blcok">
-                                <div class="text" style="text-align: justify; tex">
+                                <div class="text" style="text-align: justify;">
                                     {{ $section->description }}  <br />
                                 </div>
+                                @if($jumlah_galeri > 4)
                                 <div class="link-btn">
                                     <a href="/gallery" class="theme-btn btn-style-one"><span>Selengkapnya</span></a>
                                 </div>
+                                @endif
                             </div>
                             <div class="swiper-container highlight-thumbs">
                                 <div class="swiper-wrapper">
@@ -267,7 +275,7 @@
                         </div>
                         <div class="col-lg-5">
                             <!-- Swiper -->
-                            <div class="swiper-container highlight-image">
+                            <div class="swiper-container highlight-image" style="margin: inherit;">
                                 <div class="swiper-wrapper">
                                     @foreach($galleries as $gallery)
                                         <div class="swiper-slide">

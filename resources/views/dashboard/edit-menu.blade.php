@@ -72,7 +72,7 @@
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="role" class="col-md-3 col-form-label form-control-label">Status Section<span class="text-danger">*</span></label>
+                                    <label for="role" class="col-md-3 col-form-label form-control-label">Status<span class="text-danger">*</span></label>
                                     <div class="col-md-9">
                                       <select name="isActive" id="isActive" class="form-control @error('role') is-invalid @enderror form-control-alternative" required>
                                         <option value="Pilih section" disabled>Pilih Status</option>

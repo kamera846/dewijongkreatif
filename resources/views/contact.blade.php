@@ -6,7 +6,8 @@
         $image = json_decode($section->cover);
     ?>
     @if ($section->slug === 'contact')
-    <section class="page-title" style="background-image: url(<?= asset('storage/'.$image[0]) ?>)">
+    <section class="page-title" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)">
+        <div class="drop-layer-contact"></div>
         <div class="auto-container">
             <div class="content-box">
                 <div class="content-wrapper">
@@ -23,7 +24,6 @@
     </section>
     @endif
 @endforeach
-<div class="drop-layer-contact"></div>
     <!-- Contact Form section -->
     <section class="contact-form-section">
         <div class="auto-container">

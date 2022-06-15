@@ -1,7 +1,8 @@
 @extends('layouts.main')
 
 @section('page-content')
-    <section class="page-title style-two" style="background-image: url({{ asset('assets/images/background/bg-11.jpg') }})">
+    <section class="page-title style-two" style="background-image: url(<?= asset('storage/'.$blog->gambar_blog) ?>)">
+        <div class="drop-layer-detail"></div>
         <div class="auto-container">
             <div class="content-box">
                 <div class="content-wrapper">

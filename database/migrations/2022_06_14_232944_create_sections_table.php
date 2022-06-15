@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('cover')->nullable();
+            $table->text('cover')->nullable();
             $table->string('slug')->nullable();
             $table->string('isActive')->nullable();
             $table->timestamps();

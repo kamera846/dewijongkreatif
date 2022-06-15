@@ -44,6 +44,7 @@
                                 <tr>
                                     <th>Slug</th>
                                     <th>Title</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -53,6 +54,9 @@
                                     <td>{{ $section->slug }}</td>
                                     <td>
                                         <b>{{ $section->title }}</b>
+                                    </td>
+                                    <td>
+                                        <b class="<?= $section->isActive == "true" ? "text-success" : "text-danger" ?>"><?= $section->isActive == "true" ? "Aktif" : "Nonaktif" ?></b>
                                     </td>
                                     <td class="table-actions">
                                         <a href="/dashboard/section/{{ $section->slug }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit Menu">

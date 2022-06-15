@@ -6,7 +6,8 @@
 $image = json_decode($section->cover);
 ?>
 @if($section->slug === 'gallery')
-    <section class="page-title" style="background-image: url(<?= asset('storage/'.$image[0]) ?>)">
+    <section class="page-title" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)">
+        <div class="drop-layer-gallery"></div>
         <div class="auto-container">
             <div class="content-box">
                 <div class="content-wrapper">
@@ -23,7 +24,6 @@ $image = json_decode($section->cover);
     </section>
     @endif
     @endforeach
-    <div class="drop-layer-gallery"></div>
     <!-- News section Three -->
     <section class="news-section-three">
         <div class="auto-container">

@@ -6,7 +6,8 @@
     $image = json_decode($section->cover);
     ?>
     @if ($section->slug === 'blog')
-    <section class="page-title" style="background-image: url(<?= asset('storage/'.$image[0]) ?>)">
+    <section class="page-title" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)">
+        <div class="drop-layer-blog"></div>
         <div class="auto-container">
             <div class="content-box">
                 <div class="content-wrapper">
@@ -23,7 +24,6 @@
     </section>
     @endif
     @endforeach
-    <div class="drop-layer-blog"></div>
     <!-- Sidebar Page Container -->
     <section class="sidebar-page-container">
         <div class="auto-container">
