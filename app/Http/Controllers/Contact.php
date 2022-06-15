@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Social;
 use App\Models\Setting;
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class Contact extends Controller
@@ -16,13 +17,16 @@ class Contact extends Controller
                 return view('contact', [
                     'judul_halaman' => 'Kontak Kami | ' . $setting->web_title,
                     'settings' => Setting::get(),
-                    'socials' => Social::get()
+                    'socials' => Social::get(),
+                    'sections' => Section::get()
                 ]);
             } else {
                 return view('contact', [
                     'judul_halaman' => 'Kontak Kami',
                     'settings' => Setting::get(),
-                    'socials' => Social::get()
+                    'socials' => Social::get(),
+                    'sections' => Section::get()
+
                 ]);
             }
         }

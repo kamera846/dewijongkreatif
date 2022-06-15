@@ -12,7 +12,7 @@
         <link href="{{ asset('assets/css/color.css') }}" rel="stylesheet" />
 
         <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Merriweather:ital@0;1&display=swap" rel="stylesheet" />
-        
+        <link rel="stylesheet" href="mycss.css">
         @foreach ($settings as $setting)
         @if ($setting->favicon)
         <link rel="icon" href="{{ asset('storage/' . $setting->favicon) }}" type="image/png" />
@@ -116,14 +116,6 @@
                                     </div>
                                 </nav>
                             </div>
-                            <!-- <div class="navbar-right">
-                                <div class="search-form-two">
-                                    <form>
-                                        <input type="search" placeholder="Ketikkan sesuatu ..." />
-                                        <button type="submit"><i class="icon-search"></i></button>
-                                    </form>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>

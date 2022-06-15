@@ -30,7 +30,7 @@ class SocialController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'tipe_sosmed' => 'required',
+            'tipe_sosmed' => 'required|unique:socials',
             'link_sosmed' => 'required',
         ]);
 

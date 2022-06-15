@@ -37,7 +37,7 @@
                     <a class="navbar-brand" href="./">
                         @foreach($settings as $setting)
                             @if($setting->logo)
-                            <img src="{{ asset('storage/'.$setting->logo) }}" class="navbar-brand-img" alt="..." style="min-height: 60px;"/>
+                            <img src="{{ asset('storage/'. $setting->logo) }}" class="navbar-brand-img" alt="..." style="min-height: 60px;"/>
                             @else
                             <img src="{{ asset('admin/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="..." />
                             @endif   
@@ -104,9 +104,9 @@
                                 <a 
                                 class="
                                     nav-link {{ ( $judul_halaman === 'Admin | Data Menu' || $judul_halaman === 'Admin | Edit Menu' || $judul_halaman === 'Admin | Tambah Menu' ) ? 'active' : '' }}" 
-                                href="/dashboard/menu">
+                                href="/dashboard/section">
                                     <i class="ni ni-single-copy-04 default"></i>
-                                    <span class="nav-link-text">Menu</span>
+                                    <span class="nav-link-text">Section</span>
                                 </a>
                             </li>
                         </ul>

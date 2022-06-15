@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Blog;
-use App\Models\Menu;
+use App\Models\Section;
 use App\Models\User;
 use App\Models\Social;
 use App\Models\Gallery;
@@ -10,7 +10,7 @@ use App\Http\Controllers\Contact;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\MenuController;
+use App\Http\Controllers\SectionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SocialController;
@@ -65,13 +65,13 @@ Route::middleware('auth')->group(function () {
     Route::put('/dashboard/gallery/{gallery}/update', [GalleryController::class, 'update']);
     Route::delete('/dashboard/gallery/{gallery}/delete', [GalleryController::class, 'destroy']);
 
-    Route::get('/dashboard/menu', [MenuController::class, 'index']);
-    Route::get('/dashboard/menu/create', [MenuController::class, 'create']);
-    Route::post('/dashboard/menu/store', [MenuController::class, 'store']);
-    Route::get('/dashboard/menu/{menu:slug}/detail', [MenuController::class, 'show']);
-    Route::get('/dashboard/menu/{menu:slug}/edit', [MenuController::class, 'edit']);
-    Route::put('/dashboard/menu/{menu:slug}/update', [MenuController::class, 'update']);
-    Route::delete('/dashboard/menu/{menu:slug}/delete', [MenuController::class, 'destroy']);
+    Route::get('/dashboard/section', [SectionController::class, 'index']);
+    Route::get('/dashboard/section/create', [SectionController::class, 'create']);
+    Route::post('/dashboard/section/store', [SectionController::class, 'store']);
+    Route::get('/dashboard/section/{section:slug}/detail', [SectionController::class, 'show']);
+    Route::get('/dashboard/section/{section:slug}/edit', [SectionController::class, 'edit']);
+    Route::put('/dashboard/section/{section:slug}/update', [SectionController::class, 'update']);
+    Route::delete('/dashboard/section/{section:slug}/delete', [SectionController::class, 'destroy']);
 });
 
 
@@ -109,9 +109,9 @@ Route::get('/about', function () {
     $settings = Setting::get();
     foreach ($settings as $setting) {
         if ($setting->web_title !== null) {
-            return view('about', ['judul_halaman' => 'Tentang Kami | ' . $setting->web_title, 'settings' => Setting::get(), 'socials' => Social::get(), 'menus' => Menu::get()]);
+            return view('about', ['judul_halaman' => 'Tentang Kami | ' . $setting->web_title, 'settings' => Setting::get(), 'socials' => Social::get(), 'sections' => Section::get()]);
         } else {
-            return view('about', ['judul_halaman' => 'Tentang Kami', 'settings' => Setting::get(), 'socials' => Social::get(), 'menus' => Menu::get()]);
+            return view('about', ['judul_halaman' => 'Tentang Kami', 'settings' => Setting::get(), 'socials' => Social::get(), 'sections' => Section::get()]);
         }
     }
 });

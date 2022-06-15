@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Storage;
-use App\Models\Gallery;
 use App\Models\Social;
+use App\Models\Gallery;
+use App\Models\Section;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -24,7 +25,8 @@ class GalleryController extends Controller
     public function create()
     {
         return view('dashboard.add-gallery', [
-            'judul_halaman' => 'Admin | Tambah Galeri'
+            'judul_halaman' => 'Admin | Tambah Galeri',
+            'settings' => Setting::get(),
         ]);
     }
 
@@ -47,17 +49,12 @@ class GalleryController extends Controller
     }
 
 
-    public function show($id)
-    {
-        //
-    }
-
-
     public function edit(Gallery $gallery)
     {
         return view('dashboard.edit-gallery', [
             'gallery' => $gallery,
-            'judul_halaman' => 'Admin | Edit Galeri'
+            'judul_halaman' => 'Admin | Edit Galeri',
+            'settings' => Setting::get(),
         ]);
     }
 
@@ -107,7 +104,8 @@ class GalleryController extends Controller
                     'galleries' => Gallery::latest('updated_at')->paginate(4),
                     'jumlah_galeri' => Gallery::count(),
                     'settings' => Setting::get(),
-                    'socials' => Social::get()
+                    'socials' => Social::get(),
+                    'sections' => Section::get()
                 ]);
             } else {
                 return view('gallery', [
@@ -115,7 +113,8 @@ class GalleryController extends Controller
                     'galleries' => Gallery::latest('updated_at')->paginate(4),
                     'jumlah_galeri' => Gallery::count(),
                     'settings' => Setting::get(),
-                    'socials' => Social::get()
+                    'socials' => Social::get(),
+                    'sections' => Section::get()
                 ]);
             }
         }

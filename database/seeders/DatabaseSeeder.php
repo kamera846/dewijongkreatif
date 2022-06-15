@@ -27,15 +27,17 @@ class DatabaseSeeder extends Seeder
             'role' => 'super-admin',
             'email_verified_at' => null
         ]);
-        DB::table('menus')->insert([
-            ['title' => '', 'description' => '', 'slug' => 'carousel-1', 'isActive' => 'true'],
-            ['title' => '', 'description' => '', 'slug' => 'carousel-2', 'isActive' => 'true'],
-            ['title' => '', 'description' => '', 'slug' => 'carousel-3', 'isActive' => 'true'],
-            ['title' => '', 'description' => '', 'slug' => 'about', 'isActive' => 'true'],
+        DB::table('sections')->insert([
+            ['title' => 'Carousel-1', 'description' => '', 'slug' => 'carousel-1', 'isActive' => 'true'],
+            ['title' => 'Carousel-2', 'description' => '', 'slug' => 'carousel-2', 'isActive' => 'true'],
+            ['title' => 'Carousel-3', 'description' => '', 'slug' => 'carousel-3', 'isActive' => 'true'],
+            ['title' => 'About', 'description' => '', 'slug' => 'about', 'isActive' => 'true'],
+            ['title' => 'Header About', 'description' => '', 'slug' => 'header-about', 'isActive' => 'true'],
             ['title' => '', 'description' => '', 'slug' => 'event', 'isActive' => 'true'],
-            ['title' => '', 'description' => '', 'slug' => 'gallery', 'isActive' => 'true'],
-            ['title' => '', 'description' => '', 'slug' => 'contact', 'isActive' => 'true'],
-            ['title' => '', 'description' => '', 'slug' => 'blog', 'isActive' => 'true'],
+            ['title' => 'gallery', 'description' => '', 'slug' => 'gallery', 'isActive' => 'true'],
+            ['title' => 'Contact', 'description' => '', 'slug' => 'contact', 'isActive' => 'true'],
+            ['title' => 'Help', 'description' => '', 'slug' => 'help', 'isActive' => 'true'],
+            ['title' => 'Blog', 'description' => '', 'slug' => 'blog', 'isActive' => 'true'],
         ]);
         DB::table('settings')->insert(['lokasi' => '', 'telpon' => '', 'email' => '', 'logo' => '', 'favicon' => '', 'web_title' => 'Desa Loha']);
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Social;
 use App\Models\Setting;
+use App\Models\Section;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,8 @@ class BlogController extends Controller
     public function create()
     {
         return view('dashboard.add-post', [
-            'judul_halaman' => 'Admin | Tambah Postingan'
+            'judul_halaman' => 'Admin | Tambah Postingan',
+            'settings' => Setting::get(),
         ]);
     }
 
@@ -57,7 +59,8 @@ class BlogController extends Controller
     {
         return view('dashboard.detail-post', [
             'judul_halaman' => 'Admin | Detail Postingan',
-            'blog' => $blog
+            'blog' => $blog,
+            'settings' => Setting::get(),
         ]);
     }
 
@@ -66,7 +69,8 @@ class BlogController extends Controller
     {
         return view('dashboard.edit-post', [
             'judul_halaman' => 'Admin | Edit Postingan',
-            'blog' => $blog
+            'blog' => $blog,
+            'settings' => Setting::get(),
         ]);
     }
 
@@ -123,7 +127,8 @@ class BlogController extends Controller
                     'jumlah_blog' => Blog::cari()->count(),
                     'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
                     'settings' => Setting::get(),
-                    'socials' => Social::get()
+                    'socials' => Social::get(),
+                    'sections' => Section::get()
                 ]);
             } else {
                 return view('blog', [
@@ -132,7 +137,8 @@ class BlogController extends Controller
                     'jumlah_blog' => Blog::cari()->count(),
                     'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
                     'settings' => Setting::get(),
-                    'socials' => Social::get()
+                    'socials' => Social::get(),
+                    'sections' => Section::get()
                 ]);
             }
         }
