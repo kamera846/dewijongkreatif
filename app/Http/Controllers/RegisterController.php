@@ -2,42 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
     public function index()
     {
         return view('register', [
-            'judul_halaman' => 'Daftar Admin'
+            'judul_halaman' => 'Register|Super Admin'
         ]);
     }
 
     public function store(Request $request)
     {
-
-        $validateData = $request->validate([
+        $request->validate([
+            // 'foto_profil' => 'image|file',
             'nama' => 'required',
-            'email' => 'required|email:dns',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
             'alamat' => 'required',
-            'foto_profil' => 'image'
         ]);
+
         if ($request->file('foto_profil')) {
-            $validateData['foto_profil'] = $request->file('foto_profil')->store('foto-profil');
+            $request->file('foto_profil')->store('foto-profil');
         }
 
+
         User::create([
+            'foto_profil' => $request->foto_profil,
             'nama' => $request->nama,
             'email' => $request->email,
             'password' => hash::make($request->password),
             'alamat' => $request->alamat,
-            'no_hp' => $request->no_hp,
             'pekerjaan' => $request->pekerjaan,
-            'foto_profil' => $request->foto_profil,
-        ])->save();
-        return redirect('/login')->with('success', 'Registration Success, Please Login!');
+            'no_hp' => $request->no_hp,
+            'role' => $request->role,
+        ]);
+
+        return redirect('/login')->with('success', 'registrasi berhasil');
     }
 }
