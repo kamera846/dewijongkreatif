@@ -124,6 +124,17 @@
                                     @enderror
                                   </div>
                                   <div class="form-group row">
+                                    <label for="password" class="col-md-3 col-form-label form-control-label">Password</label>
+                                    <div class="col-md-9">
+                                      <input class="form-control @error('password') is-invalid @enderror form-control-alternative" type="password" id="password" name="password" placeholder="Isi jika anda ingin mengganti password">
+                                      @error('password')
+                                          <div class="invalid-feedback">
+                                            {{ $message }}
+                                          </div>
+                                      @enderror
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
                                       <button type="submit" class="btn btn-primary">Simpan</button>

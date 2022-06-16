@@ -104,8 +104,11 @@ class UserController extends Controller
             'foto_profil' => 'image|file',
             'nama' => 'required',
             'email' => 'required|email',
-            'alamat' => 'required'
+            'alamat' => 'required',
+            'password' => 'min:8'
         ]);
+
+        $cekPassword = preg_replace('/\s+/', '', $request->password);
 
         if ($request->file('foto_profil')) {
             if ($request->oldImage != null) {
@@ -123,8 +126,8 @@ class UserController extends Controller
                     'no_hp' => $request->no_hp,
                     'role' => $request->role,
                 ]);
-        }
-        User::where('id', $user->id)
+        } else {
+            User::where('id', $user->id)
             ->update([
                 'nama' => $request->nama,
                 'email' => $request->email,
@@ -133,6 +136,14 @@ class UserController extends Controller
                 'no_hp' => $request->no_hp,
                 'role' => $request->role,
             ]);
+        }
+
+        if($cekPassword != null || $cekPassword != "") {
+            User::where('id', $user->id)
+            ->update([
+                'password' => hash::make($request->password),
+            ]);
+        }
 
         return redirect('/dashboard/user')->with('success', 'mengubah');
     }
@@ -150,7 +161,8 @@ class UserController extends Controller
             'foto_profil' => 'image|file',
             'nama' => 'required',
             'email' => 'required|email',
-            'alamat' => 'required'
+            'alamat' => 'required',
+            'password' => 'min:8'
         ]);
 
         if ($request->file('foto_profil')) {
@@ -176,6 +188,15 @@ class UserController extends Controller
                     'pekerjaan' => $request->pekerjaan,
                     'no_hp' => $request->no_hp,
                 ]);
+        }
+
+        $cekPassword = preg_replace('/\s+/', '', $request->password);
+
+        if($cekPassword != null || $cekPassword != "") {
+            User::where('id', Auth::user()->id)
+            ->update([
+                'password' => hash::make($request->password),
+            ]);
         }
 
         return redirect('/dashboard')->with('success', 'memperbarui');
