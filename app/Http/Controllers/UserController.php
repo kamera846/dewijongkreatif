@@ -105,7 +105,6 @@ class UserController extends Controller
             'nama' => 'required',
             'email' => 'required|email',
             'alamat' => 'required',
-            'password' => 'min:8'
         ]);
 
         $cekPassword = preg_replace('/\s+/', '', $request->password);
@@ -162,7 +161,6 @@ class UserController extends Controller
             'nama' => 'required',
             'email' => 'required|email',
             'alamat' => 'required',
-            'password' => 'min:8'
         ]);
 
         if ($request->file('foto_profil')) {

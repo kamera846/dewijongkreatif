@@ -126,7 +126,7 @@
                                   <div class="form-group row">
                                     <label for="password" class="col-md-3 col-form-label form-control-label">Password</label>
                                     <div class="col-md-9">
-                                      <input class="form-control @error('password') is-invalid @enderror form-control-alternative" type="password" id="password" name="password" placeholder="Isi jika anda ingin mengganti password">
+                                      <input class="form-control @error('password') is-invalid @enderror form-control-alternative" type="password" id="password" name="password" minlength="8" placeholder="Isi jika anda ingin mengganti password">
                                       @error('password')
                                           <div class="invalid-feedback">
                                             {{ $message }}
