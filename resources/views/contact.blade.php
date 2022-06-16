@@ -32,7 +32,10 @@
                 @if ($section->slug === 'help')
                 <div class="row">
                     <div class="col-lg-5">
-                        <div class="our-facts" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)" style="height: 100% !important">
+                        <?php 
+                            $imageHelp = json_decode($section->cover);
+                        ?>
+                        <div class="our-facts" style="background-image: url(<?= asset($imageHelp != null ? 'storage/'.$imageHelp[0] : 'assets/images/background/bg-4.jpg') ?>)" style="height: 100% !important">
                         </div>
                     </div>
                     <div class="col-lg-7">

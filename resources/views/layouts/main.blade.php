@@ -236,7 +236,7 @@
                             <div class="column col-lg-4 col-md-6">
                                 <div class="widget about-widget">
                                     @foreach ($sections as $section)
-                                    @if ($section->slug === 'about')
+                                    @if ($section->slug === 'footer')
                                     <h3 class="widget-title">{{ $section->title }}</h3>
                                     <div class="text">{{ $section->description }}</div>
                                     @endif
