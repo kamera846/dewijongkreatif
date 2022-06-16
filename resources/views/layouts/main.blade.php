@@ -45,15 +45,11 @@
                 <div class="header-top">
                     <div class="auto-container">
                         <div class="inner-container">
-                            @foreach ($newBlogs as $newBlog)
+                            @if(sizeof($newBlogs) != 0)
                             <div class="left-column">
-<<<<<<< HEAD
-                                <div class="text"><i class="icon-news"></i><a href="/blog/{{ 'tuufkjfkjfskj' }}">Artikel terbaru</a> {{ 'oiofoahofahoi' }}</div>
-=======
-                                <div class="text"><i class="icon-news"></i><a href="/blog/{{ $newBlog->slug }}">Postingan Terbaru</a> {{ $newBlog->judul }}</div>
->>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
+                                <div class="text"><i class="icon-news"></i><a href="/blog/{{ $newBlogs[0]->slug }}">Postingan Terbaru</a> {{ $newBlogs[0]->judul }}</div>
                             </div>
-                            @endforeach
+                            @endif
                             <div class="right-column">
                                 <div class="phone">
                                     <a href="tel:+18526105599"><i class="fas fa-phone-volume"></i>+1 852-610-5599</a>
@@ -89,12 +85,8 @@
                             <!--Logo-->
                             <div class="logo-box">
                                 <div class="logo">
-<<<<<<< HEAD
-                                    <a href="/"><img src="{{ asset('assets/images/tes-logo2.png') }}" alt="desa wisata loha" /></a>
-=======
                                     @foreach ($settings as $setting)
                                         <a href="./"><img src="{{ asset('storage/' . $setting->logo) }}" alt="" style="max-height: 60px;" /></a>
->>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
                                     {{-- <a href="/"><h1 class="text-white">Loha</h1><p class="text-white">Desa Wisata</p></a> --}}
                                     @endforeach
                                 </div>
@@ -108,13 +100,6 @@
                                 <nav class="main-menu navbar-expand-md navbar-light">
                                     <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                         <ul class="navigation">
-<<<<<<< HEAD
-                                            <li><a href="/">Beranda</a></li>
-                                            <li class="{{ ($judul_halaman === 'Tentang Kami | Desa Wisata Loha')?'current':'' }}"><a href="/about">Tentang Kami</a></li>
-                                            <li class="{{ ($judul_halaman === 'Galeri | Desa Wisata Loha')?'current':'' }}"><a href="/gallery">Galeri</a></li>
-                                            <li class="{{ ($judul_halaman === 'Blog | Desa Wisata Loha' || isset($tes))?'current':''}}"><a href="/blog">Blog</a></li>
-                                            <li class="{{ ($judul_halaman === 'Kontak Kami | Desa Wisata Loha')?'current':'' }}"><a href="/contact">Kontak</a></li>
-=======
                                             @foreach ($settings as $setting)
                                             @if($setting->web_title !== null)
                                                 <li><a href="{{ isset($tes)?'../':'./' }}">Beranda</a></li>
@@ -130,7 +115,6 @@
                                             <li class="{{ ($judul_halaman === 'Kontak Kami')?'current':'' }}"><a href="/contact">Kontak</a></li>                                        
                                             @endif
                                             @endforeach
->>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
                                         </ul>
                                     </div>
                                 </nav>
@@ -148,12 +132,8 @@
                                 <!--Logo-->
                                 <div class="logo-box">
                                     <div class="logo">
-<<<<<<< HEAD
-                                        <a href="/"><img src="{{ asset('assets/images/tes-logo.png') }}" alt="desa wisata loha" /></a>
-=======
                                         @foreach ($settings as $setting)
                                         <a href="./"><img src="{{ asset('storage/' . $setting->logo) }}" alt="" style="max-height: 60px;" /></a>
->>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
                                         {{-- <a href="/"><h1 class="text-white">Loha</h1><p class="text-white">Desa Wisata</p></a> --}}
                                         @endforeach
                                     </div>
@@ -186,30 +166,40 @@
 
                     <nav class="menu-box">
                         <div class="nav-logo">
-                            <a href="/"><img src="{{ asset('assets/images/tes-logo.png') }}" alt="desa wisata loha" title="" /></a> 
+                            <!-- <a href="./"><img src="{{ asset('assets/images/tes-logo.png') }}" alt="" title="" /></a> -->
                             {{-- <a href="/">Desa Wisata Loha</a> --}}
                         </div>
                         <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                         <!--Social Links-->
                         <div class="social-links">
                             <ul class="clearfix">
-                                {{-- @foreach ($socials as $social)   --}}
-                                <li>
-                                    <a href="#"><span class="fab fa-twitter"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#"><span class="fab fa-facebook-square"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#"><span class="fab fa-instagram"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#"><span class="fab fa-youtube"></span></a>
-                                </li>
-                                {{-- @endforeach --}}
+                                @foreach ($socials as $social)
+                                @if ($social->tipe_sosmed === 'Facebook')
+                                    <li>
+                                        <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                                    </li>
+                                @endif
+                                @if ($social->tipe_sosmed === 'Twitter')
+                                    <li>
+                                        <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                @endif
+                                @if ($social->tipe_sosmed === 'Instagram')
+                                    <li>
+                                        <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                @endif
+                                @if ($social->tipe_sosmed === 'Pinterest')
+                                    <li>
+                                        <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                                    </li>
+                                @endif
+                                @if ($social->tipe_sosmed === 'Youtube')
+                                    <li>
+                                        <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                @endif
+                                @endforeach
                             </ul>
                         </div>
                     </nav>
@@ -222,6 +212,24 @@
                 </div>
             </header>
             <!-- End Main Header -->
+
+            <!--Search Popup-->
+            <div id="search-popup" class="search-popup">
+                <div class="close-search theme-btn"><span class="far fa-times-circle"></span></div>
+                <div class="popup-inner">
+                    <div class="overlay-layer"></div>
+                    <div class="search-form">
+                        <form method="post" action="index.php">
+                            <div class="form-group">
+                                <fieldset>
+                                    <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required />
+                                    <input type="submit" value="Search Now!" class="theme-btn" />
+                                </fieldset>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
             {{-- page content --}}
             @yield('page-content')
@@ -240,27 +248,37 @@
                                     @foreach ($sections as $section)
                                     @if ($section->slug === 'footer')
                                     <h3 class="widget-title">{{ $section->title }}</h3>
-                                    <div class="text">{{ $section->description }}</div>
+                                    <div class="text">{!! $section->description !!}</div>
                                     @endif
                                     @endforeach
                                     <ul class="social-links">
-                                        @foreach ($socials as $social)
-                                        @if ($social->tipe_sosmed === 'Facebook')
-                                            <li>
-                                                <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                        @endif
-                                        @if ($social->tipe_sosmed === 'Twitter')
-                                            <li>
-                                                <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                        @endif
-                                        @if ($social->tipe_sosmed === 'Instagram')
-                                            <li>
-                                                <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-instagram"></i></a>
-                                            </li>
-                                        @endif
-                                        @endforeach
+                                    @foreach ($socials as $social)
+                                    @if ($social->tipe_sosmed === 'Facebook')
+                                        <li>
+                                            <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                                        </li>
+                                    @endif
+                                    @if ($social->tipe_sosmed === 'Twitter')
+                                        <li>
+                                            <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                    @endif
+                                    @if ($social->tipe_sosmed === 'Instagram')
+                                        <li>
+                                            <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        </li>
+                                    @endif
+                                    @if ($social->tipe_sosmed === 'Pinterest')
+                                        <li>
+                                            <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                                        </li>
+                                    @endif
+                                    @if ($social->tipe_sosmed === 'Youtube')
+                                        <li>
+                                            <a href="{{ $social->link_sosmed }}" target="_blank"><i class="fab fa-youtube"></i></a>
+                                        </li>
+                                    @endif
+                                    @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -271,7 +289,7 @@
                                     <h3 class="widget-title">Navigasi</h3>
                                     <div class="widget-content">
                                         <ul>
-                                            <li><a href="/">Beranda</a></li>
+                                            <li><a href="{{ isset($tes)?'../':'./' }}">Beranda</a></li>
                                             <li><a href="/about">Tentang Kami</a></li>
                                             <li><a href="/gallery">Galeri</a></li>
                                             <li><a href="/blog">Blog</a></li>
@@ -322,11 +340,7 @@
                     <div class="auto-container">
                         <div class="wrapper-box">
                             <div class="copyright">
-<<<<<<< HEAD
-                                <div class="text">© 2022 <a href="/">LOHA</a> - Powered by <a target="_blank" href="https://jongkreatif.id/">JongKreatif</a>.</div>
-=======
-                                <div class="text">© {{ date('Y') }} <a href="/">{{ $section->title }}</a> - Powered by <a href="https://jongkreatif.id/">JongKreatif</a>.</div>
->>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
+                                <div class="text">© 2022 <a href="/">DESA LOHA</a> - Powered by <a href="https://jongkreatif.id/">JongKreatif</a>.</div>
                             </div>
                         </div>
                     </div>

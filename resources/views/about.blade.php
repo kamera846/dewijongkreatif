@@ -39,7 +39,7 @@
                     </div>
                     <div class="content-block">
                         <div class="text" style="text-align:justify; text-indent: 2rem">
-                            "{{ $section->description }}"
+                            "{!! $section->description !!}"
                         </div>
                     </div>
                 </div>

@@ -34,19 +34,14 @@
             <div class="scrollbar-inner">
                 <!-- Brand -->
                 <div class="sidenav-header d-flex align-items-center">
-<<<<<<< HEAD
-                    <a class="navbar-brand" href="/">
-                        <img src="{{ asset('admin/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="..." />
-=======
                     <a class="navbar-brand" href="./">
                         @foreach($settings as $setting)
                             @if($setting->logo)
-                            <img src="{{ asset('storage/'. $setting->logo) }}" class="navbar-brand-img" alt="..." style="min-height: 60px;"/>
+                            <img src="{{ asset('storage/'. $setting->logo) }}" class="navbar-brand-img" alt="..." style="min-height: 60px; object-fit: contain;"/>
                             @else
                             <img src="{{ asset('admin/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="..." />
                             @endif   
                         @endforeach
->>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
                     </a>
                     <div class="ml-auto">
                         <!-- Sidenav toggler -->
@@ -179,7 +174,7 @@
                             </li>
                         </ul>
                         <ul class="navbar-nav align-items-center mr-md-auto">
-                            <h1 class="text-white mb-0">Selamat Datang!</h1>
+                            <h1 class="text-white mb-0">Selamat Datang di Halaman Dashboard!</h1>
                         </ul>
                         <ul class="navbar-nav align-items-center ml-auto ml-md-0">
                             <li class="nav-item dropdown">
@@ -194,7 +189,7 @@
                                                     <img alt="Image placeholder" style="width: 100%;height:100%;object-fit:cover;" src="{{ asset('storage/' . Auth::user()->foto_profil)}}" />
                                                 </span>
                                             @else
-                                                <img src="{{ asset('/storage/foto-profil/defaultuserimage.png') }}" class="avatar rounded-circle mr-3">
+                                                <img src="{{ asset('/assets/images/download.jpeg') }}" class="avatar rounded-circle mr-3">
                                             @endif
                                         </div>
                                     </a>

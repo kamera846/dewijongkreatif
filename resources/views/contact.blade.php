@@ -44,7 +44,7 @@
                                 <h2>{{ $section->title }}</h2>
                             </div>
                             <div class="text mb-30">
-                                {{ $section->description }}
+                                {!! $section->description !!}
                             </div>
                             <!--Contact Form-->
                             <div class="contact-form">
@@ -105,7 +105,7 @@
                         @if ($section->slug === 'maps')
                         <h3>{{ $section->title }}</h3>
                         <div class="text mb-30">
-                            {{ $section->description }} <br />
+                            {!! $section->description !!} <br />
                         </div>
                         @endif
                         @endforeach

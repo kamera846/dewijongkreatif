@@ -63,9 +63,11 @@
                                         
                                         <option value="Twitter">Twitter</option>
                                         @endif --}}
-                                        <option value="Facebook">Facebook</option>
+                                            <option value="Facebook">Facebook</option>
                                             <option value="Instagram">Instagram</option>
                                             <option value="Twitter">Twitter</option>
+                                            <option value="Pinterest">Pinterest</option>
+                                            <option value="Youtube">Youtube</option>
                                       </select>
                                       @error('tipe_sosmed')
                                           <div class="invalid-feedback">

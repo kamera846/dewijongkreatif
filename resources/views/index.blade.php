@@ -23,7 +23,7 @@
                                     
                                 </h1>
                                 <div class="text">
-                                   {{ $section->description }}<br />
+                                   {!! $section->description !!}<br />
                                    
                                 </div>
                             </div>
@@ -47,18 +47,14 @@
                                     
                                 </h1>
                                 <div class="text">
-                                    {{ $section->description }}<br />
+                                    {!! $section->description !!}<br />
                                     
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
- 
-=======
                 @endif
->>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
                 <!-- Slide Item -->
                 @if ($section->slug === 'carousel-3' && $section->isActive == 'true')
                 <?php 
@@ -73,7 +69,7 @@
                                     {{ $section->title }} <br />
                                 </h1>
                                 <div class="text">
-                                    {{ $section->description }}<br />
+                                    {!! $section->description !!}<br />
                                 </div>
                             </div>
                         </div>
@@ -107,7 +103,7 @@
                 <div class="col-lg-5">
                     <div class="content-block wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="text" style="text-align:justify; text-indent: 2rem">
-                            "{{ $section->description }}"
+                            "{!! $section->description !!}"
                         </div>
                     </div>
                 </div>
@@ -146,224 +142,61 @@
     <section class="projects-section">
         <div class="auto-container">
             <div class="row no-gutters">
+                @foreach ($sections as $section)
+                @if ($section->slug === 'produk-1' || $section->slug === 'produk-2' || $section->slug === 'produk-3' || $section->slug === 'produk-4')
                 <div class="col-xl-3 col-lg-6 project-block">
-                    <div class="inner-box">
-                        @foreach ($sections as $section)
-                            <?php 
-                                $image = json_decode($section->cover);
-                            ?>
-                            @if ($section->slug === 'product-1')
-                            @if ($section->cover === null)
-                                <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
-                            @else
-                            <div class="image"><img src="{{ asset('storage/' . $image[0]) }}" alt="" /></div>
-                            @endif
-                        <div class="content">
-                            <h4>{{ $section->title }}</h4>
-                            <div class="text">
-                                {{ $section->description }} <br />
-                            </div>
-                        </div>
-                        @endif
-                        @endforeach
-                        <div class="overlay">
-                            <div class="content-two">
-                                @foreach ($sections as $section)
-                            <?php 
-                                $image = json_decode($section->cover);
-                            ?>
-                            @if ($section->slug === 'product-1')
-                            @if ($section->cover === null)
-                                <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
-                            @else
-                            <div class="image"><img src="{{ asset('storage/' . $image[0]) }}" alt="" /></div>
-                            @endif
-                            <div class="content">
-                                <h4>{{ $section->title }}</h4>
-                                <div class="text">
-                                    {{ $section->description }} <br />
-                                </div>
-                            </div>
-                            @endif
-                            @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 project-block">
-                    <div class="inner-box">
-                        @foreach ($sections as $section)
-                        <?php 
-                            $image = json_decode($section->cover);
-                        ?>
-                        @if ($section->slug === 'product-2')
-                        @if ($section->cover === null)
-                            <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
-                        @else
-                        <div class="image"><img src="{{ asset('storage/' . $image[1]) }}" alt="" /></div>
-                        @endif
-                        <div class="content">
-                            <h4>{{ $section->title }}</h4>
-                            <div class="text">
-                                {{ $section->description }} <br />
-                            </div>
-                        </div>
-                        @endif
-                        @endforeach
-                        <div class="overlay">
-                            <div class="content-two">
-                                @foreach ($sections as $section)
-                                <?php 
-                                    $image = json_decode($section->cover);
-                                ?>
-                                @if ($section->slug === 'product-2')
-                                @if ($section->cover === null)
-                                    <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
-                                @else
-                                <div class="image"><img src="{{ asset('storage/' . $image[1]) }}" alt="" /></div>
-                                @endif
-                                <div class="content">
-                                    <h4>{{ $section->title }}</h4>
-                                    <div class="text">
-                                        {{ $section->description }} <br />
-                                    </div>
-                                </div>
-                                @endif
+                    <div class="inner-box" style="height: 300px">
+                            <?php $image = json_decode($section->cover); ?>
+                            <div class="image" style="height: 100%; background-color: black"><img src="<?= $section->cover != null ? 'storage/'.$image[0] : 'assets/images/resource/image-5.jpg' ?>" alt="" style="height: 100%; object-fit:cover; opacity: 0.6;" /></div>
+                            <div class="content" >
+                                @foreach($settings as $item)
+                                <h4>{{$item->web_title}}</h4>
                                 @endforeach
+                                <h3>{{$section->title}}</h3>
+                                <!-- <div class="link-btn">
+                                    <a href="#"><i class="icon-arrow"></i></a>
+                                </div> -->
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 project-block">
-                    <div class="inner-box">
-                        @foreach ($sections as $section)
-                        <?php 
-                            $image = json_decode($section->cover);
-                        ?>
-                        @if ($section->slug === 'product-3')
-                        @if ($section->cover === null)
-                            <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
-                        @else
-                        <div class="image"><img src="{{ asset('storage/' . $image[2]) }}" alt="" /></div>
-                        @endif
-                        <div class="content">
-                            <h4>{{ $section->title }}</h4>
-                            <div class="text">
-                                {{ $section->description }} <br />
-                            </div>
-                        </div>
-                        @endif
-                        @endforeach
-                        <div class="overlay">
-                            <div class="content-two">
-                                @foreach ($sections as $section)
-                                <?php 
-                                    $image = json_decode($section->cover);
-                                ?>
-                                @if ($section->slug === 'product-3')
-                                @if ($section->cover === null)
-                                    <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
-                                @else
-                                <div class="image"><img src="{{ asset('storage/' . $image[2]) }}" alt="" /></div>
-                                @endif
-                                <div class="content">
-                                    <h4>{{ $section->title }}</h4>
+                            <div class="overlay" >
+                                <div class="content-two">
                                     <div class="text">
-                                        {{ $section->description }} <br />
+                                        {!! $section->description !!}
                                     </div>
+                                    <!-- <div class="link-btn">
+                                        <a href="#"><i class="icon-arrow"></i></a>
+                                    </div> -->
                                 </div>
-                                @endif
-                                @endforeach
                             </div>
-                        </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 project-block">
-                    <div class="inner-box">
-                        @foreach ($sections as $section)
-                        <?php 
-                            $image = json_decode($section->cover);
-                        ?>
-                        @if ($section->slug === 'product-4')
-                        @if ($section->cover === null)
-                            <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
-                        @else
-                        <div class="image"><img src="{{ asset('storage/' . $image[3]) }}" alt="" /></div>
-                        @endif
-                        <div class="content">
-                            <h4>{{ $section->title }}</h4>
-                            <div class="text">
-                                {{ $section->description }} <br />
-                            </div>
-                        </div>
-                        @endif
-                        @endforeach
-                        <div class="overlay">
-                            <div class="content-two">
-                                @foreach ($sections as $section)
-                                <?php 
-                                    $image = json_decode($section->cover);
-                                ?>
-                                @if ($section->slug === 'product-4')
-                                @if ($section->cover === null)
-                                    <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
-                                @else
-                                <div class="image"><img src="{{ asset('storage/' . $image[3]) }}" alt="" /></div>
-                                @endif
-                                <div class="content">
-                                    <h4>{{ $section->title }}</h4>
-                                    <div class="text">
-                                        {{ $section->description }} <br />
-                                    </div>
-                                </div>
-                                @endif
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endif
+                @endforeach
             </div>
         </div>
     </section>
 
     <!-- Highlights section -->
-<<<<<<< HEAD
-        
-=======
     @foreach ($sections as $section)
     @if ($section->slug === 'gallery')
     @if($jumlah_galeri != 0)
->>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
         <section class="highlights-section">
             <div class="auto-container">
                 <div class="sec-title">
                     <!-- <div class="sub-title">City With Equity - Efficiency - Opportunity</div> -->
-                    <h2>{{ $section->title }} Desa</h2>
+                    <h2>{{ $section->title }}</h2>
                 </div>
                 <div class="highlight-block-area">
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="text-blcok">
                                 <div class="text" style="text-align: justify;">
-                                    {{ $section->description }}  <br />
+                                    {!! $section->description !!}  <br />
                                 </div>
-<<<<<<< HEAD
-
-                                @if($jumlah_galeri >= 5)
-
-                                    <div class="link-btn">
-                                        <a href="/gallery" class="theme-btn btn-style-one"><span>Selengkapnya</span></a>
-                                    </div>
-
-                                @endif
-                                
-=======
                                 @if($jumlah_galeri > 4)
                                 <div class="link-btn">
                                     <a href="/gallery" class="theme-btn btn-style-one"><span>Selengkapnya</span></a>
                                 </div>
                                 @endif
->>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
                             </div>
                             <div class="swiper-container highlight-thumbs">
                                 <div class="swiper-wrapper">
@@ -399,13 +232,9 @@
                 </div>
             </div>
         </section>
-<<<<<<< HEAD
-
-=======
     @endif
     @endif
     @endforeach
->>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
     <!-- Contact Info section -->
     <section class="contact-info-section" style="margin-top: 210px; padding: 0">
         <div class="auto-container">
@@ -414,17 +243,18 @@
                 $image = json_decode($section->cover);
             ?>
             @if($section->slug === 'help')
-                <div class="wrapper-box" style="background-image: url({{ asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') }})">
-                <div class="top-content">
+                <div class="wrapper-box" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>); padding: 0; padding-top: 90px; padding-bottom: 60px;">
+                <div class="drop-layer"></div>
+                <div class="top-content" style="padding-left: 50px; padding-right: 50px;">
                     <h2>{{ $section->title }}</h2>
                     <div class="text">
-                          {{ $section->description }}<br />
+                          {!! $section->description !!}<br />
                     </div>
                 </div>
                 @endif
                 @endforeach
                 @foreach ($settings as $setting)
-                <div class="row justify-content-center">
+                <div class="row justify-content-center" style="padding-left: 50px; padding-right: 50px;">
                     <div class="col-lg-3 col-md-6 contact-info-block">
                         <div class="inner-box">
                             <div class="icon"><span class="pe-7s-call"></span></div>
@@ -457,7 +287,7 @@
         <div class="auto-container">
             <div class="sec-title text-center">
                 <!-- <div class="sub-title">City With Equity - Efficiency - Opportunity</div> -->
-                <h2>Artikel Terbaru</h2>
+                <h2>Blog Terbaru</h2>
             </div>
             <div class="row">
 
@@ -496,7 +326,7 @@
                 @else
 
                     <div class="col-12">
-                        <h3 class="text-center">(Belum ada artikel.)</h3>
+                        <h3 class="text-center">(Belum ada postingan)</h3>
                     </div>
 
                 @endif

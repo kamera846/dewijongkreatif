@@ -160,6 +160,7 @@ class BlogController extends Controller
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
                     'newBlogs' => Blog::latest()->get(),
+                    'sections' => Section::get()
                 ]);
             } else {
                 return view('blog-details', [
@@ -170,6 +171,7 @@ class BlogController extends Controller
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
                     'newBlogs' => Blog::latest()->get(),
+                    'sections' => Section::get()
                 ]);
             }
         }

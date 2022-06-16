@@ -94,7 +94,7 @@
                                   <div class="form-group row">
                                     <label for="description" class="col-md-3 col-form-label form-control-label">Description</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control @error('description') is-invalid @enderror form-control-alternative" name="description" id="description" rows="8" >{{ $section->description }}</textarea>
+                                        <textarea class="ckeditor @error('description') is-invalid @enderror form-control-alternative" name="description" id="description" rows="8" >{!! $section->description !!}</textarea>
                                     </div>
                                     @error('description')
                                       <div class="invalid-feedback">
