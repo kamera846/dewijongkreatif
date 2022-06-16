@@ -20,7 +20,7 @@ class MainController extends Controller
         return view('index', [
             'judul_halaman' => $setting->web_title,
             'blogs' => Blog::latest('updated_at')->limit(3)->get(),
-            'newBlogs' => Blog::latest()->get(),
+            'newBlogs' => Blog::latest('updated_at')->get(),
             'jumlah_blog' => Blog::count(),
             'galleries' => Gallery::latest('updated_at')->limit(4)->get(),
             'jumlah_galeri' => Gallery::count(),
