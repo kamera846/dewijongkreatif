@@ -20,7 +20,7 @@ class Contact extends Controller
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
                     'sections' => Section::get(),
-                    'newBlogs' => Blog::latest()->get(),
+                    'newBlogs' => Blog::latest('updated_at')->get(),
                 ]);
             } else {
                 return view('contact', [
@@ -28,7 +28,7 @@ class Contact extends Controller
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
                     'sections' => Section::get(),
-                    'newBlogs' => Blog::latest()->get(),
+                    'newBlogs' => Blog::latest('updated_at')->get(),
                 ]);
             }
         }

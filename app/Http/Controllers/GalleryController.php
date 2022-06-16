@@ -112,7 +112,7 @@ class GalleryController extends Controller
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
                     'sections' => Section::get(),
-                    'newBlogs' => Blog::latest()->get(),
+                    'newBlogs' => Blog::latest('updated_at')->get(),
                 ]);
             } else {
                 return view('gallery', [
@@ -122,7 +122,7 @@ class GalleryController extends Controller
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
                     'sections' => Section::get(),
-                    'newBlogs' => Blog::latest()->get(),
+                    'newBlogs' => Blog::latest('updated_at')->get(),
                 ]);
             }
         }

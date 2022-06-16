@@ -134,7 +134,7 @@ class BlogController extends Controller
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
                     'sections' => Section::get(),
-                    'newBlogs' => Blog::latest()->get(),
+                    'newBlogs' => Blog::latest('updated_at')->get(),
                 ]);
             } else {
                 return view('blog', [
@@ -145,7 +145,7 @@ class BlogController extends Controller
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
                     'sections' => Section::get(),
-                    'newBlogs' => Blog::latest()->get(),
+                    'newBlogs' => Blog::latest('updated_at')->get(),
                 ]);
             }
         }
@@ -164,7 +164,7 @@ class BlogController extends Controller
                     'tes' => 'oke',
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
-                    'newBlogs' => Blog::latest()->get(),
+                    'newBlogs' => Blog::latest('updated_at')->get(),
                     'sections' => Section::get()
                 ]);
             } else {
@@ -175,7 +175,7 @@ class BlogController extends Controller
                     'tes' => 'oke',
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
-                    'newBlogs' => Blog::latest()->get(),
+                    'newBlogs' => Blog::latest('updated_at')->get(),
                     'sections' => Section::get()
                 ]);
             }
