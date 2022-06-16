@@ -27,6 +27,7 @@
                         </div>
                     </div>
                 </div>
+ 
                 <!-- Slide Item -->
                 <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-2.jpg)">
                     <div class="content-outer">

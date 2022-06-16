@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class Contact extends Controller
@@ -10,7 +9,6 @@ class Contact extends Controller
     function show(){
         return view('contact', [
             'judul_halaman' => 'Kontak Kami | Desa Wisata Loha',
-            'latestBlogs' => Blog::latest('updated_at')->limit(1)->get(),
         ]);
     }
 

@@ -76,7 +76,6 @@ Route::post('/contact', [Contact::class, 'sendMail']);
 Route::get('/about', function() {
     return view('about', [
         'judul_halaman' => 'Tentang Kami | Desa Wisata Loha',
-        'latestBlogs' => Blog::latest('updated_at')->limit(1)->get(),
     ]);
 });
 

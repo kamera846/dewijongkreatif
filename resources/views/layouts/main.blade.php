@@ -36,14 +36,11 @@
             <!-- Main Header -->
             <header class="main-header header-style-one">
                 <!-- Header Top -->
-                @if(!isset($tes))
                 <div class="header-top">
                     <div class="auto-container">
                         <div class="inner-container">
                             <div class="left-column">
-                                @foreach($latestBlogs as $blog)
-                                    <div class="text"><i class="icon-news"></i><a href="/blog/{{ $blog->slug }}">Artikel terbaru</a> {{ $blog->judul }}</div>
-                                @endforeach
+                                <div class="text"><i class="icon-news"></i><a href="/blog/{{ 'tuufkjfkjfskj' }}">Artikel terbaru</a> {{ 'oiofoahofahoi' }}</div>
                             </div>
                             <div class="right-column">
                                 <div class="phone">
@@ -72,7 +69,6 @@
                         </div>
                     </div>
                 </div>
-                @endif
 
                 <!-- Header Upper -->
                 <div class="header-upper">

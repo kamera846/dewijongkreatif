@@ -1,13 +1,13 @@
 // Logout
 const keluar = document.getElementById("logout");
-if (keluar != undefined) {
+if (!keluar) {
     keluar.addEventListener("click", function (e) {
         e.preventDefault();
         const formLogout = this.parentElement;
 
         Swal.fire({
             title: "Are you sure?",
-            text: "Yakin ingin keluar?",
+            text: "Your auth session will end!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
@@ -23,14 +23,14 @@ if (keluar != undefined) {
 
 // hapus data
 const hapus = document.getElementById("hapus");
-if (hapus != undefined) {
+if (!hapus) {
     hapus.addEventListener("click", function (e) {
         e.preventDefault();
         const formHapus = this.parentElement;
 
         Swal.fire({
             title: "Are you sure?",
-            text: "Ingin menghapus data ini?",
+            text: "This data will deleted!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
@@ -44,9 +44,9 @@ if (hapus != undefined) {
     });
 }
 
-const flashData = document.querySelector(".flash-data");
-if (flashData != undefined) {
-    const flashData = flashData.dataset["flashdata"];
+let flashData = document.querySelector(".flash-data");
+if (!flashData) {
+    flashData = flashData.dataset["flashdata"];
 
     if (flashData !== "gagal") {
         Swal.fire("Sukses", "Berhasil " + flashData + " data!", "success");
@@ -57,21 +57,21 @@ if (flashData != undefined) {
 
 // edit kontak
 if (document.location.pathname === "/dashboard/contact") {
-    const email = document.getElementById("email");
-    const noTelp = document.getElementById("no_telp");
-    const noWa = document.getElementById("no_wa");
-    const alamat = document.getElementById("alamat");
+    let email = document.getElementById("email");
+    let noTelp = document.getElementById("no_telp");
+    let noWa = document.getElementById("no_wa");
+    let alamat = document.getElementById("alamat");
 
-    const edit = document.getElementById("edit");
-    const pembungkus = document.getElementById("pembungkus");
+    let edit = document.getElementById("edit");
+    let pembungkus = document.getElementById("pembungkus");
 
-    const simpan = document.createElement("button");
+    let simpan = document.createElement("button");
     simpan.innerHTML = "Simpan";
     simpan.classList.add("btn");
     simpan.classList.add("btn-primary");
     simpan.setAttribute("type", "submit");
 
-    const batal = document.createElement("button");
+    let batal = document.createElement("button");
     batal.innerHTML = "Batal";
     batal.classList.add("btn");
     batal.classList.add("btn-secondary");
@@ -95,22 +95,22 @@ if (document.location.pathname === "/dashboard/contact") {
 
 // edit akun sosmed
 if (document.location.pathname === "/dashboard/social") {
-    const twitter = document.getElementById("twitter");
-    const facebook = document.getElementById("facebook");
-    const instagram = document.getElementById("instagram");
-    const youtube = document.getElementById("youtube");
-    const pinterest = document.getElementById("pinterest");
+    let twitter = document.getElementById("twitter");
+    let facebook = document.getElementById("facebook");
+    let instagram = document.getElementById("instagram");
+    let youtube = document.getElementById("youtube");
+    let pinterest = document.getElementById("pinterest");
 
-    const edit = document.getElementById("edit");
-    const pembungkus = document.getElementById("pembungkus");
+    let edit = document.getElementById("edit");
+    let pembungkus = document.getElementById("pembungkus");
 
-    const simpan = document.createElement("button");
+    let simpan = document.createElement("button");
     simpan.innerHTML = "Simpan";
     simpan.classList.add("btn");
     simpan.classList.add("btn-primary");
     simpan.setAttribute("type", "submit");
 
-    const batal = document.createElement("button");
+    let batal = document.createElement("button");
     batal.innerHTML = "Batal";
     batal.classList.add("btn");
     batal.classList.add("btn-secondary");
