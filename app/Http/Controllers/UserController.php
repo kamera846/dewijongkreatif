@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
+    public function upload($fotoProfil) {
+        $uid = uniqid().".".$fotoProfil->getClientOriginalExtension();
+        $fotoProfil->move(public_path('storage'), $uid);
+        return $uid;
+    }
+
     public function index()
     {
         if (Auth::user()->role === 'super-admin') {
@@ -46,9 +52,13 @@ class UserController extends Controller
         ]);
 
         if ($request->file('foto_profil')) {
-            $fotoProfil = $request->file('foto_profil')->store('foto-profil');
+            // $fotoProfil = $request->file('foto_profil')->store('foto-profil');
+            // $fotoProfil = $request->file('foto_profil');
+            // $uid = uniqid().".".$fotoProfil->getClientOriginalExtension();
+            // $fotoProfil->move(public_path('storage/foto-profil'), $uid);
+
             User::create([
-                'foto_profil' => $fotoProfil,
+                'foto_profil' => $this->upload($request->file('foto_profil')),
                 'nama' => $request->nama,
                 'email' => $request->email,
                 'password' => hash::make($request->password),
@@ -113,11 +123,11 @@ class UserController extends Controller
             if ($request->oldImage != null) {
                 Storage::delete($request->oldImage);
             }
-            $fotoProfile = $request->file('foto_profil')->store('foto-profil');
+            // $fotoProfile = $request->file('foto_profil')->store('foto-profil');
 
             User::where('id', $user->id)
                 ->update([
-                    'foto_profil' => $fotoProfile,
+                    'foto_profil' => $this->upload($request->file('foto_profil')),
                     'nama' => $request->nama,
                     'email' => $request->email,
                     'alamat' => $request->alamat,
@@ -167,10 +177,16 @@ class UserController extends Controller
             if ($request->gambarLama) {
                 Storage::delete($request->gambarLama);
             }
-            $fotoProfil = $request->file('foto_profil')->store('foto-profil');
+
+            // $fotoProfil = $request->file('foto_profil')->store('foto-profil');
+
+            // $fotoProfil = $request->file('foto_profil');
+            // $uid = uniqid().".".$fotoProfil->getClientOriginalExtension();
+            // $fotoProfil->move(public_path('storage/foto-profil'), $uid);
+            
             User::where('id', Auth::user()->id)
                 ->update([
-                    'foto_profil' => $fotoProfil,
+                    'foto_profil' => $this->upload($request->file('foto_profil')),
                     'nama' => $request->nama,
                     'email' => $request->email,
                     'alamat' => $request->alamat,

@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class SectionController extends Controller
 {
+    public function upload($fotoProfil) {
+        $uid = uniqid().".".$fotoProfil->getClientOriginalExtension();
+        $fotoProfil->move(public_path('storage'), $uid);
+        return $uid;
+    }
+
     public function index()
     {
         return view('dashboard.menu', [
@@ -27,6 +33,7 @@ class SectionController extends Controller
             'covers' => json_decode($section->cover)
         ]);
     }
+
     public function update(Request $request, Section $section)
     {
         date_default_timezone_set("Asia/Jakarta");
@@ -38,17 +45,17 @@ class SectionController extends Controller
         if ($request->hasFile('cover')) {
             $files = $request->file('cover');
 
-            $stringRand = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            // $stringRand = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             $imageArray = [];
 
             foreach ($files as $index => $file) {
                 // if ($index < 3) {
-                $name = date("YmdHis") . substr(str_shuffle($stringRand), 10);
-                $extension = $file->getClientOriginalExtension();
+                // $name = date("YmdHis") . substr(str_shuffle($stringRand), 10);
+                // $extension = $file->getClientOriginalExtension();
 
-                $newName = $name . '.' . $extension;
-                Storage::putFileAs('public', $file, $newName);
-                $imageArray[$index] = 'public/' . $newName;
+                // $newName = $name . '.' . $extension;
+                // Storage::putFileAs('public', $file, $newName);
+                $imageArray[$index] = $this->upload($file);
                 // }
             }
 

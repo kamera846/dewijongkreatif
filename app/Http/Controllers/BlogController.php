@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Storage;
 class BlogController extends Controller
 {
 
+    public function upload($fotoProfil) {
+        $uid = uniqid().".".$fotoProfil->getClientOriginalExtension();
+        $fotoProfil->move(public_path('storage'), $uid);
+        return $uid;
+    }
+
     public function index()
     {
         return view('dashboard.blog', [
@@ -22,7 +28,6 @@ class BlogController extends Controller
             'judul_halaman' => 'Admin | Data Postingan'
         ]);
     }
-
 
     public function create()
     {
@@ -41,10 +46,10 @@ class BlogController extends Controller
             'konten' => 'required',
         ]);
 
-        $gambarBlog = $request->file('gambar_blog')->store('image_blog');
+        // $gambarBlog = $request->file('gambar_blog')->store('image_blog');
 
         Blog::create([
-            'gambar_blog' => $gambarBlog,
+            'gambar_blog' => $this->upload($request->file('gambar_blog')),
             'judul' => $request->judul,
             'slug' => str::of($request->judul)->slug('-'),
             'penulis' => Auth::user()->nama,
@@ -86,10 +91,10 @@ class BlogController extends Controller
             if ($request->oldBlog) {
                 Storage::delete($request->oldBlog);
             }
-            $updateGambarBlog = $request->file('gambar_blog')->store('image_blog');
+            // $updateGambarBlog = $request->file('gambar_blog')->store('image_blog');
             Blog::where('id', $blog->id)
                 ->update([
-                    'gambar_blog' => $updateGambarBlog,
+                    'gambar_blog' => $this->upload($request->file('gambar_blog')),
                     'judul' => $request->judul,
                     'slug' => str::of($request->judul)->slug('-'),
                     'konten' => $request->konten

@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
+    public function upload($fotoProfil) {
+        $uid = uniqid().".".$fotoProfil->getClientOriginalExtension();
+        $fotoProfil->move(public_path('storage'), $uid);
+        return $uid;
+    }
 
     public function index()
     {
@@ -39,10 +44,10 @@ class GalleryController extends Controller
             'judul' => 'required',
         ]);
 
-        $foto = $request->file('foto')->store('gallery-images');
+        // $foto = $request->file('foto')->store('gallery-images');
 
         Gallery::create([
-            'foto' => $foto,
+            'foto' => $this->upload($request->file('foto')),
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
         ]);
@@ -70,10 +75,10 @@ class GalleryController extends Controller
             if ($request->fotoLama) {
                 Storage::delete($request->fotoLama);
             }
-            $foto = $request->file('foto')->store('gallery-images');
+            // $foto = $request->file('foto')->store('gallery-images');
             Gallery::where('id', $gallery->id)
                 ->update([
-                    'foto' => $foto,
+                    'foto' => $this->upload($request->file('foto')),
                     'judul' => $request->judul,
                     'deskripsi' => $request->deskripsi,
                 ]);

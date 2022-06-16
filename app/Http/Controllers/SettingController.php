@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
+    public function upload($fotoProfil) {
+        $uid = uniqid().".".$fotoProfil->getClientOriginalExtension();
+        $fotoProfil->move(public_path('storage'), $uid);
+        return $uid;
+    }
+    
     public function index()
     {
         return view('dashboard.setting', [
@@ -15,6 +21,7 @@ class SettingController extends Controller
             'settings' => Setting::get()
         ]);
     }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -22,29 +29,29 @@ class SettingController extends Controller
             'favicon' => 'image|file',
         ]);
         if ($request->file('favicon') && $request->file('logo')) {
-            $favicon = $request->file('favicon')->store('favicon');
-            $logo = $request->file('logo')->store('logo');
+            // $favicon = $request->file('favicon')->store('favicon');
+            // $logo = $request->file('logo')->store('logo');
             Setting::create([
-                'logo' => $logo,
-                'favicon' => $favicon,
+                'logo' => $this->upload($request->file('logo')),
+                'favicon' => $this->upload($request->file('favicon')),
                 'lokasi' => $request->lokasi,
                 'email' => $request->email,
                 'telpon' => $request->telpon,
                 'web_title' => $request->web_title,
             ]);
         } elseif ($request->file('favicon')) {
-            $favicon = $request->file('favicon')->store('favicon');
+            // $favicon = $request->file('favicon')->store('favicon');
             Setting::create([
-                'favicon' => $favicon,
+                'favicon' => $this->upload($request->file('favicon')),
                 'lokasi' => $request->lokasi,
                 'email' => $request->email,
                 'telpon' => $request->telpon,
                 'web_title' => $request->web_title,
             ]);
         } elseif ($request->file('logo')) {
-            $logo = $request->file('logo')->store('logo');
+            // $logo = $request->file('logo')->store('logo');
             Setting::create([
-                'logo' => $logo,
+                'logo' => $this->upload($request->file('logo')),
                 'lokasi' => $request->lokasi,
                 'email' => $request->email,
                 'telpon' => $request->telpon,
@@ -73,13 +80,13 @@ class SettingController extends Controller
             if ($request->oldLogo != null) {
                 Storage::delete($request->oldLogo);
             }
-            $logo = $request->file('logo')->store('logo');
+            // $logo = $request->file('logo')->store('logo');
             Setting::where('id', $setting->id)
                 ->update([
                     'lokasi' => $request->lokasi,
                     'email' => $request->email,
                     'telpon' => $request->telpon,
-                    'logo' => $logo,
+                    'logo' => $this->upload($request->file('logo')),
                     'web_title' => $request->web_title,
                 ]);
         } else {
@@ -95,13 +102,13 @@ class SettingController extends Controller
             if ($request->oldFavicon != null) {
                 Storage::delete($request->oldFavicon);
             }
-            $favicon = $request->file('favicon')->store('favicon');
+            // $favicon = $request->file('favicon')->store('favicon');
             Setting::where('id', $setting->id)
                 ->update([
                     'lokasi' => $request->lokasi,
                     'email' => $request->email,
                     'telpon' => $request->telpon,
-                    'favicon' => $favicon,
+                    'favicon' => $this->upload($request->file('favicon')),
                     'web_title' => $request->web_title,
                 ]);
         } else {
