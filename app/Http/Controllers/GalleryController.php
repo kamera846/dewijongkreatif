@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Storage;
+use App\Models\Blog;
+use App\Models\Social;
 use App\Models\Gallery;
+use App\Models\Section;
+use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -13,7 +17,8 @@ class GalleryController extends Controller
     {
         return view('dashboard.gallery', [
             'judul_halaman' => 'Admin | Data Galeri',
-            'galleries' => Gallery::latest('updated_at')->get()
+            'galleries' => Gallery::latest('updated_at')->get(),
+            'settings' => Setting::get()
         ]);
     }
 
@@ -21,7 +26,8 @@ class GalleryController extends Controller
     public function create()
     {
         return view('dashboard.add-gallery', [
-            'judul_halaman' => 'Admin | Tambah Galeri'
+            'judul_halaman' => 'Admin | Tambah Galeri',
+            'settings' => Setting::get(),
         ]);
     }
 
@@ -44,17 +50,12 @@ class GalleryController extends Controller
     }
 
 
-    public function show($id)
-    {
-        //
-    }
-
-
     public function edit(Gallery $gallery)
     {
         return view('dashboard.edit-gallery', [
             'gallery' => $gallery,
-            'judul_halaman' => 'Admin | Edit Galeri'
+            'judul_halaman' => 'Admin | Edit Galeri',
+            'settings' => Setting::get(),
         ]);
     }
 
@@ -96,10 +97,29 @@ class GalleryController extends Controller
     }
     public function landingPage()
     {
-        return view('gallery', [
-            'judul_halaman' => 'Galeri | Desa Wisata Loha',
-            'galleries' => Gallery::latest('updated_at')->paginate(10),
-            'jumlah_galeri' => Gallery::count(),
-        ]);
+        $settings = Setting::get();
+        foreach ($settings as $setting) {
+            if ($setting->web_title !== null) {
+                return view('gallery', [
+                    'judul_halaman' => 'Galeri | ' . $setting->web_title,
+                    'galleries' => Gallery::latest('updated_at')->paginate(4),
+                    'jumlah_galeri' => Gallery::count(),
+                    'settings' => Setting::get(),
+                    'socials' => Social::get(),
+                    'sections' => Section::get(),
+                    'newBlogs' => Blog::latest()->get(),
+                ]);
+            } else {
+                return view('gallery', [
+                    'judul_halaman' => 'Galeri',
+                    'galleries' => Gallery::latest('updated_at')->paginate(4),
+                    'jumlah_galeri' => Gallery::count(),
+                    'settings' => Setting::get(),
+                    'socials' => Social::get(),
+                    'sections' => Section::get(),
+                    'newBlogs' => Blog::latest()->get(),
+                ]);
+            }
+        }
     }
 }

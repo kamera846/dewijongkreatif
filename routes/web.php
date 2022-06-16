@@ -1,17 +1,22 @@
 <?php
 
 use App\Models\Blog;
+use App\Models\Section;
 use App\Models\User;
+use App\Models\Social;
 use App\Models\Gallery;
+use App\Models\Setting;
+use App\Http\Controllers\Contact;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\Contact;
 use App\Http\Controllers\MainController;
-
+use App\Http\Controllers\SectionController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SocialController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\SettingController;
+// use App\Http\Controllers\RegisterController;
 
 // Route::get('/register', [RegisterController::class, 'index']);
 // Route::post('/register', [RegisterController::class, 'store']);
@@ -26,7 +31,8 @@ Route::middleware('auth')->group(function () {
             'judul_halaman' => 'Admin | Dashboard',
             'jumlah_pengguna' => User::count(),
             'jumlah_blog' => Blog::count(),
-            'jumlah_galeri' => Gallery::count()
+            'jumlah_galeri' => Gallery::count(),
+            'settings' => Setting::get()
         ]);
     });
 
@@ -58,8 +64,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/gallery/{gallery}/edit', [GalleryController::class, 'edit']);
     Route::put('/dashboard/gallery/{gallery}/update', [GalleryController::class, 'update']);
     Route::delete('/dashboard/gallery/{gallery}/delete', [GalleryController::class, 'destroy']);
-    
-    
+
+    Route::get('/dashboard/section', [SectionController::class, 'index']);
+    Route::get('/dashboard/section/create', [SectionController::class, 'create']);
+    Route::post('/dashboard/section/store', [SectionController::class, 'store']);
+    Route::get('/dashboard/section/{section:slug}/detail', [SectionController::class, 'show']);
+    Route::get('/dashboard/section/{section:slug}/edit', [SectionController::class, 'edit']);
+    Route::put('/dashboard/section/{section:slug}/update', [SectionController::class, 'update']);
+    Route::delete('/dashboard/section/{section:slug}/delete', [SectionController::class, 'destroy']);
 });
 
 
@@ -80,10 +92,42 @@ Route::get('/about', function() {
 });
 
 
+
 // admin
+Route::get('/dashboard/setting', [SettingController::class, 'index']);
+Route::post('/dashboard/setting/store', [SettingController::class, 'store']);
+Route::put('/dashboard/setting/{setting}/update', [SettingController::class, 'update']);
 // Route::get('/dashboard/contact', function () {
 //     return view('dashboard.contact', ['judul_halaman' => 'Admin | Profil Kontak']);
 // });
 // Route::get('/dashboard/social', function () {
 //     return view('dashboard.social', ['judul_halaman' => 'Admin | Profil Sosial Media']);
 // });
+Route::get('/dashboard/social', [SocialController::class, 'index']);
+Route::get('/dashboard/social/create', [SocialController::class, 'create']);
+Route::post('/dashboard/social/store', [SocialController::class, 'store']);
+Route::get('/dashboard/social/{social}/edit', [SocialController::class, 'edit']);
+Route::put('/dashboard/social/{social}/update', [SocialController::class, 'update']);
+Route::delete('/dashboard/social/{social}/delete', [SocialController::class, 'destroy']);
+
+
+Route::get('/about', function () {
+    $settings = Setting::get();
+    foreach ($settings as $setting) {
+        if ($setting->web_title !== null) {
+            return view('about', ['judul_halaman' => 'Tentang Kami | ' . $setting->web_title, 'settings' => Setting::get(), 'socials' => Social::get(), 'sections' => Section::get(), 'newBlogs' => Blog::latest()->get()]);
+        } else {
+            return view('about', ['judul_halaman' => 'Tentang Kami', 'settings' => Setting::get(), 'socials' => Social::get(), 'sections' => Section::get(), 'newBlogs' => Blog::latest()->get()]);
+        }
+    }
+});
+Route::get('/blog/slug', function () {
+    $settings = Setting::get();
+    foreach ($settings as $setting) {
+        if ($setting->web_title !== null) {
+            return view('blog-details', ['judul_halaman' => 'Judul Postingan | ' . $setting->web_title]);
+        } else {
+            return view('blog-details', ['judul_halaman' => 'Judul Postingan']);
+        }
+    }
+});

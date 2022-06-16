@@ -6,11 +6,11 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Sosial Media</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Section</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a hrefdashboarddashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Data Sosial Media</li>
+                                <li class="breadcrumb-item active" aria-current="page">Data Section</li>
                             </ol>
                         </nav>
                     </div>
@@ -29,13 +29,7 @@
                     <div class="card-header border-0">
                         <div class="row">
                             <div class="col-6">
-                                <h3 class="mb-0">Data Sosial Media</h3>
-                            </div>
-                            <div class="col-6 text-right">
-                                <a href="/dashboard/social/create" class="btn btn-sm btn-primary">
-                                    <span class="btn-inner--icon"><i class="fas fa-user-plus"></i></span>
-                                    <span class="btn-inner--text">Tambah Data</span>
-                                </a>
+                                <h3 class="mb-0">Data Section</h3>
                             </div>
                         </div>
                     </div>
@@ -48,31 +42,26 @@
                         <table class="table align-items-center table-flush table-hover">
                             <thead class="thead-light">
                                 <tr>
-                                    <th>Tipe sosial media</th>
-                                    <th>link</th>
+                                    <th>Slug</th>
+                                    <th>Title</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($socials as $sosmed)
+                                @foreach ($sections as $section)
                                 <tr>
+                                    <td>{{ $section->slug }}</td>
                                     <td>
-                                        <b>{{ $sosmed->tipe_sosmed }}</b>
+                                        <b>{{ $section->title }}</b>
                                     </td>
                                     <td>
-                                        <span class="font-weight-bold">{{ $sosmed->link_sosmed }}</span>
+                                        <b class="<?= $section->isActive == "true" ? "text-success" : "text-danger" ?>"><?= $section->isActive == "true" ? "Aktif" : "Nonaktif" ?></b>
                                     </td>
                                     <td class="table-actions">
-                                        <a href="/dashboard/social/{{ $sosmed->id }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit pengguna">
+                                        <a href="/dashboard/section/{{ $section->slug }}/edit" class="table-action" data-toggle="tooltip" data-original-title="Edit Menu">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
-                                        <form action="/dashboard/social/{{ $sosmed->id }}/delete" method="post" class="p-0 m-0 d-inline" id="form">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit" id="hapus" class="table-action table-action-delete border-0 p-0 m-0" data-toggle="tooltip" data-original-title="Hapus pengguna" style="background:none;">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

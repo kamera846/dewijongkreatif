@@ -43,12 +43,11 @@ if (!hapus) {
         });
     });
 }
+let flashdata = document.querySelector(".flash-data");
+if (!flashdata) {
+    flashData = flashdata.dataset["flashdata"];
 
-let flashData = document.querySelector(".flash-data");
-if (!flashData) {
-    flashData = flashData.dataset["flashdata"];
-
-    if (flashData !== "gagal") {
+    if (flashData !== "success") {
         Swal.fire("Sukses", "Berhasil " + flashData + " data!", "success");
     } else if (flashData === "gagal") {
         Swal.fire("Gagal", "Ada kesalahan!", "error");
@@ -84,8 +83,10 @@ if (document.location.pathname === "/dashboard/contact") {
 
         email.removeAttribute("readonly");
         noTelp.removeAttribute("readonly");
-        noWa.removeAttribute("readonly");
-        alamat.removeAttribute("readonly");
+        lokasi.removeAttribute("readonly");
+        logo.removeAttribute("readonly");
+        favicon.removeAttribute("readonly");
+        webTitle.removeAttribute("readonly");
 
         batal.addEventListener("click", function () {
             location.reload();

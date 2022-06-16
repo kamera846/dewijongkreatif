@@ -1,22 +1,29 @@
 @extends('layouts.main')
 
 @section('page-content')
-    <section class="page-title" style="background-image: url(assets/images/background/bg-9.jpg)">
+@foreach ($sections as $section)
+<?php 
+$image = json_decode($section->cover);
+?>
+@if($section->slug === 'gallery')
+    <section class="page-title" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)">
+        <div class="drop-layer-gallery"></div>
         <div class="auto-container">
             <div class="content-box">
                 <div class="content-wrapper">
                     <div class="title">
-                        <h1>Galeri.</h1>
+                        <h1 style="z-index: 3">{{ $section->title }}</h1>
                     </div>
-                    <ul class="bread-crumb">
+                    <ul class="bread-crumb" style="z-index: 3">
                         <li><a href="./">Beranda</a></li>
-                        <li>Galeri</li>
+                        <li>{{ $section->title }}</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-
+    @endif
+    @endforeach
     <!-- News section Three -->
     <section class="news-section-three">
         <div class="auto-container">

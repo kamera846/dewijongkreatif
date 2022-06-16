@@ -8,7 +8,14 @@
         <meta name="author" content="Creative Tim" />
         <title>{{ $judul_halaman }}</title>
         <!-- Favicon -->
+        @foreach ($settings as $setting)
+        @if ($setting->favicon)
+        <link rel="icon" href="{{ asset('storage/' . $setting->favicon) }}" type="image/png" />
+        @else
         <link rel="icon" href="{{ asset('admin/assets/img/brand/favicon.png') }}" type="image/png" />
+        @endif
+        @endforeach
+        {{-- <link rel="icon" href="{{ asset('admin/assets/img/brand/blue.png') }}" type="image/png" /> --}}
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
         <!-- Icons -->
@@ -27,8 +34,19 @@
             <div class="scrollbar-inner">
                 <!-- Brand -->
                 <div class="sidenav-header d-flex align-items-center">
+<<<<<<< HEAD
                     <a class="navbar-brand" href="/">
                         <img src="{{ asset('admin/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="..." />
+=======
+                    <a class="navbar-brand" href="./">
+                        @foreach($settings as $setting)
+                            @if($setting->logo)
+                            <img src="{{ asset('storage/'. $setting->logo) }}" class="navbar-brand-img" alt="..." style="min-height: 60px;"/>
+                            @else
+                            <img src="{{ asset('admin/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="..." />
+                            @endif   
+                        @endforeach
+>>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
                     </a>
                     <div class="ml-auto">
                         <!-- Sidenav toggler -->
@@ -87,20 +105,28 @@
                                     <span class="nav-link-text">Galeri</span>
                                 </a>
                             </li>
-
+                            <li class="nav-item">
+                                <a 
+                                class="
+                                    nav-link {{ ( $judul_halaman === 'Admin | Data Menu' || $judul_halaman === 'Admin | Edit Menu' || $judul_halaman === 'Admin | Tambah Menu' ) ? 'active' : '' }}" 
+                                href="/dashboard/section">
+                                    <i class="ni ni-single-copy-04 default"></i>
+                                    <span class="nav-link-text">Section</span>
+                                </a>
+                            </li>
                         </ul>
 
                         <!-- Divider -->
-                        {{-- <hr class="my-3">
+                        <hr class="my-3">
 
                         <h6 class="navbar-heading p-0 text-primary">PROFIL</h6>
                         <ul class="navbar-nav mb-md-3">
                             <li class="nav-item">
                                 <a 
-                                class="nav-link {{ ( $judul_halaman === 'Admin | Profil Kontak') ? 'active' : '' }}" 
-                                href="/dashboard/contact">
+                                class="nav-link {{ ( $judul_halaman === 'Admin | Profil Setting') ? 'active' : '' }}" 
+                                href="/dashboard/setting">
                                     <i class="ni ni-email-83 text-red"></i>
-                                    <span class="nav-link-text">Kontak</span>
+                                    <span class="nav-link-text">Setting</span>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -111,7 +137,7 @@
                                     <span class="nav-link-text">Sosial Media</span>
                                 </a>
                             </li>
-                        </ul> --}}
+                        </ul>
 
                         <!-- Divider -->
                         <hr class="my-3">

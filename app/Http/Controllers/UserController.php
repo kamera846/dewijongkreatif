@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class UserController extends Controller
         if (Auth::user()->role === 'super-admin') {
             return view('dashboard.user', [
                 'judul_halaman' => 'Admin | Data Pengguna',
-                'users' => User::latest('updated_at')->get()
+                'users' => User::latest('updated_at')->get(),
+                'settings' => Setting::get()
             ]);
         } else {
             return redirect('/dashboard');
@@ -26,7 +28,8 @@ class UserController extends Controller
     {
         if (Auth::user()->role === 'super-admin') {
             return view('dashboard.add-user', [
-                'judul_halaman' => 'Admin | Tambah Pengguna'
+                'judul_halaman' => 'Admin | Tambah Pengguna',
+                'settings' => Setting::get()
             ]);
         } else {
             return redirect('/dashboard');
@@ -75,7 +78,8 @@ class UserController extends Controller
         if (Auth::user()->role === 'super-admin') {
             return view('dashboard.detail-user', [
                 'judul_halaman' => 'Admin | Detail Pengguna',
-                'user' => $user
+                'user' => $user,
+                'settings' => Setting::get()
             ]);
         } else {
             return redirect('/dashboard');
@@ -87,7 +91,8 @@ class UserController extends Controller
         if (Auth::user()->role === 'super-admin') {
             return view('dashboard.edit-user', [
                 'judul_halaman' => 'Admin | Edit Pengguna',
-                'user' => $user
+                'user' => $user,
+                'settings' => Setting::get()
             ]);
         } else {
             return redirect('/dashboard');
@@ -135,6 +140,7 @@ class UserController extends Controller
     {
         return view('dashboard.edit-profile', [
             'judul_halaman' => 'Admin | Edit Profil',
+            'settings' => Setting::get()
         ]);
     }
 

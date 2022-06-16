@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Str;
 use App\Models\Blog;
-use Illuminate\Support\Facades\Storage;
+use App\Models\Social;
+use App\Models\Setting;
+use App\Models\Section;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
@@ -15,6 +18,7 @@ class BlogController extends Controller
     {
         return view('dashboard.blog', [
             'blogs' => Blog::latest('updated_at')->get(),
+            'settings' => Setting::get(),
             'judul_halaman' => 'Admin | Data Postingan'
         ]);
     }
@@ -23,7 +27,8 @@ class BlogController extends Controller
     public function create()
     {
         return view('dashboard.add-post', [
-            'judul_halaman' => 'Admin | Tambah Postingan'
+            'judul_halaman' => 'Admin | Tambah Postingan',
+            'settings' => Setting::get(),
         ]);
     }
 
@@ -54,7 +59,8 @@ class BlogController extends Controller
     {
         return view('dashboard.detail-post', [
             'judul_halaman' => 'Admin | Detail Postingan',
-            'blog' => $blog
+            'blog' => $blog,
+            'settings' => Setting::get(),
         ]);
     }
 
@@ -63,7 +69,8 @@ class BlogController extends Controller
     {
         return view('dashboard.edit-post', [
             'judul_halaman' => 'Admin | Edit Postingan',
-            'blog' => $blog
+            'blog' => $blog,
+            'settings' => Setting::get(),
         ]);
     }
 
@@ -108,27 +115,63 @@ class BlogController extends Controller
         Blog::destroy($blog->id);
         return redirect('/dashboard/blog')->with('success', 'menghapus');
     }
-    
+
     public function landingPage()
     {
-        return view('blog', [
-            'blogs' => Blog::latest('updated_at')->cari()->paginate(5),
-            'judul_halaman' => 'Blog | Desa Wisata Loha',
-            'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
-            'jumlah_blog' => Blog::cari()->count(),
-            'tes' => 'oke',
-        ]);
+        $settings = Setting::get();
+        foreach ($settings as $setting) {
+            if ($setting->web_title !== null) {
+                return view('blog', [
+                    'blogs' => Blog::latest('updated_at')->cari()->paginate(3),
+                    'judul_halaman' => 'Blog | '  . $setting->web_title,
+                    'jumlah_blog' => Blog::cari()->count(),
+                    'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+                    'settings' => Setting::get(),
+                    'socials' => Social::get(),
+                    'sections' => Section::get(),
+                    'newBlogs' => Blog::latest()->get(),
+                ]);
+            } else {
+                return view('blog', [
+                    'blogs' => Blog::latest('updated_at')->cari()->paginate(3),
+                    'judul_halaman' => 'Blog',
+                    'jumlah_blog' => Blog::cari()->count(),
+                    'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+                    'settings' => Setting::get(),
+                    'socials' => Social::get(),
+                    'sections' => Section::get(),
+                    'newBlogs' => Blog::latest()->get(),
+                ]);
+            }
+        }
     }
-    
-    
+
+
     public function postDetails(Blog $blog)
     {
-        return view('blog-details', [
-            'judul_halaman' => $blog->judul . ' | Desa Wisata Loha',
-            'blog' => $blog,
-            'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
-            'latestBlogs' => Blog::latest('updated_at')->limit(1)->get(),
-            'tes' => 'oke',
-        ]);
+        $settings = Setting::get();
+        foreach ($settings as $setting) {
+            if ($setting->web_title !== null) {
+                return view('blog-details', [
+                    'judul_halaman' => $blog->judul . ' | '  . $setting->web_title,
+                    'blog' => $blog,
+                    'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+                    'tes' => 'oke',
+                    'settings' => Setting::get(),
+                    'socials' => Social::get(),
+                    'newBlogs' => Blog::latest()->get(),
+                ]);
+            } else {
+                return view('blog-details', [
+                    'judul_halaman' => $blog->judul,
+                    'blog' => $blog,
+                    'recentPosts' => Blog::latest('updated_at')->limit(3)->get(),
+                    'tes' => 'oke',
+                    'settings' => Setting::get(),
+                    'socials' => Social::get(),
+                    'newBlogs' => Blog::latest()->get(),
+                ]);
+            }
+        }
     }
 }

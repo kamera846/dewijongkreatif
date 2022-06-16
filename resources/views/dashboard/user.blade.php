@@ -60,6 +60,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($users as $user)
+                                @if ($user->role !== 'super-admin')
                                 <tr>
                                     <td class="table-user" style="object-fit: cover;overflow:hidden !important">
                                     @if ($user->foto_profil != null)
@@ -102,6 +103,7 @@
                                         </form>
                                     </td>
                                 </tr>
+                                @endif
                                 @endforeach
                             </tbody>
                         </table>

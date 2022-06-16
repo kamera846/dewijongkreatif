@@ -5,71 +5,82 @@
     <!-- Bnner Section -->
     <section class="banner-section">
         <div class="swiper-container banner-slider">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" style="z-index: -1">
                 <!-- Slide Item -->
-                <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-1.jpg)">
+                @foreach ($sections as $section)
+                @if($section->slug === 'carousel-1' && $section->isActive == 'true')
+                <?php 
+                    $image = json_decode($section->cover);
+                ?>
+                <div class="swiper-slide" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)">
+                    <div class="drop-layer"></div>
+                    <div class="content-outer">
+                        <div class="content-box justify-content-center">
+                            <div class="inner text-center inner-corousel">
+                                <h1>
+                                    {{ $section->title }}
+                                    <br />
+                                    
+                                </h1>
+                                <div class="text">
+                                   {{ $section->description }}<br />
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endif
+                <!-- Slide Item -->
+                @if ($section->slug === 'carousel-2' && $section->isActive == 'true')
+                <?php 
+                    $image = json_decode($section->cover);
+                ?>
+                <div class="swiper-slide" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)">
+                    <div class="drop-layer"></div>
                     <div class="content-outer">
                         <div class="content-box justify-content-center">
                             <div class="inner text-center">
                                 <h1>
-                                    Explore The Countryside <br />
-                                    With Pursuit Of Happiness
+                                    {{ $section->title }}
+                                    <br />
+                                    
                                 </h1>
                                 <div class="text">
-                                    Eabore ipsum dolor sit amet consectetur ipsum adipisicing tempor <br />
-                                    incididunt nostrud sed axercitation sed ullamcoy laboris
-                                </div>
-                                <div class="link-box">
-                                    <a href="#" class="theme-btn btn-style-one"><span>Read More</span></a>
-                                    <a href="#" class="theme-btn btn-style-one style-two"><span>Virtual tour</span></a>
+                                    {{ $section->description }}<br />
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
  
+=======
+                @endif
+>>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
                 <!-- Slide Item -->
-                <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-2.jpg)">
+                @if ($section->slug === 'carousel-3' && $section->isActive == 'true')
+                <?php 
+                    $image = json_decode($section->cover);
+                ?>
+                <div class="swiper-slide" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)">
+                    <div class="drop-layer"></div>
                     <div class="content-outer">
                         <div class="content-box">
                             <div class="inner">
                                 <h1>
-                                    Best Social Care <br />
-                                    & City Center Area.
+                                    {{ $section->title }} <br />
                                 </h1>
                                 <div class="text">
-                                    Eabore ipsum dolor sit amet consectetur ipsum adipisicing tempor <br />
-                                    incididunt nostrud sed axercitation sed ullamcoy laboris
-                                </div>
-                                <div class="link-box">
-                                    <a href="#" class="theme-btn btn-style-one"><span>Read More</span></a>
-                                    <a href="#" class="theme-btn btn-style-one style-two"><span>Virtual Tour</span></a>
+                                    {{ $section->description }}<br />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Slide Item -->
-                <div class="swiper-slide" style="background-image: url(assets/images/main-slider/image-3.jpg)">
-                    <div class="content-outer">
-                        <div class="content-box">
-                            <div class="inner">
-                                <h1>
-                                    Hotels, Restaurants, <br />
-                                    Attractions & More Places.
-                                </h1>
-                                <div class="text">
-                                    Eabore ipsum dolor sit amet consectetur ipsum adipisicing tempor <br />
-                                    incididunt nostrud sed axercitation sed ullamcoy laboris
-                                </div>
-                                <div class="link-box">
-                                    <a href="#" class="theme-btn btn-style-one"><span>Read More</span></a>
-                                    <a href="#" class="theme-btn btn-style-one style-two"><span>Virtual Tour</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endif
+                @endforeach
             </div>
         </div>
         <div class="banner-slider-nav">
@@ -84,31 +95,43 @@
     <!-- End Bnner Section -->
 
 <!-- About section -->
+@foreach ($sections as $section)
+@if ($section->slug === 'about' && $section->isActive == 'true')
 <section class="about-section">
-        <div class="auto-container">
+    <div class="auto-container">
             <div class="sec-title text-center">
                 <!-- <div class="sub-title">City With Equity - Efficiency - Opportunity</div> -->
-                <h2>
-                    Cerita Desa
-                </h2>
+                <h2>{{$section->title}}</h2>
             </div>
             <div class="row">
                 <div class="col-lg-5">
                     <div class="content-block wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="text">
-                            "Sejarah peradaban masyarakat penghuni kampung sowang yang berlokasi Didesa Loha, Kecamatan Pacar, Kabupaten Manggarai Barat. kampung sowang diberi nama oleh leluhur “empo” yang datang dari suku nawangkarena sebelum dijadikan sebuah tempat pemukiman. Wilayah kampung sowang pada saat itu banyak tumbuh pohon gebang (sowang) sehingga nama tersebut diambil dari nama pohon gebang yang dalam bahasa daerah setempat adalah sowang Kampung sowang dihuni oleh beberapa suku diantaranya Suku Nawang, Suku Jao,Suku Dangka Dan Suku Nduri. Kedatangan nenek moyang pertama yang menghuni kampung sowang adalah leluhur dari keturunan suku nawang dan diikuti oleh suku jao, suku dangka dan suku nduri. Suku nawang datang dan menghuni wilayah kampong sowing karena diutus oleh suku jao yang berada di dangka dengan tujuan untuk menguasai wilayah dan hak atas ulaiat kekuasaan suku jao. Semua suku yang berada di kampung sowang memiliki hubungan kekeluargaan yang sangat dekat. Hal itu terjadi karena adanya hubungan perkawinan antara suku."
+                        <div class="text" style="text-align:justify; text-indent: 2rem">
+                            "{{ $section->description }}"
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="image-block wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="row">
+                            <?php $image = json_decode($section->cover); ?>
                             <div class="col-lg-6 column">
-                                <div class="image"><img src="assets/images/resource/image-1.jpg" alt="" /></div>
-                                <div class="image"><img src="assets/images/resource/image-2.jpg" alt="" /></div>
+                                @if($image != null)
+                                @foreach($image as $index => $item)
+                                    @if($index < 2)
+                                        <div class="image"><img src="{{asset('storage/' . $item)}}" alt="" style="height: 190px;object-fit: cover;" width="100%"/></div>
+                                    @endif
+                                @endforeach
+                                @endif
                             </div>
                             <div class="col-lg-6 column">
-                                <div class="image"><img src="assets/images/resource/image-3.jpg" alt="" /></div>
+                                @if($image != null)
+                                @foreach($image as $index => $item)
+                                    @if($index === 2)
+                                        <div class="image"><img src="{{asset('storage/' . $item)}}" alt="" style="height: 390px;object-fit: cover;" width="100%"/></div>
+                                    @endif
+                                @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -116,107 +139,185 @@
             </div>
         </div>
     </section>
-
+    @endif
+    @endforeach
+    
     <!-- Projects section -->
     <section class="projects-section">
         <div class="auto-container">
             <div class="row no-gutters">
                 <div class="col-xl-3 col-lg-6 project-block">
                     <div class="inner-box">
-                        <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
+                        @foreach ($sections as $section)
+                            <?php 
+                                $image = json_decode($section->cover);
+                            ?>
+                            @if ($section->slug === 'product-1')
+                            @if ($section->cover === null)
+                                <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
+                            @else
+                            <div class="image"><img src="{{ asset('storage/' . $image[0]) }}" alt="" /></div>
+                            @endif
                         <div class="content">
-                            <h4>Explore Loha</h4>
-                            <h3>Our City Guides</h3>
-                            <div class="link-btn">
-                                <a href="#"><i class="icon-arrow"></i></a>
+                            <h4>{{ $section->title }}</h4>
+                            <div class="text">
+                                {{ $section->description }} <br />
                             </div>
                         </div>
+                        @endif
+                        @endforeach
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Explore Loha</h4>
-                                <h3>Our City Guides</h3>
+                                @foreach ($sections as $section)
+                            <?php 
+                                $image = json_decode($section->cover);
+                            ?>
+                            @if ($section->slug === 'product-1')
+                            @if ($section->cover === null)
+                                <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
+                            @else
+                            <div class="image"><img src="{{ asset('storage/' . $image[0]) }}" alt="" /></div>
+                            @endif
+                            <div class="content">
+                                <h4>{{ $section->title }}</h4>
                                 <div class="text">
-                                    Veniam quis nostrud exercitation sed llamco <br />
-                                    conseqa rure dolorn repreh derit ...
+                                    {{ $section->description }} <br />
                                 </div>
-                                <div class="link-btn">
-                                    <a href="#"><i class="icon-arrow"></i></a>
-                                </div>
+                            </div>
+                            @endif
+                            @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6 project-block">
                     <div class="inner-box">
-                        <div class="image"><img src="assets/images/resource/image-6.jpg" alt="" /></div>
+                        @foreach ($sections as $section)
+                        <?php 
+                            $image = json_decode($section->cover);
+                        ?>
+                        @if ($section->slug === 'product-2')
+                        @if ($section->cover === null)
+                            <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
+                        @else
+                        <div class="image"><img src="{{ asset('storage/' . $image[1]) }}" alt="" /></div>
+                        @endif
                         <div class="content">
-                            <h4>Explore Loha</h4>
-                            <h3>Main Tourist Spots</h3>
-                            <div class="link-btn">
-                                <a href="#"><i class="icon-arrow"></i></a>
+                            <h4>{{ $section->title }}</h4>
+                            <div class="text">
+                                {{ $section->description }} <br />
                             </div>
                         </div>
+                        @endif
+                        @endforeach
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Explore Loha</h4>
-                                <h3>Main Tourist Spots</h3>
-                                <div class="text">
-                                    Veniam quis nostrud exercitation sed llamco <br />
-                                    conseqa rure dolorn repreh derit ...
+                                @foreach ($sections as $section)
+                                <?php 
+                                    $image = json_decode($section->cover);
+                                ?>
+                                @if ($section->slug === 'product-2')
+                                @if ($section->cover === null)
+                                    <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
+                                @else
+                                <div class="image"><img src="{{ asset('storage/' . $image[1]) }}" alt="" /></div>
+                                @endif
+                                <div class="content">
+                                    <h4>{{ $section->title }}</h4>
+                                    <div class="text">
+                                        {{ $section->description }} <br />
+                                    </div>
                                 </div>
-                                <div class="link-btn">
-                                    <a href="#"><i class="icon-arrow"></i></a>
-                                </div>
+                                @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6 project-block">
                     <div class="inner-box">
-                        <div class="image"><img src="assets/images/resource/image-7.jpg" alt="" /></div>
+                        @foreach ($sections as $section)
+                        <?php 
+                            $image = json_decode($section->cover);
+                        ?>
+                        @if ($section->slug === 'product-3')
+                        @if ($section->cover === null)
+                            <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
+                        @else
+                        <div class="image"><img src="{{ asset('storage/' . $image[2]) }}" alt="" /></div>
+                        @endif
                         <div class="content">
-                            <h4>Explore Loha</h4>
-                            <h3>Experience Now</h3>
-                            <div class="link-btn">
-                                <a href="#"><i class="icon-arrow"></i></a>
+                            <h4>{{ $section->title }}</h4>
+                            <div class="text">
+                                {{ $section->description }} <br />
                             </div>
                         </div>
+                        @endif
+                        @endforeach
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Explore Loha</h4>
-                                <h3>Experience Now</h3>
-                                <div class="text">
-                                    Veniam quis nostrud exercitation sed llamco <br />
-                                    conseqa rure dolorn repreh derit ...
+                                @foreach ($sections as $section)
+                                <?php 
+                                    $image = json_decode($section->cover);
+                                ?>
+                                @if ($section->slug === 'product-3')
+                                @if ($section->cover === null)
+                                    <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
+                                @else
+                                <div class="image"><img src="{{ asset('storage/' . $image[2]) }}" alt="" /></div>
+                                @endif
+                                <div class="content">
+                                    <h4>{{ $section->title }}</h4>
+                                    <div class="text">
+                                        {{ $section->description }} <br />
+                                    </div>
                                 </div>
-                                <div class="link-btn">
-                                    <a href="#"><i class="icon-arrow"></i></a>
-                                </div>
+                                @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6 project-block">
                     <div class="inner-box">
-                        <div class="image"><img src="assets/images/resource/image-8.jpg" alt="" /></div>
+                        @foreach ($sections as $section)
+                        <?php 
+                            $image = json_decode($section->cover);
+                        ?>
+                        @if ($section->slug === 'product-4')
+                        @if ($section->cover === null)
+                            <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
+                        @else
+                        <div class="image"><img src="{{ asset('storage/' . $image[3]) }}" alt="" /></div>
+                        @endif
                         <div class="content">
-                            <h4>Explore Loha</h4>
-                            <h3>Culture & History</h3>
-                            <div class="link-btn">
-                                <a href="#"><i class="icon-arrow"></i></a>
+                            <h4>{{ $section->title }}</h4>
+                            <div class="text">
+                                {{ $section->description }} <br />
                             </div>
                         </div>
+                        @endif
+                        @endforeach
                         <div class="overlay">
                             <div class="content-two">
-                                <h4>Explore Loha</h4>
-                                <h3>Culture & History</h3>
-                                <div class="text">
-                                    Veniam quis nostrud exercitation sed llamco <br />
-                                    conseqa rure dolorn repreh derit ...
+                                @foreach ($sections as $section)
+                                <?php 
+                                    $image = json_decode($section->cover);
+                                ?>
+                                @if ($section->slug === 'product-4')
+                                @if ($section->cover === null)
+                                    <div class="image"><img src="assets/images/resource/image-5.jpg" alt="" /></div>
+                                @else
+                                <div class="image"><img src="{{ asset('storage/' . $image[3]) }}" alt="" /></div>
+                                @endif
+                                <div class="content">
+                                    <h4>{{ $section->title }}</h4>
+                                    <div class="text">
+                                        {{ $section->description }} <br />
+                                    </div>
                                 </div>
-                                <div class="link-btn">
-                                    <a href="#"><i class="icon-arrow"></i></a>
-                                </div>
+                                @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -226,22 +327,27 @@
     </section>
 
     <!-- Highlights section -->
+<<<<<<< HEAD
         
+=======
+    @foreach ($sections as $section)
+    @if ($section->slug === 'gallery')
+    @if($jumlah_galeri != 0)
+>>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
         <section class="highlights-section">
             <div class="auto-container">
                 <div class="sec-title">
                     <!-- <div class="sub-title">City With Equity - Efficiency - Opportunity</div> -->
-                    <h2>Galeri Desa</h2>
+                    <h2>{{ $section->title }} Desa</h2>
                 </div>
                 <div class="highlight-block-area">
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="text-blcok">
-                                <div class="text">
-                                    Hiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniay <br />
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ela reprehenderit in <br />
-                                    voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                <div class="text" style="text-align: justify;">
+                                    {{ $section->description }}  <br />
                                 </div>
+<<<<<<< HEAD
 
                                 @if($jumlah_galeri >= 5)
 
@@ -251,6 +357,13 @@
 
                                 @endif
                                 
+=======
+                                @if($jumlah_galeri > 4)
+                                <div class="link-btn">
+                                    <a href="/gallery" class="theme-btn btn-style-one"><span>Selengkapnya</span></a>
+                                </div>
+                                @endif
+>>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
                             </div>
                             <div class="swiper-container highlight-thumbs">
                                 <div class="swiper-wrapper">
@@ -272,11 +385,11 @@
                         </div>
                         <div class="col-lg-5">
                             <!-- Swiper -->
-                            <div class="swiper-container highlight-image">
+                            <div class="swiper-container highlight-image" style="margin: inherit;">
                                 <div class="swiper-wrapper">
                                     @foreach($galleries as $gallery)
                                         <div class="swiper-slide">
-                                            <div class="image"><img src="{{ asset('storage/'.$gallery->foto) }}" alt="" /></div>
+                                            <div class="image"><img src="{{ asset('storage/'.$gallery->foto) }}" alt="" style="max-height: 70vh; min-height: 70vh; object-fit: cover"  width="100%" /></div>
                                         </div>
                                     @endforeach
                                 </div>
@@ -286,31 +399,44 @@
                 </div>
             </div>
         </section>
+<<<<<<< HEAD
 
+=======
+    @endif
+    @endif
+    @endforeach
+>>>>>>> 57550b7595d691257d76951f9c929d1a08d43b17
     <!-- Contact Info section -->
     <section class="contact-info-section" style="margin-top: 210px; padding: 0">
         <div class="auto-container">
-            <div class="wrapper-box" style="background-image: url(assets/images/background/bg-4.jpg)">
+            @foreach ($sections as $section)
+            <?php 
+                $image = json_decode($section->cover);
+            ?>
+            @if($section->slug === 'help')
+                <div class="wrapper-box" style="background-image: url({{ asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') }})">
                 <div class="top-content">
-                    <h2>Untuk Bantuan atau Pertanyaan</h2>
+                    <h2>{{ $section->title }}</h2>
                     <div class="text">
-                        Tempor incididunt ut labore et dolore magna aliqua. Ut minim veniay quis nostrud <br />
-                        exercitation ullamco laboris nisi ut aliquip ex ela reprehenderit
+                          {{ $section->description }}<br />
                     </div>
                 </div>
+                @endif
+                @endforeach
+                @foreach ($settings as $setting)
                 <div class="row justify-content-center">
                     <div class="col-lg-3 col-md-6 contact-info-block">
                         <div class="inner-box">
                             <div class="icon"><span class="pe-7s-call"></span></div>
                             <h5>Call us</h5>
-                            <h4><a href="tel:8526105599">852-610-5599</a></h4>
+                            <h4><a href="tel:8526105599">{{ $setting->telpon }}</a></h4>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 contact-info-block">
                         <div class="inner-box">
                             <div class="icon"><span class="pe-7s-mail-open"></span></div>
                             <h5>Send Email</h5>
-                            <h4><a href="mailto:mail@govern.net">mail@govern.net</a></h4>
+                            <h4><a href="mailto:mail@govern.net">{{ $setting->email }}</a></h4>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 contact-info-block">
@@ -321,6 +447,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>
