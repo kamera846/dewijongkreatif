@@ -141,7 +141,7 @@
                                 <!--Nav Box-->
                                 <div class="nav-outer">
                                     <!--Mobile Navigation Toggler-->
-                                    <div class="mobile-nav-toggler"><img src="assets/images/icons/icon-bar-2.png" alt="" /></div>
+                                    <div class="mobile-nav-toggler"><img src="{{asset('assets/images/icons/icon-bar-2.png')}}" alt="" /></div>
                                     <!-- Main Menu -->
                                     <nav class="main-menu navbar-expand-md navbar-light"></nav>
                                 </div>
@@ -307,21 +307,21 @@
                                         <ul class="contact-info">
                                             <li>
                                                 @foreach ($settings as $setting)
-                                                <div class="icon"><img src="assets/images/icons/icon-1.png" alt="" /></div>
+                                                <div class="icon"><img src="{{asset('assets/images/icons/icon-1.png')}}" alt="" /></div>
                                                 <div class="text">
                                                     <strong>Lokasi</strong>{{ $setting->lokasi }} <br />
                                                     
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="icon"><img src="assets/images/icons/icon-2.png" alt="" /></div>
+                                                <div class="icon"><img src="{{asset('assets/images/icons/icon-2.png')}}" alt="" /></div>
                                                 <div class="text">
                                                     <strong>Telepon</strong>
                                                     <a href="tel:+62 823 3976 5401">{{ $setting->telpon }}</a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="icon"><img src="assets/images/icons/icon-3.png" alt="" /></div>
+                                                <div class="icon"><img src="{{asset('assets/images/icons/icon-3.png')}}" alt="" /></div>
                                                 <div class="text">
                                                     <strong>Email</strong>
                                                     <a href="mailto:munciple@example.net">{{ $setting->email }}</a>
