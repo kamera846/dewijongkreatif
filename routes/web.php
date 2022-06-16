@@ -109,9 +109,9 @@ Route::get('/about', function () {
     $settings = Setting::get();
     foreach ($settings as $setting) {
         if ($setting->web_title !== null) {
-            return view('about', ['judul_halaman' => 'Tentang Kami | ' . $setting->web_title, 'settings' => Setting::get(), 'socials' => Social::get(), 'sections' => Section::get()]);
+            return view('about', ['judul_halaman' => 'Tentang Kami | ' . $setting->web_title, 'settings' => Setting::get(), 'socials' => Social::get(), 'sections' => Section::get(), 'newBlogs' => Blog::latest()->get()]);
         } else {
-            return view('about', ['judul_halaman' => 'Tentang Kami', 'settings' => Setting::get(), 'socials' => Social::get(), 'sections' => Section::get()]);
+            return view('about', ['judul_halaman' => 'Tentang Kami', 'settings' => Setting::get(), 'socials' => Social::get(), 'sections' => Section::get(), 'newBlogs' => Blog::latest()->get()]);
         }
     }
 });

@@ -10,6 +10,7 @@
         <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet" />
         <!-- Color File -->
         <link href="{{ asset('assets/css/color.css') }}" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ asset('mycss.css') }}">
 
         <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Merriweather:ital@0;1&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="mycss.css">
@@ -44,9 +45,11 @@
                 <div class="header-top">
                     <div class="auto-container">
                         <div class="inner-container">
+                            @foreach ($newBlogs as $newBlog)
                             <div class="left-column">
-                                <div class="text"><i class="icon-news"></i><a href="#">Latest City News</a> Coronavirus: Restrictions eased in parts of some islands</div>
+                                <div class="text"><i class="icon-news"></i><a href="/blog/{{ $newBlog->slug }}">Postingan Terbaru</a> {{ $newBlog->judul }}</div>
                             </div>
+                            @endforeach
                             <div class="right-column">
                                 <div class="phone">
                                     <a href="tel:+18526105599"><i class="fas fa-phone-volume"></i>+1 852-610-5599</a>
@@ -222,6 +225,8 @@
             @yield('page-content')
 
             <!-- Main  Footer -->
+            @foreach ($sections as $section)
+            @if($section->slug === 'footer')
             <footer class="main-footer">
                 <div class="auto-container">
                     <!--Widgets Section-->
@@ -230,8 +235,12 @@
                             <!--Column-->
                             <div class="column col-lg-4 col-md-6">
                                 <div class="widget about-widget">
-                                    <h3 class="widget-title">Tentang Kami</h3>
-                                    <div class="text">Kedatangan nenek moyang pertama yang menghuni kampung sowang adalah leluhur dari keturunan suku nawang dan diikuti oleh suku jao, suku dangka dan suku nduri.</div>
+                                    @foreach ($sections as $section)
+                                    @if ($section->slug === 'about')
+                                    <h3 class="widget-title">{{ $section->title }}</h3>
+                                    <div class="text">{{ $section->description }}</div>
+                                    @endif
+                                    @endforeach
                                     <ul class="social-links">
                                         @foreach ($socials as $social)
                                         @if ($social->tipe_sosmed === 'Facebook')
@@ -311,12 +320,14 @@
                     <div class="auto-container">
                         <div class="wrapper-box">
                             <div class="copyright">
-                                <div class="text">© 2022 <a href="/">LOHA</a> - Powered by <a href="https://jongkreatif.id/">JongKreatif</a>.</div>
+                                <div class="text">© {{ date('Y') }} <a href="/">{{ $section->title }}</a> - Powered by <a href="https://jongkreatif.id/">JongKreatif</a>.</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </footer>
+            @endif
+            @endforeach
         </div>
         <!--End pagewrapper-->
 

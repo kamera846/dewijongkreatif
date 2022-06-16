@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Social;
 use App\Models\Gallery;
 use App\Models\Section;
@@ -105,7 +106,8 @@ class GalleryController extends Controller
                     'jumlah_galeri' => Gallery::count(),
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
-                    'sections' => Section::get()
+                    'sections' => Section::get(),
+                    'newBlogs' => Blog::latest()->get(),
                 ]);
             } else {
                 return view('gallery', [
@@ -114,7 +116,8 @@ class GalleryController extends Controller
                     'jumlah_galeri' => Gallery::count(),
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
-                    'sections' => Section::get()
+                    'sections' => Section::get(),
+                    'newBlogs' => Blog::latest()->get(),
                 ]);
             }
         }

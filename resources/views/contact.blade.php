@@ -29,10 +29,10 @@
         <div class="auto-container">
             <div class="wrapper-box">
                 @foreach ($sections as $section)
-                    @if ($section->slug === 'help')
+                @if ($section->slug === 'help')
                 <div class="row">
                     <div class="col-lg-5">
-                        <div class="our-facts" style="background-image: url(assets/images/resource/image-54.jpg); height: 100%!important;">
+                        <div class="our-facts" style="background-image: url(<?= asset($image != null ? 'storage/'.$image[0] : 'assets/images/background/bg-4.jpg') ?>)" style="height: 100% !important">
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -56,8 +56,10 @@
                                         </div>
                                         
                                         {{-- nomor --}}
-                                        <input type="hidden" name="nomor" value="6282339765401" />
-
+                                        @foreach ($settings as $setting)
+                                        <input type="hidden" name="nomor" value="{{ $setting->telpon }}" />
+                                        @endforeach
+                                        
                                         <div class="form-group col-md-12">
                                             <textarea name="pesan" placeholder="Isi pesan" required></textarea>
                                         </div>
@@ -95,11 +97,15 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="contact-info-block">
-                        <h3>City Muncipal Office</h3>
+                        @foreach ($sections as $section)
+                            
+                        @if ($section->slug === 'maps')
+                        <h3>{{ $section->title }}</h3>
                         <div class="text mb-30">
-                            Fugiat nulla pariatur excepteur sint occaecat proident <br />
-                            sunt in culp mollit anim id est laborum.
+                            {{ $section->description }} <br />
                         </div>
+                        @endif
+                        @endforeach
                         <ul class="contact-info">
                             <li>
                                 @foreach ($settings as $setting)

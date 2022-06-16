@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Social;
-use App\Models\Setting;
 use App\Models\Section;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class Contact extends Controller
@@ -18,15 +19,16 @@ class Contact extends Controller
                     'judul_halaman' => 'Kontak Kami | ' . $setting->web_title,
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
-                    'sections' => Section::get()
+                    'sections' => Section::get(),
+                    'newBlogs' => Blog::latest()->get(),
                 ]);
             } else {
                 return view('contact', [
                     'judul_halaman' => 'Kontak Kami',
                     'settings' => Setting::get(),
                     'socials' => Social::get(),
-                    'sections' => Section::get()
-
+                    'sections' => Section::get(),
+                    'newBlogs' => Blog::latest()->get(),
                 ]);
             }
         }
