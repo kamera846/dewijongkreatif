@@ -34,7 +34,7 @@
             <div class="scrollbar-inner">
                 <!-- Brand -->
                 <div class="sidenav-header d-flex align-items-center">
-                    <a class="navbar-brand" href="./">
+                    <a class="navbar-brand" href="/">
                         @foreach($settings as $setting)
                             @if($setting->logo)
                             <img src="{{ asset('storage/'. $setting->logo) }}" class="navbar-brand-img" alt="..." style="min-height: 60px; object-fit: contain;"/>
