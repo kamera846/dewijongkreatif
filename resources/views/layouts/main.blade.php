@@ -1,8 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- HTML Meta Tags -->
+        
+        <?php 
+        $keywords = "desa, wisata, loha, desa wisata, desa loha, wisata loha, desa wisata loha, ntt, nusa tenggara timur";
+        $description = "Sejarah peradaban masyarakat penghuni kampung sowang yang berlokasi Didesa Loha, Kecamatan Pacar, Kabupaten Manggarai Barat. kampung sowang diberi nama oleh leluhur “empo” yang datang dari suku nawangkarena sebelum dijadikan sebuah tempat pemukiman."; 
+        $setting = $settings[0];
+        $web_url = sprintf("%s://%s%s", isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http', $_SERVER['SERVER_NAME'], $_SERVER['REQUEST_URI'])
+        ?>
+        
         <meta charset="utf-8" />
-        <title>{{ $judul_halaman }}</title>
+        <title>{{$judul_halaman}}</title>
+        <meta name="description" content="{{$description}}">
+        <meta name="keywords" content="{{$keywords}}">
+        
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="{{$judul_halaman}}">
+        <meta itemprop="description" content="{{$description}}">
+        <meta itemprop="image" content="{{ asset('storage/' . $setting->logo) }}">
+        
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="{{$web_url}}">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{$judul_halaman}}">
+        <meta property="og:description" content="{{$description}}">
+        <meta property="og:image" content="{{ asset('storage/' . $setting->logo) }}">
+        
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{$judul_halaman}}">
+        <meta name="twitter:description" content="{{$description}}">
+        <meta name="twitter:image" content="{{ asset('storage/' . $setting->logo) }}">
+        
+        <!-- Meta Tags Generated via http://heymeta.com -->
         <!-- Stylesheets -->
         <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />

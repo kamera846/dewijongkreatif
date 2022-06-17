@@ -15,8 +15,9 @@ use App\Models\Social;
 
 class MainController extends Controller
 {
-    public function index(Setting $setting)
+    public function index()
     {
+        $setting = Setting::first();
         return view('index', [
             'judul_halaman' => $setting->web_title,
             'blogs' => Blog::latest('updated_at')->limit(3)->get(),

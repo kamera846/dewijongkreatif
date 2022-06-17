@@ -147,7 +147,7 @@
                 <div class="col-xl-3 col-lg-6 project-block">
                     <div class="inner-box" style="height: 300px">
                             <?php $image = json_decode($section->cover); ?>
-                            <div class="image" style="height: 100%; background-color: black"><img src="<?= $section->cover != null ? 'storage/'.$image[0] : 'assets/images/resource/image-5.jpg' ?>" alt="" style="height: 100%; object-fit:cover; opacity: 0.6;" /></div>
+                            <div class="image" style="height: 100%; background-color: black"><img src="<?= $section->cover != null ? asset('storage/'.$image[0]) : asset('assets/images/resource/image-5.jpg'); ?>" alt="" style="height: 100%; object-fit:cover; opacity: 0.6;" /></div>
                             <div class="content" >
                                 @foreach($settings as $item)
                                 <h4>{{$item->web_title}}</h4>
@@ -255,27 +255,27 @@
                 @endforeach
                 @foreach ($settings as $setting)
                 <div class="row justify-content-center" style="padding-left: 50px; padding-right: 50px;">
-                    <div class="col-lg-3 col-md-6 contact-info-block">
+                    <div class="col-lg-6 col-md-6 contact-info-block">
                         <div class="inner-box">
                             <div class="icon"><span class="pe-7s-call"></span></div>
                             <h5>Call us</h5>
                             <h4><a href="tel:8526105599">{{ $setting->telpon }}</a></h4>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 contact-info-block">
+                    <div class="col-lg-6 col-md-6 contact-info-block">
                         <div class="inner-box">
                             <div class="icon"><span class="pe-7s-mail-open"></span></div>
                             <h5>Send Email</h5>
                             <h4><a href="mailto:mail@govern.net">{{ $setting->email }}</a></h4>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 contact-info-block">
+                    <!-- <div class="col-lg-3 col-md-6 contact-info-block">
                         <div class="inner-box">
                             <div class="icon"><span class="pe-7s-stopwatch"></span></div>
                             <h5>Office Hours</h5>
                             <h4>0900am - 0600pm</h4>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 @endforeach
             </div>

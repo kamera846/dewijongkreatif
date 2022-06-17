@@ -35,7 +35,7 @@
                         <?php 
                             $imageHelp = json_decode($section->cover);
                         ?>
-                        <div class="our-facts" style="background-image: url(<?= asset($imageHelp != null ? 'storage/'.$imageHelp[0] : 'assets/images/background/bg-4.jpg') ?>)" style="height: 100% !important">
+                        <div class="our-facts" style="background-image: url(<?= asset($imageHelp != null ? 'storage/'.$imageHelp[0] : 'assets/images/background/bg-4.jpg') ?>);height: 100% !important">
                         </div>
                     </div>
                     <div class="col-lg-7">
